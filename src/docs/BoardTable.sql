@@ -1,4 +1,4 @@
-﻿drop table USER_T;
+drop table USER_T;
 create table USER_T
 (
        ID number(4),
