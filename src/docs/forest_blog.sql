@@ -264,5 +264,6 @@ CREATE TABLE `user` (
 #
 
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'admin','123456','言曌','admin@liuyanzhao.com','https://liuyanzhao.com','/uploads/2017/10/20171006225356181.jpg','0:0:0:0:0:0:0:1','2017-10-06 21:56:33','2017-11-15 21:09:59',1);
+# INSERT INTO `user` VALUES (1,'admin','123456','言曌','admin@liuyanzhao.com','https://liuyanzhao.com','/uploads/2017/10/20171006225356181.jpg','0:0:0:0:0:0:0:1','2017-10-06 21:56:33','2017-11-15 21:09:59',1);
+INSERT INTO `user` VALUES (1,'Klaus','111','mebingo','shangsn@cn.ibm.com','https://github.com/mebingo','/uploads/2017/10/20171006225356181.jpg','0:0:0:0:0:0:0:1',CURRENT_TIMESTAMP,CURRENT_TIMESTAMP,1);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
