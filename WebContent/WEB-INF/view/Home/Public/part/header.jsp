@@ -41,10 +41,6 @@
     <%--主要菜单 satrt--%>
     <div id="menu-box">
         <div id="top-menu">
-                <span class="nav-search">
-                    <i class="fa fa-search"></i>
-                </span>
-
             <div id="site-nav-wrap">
                 <div id="sidr-close">
                     <a href="#sidr-close" class="toggle-sidr-close">×</a>
@@ -97,6 +93,10 @@
                     </div>
                 </nav>
             </div>
+              <span class="nav-search">
+                    <i class="fa fa-search"></i>
+              </span>
+            
             <div class="clear"></div>
         </div><!-- #top-menu -->
     </div><!-- #menu-box -->
