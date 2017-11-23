@@ -1,4 +1,5 @@
 # Exchange_Board
+<<<<<<< master
 1,Code Format:UTF-8
 2,Set Upload File Path
 	UploadFileController.java 
@@ -9,3 +10,6 @@
 	
 	
 	
+=======
+编码:UTF-8
+>>>>>>> e0a5a1c update
