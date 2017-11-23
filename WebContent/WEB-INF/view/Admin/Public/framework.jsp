@@ -11,7 +11,7 @@
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
     <link rel="shortcut icon" href="/img/logo.png">
     <title>
-        ${options.optionSiteTitle}后台
+        <%-- ${options.optionSiteTitle}Management --%>Management
             <rapid:block name="title"></rapid:block>
     </title>
     <link rel="stylesheet" href="/plugin/layui/css/layui.css">
@@ -24,12 +24,12 @@
 <div class="layui-layout layui-layout-admin">
     <div class="layui-header">
         <div class="layui-logo"><a href="/admin" style="color:#009688;">
-        ${options.optionSiteTitle}后台
+        <%-- ${options.optionSiteTitle}Management --%>Management
         </a>
         </div>
         <!-- 头部区域（可配合layui已有的水平导航） -->
         <ul class="layui-nav layui-layout-left">
-            <li class="layui-nav-item"><a href="/" target="_blank">前台</a></li>
+            <li class="layui-nav-item"><a href="/" target="_blank">ShowCase Board</a></li>
             <li class="layui-nav-item">
                 <a href="javascript:;">新建</a>
                 <dl class="layui-nav-child">
@@ -130,7 +130,7 @@
 
     <div class="layui-footer">
         <!-- 底部固定区域 -->
-        © ${options.optionSiteTitle} - 后台
+        <%-- © ${options.optionSiteTitle} - Management --%>Management
     </div>
 </div>
 

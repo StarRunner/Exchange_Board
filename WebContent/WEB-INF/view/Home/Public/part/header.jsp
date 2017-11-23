@@ -13,10 +13,10 @@
             <div class="user-login">
                 <c:choose>
                     <c:when test="${sessionScope.user==null}">
-                        <a href="/admin">Sign in</a>
+                        <a href="/admin">登录</a>
                     </c:when>
                     <c:otherwise>
-                        <a href="/admin">Management</a>
+                        <a href="/admin">进入后台</a>
                     </c:otherwise>
                 </c:choose>
             </div>

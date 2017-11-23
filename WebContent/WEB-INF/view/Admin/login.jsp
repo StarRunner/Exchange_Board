@@ -77,17 +77,17 @@
          %>
     <form name="loginForm" id="loginForm"  method="post">
         <p>
-            <label for="user_login">用户名或电子邮件地址<br />
+            <label for="user_login">Username or Email<br />
                 <input type="text" name="username" id="user_login" class="input" value="<%=username%>" size="20" required/></label>
         </p>
         <p>
-            <label for="user_pass">密码<br />
+            <label for="user_pass">Password<br />
                 <input type="password" name="password" id="user_pass" class="input" value="<%=password%>" size="20" required/>
             </label>
         </p>
-        <p class="forgetmenot"><label for="rememberme"><input name="rememberme" type="checkbox" id="rememberme" value="1" checked /> 记住密码</label></p>
+        <p class="forgetmenot"><label for="rememberme"><input name="rememberme" type="checkbox" id="rememberme" value="1" checked />Remember password</label></p>
         <p class="submit">
-            <input type="button" name="wp-submit" id="submit-btn" class="button button-primary button-large" value="登录" />
+            <input type="button" name="wp-submit" id="submit-btn" class="button button-primary button-large" value="Sign in" />
         </p>
     </form>
 
