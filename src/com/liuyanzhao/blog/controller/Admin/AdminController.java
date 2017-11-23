@@ -88,10 +88,10 @@ public class AdminController {
         User user = userService.getUserByNameOrEmail(username);
         if(user==null) {
             map.put("code",0);
-            map.put("msg","用户名无效！");
+            map.put("msg","Your username or password was entered incorrectly");
         } else if(!user.getUserPass().equals(password)) {
             map.put("code",0);
-            map.put("msg","密码错误！");
+            map.put("msg","Your username or password was entered incorrectly");
         } else {
             //登录成功
             map.put("code",1);
