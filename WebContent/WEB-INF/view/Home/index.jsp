@@ -8,19 +8,7 @@
 
 
     <rapid:override name="breadcrumb">
-        <nav class="breadcrumb">
-            <div class="bull"><i class="fa fa-volume-up"></i></div>
-            <div id="scrolldiv">
-                <div class="scrolltext">
-                    <ul style="margin-top: 0px;">
-                        <c:forEach items="${noticeCustomList}" var="n">
-                            <li class="scrolltext-title">
-                                <a href="/notice/${n.noticeId}" rel="bookmark">${n.noticeTitle}</a>
-                            </li>
-                        </c:forEach>
-                    </ul>
-                </div>
-            </div>
+        <nav class="breadcrumb" style="background:unset !important;">
         </nav>
     </rapid:override>
 
@@ -30,7 +18,7 @@
             <main id="main" class="site-main" role="main">
                 <c:forEach items="${articleListVoList}" var="a">
 
-                    <article  class="post type-post">
+                    <article  class="post type-post" style="float:left;width:33%">
 
                         <figure class="thumbnail">
                             <a href="/article/${a.articleCustom.articleId}">
@@ -49,35 +37,14 @@
                         <header class="entry-header">
                             <h2 class="entry-title">
                                 <a href="/article/${a.articleCustom.articleId}"
-                                   rel="bookmark">
+                                   rel="bookmark"  style="font-weight:unset;font-size:14px;">
                                         ${a.articleCustom.articleTitle}
                                 </a>
                             </h2>
                         </header>
 
                         <div class="entry-content">
-                            <div class="archive-content">
-                                <lyz:htmlFilter>${a.articleCustom.articleContent}</lyz:htmlFilter>......
-                            </div>
-                            <span class="title-l"></span>
-                            <span class="new-icon">
-                                    <c:choose>
-                                        <c:when test="${a.articleCustom.articleStatus==2}">
-                                            <i class="fa fa-bookmark-o"></i>
-                                        </c:when>
-                                        <c:otherwise>
-                                            <jsp:useBean id="nowDate" class="java.util.Date"/>
-                                            <c:set var="interval"
-                                                   value="${nowDate.time - a.articleCustom.articlePostTime.time}"/><%--时间差毫秒数--%>
-                                            <fmt:formatNumber value="${interval/1000/60/60/24}" pattern="#0"
-                                                              var="days"/>
-                                            <c:if test="${days <= 7}">NEW</c:if>
-                                        </c:otherwise>
-                                    </c:choose>
-
-
-                                </span>
-                            <span class="entry-meta">
+                            <span class="entry-meta" style="display:block; position:unset !important">
                                     <span class="date">
                                         <fmt:formatDate value="${a.articleCustom.articlePostTime}" pattern="yyyy年MM月dd日"/>
                                     &nbsp;&nbsp;
@@ -104,16 +71,11 @@
                             <div class="clear"></div>
                         </div><!-- .entry-content -->
 
-                        <span class="entry-more">
-                                <a href="/article/${a.articleCustom.articleId}"
-                                   rel="bookmark">
-                                    阅读全文
-                                </a>
-                            </span>
+
                     </article>
                 </c:forEach>
             </main>
-
+            <div style="clear:both;"></div>
             <c:if test="${articleListVoList[0].page.totalPageCount>1}">
             <nav class="navigation pagination" role="navigation">
                 <div class="nav-links">

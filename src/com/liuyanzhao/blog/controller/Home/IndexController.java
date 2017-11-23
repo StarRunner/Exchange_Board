@@ -43,7 +43,7 @@ public class IndexController {
 	public ModelAndView IndexView() throws Exception {
 		ModelAndView modelAndView = new ModelAndView();
 		//文章列表
-		int pageSize = 10;
+		int pageSize = 9;
 		List<ArticleListVo> articleListVoList = articleService.listArticleByPage(1,null,pageSize);
 		modelAndView.addObject("articleListVoList",articleListVoList);
 
@@ -57,7 +57,7 @@ public class IndexController {
 	public @ResponseBody  ModelAndView ArticleListByPageView(@PathVariable("pageNow") Integer pageNow) throws Exception{
 		ModelAndView modelAndView = new ModelAndView();
 		//设置每页显示的数量
-		int pageSize = 10;
+		int pageSize = 9;
 		List<ArticleListVo> articleListVoList = articleService.listArticleByPage(1,pageNow,pageSize);
 		modelAndView.addObject("articleListVoList",articleListVoList);
 		modelAndView.setViewName("Home/index");

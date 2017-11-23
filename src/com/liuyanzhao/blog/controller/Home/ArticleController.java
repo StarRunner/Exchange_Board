@@ -108,7 +108,7 @@ public class ArticleController {
 	public ModelAndView SearchPageView(HttpServletRequest request,Model model) throws Exception {
 		ModelAndView modelAndView = new ModelAndView();
 		//设置每页显示的数量
-		int pageSize = 10;
+		int pageSize = 9;
 		String query = request.getParameter("query");
 		List<ArticleSearchVo> articleSearchVoList = articleService.listSearchResultByPage(1,request,model,null,pageSize,query);
 		if(articleSearchVoList!=null) {
@@ -126,7 +126,7 @@ public class ArticleController {
 	public  ModelAndView SearchPageByPageView(HttpServletRequest request, Model model,@PathVariable("pageNow") Integer pageNow) throws Exception {
 		ModelAndView modelAndView = new ModelAndView();
 		//设置每页显示的数量
-		int pageSize = 10;
+		int pageSize = 9;
 		String query = request.getParameter("query");
 		List<ArticleSearchVo> articleSearchVoList = articleService.listSearchResultByPage(1,request,model,pageNow,pageSize,query);
 		modelAndView.addObject("articleSearchVoList", articleSearchVoList);

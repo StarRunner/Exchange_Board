@@ -33,7 +33,7 @@ public class TagController {
 	public ModelAndView ArticleListByTagView(@PathVariable("tagId") Integer tagId) throws Exception {
 		ModelAndView modelAndView = new ModelAndView();
 		//设置每页显示条数、
-		int pageSize = 10;
+		int pageSize = 9;
 		List<ArticleListVo> articleListVoList = tagService.getArticleListByPage(1,null,pageSize,tagId);
 
 		modelAndView.addObject("articleListVoList",articleListVoList);
@@ -53,7 +53,7 @@ public class TagController {
 		ModelAndView modelAndView = new ModelAndView();
 		
 		//设置每页显示条数
-		int pageSize = 10;
+		int pageSize = 9;
 		List<ArticleListVo> articleListVoList = tagService.getArticleListByPage(1,pageNow,pageSize,tagId);
 		modelAndView.addObject("articleListVoList",articleListVoList);
 		modelAndView.setViewName("Home/Page/articleListByTag");

@@ -436,7 +436,7 @@ a, button, input {
 
 .nav-search {
     background: #009688;
-    float: right;
+    float: left;
     color: #fff;
     line-height: 26px;
     margin: 28px 10px 0 10px;
@@ -605,7 +605,7 @@ a, button, input {
 }
 /*一级样式*/
 #site-nav-wrap {
-    float: right;
+    float: left;
     max-width: 70%;
 }
 

@@ -57,7 +57,7 @@
                                     <%--文章列表-start--%>
                                     <c:forEach items="${articleListVoList}" var="a">
 
-                                        <article class="post">
+                                        <article class="post"  style="float:left;width:33%">
 
                                             <figure class="thumbnail">
                                                 <a href="/article/${a.articleCustom.articleId}">
@@ -74,20 +74,16 @@
                                             </figure>
 
                                             <header class="entry-header">
-                                                <h2 class="entry-title">
+                                                <h2 class="entry-title"  >
                                                     <a href="/article/${a.articleCustom.articleId}"
-                                                       rel="bookmark">
+                                                       rel="bookmark" style="font-weight:unset;font-size:14px;">
                                                             ${a.articleCustom.articleTitle}
                                                     </a>
                                                 </h2>
                                             </header><!-- .entry-header -->
 
                                             <div class="entry-content">
-                                                <div class="archive-content">
-                                                    <lyz:htmlFilter>${a.articleCustom.articleContent}</lyz:htmlFilter>......
-                                                </div>
-                                                <span class="title-l"></span>
-                                                <span class="new-icon">
+                                              
                                     <c:choose>
                                         <c:when test="${a.articleCustom.articleStatus==2}">
                                             <i class="fa fa-bookmark-o"></i>
@@ -104,7 +100,7 @@
 
 
                                 </span>
-                                                <span class="entry-meta">
+                                                <span class="entry-meta" style="display:block; position:unset !important">
                                     <span class="date">
                                         <fmt:formatDate value="${a.articleCustom.articlePostTime}" pattern="yyyy年MM月dd日"/>
                                     &nbsp;&nbsp;
@@ -131,11 +127,6 @@
                                                 <div class="clear"></div>
                                             </div><!-- .entry-content -->
 
-                                            <span class="entry-more">
-                                            <a href="/article/${a.articleCustom.articleId}"
-                                               rel="bookmark">阅读全文
-                                            </a>
-                                        </span>
                                         </article>
                                     </c:forEach>
                                     <%--文章列表-end--%>
@@ -161,6 +152,7 @@
                     </c:choose>
 
              </main>
+            <div style="clear:both;"></div>
             <c:choose>
                 <c:when test="${articleListVoList!=null}">
                         <c:if test="${articleListVoList.size()!=0}">
