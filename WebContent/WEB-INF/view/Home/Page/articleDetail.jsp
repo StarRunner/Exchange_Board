@@ -63,6 +63,11 @@
                             ${articleDetailVo.articleCustom.articleTitle}
                     </h1>
                 </header><!-- .entry-header -->
+                
+                <!-- Rancho Add -->
+               <div class="wrap-vid">
+					<iframe width="100%" height="400" src="${articleDetailVo.articleCustom.articleUrl}" frameborder="0" allowfullscreen></iframe>
+			   </div>
                 <div class="entry-content">
                     <div class="single-content">
                             ${articleDetailVo.articleCustom.articleContent}
@@ -147,7 +152,7 @@
 
 
                 <%--版权声明 start--%>
-            <div class="authorbio wow fadeInUp" >
+            <!--div class="authorbio wow fadeInUp" >
                 <img alt="${articleDetailVo.userCustom.userNickname}" src="${articleDetailVo.userCustom.userAvatar}"
                      class="avatar avatar-64 photo" height="64" width="64">
                 <ul class="postinfo">
@@ -168,7 +173,7 @@
                     </li>
                 </ul>
                 <div class="clear"></div>
-            </div>
+            </div-->
                 <%--版权声明 end--%>
 
 

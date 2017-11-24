@@ -16,6 +16,7 @@
     <result column="article_is_comment" property="articleIsComment" jdbcType="INTEGER" />
     <result column="article_status" property="articleStatus" jdbcType="INTEGER" />
     <result column="article_order" property="articleOrder" jdbcType="INTEGER" />
+    <result column="article_url" property="articleUrl" jdbcType="VARCHAR" />
   </resultMap>
   <resultMap id="ResultMapWithBLOBs" type="com.ios.entity.Article" extends="BaseResultMap" >
     <result column="article_content" property="articleContent" jdbcType="LONGVARCHAR" />
@@ -23,7 +24,7 @@
   <sql id="Base_Column_List" >
     article_id, article_user_id, article_title, article_parent_category_id, article_child_category_id, 
     article_tag_ids, article_view_count, article_comment_count, article_like_count, article_post_time, 
-    article_update_time, article_is_comment, article_status, article_order
+    article_update_time, article_is_comment, article_status, article_order, articel_url
   </sql>
   <sql id="Blob_Column_List" >
     article_content
@@ -46,13 +47,13 @@
       article_tag_ids, article_view_count, article_comment_count, 
       article_like_count, article_post_time, article_update_time, 
       article_is_comment, article_status, article_order, 
-      article_content)
+      article_content,article_url)
     values (#{articleId,jdbcType=INTEGER}, #{articleUserId,jdbcType=INTEGER}, #{articleTitle,jdbcType=VARCHAR}, 
       #{articleParentCategoryId,jdbcType=INTEGER}, #{articleChildCategoryId,jdbcType=INTEGER}, 
       #{articleTagIds,jdbcType=VARCHAR}, #{articleViewCount,jdbcType=INTEGER}, #{articleCommentCount,jdbcType=INTEGER}, 
       #{articleLikeCount,jdbcType=INTEGER}, #{articlePostTime,jdbcType=TIMESTAMP}, #{articleUpdateTime,jdbcType=TIMESTAMP}, 
       #{articleIsComment,jdbcType=INTEGER}, #{articleStatus,jdbcType=INTEGER}, #{articleOrder,jdbcType=INTEGER}, 
-      #{articleContent,jdbcType=LONGVARCHAR})
+      #{articleContent,jdbcType=LONGVARCHAR}, #{articleUrl,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.ios.entity.Article" >
     insert into article
@@ -202,6 +203,9 @@
       <if test="articleContent != null" >
         article_content = #{articleContent,jdbcType=LONGVARCHAR},
       </if>
+      <if test="articleUrl != null" >
+        article_url = #{articleUrl,jdbcType=VARCHAR},
+      </if>
     </set>
     where article_id = #{articleId,jdbcType=INTEGER}
   </update>
@@ -220,7 +224,8 @@
       article_is_comment = #{articleIsComment,jdbcType=INTEGER},
       article_status = #{articleStatus,jdbcType=INTEGER},
       article_order = #{articleOrder,jdbcType=INTEGER},
-      article_content = #{articleContent,jdbcType=LONGVARCHAR}
+      article_content = #{articleContent,jdbcType=LONGVARCHAR},
+      article_url= #{articleUrl,jdbcType=VARCHAR}
     where article_id = #{articleId,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.ios.entity.Article" >
@@ -237,7 +242,9 @@
       article_update_time = #{articleUpdateTime,jdbcType=TIMESTAMP},
       article_is_comment = #{articleIsComment,jdbcType=INTEGER},
       article_status = #{articleStatus,jdbcType=INTEGER},
-      article_order = #{articleOrder,jdbcType=INTEGER}
+      article_order = #{articleOrder,jdbcType=INTEGER},
+      article_url = #{articleUrl,jdbcType=VARCHAR}
+    
     where article_id = #{articleId,jdbcType=INTEGER}
   </update>
 </mapper>
