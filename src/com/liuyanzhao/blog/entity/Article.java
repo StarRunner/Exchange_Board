@@ -32,8 +32,20 @@ public class Article {
     private Integer articleOrder;
 
     private String articleContent;
+    
+    private String articleUrl;
 
-    public Integer getArticleId() {
+  
+
+	public String getArticleUrl() {
+		return articleUrl;
+	}
+
+	public void setArticleUrl(String articleUrl) {
+		this.articleUrl = articleUrl;
+	}
+
+	public Integer getArticleId() {
         return articleId;
     }
 

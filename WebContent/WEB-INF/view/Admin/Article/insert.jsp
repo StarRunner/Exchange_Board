@@ -29,6 +29,14 @@
                 <input type="text" name="articleTitle" lay-verify="title" id="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
             </div>
         </div>
+        
+        <!-- Rancho Add -->
+        <div class="layui-form-item">
+            <label class="layui-form-label">Video URL <span style="color: #FF5722; ">*</span></label>
+            <div class="layui-input-block">
+                <input type="text" name="articleUrl" lay-verify="title" id="articleurl" autocomplete="off" placeholder="Please input url for box" class="layui-input">
+            </div>
+        </div>
 
         <div class="layui-form-item layui-form-text">
             <label class="layui-form-label">内容 <span style="color: #FF5722; ">*</span></label>

@@ -102,6 +102,9 @@
       <if test="articleContent != null" >
         article_content,
       </if>
+        <if test="articleUrl != null" >
+        article_url,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="articleId != null" >
@@ -148,6 +151,9 @@
       </if>
       <if test="articleContent != null" >
         #{articleContent,jdbcType=LONGVARCHAR},
+      </if>
+       <if test="articleUrl != null" >
+        #{articleUrl,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
