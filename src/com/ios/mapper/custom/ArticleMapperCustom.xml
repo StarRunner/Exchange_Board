@@ -17,7 +17,8 @@
         article_update_time,
         article_is_comment,
         article_status,
-        article_order
+        article_order,
+        article_url
     </sql>
 
 
