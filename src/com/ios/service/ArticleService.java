@@ -9,6 +9,9 @@ import com.ios.entity.custom.ArticleSearchVo;
 import org.springframework.ui.Model;
 
 import javax.servlet.http.HttpServletRequest;
+
+import java.util.Date;
+import java.sql.Timestamp;
 import java.util.List;
 
 /**
@@ -80,4 +83,7 @@ public interface ArticleService {
 
 	//获得最后更新记录
 	public ArticleCustom getLastUpdateArticle() throws Exception;
+	
+	//get article by update time
+	public ArticleCustom getArticleByUpdateTime(String content) throws Exception;
 }

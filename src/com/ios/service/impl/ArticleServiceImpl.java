@@ -19,6 +19,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
 import javax.servlet.http.HttpServletRequest;
+
+import java.util.Date;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -424,7 +426,7 @@ public class ArticleServiceImpl implements ArticleService {
     //添加文章
     @Override
     public void insertArticle(Article article) throws Exception {
-        articleMapper.insertSelective(article);
+       articleMapper.insertSelective(article);
     }
 
     //统计某个分类的文章数
@@ -452,5 +454,10 @@ public class ArticleServiceImpl implements ArticleService {
 		return articleCustom;
 	}
 
-
+	@Override
+	public ArticleCustom getArticleByUpdateTime(String time) throws Exception {
+		// TODO Auto-generated method stub
+		ArticleCustom articleCustom = articleMapperCustom.getArticleIdByUpdateTime(time);
+		return articleCustom;
+	}
 }

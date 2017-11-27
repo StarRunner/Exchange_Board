@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import com.ios.entity.custom.ArticleCustom;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -71,6 +72,9 @@ public interface ArticleMapperCustom {
 
 	//获得最后更新的记录
 	public ArticleCustom getLastUpdateArticle() throws Exception;
+	
+	//Get Article id by update time in table article
+	public ArticleCustom getArticleIdByUpdateTime(@Param(value="updateTime") String updateTime);
 }
 
 

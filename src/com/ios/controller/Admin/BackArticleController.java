@@ -2,6 +2,7 @@ package com.ios.controller.Admin;
 
 import com.ios.entity.Article;
 import com.ios.entity.custom.*;
+import com.ios.mapper.custom.ArticleMapperCustom;
 import com.ios.service.ArticleService;
 import com.ios.service.CategoryService;
 import com.ios.service.TagService;
@@ -12,12 +13,25 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.commons.CommonsMultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.Properties;
 
 
 @Controller
@@ -25,7 +39,6 @@ import java.util.List;
 public class BackArticleController {
     @Autowired
     private ArticleService articleService;
-
 
     @Autowired
     private TagService tagService;
@@ -80,22 +93,118 @@ public class BackArticleController {
         modelAndView.setViewName("Admin/Article/insert");
         return modelAndView;
     }
-
+    
+    @Autowired
+    HttpServletRequest request;
+    
     //后台添加文章提交操作
     @RequestMapping(value = "/insertSubmit",method = RequestMethod.POST)
-    public String insertArticleSubmit(Article article) throws Exception {
-
-        article.setArticlePostTime(new Date());
-        article.setArticleUpdateTime(new Date());
+    public String insertArticleSubmit(Article article, @RequestParam("file") CommonsMultipartFile file) throws Exception {
+    	
+    	/*
+    	 *  Insert Article
+    	 */
+    	SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    	System.out.println(" ---- Start insert article ----");
+    	Date utilDate=new Date(); 
+    	
+    	String timeStr = df.format(utilDate);
+    	System.out.println("after format: " + timeStr);//2017-11-26 23:35:49
+    	
+    	String year = timeStr.substring(0, 4);
+    	String month = timeStr.substring(5,7);
+    	String day = timeStr.substring(8,10);
+    	String hour = timeStr.substring(11, 13);
+    	String minute = timeStr.substring(14, 16);
+    	String second = timeStr.substring(17, 19);
+    	Date date1Parsed = df.parse(year +"-" + month+ "-" + day+ " " + hour + ":" + minute + ":" + second);
+    	System.out.println("date format : " + date1Parsed);
+    	
+    	Timestamp time = new Timestamp(date1Parsed.getTime());
+    	System.out.println("Date: " + utilDate);
+    	System.out.println("timestamp: " + time);//0201-01-02 00:00:03.0
+    	
+        article.setArticlePostTime(time);
+        article.setArticleUpdateTime(time);
         article.setArticleIsComment(1);
         article.setArticleViewCount(0);
         article.setArticleLikeCount(0);
         article.setArticleCommentCount(0);
         article.setArticleStatus(1);
         article.setArticleOrder(1);
-
+        System.out.println("Article.toString: " + article.toString());
+        
+        //insert
         articleService.insertArticle(article);
-
+        System.out.println("Inser article finished.");
+        
+        //get article id
+        
+    	
+        System.out.println(" Start get article id...");
+        int articleId = 1;
+        
+        try {
+        	articleId = articleService.getArticleByUpdateTime(timeStr).getArticleId();
+		} catch (NullPointerException e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+        
+        //if articleId = 1, it means get article id failed.
+        if (articleId==1) {
+			System.out.println("Get article id failed. Try another way. ");
+			System.out.println("Get last update article...");
+			articleService.getLastUpdateArticle();
+		}
+        
+        System.out.println("Get article id successed. ");
+        System.out.println("Article id: " + articleId);
+        
+        /*
+         *	Upload Video Picture 
+         *
+         *	1, get project path from properties file
+         *	2, get Server path
+         *	2, set img name
+         *	3, write file to 2 pathes
+         */
+        System.out.println(" ---- Start upload video picture ----");
+        Properties prop = new Properties();
+        System.out.println("start get properties file which contains project root path");
+        InputStream propIs = this.getClass().getResourceAsStream("/projectpath.properties");
+        prop.load(propIs);
+        //get Project real path
+        String projectDir = prop.getProperty("path") + "/WebContent/img/thumbnail/random/";
+        String imgDirInServer = "/img/thumbnail/random/";
+        //get Server real path
+        String serverDir = request.getSession().getServletContext().getRealPath(imgDirInServer);
+        String fileName = "img_" + articleId;
+        System.out.println("img name: " + fileName);
+        System.out.println("project path: " + projectDir);
+        System.out.println("server path: " + serverDir);
+        
+        try {
+        	
+        	OutputStream os4Project = new FileOutputStream(projectDir + fileName + ".jpg");
+			OutputStream os4Server = new FileOutputStream(serverDir + fileName + ".jpg");
+			
+        	InputStream is = file.getInputStream();
+			
+			int temp;
+			while((temp=is.read())!=(-1)){
+				os4Project.write(temp);
+				os4Server.write(temp);
+			}
+			os4Project.flush();
+			os4Project.close();
+			os4Server.flush();
+			os4Server.close();
+			is.close();
+		} catch (FileNotFoundException e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
         return "redirect:/admin/article";
     }
 

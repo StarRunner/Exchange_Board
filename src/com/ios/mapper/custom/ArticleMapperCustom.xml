@@ -316,4 +316,11 @@
         )
     </select>
 
+	<select id="getArticleIdByUpdateTime" resultType="com.ios.entity.custom.ArticleCustom">
+		SELECT
+        <include refid="article_table_all_columns"/>
+        FROM `article`
+        WHERE article_update_time=#{updateTime} 
+	</select>
+
 </mapper>
