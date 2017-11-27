@@ -172,32 +172,32 @@ public class BackArticleController {
         System.out.println(" ---- Start upload video picture ----");
         Properties prop = new Properties();
         System.out.println("start get properties file which contains project root path");
-        InputStream propIs = this.getClass().getResourceAsStream("/projectpath.properties");
-        prop.load(propIs);
+        //InputStream propIs = this.getClass().getResourceAsStream("/projectpath.properties");
+        //prop.load(propIs);
         //get Project real path
-        String projectDir = prop.getProperty("path") + "/WebContent/img/thumbnail/random/";
+        //String projectDir = prop.getProperty("path") + "/WebContent/img/thumbnail/random/";
         String imgDirInServer = "/img/thumbnail/random/";
         //get Server real path
         String serverDir = request.getSession().getServletContext().getRealPath(imgDirInServer);
         String fileName = "img_" + articleId;
         System.out.println("img name: " + fileName);
-        System.out.println("project path: " + projectDir);
+//      System.out.println("project path: " + projectDir);
         System.out.println("server path: " + serverDir);
         
         try {
         	
-        	OutputStream os4Project = new FileOutputStream(projectDir + fileName + ".jpg");
+        	//OutputStream os4Project = new FileOutputStream(projectDir + fileName + ".jpg");
 			OutputStream os4Server = new FileOutputStream(serverDir + fileName + ".jpg");
 			
         	InputStream is = file.getInputStream();
 			
 			int temp;
 			while((temp=is.read())!=(-1)){
-				os4Project.write(temp);
+				//os4Project.write(temp);
 				os4Server.write(temp);
 			}
-			os4Project.flush();
-			os4Project.close();
+//			os4Project.flush();
+//			os4Project.close();
 			os4Server.flush();
 			os4Server.close();
 			is.close();
