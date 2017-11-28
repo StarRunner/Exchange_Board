@@ -183,7 +183,7 @@ public class BackArticleController {
         System.out.println("img name: " + fileName);
 //      System.out.println("project path: " + projectDir);
         System.out.println("server path: " + serverDir);
-        
+        System.out.println("final path: " + serverDir + fileName + ".jpg");
         try {
         	
         	//OutputStream os4Project = new FileOutputStream(projectDir + fileName + ".jpg");
