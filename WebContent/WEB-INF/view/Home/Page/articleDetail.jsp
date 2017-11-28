@@ -76,14 +76,7 @@
                     <div class="clear"></div>
                     <div id="social">
                         <div class="social-main">
-                                    <span class="like">
-                                        <a href="javascript:;" data-action="ding" data-id="1" title="点赞"
-                                           class="favorite" onclick="increaseLikeCount()">
-                                            <i class="fa fa-thumbs-up"></i>赞
-                                            <i class="count"
-                                               id="count-${articleDetailVo.articleCustom.articleId}">${articleDetailVo.articleCustom.articleLikeCount}</i>
-                                        </a>
-                                    </span>
+                                 
                           
                             <div class="clear"></div>
                         </div>
@@ -271,6 +264,14 @@
                         <a rel="nofollow" id="cancel-comment-reply-link"
                            href="/article/${articleDetailVo.articleCustom.articleId}#respond"
                            style="">Cancel Comment</a>
+                        <span class="like">
+                                        <a href="javascript:;" data-action="ding" data-id="1" title="点赞"
+                                           class="favorite" style="border: unset !important; width: unset !important" onclick="increaseLikeCount()">
+                                            <i class="fa fa-thumbs-up"></i>赞
+                                            <i class="count"
+                                               id="count-${articleDetailVo.articleCustom.articleId}">${articleDetailVo.articleCustom.articleLikeCount}</i>
+                                        </a>
+                        </span>
                     </h3>
                     <form id="comment_form" method="post">
                         <c:if test="${sessionScope.user!=null}">
