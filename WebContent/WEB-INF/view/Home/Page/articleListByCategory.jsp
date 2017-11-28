@@ -115,7 +115,7 @@
                                           <i class="fa fa-comment-o"></i>
                                             <c:choose>
                                                 <c:when test="${a.articleCustom.articleCommentCount==0}">
-                                                    Post Comment
+                                                    Comment
                                                 </c:when>
                                                 <c:otherwise>
                                                     ${a.articleCustom.articleCommentCount}

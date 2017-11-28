@@ -45,7 +45,7 @@
 
                         <div class="entry-content">
                             <span class="entry-meta" style="display:block; position:unset !important">
-                                    <span class="date">
+                                    <span class="date" style="width: 100%;display: block;position:unset !important">
                                         <fmt:formatDate value="${a.articleCustom.articlePostTime}" pattern="yyyy/MM/dd"/>
                                     &nbsp;&nbsp;
                                     </span>
@@ -58,7 +58,7 @@
                                           <i class="fa fa-comment-o"></i>
                                             <c:choose>
                                                 <c:when test="${a.articleCustom.articleCommentCount==0}">
-                                                    Post Comment
+                                                    Comment
                                                 </c:when>
                                                 <c:otherwise>
                                                     ${a.articleCustom.articleCommentCount}

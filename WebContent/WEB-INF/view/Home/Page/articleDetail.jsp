@@ -267,7 +267,7 @@
             <div class="scroll-comments"></div>
             <div id="comments" class="comments-area">
                 <div id="respond" class="comment-respond">
-                    <h3 id="reply-title" class="comment-reply-title"><span id="reply-title-word">Post Comment</span>
+                    <h3 id="reply-title" class="comment-reply-title"><span id="reply-title-word">Comment</span>
                         <a rel="nofollow" id="cancel-comment-reply-link"
                            href="/article/${articleDetailVo.articleCustom.articleId}#respond"
                            style="">Cancel Comment</a>

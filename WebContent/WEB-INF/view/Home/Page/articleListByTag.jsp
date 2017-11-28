@@ -18,9 +18,9 @@
         <title>${tagCustom.tagName}</title>
     </rapid:override>
 
-    <rapid:override name="breadcrumb">
+    <rapid:override name="breadcrumb" >
         <%--面包屑导航 start--%>
-        <nav class="breadcrumb">
+         <nav class="breadcrumb" style="background:unset !important;">
             <a class="crumbs" href="/">
                 <i class="fa fa-home"></i>Home</a>
             <i class="fa fa-angle-right"></i>
@@ -61,8 +61,7 @@
                                 <%--Article列表-start--%>
                                 <c:forEach items="${articleListVoList}" var="a">
 
-                                    <article class="post"
-                                             data-wow-delay="0.3s">
+                                    <article  class="post type-post" style="float:left;width:33%"">
 
                                         <figure class="thumbnail">
                                             <a href="/article/${a.articleCustom.articleId}">
@@ -81,17 +80,17 @@
                                         <header class="entry-header">
                                             <h2 class="entry-title">
                                                 <a href="/article/${a.articleCustom.articleId}"
-                                                   rel="bookmark">
+                                                   rel="bookmark" style="font-weight:unset;font-size:14px;">
                                                         ${a.articleCustom.articleTitle}
                                                 </a>
                                             </h2>
                                         </header><!-- .entry-header -->
 
                                         <div class="entry-content">
-                                            <div class="archive-content">
+                                        <!-- Rancho Comment Content -->
+                                            <!--div class="archive-content">
                                                 <lyz:htmlFilter>${a.articleCustom.articleContent}</lyz:htmlFilter>......
-                                            </div>
-                                            <span class="title-l"></span>
+                                            </div-->
                                             <span class="new-icon">
                                 <c:choose>
                                     <c:when test="${a.articleCustom.articleStatus==2}">
@@ -109,9 +108,9 @@
 
 
                             </span>
-                                            <span class="entry-meta">
-                                <span class="date">
-                                    <fmt:formatDate value="${a.articleCustom.articlePostTime}" pattern="yyyy年MM月dd日"/>
+                                            <span class="entry-meta" style="display:block; position:unset !important">
+                                <span class="date" style="width: 100%;display: block;position:unset !important">
+                                    <fmt:formatDate value="${a.articleCustom.articlePostTime}" pattern="yyyy-MM-dd"/>
                                 &nbsp;&nbsp;
                                 </span>
                                 <span class="views">
@@ -123,7 +122,7 @@
                                       <i class="fa fa-comment-o"></i>
                                         <c:choose>
                                             <c:when test="${a.articleCustom.articleCommentCount==0}">
-                                                Post Comment
+                                                Comment
                                             </c:when>
                                             <c:otherwise>
                                                 ${a.articleCustom.articleCommentCount}
@@ -136,8 +135,8 @@
                                             <div class="clear"></div>
                                         </div><!-- .entry-content -->
 
-                                        <span class="entry-more"><a href="/article/${a.articleCustom.articleId}"
-                                                                    rel="bookmark">阅读全文</a></span>
+                                        <!--span class="entry-more"><a href="/article/${a.articleCustom.articleId}"
+                                                                    rel="bookmark">阅读全文</a></span-->
                                     </article>
                                 </c:forEach>
                                 <%--Article列表-end--%>
@@ -163,7 +162,7 @@
                 </c:choose>
 
             </main><!-- .site-main -->
-
+           <div style="clear:both;"></div>
             <c:choose>
                 <c:when test="${articleListVoList!=null}">
                     <c:if test="${articleListVoList.size()!=0}">
