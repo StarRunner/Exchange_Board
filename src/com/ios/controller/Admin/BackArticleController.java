@@ -172,32 +172,29 @@ public class BackArticleController {
         System.out.println(" ---- Start upload video picture ----");
         Properties prop = new Properties();
         System.out.println("start get properties file which contains project root path");
-        //InputStream propIs = this.getClass().getResourceAsStream("/projectpath.properties");
-        //prop.load(propIs);
-        //get Project real path
-        //String projectDir = prop.getProperty("path") + "/WebContent/img/thumbnail/random/";
         String imgDirInServer = "/img/thumbnail/random/";
         //get Server real path
         String serverDir = request.getSession().getServletContext().getRealPath(imgDirInServer);
+        
+        if (!serverDir.endsWith("\\")) {
+        	System.out.println("Path doesn't contains \\, adding '\\' for server path...");
+			serverDir = serverDir + "\\";
+			System.out.println("'\\' added to server path : " + serverDir);
+		}
+        
         String fileName = "img_" + articleId;
         System.out.println("img name: " + fileName);
-//      System.out.println("project path: " + projectDir);
         System.out.println("server path: " + serverDir);
         System.out.println("final path: " + serverDir + fileName + ".jpg");
         try {
         	
-        	//OutputStream os4Project = new FileOutputStream(projectDir + fileName + ".jpg");
 			OutputStream os4Server = new FileOutputStream(serverDir + fileName + ".jpg");
-			
         	InputStream is = file.getInputStream();
 			
 			int temp;
 			while((temp=is.read())!=(-1)){
-				//os4Project.write(temp);
 				os4Server.write(temp);
 			}
-//			os4Project.flush();
-//			os4Project.close();
 			os4Server.flush();
 			os4Server.close();
 			is.close();
