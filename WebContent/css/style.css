@@ -1526,8 +1526,8 @@ a, button, input {
 
 .thumbnail a img {
     float: left;
-    width: auto;
-    height: auto;
+    width: 188px;
+    height: 141px;
     max-width: 100%;
 }
 
