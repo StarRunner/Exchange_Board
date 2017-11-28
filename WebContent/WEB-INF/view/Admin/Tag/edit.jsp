@@ -6,7 +6,7 @@
 <%@ taglib prefix="rapid" uri="http://www.rapid-framework.org.cn/rapid" %>
 
     <rapid:override name="title">
-        - 编辑标签
+        - Edit Tags
     </rapid:override>
 <rapid:override name="header-style">
     <style>
@@ -34,8 +34,8 @@
     <blockquote class="layui-elem-quote">
         <span class="layui-breadcrumb" lay-separator="/">
               <a href="/admin">Home</a>
-              <a href="/admin/tag">标签列表</a>
-              <a><cite>编辑标签</cite></a>
+              <a href="/admin/tag">Tag List</a>
+              <a><cite>Edit Tag</cite></a>
         </span>
     </blockquote>
     <div class="layui-row">
@@ -43,27 +43,27 @@
             <form class="layui-form" method="post" id="myForm" action="/admin/tag/editSubmit">
                 <div class="layui-form-item">
                     <div class="layui-input-block">
-                        <strong>编辑标签</strong>
+                        <strong>Edit Tag</strong>
                     </div>
                     <input type="hidden" name="tagId" value="${tagCustom.tagId}">
                     <div class="layui-input-block">
-                        名称 <span style="color: #FF5722; ">*</span>
+                        Name <span style="color: #FF5722; ">*</span>
                         <input type="text" name="tagName" value="${tagCustom.tagName}" autocomplete="off" class="layui-input" required>
                     </div>
                     <br>
                     <div class="layui-input-block">
-                        标签描述
+                      Tag Description
                         <input type="text" name="tagDescription" value="${tagCustom.tagDescription}" autocomplete="off" class="layui-input" >
                     </div>
                     <br>
                     <div class="layui-input-block">
-                        状态 <br>
-                        <input type="radio" name="tagStatus" value="1" title="显示" <c:if test="${tagCustom.tagStatus==1}">checked</c:if>>
-                        <input type="radio" name="tagStatus" value="0" title="隐藏" <c:if test="${tagCustom.tagStatus==0}">checked</c:if>>
+                       Status <br>
+                        <input type="radio" name="tagStatus" value="1" title="display" <c:if test="${tagCustom.tagStatus==1}">checked</c:if>>
+                        <input type="radio" name="tagStatus" value="0" title="hidden" <c:if test="${tagCustom.tagStatus==0}">checked</c:if>>
                     </div>
                     <br>
                     <div class="layui-input-block">
-                        <button class="layui-btn" lay-filter="formDemo" type="submit">保存</button>
+                        <button class="layui-btn" lay-filter="formDemo" type="submit">Save</button>
                     </div>
                 </div>
             </form>
@@ -80,10 +80,10 @@
                 <thead>
                 <tr>
                     <th>id</th>
-                    <th>名称</th>
-                    <th>Article数</th>
-                    <th>状态</th>
-                    <th>操作</th>
+                    <th>Name</th>
+                    <th>Article Number</th>
+                    <th>Status</th>
+                    <th>Operation</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -101,9 +101,9 @@
                                 ${c.tagStatus}
                         </td>
                         <td>
-                            <a href="/admin/tag/edit/${c.tagId}" class="layui-btn layui-btn-mini">编辑</a>
+                            <a href="/admin/tag/edit/${c.tagId}" class="layui-btn layui-btn-mini">Edit</a>
                             <c:if test="${c.articleCount==0}">
-                                <a href="/admin/tag/delete/${c.tagId}" class="layui-btn layui-btn-danger layui-btn-mini" onclick="return confirmDelete()">删除</a>
+                                <a href="/admin/tag/delete/${c.tagId}" class="layui-btn layui-btn-danger layui-btn-mini" onclick="return confirmDelete()">Delete</a>
                             </c:if>
 
                         </td>
@@ -113,10 +113,10 @@
                 </tbody>
             </table>
             <blockquote class="layui-elem-quote layui-quote-nm">
-                温馨提示：
+                Note：
                 <ul>
-                    <li>如果该分类包含Article，将不可删除</li>
-                    <li>分类状态为1表示将显示在侧边栏，为0表示不显示在侧边栏(依然显示在正文)</li>
+                    <li>If the tag contains any article，the tag can not be deleted</li>
+                    <li>if the category is 1, the category will displayed in the left， if the status is 0, this will display in content </li>
                 </ul>
             </blockquote>
         </div>
