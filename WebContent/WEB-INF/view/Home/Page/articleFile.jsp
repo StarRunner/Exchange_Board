@@ -6,25 +6,25 @@
 <%@ taglib prefix="rapid" uri="http://www.rapid-framework.org.cn/rapid" %>
 
     <rapid:override name="description">
-        <meta name="description" content="文章归档"/>
+        <meta name="description" content="Article归档"/>
     </rapid:override>
 
     <rapid:override name="keywords">
-        <meta name="keywords" content="文章,归档"/>
+        <meta name="keywords" content="Article,归档"/>
     </rapid:override>
 
     <rapid:override name="title">
-        <title>文章归档--${options.optionSiteTitle}</title>
+        <title>Article归档--${options.optionSiteTitle}</title>
     </rapid:override>
 
     <rapid:override name="breadcrumb">
         <%--面包屑导航 start--%>
         <nav class="breadcrumb">
             <a class="crumbs" href="/">
-                <i class="fa fa-home"></i>首页
+                <i class="fa fa-home"></i>Home
             </a>
             <i class="fa fa-angle-right"></i>
-            文章归档
+            Article归档
             <i class="fa fa-angle-right"></i>
             正文
         </nav>

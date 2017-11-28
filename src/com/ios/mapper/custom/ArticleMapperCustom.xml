@@ -22,7 +22,7 @@
     </sql>
 
 
-    <!--获取文章总数-->
+    <!--获取Article总数-->
     <select id="countArticle" resultType="Integer">
         SELECT COUNT(*) FROM `article`
         <where>
@@ -32,7 +32,7 @@
         </where>
     </select>
 
-    <!--获得文章留言总数-->
+    <!--获得Article留言总数-->
     <select id="countArticleComment" resultType="Integer">
         SELECT SUM(article_comment_count) FROM article
         <where>
@@ -67,7 +67,7 @@
     </select>
 
 
-    <!--获得所有文章-->
+    <!--获得所有Article-->
     <select id="listArticle" resultType="com.ios.entity.custom.ArticleCustom">
         SELECT
         <include refid="article_table_all_columns"/>
@@ -82,7 +82,7 @@
     </select>
 
 
-    <!--文章列表查询-->
+    <!--Article列表查询-->
     <select id="getArticleList" parameterType="com.ios.entity.custom.ArticleListVo"
             resultType="com.ios.entity.custom.ArticleCustom">
         SELECT
@@ -103,7 +103,7 @@
     </select>
 
 
-    <!--通过分页查询文章-->
+    <!--通过分页查询Article-->
     <select id="listArticleByPage" resultType="com.ios.entity.custom.ArticleCustom">
          SELECT
          <include refid="article_table_all_columns"/>
@@ -132,7 +132,7 @@
 
     </select>
 
-    <!--文章查询分页显示-->
+    <!--Article查询分页显示-->
     <select id="listSearchResultByPage"  resultType="com.ios.entity.custom.ArticleCustom">
         SELECT
         <include refid="article_table_all_columns"/>
@@ -149,7 +149,7 @@
         limit #{startPos},#{pageSize}
     </select>
 
-    <!--获得相同分类的文章-->
+    <!--获得相同分类的Article-->
     <select id="listArticleWithSameCategory"  resultType="com.ios.entity.custom.ArticleCustom">
         SELECT
         <include refid="article_table_all_columns"/>
@@ -171,7 +171,7 @@
         limit #{limit}
     </select>
 
-    <!--获得访问量较多的文章-->
+    <!--获得访问量较多的Article-->
     <select id="listArticleByViewCount" resultType="com.ios.entity.custom.ArticleCustom">
         SELECT
         <include refid="article_table_all_columns"/>
@@ -188,7 +188,7 @@
     </select>
 
 
-    <!--获得下一篇的文章-->
+    <!--获得下一篇的Article-->
     <select id="getAfterArticle" resultType="com.ios.entity.custom.ArticleCustom">
         SELECT
         <include refid="article_table_all_columns"/>
@@ -203,7 +203,7 @@
         ORDER BY article_id
         limit 1
     </select>
-    <!--获得上一篇的文章-->
+    <!--获得上一篇的Article-->
     <select id="getPreArticle" resultType="com.ios.entity.custom.ArticleCustom">
         SELECT
         <include refid="article_table_all_columns"/>
@@ -219,7 +219,7 @@
         limit 1
     </select>
 
-    <!--获得随机文章-->
+    <!--获得随机Article-->
     <select id="listRandomArticle" resultType="com.ios.entity.custom.ArticleCustom">
         SELECT
         <include refid="article_table_all_columns"/>
@@ -235,7 +235,7 @@
         limit #{limit}
     </select>
 
-    <!--获得评论数较多的文章列表-->
+    <!--获得评论数较多的Article列表-->
     <select id="listArticleByCommentCount" resultType="com.ios.entity.custom.ArticleCustom">
         SELECT
         <include refid="article_table_all_columns"/>
@@ -252,7 +252,7 @@
     </select>
 
 
-    <!--文章详情页面内容显示-->
+    <!--Article详情页面内容显示-->
     <select id="getArticleDetailById" resultType="com.ios.entity.custom.ArticleCustom">
         SELECT
         <include refid="article_table_all_columns"/>
@@ -265,7 +265,7 @@
     </select>
 
 
-    <!--统计该分类下有多少文章-->
+    <!--统计该分类下有多少Article-->
     <select id="countArticleByCategory" resultType="Integer">
         SELECT count(*)
         FROM  `article`
@@ -280,7 +280,7 @@
         </where>
     </select>
 
-    <!--统计该标签下有多少文章-->
+    <!--统计该标签下有多少Article-->
     <select id="countArticleByTag" resultType="Integer">
         SELECT count(*)
         FROM  `article`

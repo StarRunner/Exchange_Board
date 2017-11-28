@@ -22,7 +22,7 @@ public class Page implements Serializable {
 	private int startPos; // 开始位置，从0开始
 	
 	@SuppressWarnings("unused")
-	private boolean hasFirst;// 是否有首页
+	private boolean hasFirst;// 是否有Home
 	
 	@SuppressWarnings("unused")
 	private boolean hasPre;// 是否有前一页
@@ -105,11 +105,11 @@ public class Page implements Serializable {
 		this.hasFirst = hasFirst;
 	}
 	/**
-	 * 是否有首页
+	 * 是否有Home
 	 * @return
 	 */
 	public boolean isHasPre() {
-		// 如果有首页就有前一页，因为有首页就不是第一页
+		// 如果有Home就有前一页，因为有Home就不是第一页
 		return isHasFirst() ? true : false;
 	}
 	

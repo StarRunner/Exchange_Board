@@ -21,7 +21,7 @@
 
     <blockquote class="layui-elem-quote">
         <span class="layui-breadcrumb" lay-separator="/">
-              <a href="/admin">首页</a>
+              <a href="/admin">Home</a>
               <a href="/admin/category">分类列表</a>
               <a><cite>编辑分类</cite></a>
         </span>
@@ -103,7 +103,7 @@
                     <th>id</th>
                     <th>pid</th>
                     <th>名称</th>
-                    <th>文章数</th>
+                    <th>Article数</th>
                     <th>状态</th>
                     <th>操作</th>
                 </tr>
@@ -163,7 +163,7 @@
                 温馨提示：
                 <ul>
                     <li>分类最多只有两级，一级分类pid=0，二级分类pid=其父节点id</li>
-                    <li>如果该分类包含文章，将不可删除</li>
+                    <li>如果该分类包含Article，将不可删除</li>
                 </ul>
             </blockquote>
         </div>

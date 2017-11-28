@@ -59,7 +59,7 @@ public class TagServiceImpl implements TagService {
 	}
 
 	
-	//获得含有该标签的文章列表
+	//获得含有该标签的Article列表
 	@Override
 	public List<ArticleListVo> getArticleListByPage(Integer status,Integer pageNow, Integer pageSize,Integer tagId) throws Exception {
 		List<ArticleListVo> articleListVoList = new ArrayList<ArticleListVo>();
@@ -86,7 +86,7 @@ public class TagServiceImpl implements TagService {
 		
 		for(int i=0;i<articleCustomList.size();i++) {
 			ArticleListVo articleListVo = new ArticleListVo();
-			//1、将文章装入 articleListVo
+			//1、将Article装入 articleListVo
 			ArticleCustom articleCustom = articleCustomList.get(i);
 			articleListVo.setArticleCustom(articleCustom);
 			//2、将分类信息装到 articleListVoList 中
@@ -105,7 +105,7 @@ public class TagServiceImpl implements TagService {
 			
 			articleListVoList.add(articleListVo);
 		}
-		//确保该标签有文章，防止空指针
+		//确保该标签有Article，防止空指针
 		if(totalCount!=0) {
 			//3、将Page存储在 articleListVoList 第一个元素中
 			articleListVoList.get(0).setPage(page);

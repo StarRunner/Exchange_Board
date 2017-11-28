@@ -18,23 +18,23 @@
 
     <blockquote class="layui-elem-quote">
         <span class="layui-breadcrumb" lay-separator="/">
-              <a href="/admin">首页</a>
-              <a href="/admin/notice">公告列表</a>
-              <a><cite>编辑公告</cite></a>
+              <a href="/admin">Home</a>
+              <a href="/admin/notice">Notice List</a>
+              <a><cite>Edit Notice</cite></a>
         </span>
     </blockquote>
 
     <form class="layui-form"  method="post" id="myForm" action="/admin/notice/editSubmit">
         <input type="hidden" name="noticeId" value="${noticeCustom.noticeId}">
         <div class="layui-form-item">
-            <label class="layui-form-label">标题  <span style="color: #FF5722; ">*</span></label>
+            <label class="layui-form-label">Title  <span style="color: #FF5722; ">*</span></label>
             <div class="layui-input-block">
                 <input type="text" name="noticeTitle" lay-verify="title" id="title" value="${noticeCustom.noticeTitle}" class="layui-input" required>
             </div>
         </div>
 
         <div class="layui-form-item layui-form-text">
-            <label class="layui-form-label">内容  <span style="color: #FF5722; ">*</span></label>
+            <label class="layui-form-label">Content  <span style="color: #FF5722; ">*</span></label>
             <div class="layui-input-block">
                 <textarea class="layui-textarea layui-hide" name="noticeContent" id="content" required>${noticeCustom.noticeContent}</textarea>
             </div>
@@ -47,16 +47,16 @@
             <div class="layui-form-mid layui-word-aux">输入1-10的数字,order越大排序越前</div>
         </div>
         <div class="layui-form-item">
-            <label class="layui-form-label">状态</label>
+            <label class="layui-form-label">Status</label>
             <div class="layui-input-block">
-                <input type="radio" name="noticeStatus" value="1" title="显示" <c:if test="${noticeCustom.noticeStatus==1}">checked</c:if>>
-                <input type="radio" name="noticeStatus" value="0" title="隐藏" <c:if test="${noticeCustom.noticeStatus==0}">checked</c:if>>
+                <input type="radio" name="noticeStatus" value="1" title="display" <c:if test="${noticeCustom.noticeStatus==1}">checked</c:if>>
+                <input type="radio" name="noticeStatus" value="0" title="hidden" <c:if test="${noticeCustom.noticeStatus==0}">checked</c:if>>
             </div>
 
         </div>
         <div class="layui-form-item">
             <div class="layui-input-block">
-                <button class="layui-btn" lay-submit="" lay-filter="" type="submit">保存</button>
+                <button class="layui-btn" lay-submit="" lay-filter="" type="submit">Save</button>
             </div>
         </div>
     </form>

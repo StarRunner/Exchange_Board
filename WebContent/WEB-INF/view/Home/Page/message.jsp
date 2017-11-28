@@ -19,7 +19,7 @@
     <%--面包屑导航 start--%>
     <nav class="breadcrumb">
         <a class="crumbs" href="/">
-            <i class="fa fa-home"></i>首页
+            <i class="fa fa-home"></i>Home
         </a>
         <i class="fa fa-angle-right"></i>
         留言板
@@ -31,7 +31,7 @@
 
 
 <rapid:override name="left">
-    <%--博客主体-左侧文章正文 start--%>
+    <%--博客主体-左侧Article正文 start--%>
     <div id="primary" class="content-area">
         <main id="main" class="site-main" role="main">
             <article class="post" style="min-height: 500px;">
@@ -78,7 +78,7 @@
         </main>
         <!-- .site-main -->
     </div>
-    <%--博客主体-左侧文章正文end--%>
+    <%--博客主体-左侧Article正文end--%>
 </rapid:override>
 
 <rapid:override name="footer-script">
@@ -93,12 +93,12 @@
                         return "用户名必须4到12位";
                     }
                     if(checkUserName()==1) {
-                        return "用户名已存在";
+                        return "User Exist";
                     }
                 },
                 userEmail: function () {
                     if(checkUserEmail()==1) {
-                        return "电子邮箱已存在";
+                        return "Email Exist";
                     }
                 }
 

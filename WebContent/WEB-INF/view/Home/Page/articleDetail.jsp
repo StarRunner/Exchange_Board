@@ -31,7 +31,7 @@
     <%--面包屑导航 start--%>
     <nav class="breadcrumb">
         <a class="crumbs" href="/">
-            <i class="fa fa-home"></i>首页
+            <i class="fa fa-home"></i>Home
         </a>
         <c:choose>
             <c:when test="${a.categoryCustomList.size()!=0}">
@@ -54,7 +54,7 @@
 
 
 <rapid:override name="left">
-    <%--博客主体-左侧文章正文 start--%>
+    <%--博客主体-左侧Article正文 start--%>
     <div id="primary" class="content-area">
         <main id="main" class="site-main" role="main">
             <article class="post">
@@ -157,7 +157,7 @@
                      class="avatar avatar-64 photo" height="64" width="64">
                 <ul class="postinfo">
                     <li></li>
-                    <li><strong>版权声明：</strong>本站原创文章，于<fmt:formatDate
+                    <li><strong>版权声明：</strong>本站原创Article，于<fmt:formatDate
                             value="${articleDetailVo.articleCustom.articlePostTime}"
                             pattern="yyyy-MM-dd"/>，由
                             <strong>
@@ -177,12 +177,12 @@
                 <%--版权声明 end--%>
 
 
-                <%--相关文章 start--%>
+                <%--相关Article start--%>
             <div id="single-widget">
                 <div class="wow fadeInUp" data-wow-delay="0.3s">
                     <aside id="related_post-2" class="widget">
                         <h3 class="widget-title">
-                            <span class="s-icon"></span>相关文章
+                            <span class="s-icon"></span>相关Article
                         </h3>
                         <div id="related_post_widget">
                             <ul>
@@ -216,7 +216,7 @@
                 </div>
                 <div class="clear"></div>
             </div>
-                <%--相关文章 end--%>
+                <%--相关Article end--%>
 
                 <%--上一篇下一篇 start--%>
             <nav class="nav-single">
@@ -235,7 +235,7 @@
                               <span class="meta-nav">
                                     <span class="post-nav">
                                         没有了<br>
-                                    </span>已是第一篇文章
+                                    </span>已是第一篇Article
                                 </span>
                     </c:otherwise>
                 </c:choose>
@@ -254,7 +254,7 @@
                             <span class="meta-nav">
                                 <span class="post-nav">
                                     没有了<br>
-                                </span>已是最后文章
+                                </span>已是最后Article
                              </span>
                     </c:otherwise>
                 </c:choose>
@@ -267,19 +267,19 @@
             <div class="scroll-comments"></div>
             <div id="comments" class="comments-area">
                 <div id="respond" class="comment-respond">
-                    <h3 id="reply-title" class="comment-reply-title"><span id="reply-title-word">发表评论</span>
+                    <h3 id="reply-title" class="comment-reply-title"><span id="reply-title-word">Post Comment</span>
                         <a rel="nofollow" id="cancel-comment-reply-link"
                            href="/article/${articleDetailVo.articleCustom.articleId}#respond"
-                           style="">取消回复</a>
+                           style="">Cancel Comment</a>
                     </h3>
                     <form id="comment_form" method="post">
                         <c:if test="${sessionScope.user!=null}">
                             <div class="user_avatar">
-                                <img alt="言曌"
+                                <img alt="Ahtor"
                                      src="${sessionScope.user.userAvatar}"
                                      class="avatar avatar-64 photo" height="64" width="64">
-                                登录者：${sessionScope.user.userNickname}
-                                <br> <a href="javascript:void(0)" onclick="logout()">登出</a>
+                                User：${sessionScope.user.userNickname}
+                                <br> <a href="javascript:void(0)" onclick="logout()">Logout</a>
                                 <input type="hidden" name="commentRole" value="1">
                                 <input type="hidden" name="commentAuthorName"
                                        value="${sessionScope.user.getUserNickname()}">
@@ -311,7 +311,7 @@
                                            tabindex="3" required>
                                 </p>
                                 <p class="comment-form-url">
-                                    <label for="author_url">网址</label>
+                                    <label for="author_url">Website</label>
                                     <input type="url" name="commentAuthorUrl" id="author_url" class="" value=""
                                            tabindex="4">
                                 </p>
@@ -319,7 +319,7 @@
                         </div>
                         <div class="clear"></div>
                         <p class="form-submit">
-                            <input id="submit" name="submit" type="submit" tabindex="5" value="提交评论">
+                            <input id="submit" name="submit" type="submit" tabindex="5" value="Submit Comment">
                             <input type="hidden" name="commentArticleId"
                                    value="${articleDetailVo.articleCustom.articleId}" id="article_id">
                             <input type="hidden" name="commentPid" id="comment_pid" value="0">
@@ -344,7 +344,7 @@
                                         <c:if test="${c.commentRole==1}">
                                             <i class="fa fa-black-tie" style="color: #c40000;"></i>
                                             <span class=""
-                                                  style="margin-top: 2px!important;color: #c40000;font-size: 13px;;"><b>博主</b></span>
+                                                  style="margin-top: 2px!important;color: #c40000;font-size: 13px;;"><b>Owner</b></span>
                                         </c:if>
                                         <span class="comment-meta commentmetadata">
                                             <span class="ua-info" style="display: inline;">
@@ -352,19 +352,19 @@
                                                 <span class="comment-aux">
                                                     <span class="reply">
                                                         <a rel="nofollow" class="comment-reply-link" href="#respond"
-                                                           onclick="replyComment()">回复
+                                                           onclick="replyComment()">Reply
                                                         </a>
                                                     </span>
                                                     <fmt:formatDate value="${c.commentCreateTime}"
-                                                                    pattern="yyyy年MM月dd日 HH:mm:ss"/>&nbsp;
+                                                                    pattern="yyyy/MM/dd/ HH:mm:ss"/>&nbsp;
                                                     <c:if test="${sessionScope.user!=null}">
                                                         <a href="javascript:void(0)"
-                                                           onclick="deleteComment(${c.commentId})">删除</a>
+                                                           onclick="deleteComment(${c.commentId})">Delete</a>
                                                         <a class="comment-edit-link"
                                                            href="/admin/comment/edit/${c.commentId}"
-                                                           target="_blank">编辑</a>
+                                                           target="_blank">Edit</a>
                                                     </c:if>
-                                                    <span class="floor"> &nbsp;${floor}楼 </span>
+                                                    <span class="floor"> &nbsp;${floor}Floor </span>
                                                 </span>
                                             </span>
                                         </span>
@@ -393,7 +393,7 @@
                                                         <c:if test="${c2.commentRole==1}">
                                                             <i class="fa fa-black-tie" style="color: #c40000;"></i>
                                                             <span class=""
-                                                                  style="margin-top: 2px!important;color: #c40000;font-size: 13px;;"><b>博主</b></span>
+                                                                  style="margin-top: 2px!important;color: #c40000;font-size: 13px;;"><b>Owner</b></span>
                                                         </c:if>
                                                         <span class="comment-meta">
                                                     <span class="ua-info" style="display: inline;">
@@ -401,19 +401,19 @@
                                                     <span class="comment-aux">
                                                         <span class="reply">
                                                             <a rel="nofollow" class="comment-reply-link" href="#respond"
-                                                               onclick="replyComment()">回复
+                                                               onclick="replyComment()">Reply
                                                             </a>
                                                         </span>
                                                         <fmt:formatDate value="${c2.commentCreateTime}"
-                                                                        pattern="yyyy年MM月dd日 HH:mm:ss"/>&nbsp;
+                                                                        pattern="yyyy/MM/dd/ HH:mm:ss"/>&nbsp;
                                                         <c:if test="${sessionScope.user!=null}">
                                                             <a href="javascript:void(0)"
-                                                               onclick="deleteComment(${c2.commentId})">删除</a>
+                                                               onclick="deleteComment(${c2.commentId})">Delete</a>
                                                             <a class="comment-edit-link"
                                                                href="/admin/comment/edit/${c2.commentId}"
-                                                               target="_blank">编辑</a>
+                                                               target="_blank">Edit</a>
                                                         </c:if>
-                                                        <span class="floor"> &nbsp;${floor2}层 </span>
+                                                        <span class="floor"> &nbsp;${floor2}Floor </span>
                                                     </span>
                                                 </span>
                                                     </span>
@@ -441,7 +441,7 @@
         </main>
         <!-- .site-main -->
     </div>
-    <%--博客主体-左侧文章正文end--%>
+    <%--博客主体-左侧Article正文end--%>
 </rapid:override>
 
 

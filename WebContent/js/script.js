@@ -292,7 +292,7 @@ $("#cancel-comment-reply-link").click(function () {
 })
 
 var articleId = (window.location.pathname).match(/\d+/g);
-//文章浏览量+1
+//Article浏览量+1
 function increaseViewCount() {
     if ($.cookie("viewId") != articleId || $.cookie("viewId") == null) {
         $.ajax({

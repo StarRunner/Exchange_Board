@@ -33,7 +33,7 @@
 
     <blockquote class="layui-elem-quote">
         <span class="layui-breadcrumb" lay-separator="/">
-              <a href="/admin">首页</a>
+              <a href="/admin">Home</a>
               <a href="/admin/tag">标签列表</a>
               <a><cite>编辑标签</cite></a>
         </span>
@@ -81,7 +81,7 @@
                 <tr>
                     <th>id</th>
                     <th>名称</th>
-                    <th>文章数</th>
+                    <th>Article数</th>
                     <th>状态</th>
                     <th>操作</th>
                 </tr>
@@ -115,7 +115,7 @@
             <blockquote class="layui-elem-quote layui-quote-nm">
                 温馨提示：
                 <ul>
-                    <li>如果该分类包含文章，将不可删除</li>
+                    <li>如果该分类包含Article，将不可删除</li>
                     <li>分类状态为1表示将显示在侧边栏，为0表示不显示在侧边栏(依然显示在正文)</li>
                 </ul>
             </blockquote>

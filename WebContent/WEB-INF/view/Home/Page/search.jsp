@@ -8,16 +8,16 @@
 
 
 <rapid:override name="title">
-    <title>搜索结果</title>
+    <title>Search结果</title>
 </rapid:override>
 
 <rapid:override name="breadcrumb">
     <%--面包屑导航 start--%>
     <nav class="breadcrumb">
         <a class="crumbs" href="/">
-            <i class="fa fa-home"></i>首页</a>
+            <i class="fa fa-home"></i>Home</a>
             <i class="fa fa-angle-right"></i>
-        搜索 ${articleSearchVoList.get(0).query} 找到 ${articleSearchVoList.get(0).page.totalCount} 个与之相关的文章
+        Search ${articleSearchVoList.get(0).query} 找到 ${articleSearchVoList.get(0).page.totalCount} 个与之相关的Article
     </nav>
     <%--面包屑导航 end--%>
 </rapid:override>

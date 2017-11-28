@@ -27,7 +27,7 @@ public interface CategoryMapperCustom {
 	//根据分类id获得分类信息
 	public CategoryCustom getCategoryById(@Param(value="status") Integer status,@Param(value="id")Integer id) throws Exception;
 
-	//获得含有该分类的文章列表
+	//获得含有该分类的Article列表
 	public List<ArticleCustom> listArticleWithCategoryByPage(
 			@Param(value="status") Integer status,
 			@Param(value = "cateId") Integer cateId

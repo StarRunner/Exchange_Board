@@ -43,7 +43,7 @@
 
 
 
-    <!--获得含有该分类的文章列表-->
+    <!--获得含有该分类的Article列表-->
     <select id="listArticleWithCategoryByPage" resultType="com.ios.entity.custom.ArticleCustom">
         SELECT * FROM `article`
         <where>

@@ -28,7 +28,7 @@ public class TagController {
 
 	}
 	
-	//根据标签查询文章
+	//根据标签查询Article
 	@RequestMapping("tag/{tagId}")
 	@ResponseBody
 	public ModelAndView ArticleListByTagView(@PathVariable("tagId") Integer tagId) throws Exception {
@@ -47,7 +47,7 @@ public class TagController {
 		return modelAndView;
 	}
 	
-	//根据标签查询文章分页
+	//根据标签查询Article分页
 	@RequestMapping("tag/{tagId}/p/{pageNow}")
 	@ResponseBody
 	public  ModelAndView ArticleListByTagAndPageView(@PathVariable("pageNow") Integer pageNow,@PathVariable("tagId") Integer tagId) throws Exception {

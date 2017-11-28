@@ -17,7 +17,7 @@ import java.util.List;
 
 
 /**
- * 文章分类目录的controller
+ * Article分类目录的controller
  * Created by 言曌 on 2017/8/24.
  */
 @Controller
@@ -32,7 +32,7 @@ public class CategoryController {
 		
 	}
 	
-	//根据分类查询文章
+	//根据分类查询Article
 	@RequestMapping("/category/{cateId}")
 	@ResponseBody
 	public ModelAndView ArticleListByCategoryView(@PathVariable("cateId") Integer cateId) throws Exception {
@@ -41,7 +41,7 @@ public class CategoryController {
 		int pageSize = 9;
 		List<ArticleListVo> articleListVoList = categoryService.listArticleWithCategoryByPage(1,null,pageSize,cateId);
 
-		//如果articleListVoList=null表示该分类不存在，如果=0表示该分类暂时没有文章
+		//如果articleListVoList=null表示该分类不存在，如果=0表示该分类暂时没有Article
         modelAndView.addObject("articleListVoList",articleListVoList);
 
 		//该分类信息
@@ -52,7 +52,7 @@ public class CategoryController {
 		return modelAndView;
 	}
 	
-	//根据分类查询文章分页
+	//根据分类查询Article分页
 	@RequestMapping("/category/{cateId}/p/{pageNow}")
 	@ResponseBody
 	public  ModelAndView ArticleListByCategoryAndPageView(@PathVariable("pageNow") Integer pageNow,@PathVariable("cateId") Integer cateId) throws Exception {

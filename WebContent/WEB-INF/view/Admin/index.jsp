@@ -228,11 +228,11 @@
             <div id="dashboard_activity" class="postbox ">
                 <div class="inside">
                     <div id="activity-widget">
-                        <div id="published-posts" class="activity-block"><h3>最近发布</h3> <br>
+                        <div id="published-posts" class="activity-block"><h3>New Post</h3> <br>
                             <ul>
                                 <c:forEach items="${articleCustomList}" begin="0" end="4" step="1" var="a">
                                     <li><span><fmt:formatDate value="${a.articleCustom.articlePostTime}"
-                                                              pattern="HH:mm MM月dd日"/> </span>
+                                                              pattern="HH:mm MM/dd"/> </span>
                                         <a href="/article/${a.articleCustom.articleId}"
                                            target="_blank">${a.articleCustom.articleTitle}</a>
                                     </li>
@@ -241,7 +241,7 @@
                             </ul>
                         </div>
                         <br>
-                        <div id="latest-comments" class="activity-block"><h3>近期评论</h3>
+                        <div id="latest-comments" class="activity-block"><h3>Latest Comment</h3>
                             <ul id="the-comment-list" data-wp-lists="list:comment">
                                 <c:forEach items="${commentListVoList}" begin="0" end="4" step="1" var="c">
                                     <li class="comment   thread-even comment-item approved">
@@ -254,10 +254,10 @@
                                                 <a target="_blank" href="${c.commentCustom.commentAuthorUrl}"
                                                    rel="external nofollow"
                                                    class="url">${c.commentCustom.commentAuthorName}</a>
-                                            </cite>发表在《<a
+                                            </cite>Post at《<a
                                                     href="/article/${c.commentCustom.commentArticleId}">${c.articleCustom.articleTitle}</a>》
                                                 <c:if test="${c.commentCustom.commentStatus==0}">
-                                                    <span class="approve">[待审]</span>
+                                                    <span class="approve">[Co-Pending]</span>
                                                 </c:if>
                                             </p>
 
@@ -267,26 +267,26 @@
                                             <c:choose>
                                                 <c:when test="${c.commentCustom.commentStatus==1}">
                                                     <a href="javascript:void(0)" style="color: #FF5722;"
-                                                       onclick="hideComment(${c.commentCustom.commentId})">屏蔽</a>
+                                                       onclick="hideComment(${c.commentCustom.commentId})">Block</a>
                                                 </c:when>
                                                 <c:otherwise>
                                                     <a href="" style="color: #009688;"
-                                                       onclick="approveComment(${c.commentCustom.commentId})">批准</a>
+                                                       onclick="approveComment(${c.commentCustom.commentId})">Approve</a>
                                                 </c:otherwise>
                                             </c:choose>
                                             </span> |
                                                 <span class="">
                                             <a data-comment-id="1268"
                                                href="/admin/comment/reply/${c.commentCustom.commentId}">
-                                                回复
+                                               Reply
                                             </a>
                                             </span>
                                                 <span class=""> |
-                                                <a href="/admin/comment/edit/${c.commentCustom.commentId}">编辑</a>
+                                                <a href="/admin/comment/edit/${c.commentCustom.commentId}">Edit</a>
                                             </span>
                                                 <span class=""> |
                                                 <a href="javascript:void(0)"
-                                                   onclick="deleteComment(${c.commentCustom.commentId})">删除</a>
+                                                   onclick="deleteComment(${c.commentCustom.commentId})">Delete</a>
                                             </span>
                                             </p>
                                         </div>
@@ -295,16 +295,16 @@
                             </ul>
                             <ul class="subsubsub">
                                 <li class="all"><a
-                                        href="">全部<span
+                                        href="">All<span
                                         class="count">（<span class="all-count">${allCommentCount}</span>）</span></a> |
                                 </li>
                                 <li class="moderated"><a
-                                        href="">待审<span
+                                        href=""> Co-Pending<span
                                         class="count">（<span class="pending-count">${hiddenCommentCount}</span>）</span></a>
                                     |
                                 </li>
                                 <li class="approved"><a
-                                        href="">已批准<span
+                                        href="">Approved<span
                                         class="count">（<span
                                         class="approved-count">${approvedCommentCount}</span>）</span></a> |
                                 </li>
@@ -322,34 +322,34 @@
 
                         <div class="layui-form-item">
                             <div class="layui-input-block">
-                                <input type="text" name="articleTitle" id="articleTitle" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+                                <input type="text" name="articleTitle" id="articleTitle" required  lay-verify="required" placeholder="Please Input Title" autocomplete="off" class="layui-input">
                             </div>
                         </div>
                         <div class="layui-form-item layui-form-text">
                             <div class="layui-input-block">
-                                <textarea name="articleContent" placeholder="请输入内容" id="articleContent" class="layui-textarea" required></textarea>
+                                <textarea name="articleContent" placeholder="Input Content" id="articleContent" class="layui-textarea" required></textarea>
                             </div>
                         </div>
                         <input type="hidden" name="articleStatus" value="0">
                         <div class="layui-form-item">
                             <div class="layui-input-block">
-                                <button class="layui-btn layui-btn-small" lay-submit lay-filter="formDemo" onclick="insertDraft()">保存草稿</button>
-                                <button type="reset" class="layui-btn layui-btn-small layui-btn-primary">重置</button>
+                                <button class="layui-btn layui-btn-small" lay-submit lay-filter="formDemo" onclick="insertDraft()">Draft</button>
+                                <button type="reset" class="layui-btn layui-btn-small layui-btn-primary">Reset</button>
                             </div>
                         </div>
 
                     </form>
                     <div class="drafts"><p class="view-all"><a
                             href="/admin/article"
-                            aria-label="查看所有草稿">查看所有</a></p>
-                        <h2 class="hide-if-no-js">草稿</h2>
+                            aria-label="View All Draft">View All Draft</a></p>
+                        <h2 class="hide-if-no-js"></h2>
                         <ul>
                             <c:forEach items="${articleCustomList}" var="a">
                                 <c:if test="${a.articleCustom.articleStatus==0}">
                                     <li>
                                         <div class="draft-title"><a
                                                 href="/admin/article/edit/${a.articleCustom.articleId}">${a.articleCustom.articleTitle}</a>
-                                            <time ><fmt:formatDate value="${a.articleCustom.articlePostTime}" pattern="yyyy年MM月dd日"/></time>
+                                            <time ><fmt:formatDate value="${a.articleCustom.articlePostTime}" pattern="yyyy-MM-dd"/></time>
                                         </div>
                                     </li>
                                 </c:if>

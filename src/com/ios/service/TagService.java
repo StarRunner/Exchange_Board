@@ -19,7 +19,7 @@ public interface TagService {
 	//获得标签列表
 	public List<TagCustom> listTag(Integer status) throws Exception;
 
-	//获得含有该标签的文章列表
+	//获得含有该标签的Article列表
 	public List<ArticleListVo> getArticleListByPage(Integer status,Integer pageNow, Integer pageSize,Integer tagId) throws Exception;
 
 	//根据id获得标签信息

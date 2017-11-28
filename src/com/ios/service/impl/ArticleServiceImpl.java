@@ -75,14 +75,14 @@ public class ArticleServiceImpl implements ArticleService {
 	public List<ArticleListVo> listArticle(Integer status) throws Exception {
 		List<ArticleListVo> articleListVoList = new ArrayList<ArticleListVo>();
 
-		//获得文章列表信息和分页信息
+		//获得Article列表信息和分页信息
 		List<ArticleCustom> articleCustomList = articleMapperCustom.listArticle(status);
 
 		//获得分类信息
 		for (int i = 0; i < articleCustomList.size(); i++) {
 			ArticleListVo articleListVo = new ArticleListVo();
 
-			//1、将文章信息装到 articleListVoList 中
+			//1、将Article信息装到 articleListVoList 中
 			ArticleCustom articleCustom = articleCustomList.get(i);
 			articleListVo.setArticleCustom(articleCustom);
 
@@ -103,7 +103,7 @@ public class ArticleServiceImpl implements ArticleService {
 			//3、获得标签信息
 			List<TagCustom> tagCustomList = new ArrayList<TagCustom>();
 			String tagIds = articleCustomList.get(i).getArticleTagIds();
-			//防止该文章没有分类，空指针
+			//防止该Article没有分类，空指针
 			if (tagIds != null && tagIds != "") {
 				String[] tagId = tagIds.split(",");
 				for (int j = 0; j < tagId.length; j++) {
@@ -157,12 +157,12 @@ public class ArticleServiceImpl implements ArticleService {
 	}
 
 	
-	//分页显示文章列表
+	//分页显示Article列表
 	@Override
 	public List<ArticleListVo> listArticleByPage(Integer status,Integer pageNow,Integer pageSize) throws Exception {
 		List<ArticleListVo> articleListVoList = new ArrayList<ArticleListVo>();
 		
-		//获得文章列表信息和分页信息
+		//获得Article列表信息和分页信息
 		List<ArticleCustom> articleCustomList = new ArrayList<ArticleCustom>();
 		Page page = null;
 		int totalCount = articleMapperCustom.countArticle(status);
@@ -178,7 +178,7 @@ public class ArticleServiceImpl implements ArticleService {
 		for(int i=0;i<articleCustomList.size();i++) {
 			ArticleListVo articleListVo = new ArticleListVo();
 			
-			//1、将文章信息装到 articleListVoList 中
+			//1、将Article信息装到 articleListVoList 中
 			ArticleCustom articleCustom = articleCustomList.get(i);
 			articleListVo.setArticleCustom(articleCustom);
 			
@@ -199,7 +199,7 @@ public class ArticleServiceImpl implements ArticleService {
 			//3、获得标签信息
 			List<TagCustom> tagCustomList = new ArrayList<TagCustom>();
 			String tagIds = articleCustomList.get(i).getArticleTagIds();
-			//防止该文章没有分类，空指针
+			//防止该Article没有分类，空指针
 			if(tagIds!=null && tagIds!="") {
 				String[] tagId = tagIds.split(",");
 				for (int j = 0; j < tagId.length; j++) {
@@ -231,12 +231,12 @@ public class ArticleServiceImpl implements ArticleService {
 		return articleListVoList;
 	}
 	
-	//文章详情页面显示
+	//Article详情页面显示
 	@Override
 	public ArticleDetailVo getArticleDetailById(Integer id) throws Exception {
 		ArticleDetailVo articleDetailVo = new ArticleDetailVo();
 		
-		//1、获得文章信息
+		//1、获得Article信息
 		ArticleCustom articleCustom = articleMapperCustom.getArticleById(1,id);
 		if(articleCustom ==null) {
 			return null;
@@ -258,7 +258,7 @@ public class ArticleServiceImpl implements ArticleService {
         }
 		articleDetailVo.setCategoryCustomList(categoryCustomList);
 		
-		//3、获得文章的标签
+		//3、获得Article的标签
 		String tag_ids = articleCustom.getArticleTagIds();
 		List<TagCustom> tagCustomList = new ArrayList<TagCustom>();
 		if (tag_ids != null && tag_ids != "") {
@@ -276,7 +276,7 @@ public class ArticleServiceImpl implements ArticleService {
 		}
 		articleDetailVo.setTagCustomList(tagCustomList);
 		
-		//4、获得文章的作者
+		//4、获得Article的作者
 		Integer userId = articleCustom.getArticleUserId();
 		User user = userMapper.selectByPrimaryKey(userId);
 		UserCustom userCustom = new UserCustom();
@@ -297,7 +297,7 @@ public class ArticleServiceImpl implements ArticleService {
 	}
 	
 
-	//文章查询结果分页
+	//Article查询结果分页
 	@Override
 	public List<ArticleSearchVo> listSearchResultByPage(Integer status,HttpServletRequest request, Model model,Integer pageNow,Integer pageSize,String query) throws Exception {
 		Page page = null;
@@ -320,7 +320,7 @@ public class ArticleServiceImpl implements ArticleService {
             for (int i = 0; i < articleCustomList.size(); i++) {
                 ArticleSearchVo articleSearchVo = new ArticleSearchVo();
 
-                //1、将文章信息装到 articleListVoList 中
+                //1、将Article信息装到 articleListVoList 中
                 ArticleCustom articleCustom = articleCustomList.get(i);
                 articleSearchVo.setArticleCustom(articleCustom);
 
@@ -379,7 +379,7 @@ public class ArticleServiceImpl implements ArticleService {
 
 	}
 	
-	//相似文章获取
+	//相似Article获取
 	@Override
 	public List<ArticleCustom> listArticleWithSameCategory(Integer status,Integer parentCategoryId,Integer childCategoryId, Integer limit) throws Exception {
 		List<ArticleCustom> similarArticleList = articleMapperCustom.listArticleWithSameCategory(status,parentCategoryId,childCategoryId,limit);
@@ -387,35 +387,35 @@ public class ArticleServiceImpl implements ArticleService {
 	}
 	
 	
-	//访问量从多到少的文章获取
+	//访问量从多到少的Article获取
 	@Override
 	public List<ArticleCustom> listArticleByViewCount(Integer status,Integer limit) throws Exception {
 		List<ArticleCustom> mostViewArticleList = articleMapperCustom.listArticleByViewCount(status,limit);
 		return mostViewArticleList;
 	}
 	
-	//获取下一篇文章
+	//获取下一篇Article
 	@Override
 	public ArticleCustom getAfterArticle(Integer status,Integer id) throws Exception {
 		ArticleCustom articleCustom = articleMapperCustom.getAfterArticle(status,id);
 		return articleCustom;
 	}
 	
-	//获取上一篇文章
+	//获取上一篇Article
 	@Override
 	public ArticleCustom getPreArticle(Integer status,Integer id) throws Exception {
 		ArticleCustom articleCustom = articleMapperCustom.getPreArticle(status,id);
 		return articleCustom;
 	}
 	
-	//获得随机文章
+	//获得随机Article
 	@Override
 	public List<ArticleCustom> listRandomArticle(Integer status,Integer limit) throws Exception {
 		List<ArticleCustom> articleCustomsList = articleMapperCustom.listRandomArticle(status,limit);
 		return articleCustomsList;
 	}
 	
-	//获得热评文章列表
+	//获得热评Article列表
 	@Override
 	public List<ArticleCustom> listArticleByCommentCount(Integer status,Integer limit) throws Exception {
 		List<ArticleCustom> articleCustomsList = articleMapperCustom.listArticleByCommentCount(status,limit);
@@ -423,20 +423,20 @@ public class ArticleServiceImpl implements ArticleService {
 	}
 
 
-    //添加文章
+    //添加Article
     @Override
     public void insertArticle(Article article) throws Exception {
        articleMapper.insertSelective(article);
     }
 
-    //统计某个分类的文章数
+    //统计某个分类的Article数
 	@Override
 	public Integer countArticleWithCategory(Integer status,Integer id) throws Exception {
 		int count = articleMapperCustom.countArticleByCategory(status,id);
 		return count;
 	}
 
-	//统计某个标签的文章数
+	//统计某个标签的Article数
 	@Override
 	public Integer countArticleWithTag(Integer status,Integer id) throws Exception {
 		int count = articleMapperCustom.countArticleByTag(status,id);

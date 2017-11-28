@@ -46,40 +46,40 @@ public class BackArticleController {
     @Autowired
     private CategoryService categoryService;
 
-    //后台文章列表显示
+    //后台Article列表显示
     @RequestMapping(value = "")
     public ModelAndView index() throws Exception {
         ModelAndView modelAndView = new ModelAndView();
 
-        //分页显示已发布文章
+        //分页显示已发布Article
         Integer pageSize = 20;
         List<ArticleListVo> publishedArticleListVoList = articleService.listArticleByPage(1,null,pageSize);
         modelAndView.addObject("publishedArticleListVoList",publishedArticleListVoList);
 
-        //不分页显示 草稿文章
+        //不分页显示 草稿Article
         List<ArticleListVo> draftArticleList = articleService.listArticle(0);
         modelAndView.addObject("draftArticleList",draftArticleList);
         modelAndView.setViewName("Admin/Article/index");
         return modelAndView;
     }
 
-    //文章分页显示
+    //Article分页显示
     @RequestMapping("/p/{pageNow}")
     public @ResponseBody  ModelAndView ArticleListByPageView(@PathVariable("pageNow") Integer pageNow) throws Exception{
         ModelAndView modelAndView = new ModelAndView();
-        //分页显示已发布文章
+        //分页显示已发布Article
         Integer pageSize = 20;
         List<ArticleListVo> publishedArticleListVoList = articleService.listArticleByPage(1,pageNow,pageSize);
         modelAndView.addObject("publishedArticleListVoList",publishedArticleListVoList);
 
-        //不分页显示 草稿文章
+        //不分页显示 草稿Article
         List<ArticleListVo> draftArticleList = articleService.listArticle(0);
         modelAndView.addObject("draftArticleList",draftArticleList);
         modelAndView.setViewName("Admin/Article/index");
         return modelAndView;
     }
 
-    //后台添加文章页面显示
+    //后台添加Article页面显示
     @RequestMapping(value = "/insert")
     public ModelAndView insertArticleView() throws Exception {
         ModelAndView modelAndView = new ModelAndView();
@@ -97,7 +97,7 @@ public class BackArticleController {
     @Autowired
     HttpServletRequest request;
     
-    //后台添加文章提交操作
+    //后台添加Article提交操作
     @RequestMapping(value = "/insertSubmit",method = RequestMethod.POST)
     public String insertArticleSubmit(Article article, @RequestParam("file") CommonsMultipartFile file) throws Exception {
     	
@@ -205,7 +205,7 @@ public class BackArticleController {
         return "redirect:/admin/article";
     }
 
-    //后台添加文章提交操作
+    //后台添加Article提交操作
     @RequestMapping(value = "/insertDraftSubmit",method = RequestMethod.POST)
     public String insertArticleDraftSubmit(Article article) throws Exception {
 
@@ -224,7 +224,7 @@ public class BackArticleController {
     }
 
 
-    //搜索实现
+    //Search实现
     @RequestMapping("/search")
     @ResponseBody
     public ModelAndView SearchPageView(HttpServletRequest request,Model model) throws Exception {
@@ -238,7 +238,7 @@ public class BackArticleController {
         return modelAndView;
     }
 
-    //搜索分页实现
+    //Search分页实现
     @RequestMapping("/p/{pageNow}/search")
     @ResponseBody
     public  ModelAndView SearchPageByPageView(HttpServletRequest request, Model model,@PathVariable("pageNow") Integer pageNow) throws Exception {
@@ -254,14 +254,14 @@ public class BackArticleController {
 
 
 
-    //删除文章
+    //删除Article
     @RequestMapping(value = "/delete/{id}")
     public void deleteArticle(@PathVariable("id") Integer id) throws Exception {
         //调用service批量删除
         articleService.deleteArticle(id);
     }
 
-    //批量删除文章
+    //批量删除Article
     @RequestMapping(value = "/deleteBatch")
     public void deleteArticles(HttpServletRequest request) throws Exception {
         String str = request.getParameter("ids");
@@ -275,7 +275,7 @@ public class BackArticleController {
 
     }
 
-    //编辑文章页面显示
+    //编辑Article页面显示
     @RequestMapping(value = "/edit/{id}")
     public ModelAndView editArticleView(@PathVariable("id") Integer id) throws Exception {
         ModelAndView modelAndView = new ModelAndView();
@@ -295,7 +295,7 @@ public class BackArticleController {
     }
 
 
-    //编辑文章提交
+    //编辑Article提交
     @RequestMapping(value = "/editSubmit",method = RequestMethod.POST)
     public String editArticleSubmit(ArticleCustom articleCustom) throws Exception {
         Integer id = articleCustom.getArticleId();

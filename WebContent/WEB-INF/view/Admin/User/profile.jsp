@@ -30,14 +30,14 @@
 
     <blockquote class="layui-elem-quote">
          <span class="layui-breadcrumb" lay-separator="/">
-              <a href="/admin">首页</a>
-              <a href="/admin/user">用户列表</a>
+              <a href="/admin">Home</a>
+              <a href="/admin/user">User List</a>
               <c:choose>
                   <c:when test="${sessionScope.user.userId==userCustom.userId}">
-                      <a><cite>个人信息</cite></a>
+                      <a><cite>Personal Information</cite></a>
                   </c:when>
                   <c:otherwise>
-                      <a><cite>用户信息</cite></a>
+                      <a><cite>User Profile</cite></a>
                   </c:otherwise>
               </c:choose>
         </span>
@@ -47,8 +47,8 @@
           method="post">
         <input type="hidden" name="userId" id="userId" value="${userCustom.userId}">
         <div class="layui-form-item">
-            <a class="layui-btn layui-btn-primary"  href="/admin/user/edit/${userCustom.userId}">编辑</a>
-            <label class="layui-form-label">头像</label>
+            <a class="layui-btn layui-btn-primary"  href="/admin/user/edit/${userCustom.userId}">Eidt</a>
+            <label class="layui-form-label">Favicon</label>
             <div class="layui-input-inline">
                 <div class="layui-upload">
                     <div class="layui-upload-list" style="">
@@ -60,7 +60,7 @@
             </div>
         </div>
         <div class="layui-form-item">
-            <label class="layui-form-label">用户名 </label>
+            <label class="layui-form-label">User Name</label>
             <div class="layui-input-inline">
                 <input type="text" value="${userCustom.userName}"  id="userName" required
                        autocomplete="off" class="layui-input" disabled>
@@ -100,7 +100,7 @@
             </div>
         </div>
         <div class="layui-form-item">
-            <label class="layui-form-label">注册时间 </label>
+            <label class="layui-form-label">Register Date </label>
             <div class="layui-input-inline">
                 <input type="text"  value="<fmt:formatDate value="${userCustom.userRegisterTime}" pattern="yyyy-MM-dd HH:mm:ss"/>
 " placeholder="" autocomplete="off"
@@ -108,7 +108,7 @@
             </div>
         </div>
         <div class="layui-form-item">
-            <label class="layui-form-label">最后登录时间 </label>
+            <label class="layui-form-label">Last Login Date </label>
             <div class="layui-input-inline">
                 <input type="text"  value='<fmt:formatDate value="${userCustom.userLastLoginTime}" pattern="yyyy-MM-dd HH:mm:ss"/>
 ' placeholder="" autocomplete="off"
@@ -116,19 +116,19 @@
             </div>
         </div>
         <div class="layui-form-item">
-            <label class="layui-form-label">最后登录IP </label>
+            <label class="layui-form-label">Last Login IP </label>
             <div class="layui-input-inline">
                 <input type="text"  value="${userCustom.userLastLoginIp}" placeholder="" autocomplete="off"
                        class="layui-input" disabled>
             </div>
         </div>
         <div class="layui-form-item">
-            <label class="layui-form-label">状态 </label>
+            <label class="layui-form-label">Status </label>
             <div class="layui-input-inline">
                 <input type="text"  value='<c:choose>
-                    <c:when test="${userCustom.userStatus==0}">禁用
+                    <c:when test="${userCustom.userStatus==0}">Forbidden
                     </c:when>
-                    <c:otherwise>正常
+                    <c:otherwise>Normal
                     </c:otherwise>
                 </c:choose>' placeholder="" autocomplete="off"
                        class="layui-input" disabled>

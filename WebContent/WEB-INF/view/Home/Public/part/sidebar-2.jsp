@@ -1,6 +1,6 @@
 <%--
-    一般用于首页侧边栏：
-    包括 关于本站，网站概况，热评文章，所有标签，随机文章 等小工具
+    一般用于Home侧边栏：
+    包括 关于本站，网站概况，热评Article，所有标签，随机Article 等小工具
 
 --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -10,17 +10,17 @@
      style="position: relative; overflow: visible; box-sizing: border-box; min-height: 1px;">
 
 
-    <%--热评文章 start--%>
+    <%--热评Article start--%>
     <aside class="widget hot_comment">
         <h3 class="widget-title">
-            <i class="fa fa-bars"></i>热评文章
+            <i class="fa fa-bars"></i>Most View
         </h3>
         <div id="hot_comment_widget">
             <ul>
                 <c:forEach items="${mostCommentArticleList}" var="m">
                     <li>
                         <a href="/article/${m.articleId}" rel="bookmark"
-                           title=" (${m.articleCommentCount}条评论)">
+                           title=" (${m.articleCommentCount}Comments)">
                                 ${m.articleTitle}
                         </a>
                     </li>
@@ -29,12 +29,12 @@
         </div>
         <div class="clear"></div>
     </aside>
-    <%--热评文章 end--%>
+    <%--热评Article end--%>
 
     <%--所有标签 start--%>
     <aside class="widget">
         <h3 class="widget-title">
-            <i class="fa fa-bars"></i>所有标签
+            <i class="fa fa-bars"></i>All Tags
         </h3>
         <div class="tagcloud">
             <c:forEach items="${tagList}" var="tag">
@@ -51,10 +51,10 @@
     <%--所有标签 end--%>
 
 
-    <%--随机文章 start--%>
+    <%--随机Article start--%>
     <aside id="random_post-7" class="widget random_post wow fadeInUp" data-wow-delay="0.3s">
         <h3 class="widget-title">
-            <i class="fa fa-bars"></i>随机文章
+            <i class="fa fa-bars"></i>Random Article
         </h3>
         <div id="random_post_widget">
             <ul>
@@ -69,11 +69,11 @@
         </div>
         <div class="clear"></div>
     </aside>
-    <%--近期文章 end--%>
+    <%--近期Article end--%>
 
     <%--最新评论 start--%>
     <aside id="recent_comments-2" class="widget recent_comments wow fadeInUp" data-wow-delay="0.3s"><h3
-            class="widget-title"><i class="fa fa-bars"></i>近期评论</h3>
+            class="widget-title"><i class="fa fa-bars"></i>Recent Comment</h3>
         <div id="message" class="message-widget">
             <ul>
                 <c:forEach items="${recentCommentList}" var="r">

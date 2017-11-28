@@ -17,7 +17,7 @@ public interface CategoryService {
 	//获得分类列表
 	public List<CategoryCustom> listCategory(Integer status) throws Exception;
 
-	//获得带有该分类的文章列表
+	//获得带有该分类的Article列表
 	public  List<ArticleListVo> listArticleWithCategoryByPage(Integer status,Integer pageNow,Integer pageSize,Integer cateId) throws Exception;
 
 	//获得某个分类信息

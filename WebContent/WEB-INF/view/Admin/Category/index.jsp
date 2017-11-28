@@ -33,9 +33,9 @@
 
     <blockquote class="layui-elem-quote">
         <span class="layui-breadcrumb" lay-separator="/">
-              <a href="/admin">首页</a>
-              <a href="/admin/category">分类列表</a>
-              <a><cite>添加分类</cite></a>
+              <a href="/admin">Home</a>
+              <a href="/admin/category">Category List</a>
+              <a><cite>Add Category</cite></a>
         </span>
     </blockquote>
     <div class="layui-row">
@@ -43,17 +43,17 @@
             <form class="layui-form"  method="post" id="myForm" action="/admin/category/insertSubmit">
                 <div class="layui-form-item">
                     <div class="layui-input-block">
-                        <strong>添加分类</strong>
+                        <strong>Add Category</strong>
                     </div>
                     <div class="layui-input-block">
-                        名称 <span style="color: #FF5722; ">*</span>
-                        <input type="text" name="categoryName" placeholder="请输入分类名称" autocomplete="off" class="layui-input" required>
+                        name <span style="color: #FF5722; ">*</span>
+                        <input type="text" name="categoryName" placeholder="Input Category Name" autocomplete="off" class="layui-input" required>
                     </div>
                     <br>
                     <div class="layui-input-block">
-                        父节点 <span style="color: #FF5722; ">*</span>
+                       Parent Node <span style="color: #FF5722; ">*</span>
                         <select name="categoryPid" class="layui-input" required>
-                            <option value="0">无</option>
+                            <option value="0">None</option>
                             <c:forEach items="${categoryCustomList}" var="c">
                                 <c:if test="${c.categoryPid==0}">
                                     <option value="${c.categoryId}">${c.categoryName}</option>
@@ -63,26 +63,26 @@
                     </div>
                     <br>
                     <div class="layui-input-block">
-                        分类描述
-                        <input type="text" name="categoryDescription" placeholder="请输入分类描述" autocomplete="off" class="layui-input" >
+                      Category Description
+                        <input type="text" name="categoryDescription" placeholder="Input Category Description" autocomplete="off" class="layui-input" >
                     </div>
                     <br>
                     <div class="layui-input-block">
-                        图标样式
-                        <input type="text" name="categoryIcon" placeholder="请输入图标样式,如 fa fa-coffee" autocomplete="off" class="layui-input" >
+                         Icons Style
+                        <input type="text" name="categoryIcon" placeholder="Input Icons Style,like 'fa fa-coffee'" autocomplete="off" class="layui-input" >
                     </div>
                     <br>
                     <div class="layui-input-block">
-                        <button class="layui-btn" lay-filter="formDemo" type="submit">添加</button>
+                        <button class="layui-btn" lay-filter="formDemo" type="submit">Add</button>
                     </div>
                 </div>
             </form>
             <blockquote class="layui-elem-quote layui-quote-nm">
-                温馨提示：
+                Notice:：
                 <ul>
-                    <li>如果该分类为一级分类，父节点选"无"</li>
-                    <li>如果该分类为二级分类，父节点选择其对应的一级目录</li>
-                    <li>图标样式可以参考<a href="http://fontawesome.io/icons/" target="_blank"> fontawesome </a>,建议给一级分类添加 </li>
+                    <li>If the category is first line level,set parent node with "None"</li>
+                    <li>If the category is first line level, set the parent node with the relative parent node</li>
+                    <li>Icon Style can refer to <a href="http://fontawesome.io/icons/" target="_blank"> fontawesome </a>, advice to add the  first line level category with icon style </li>
                 </ul>
             </blockquote>
         </div>
@@ -100,10 +100,10 @@
                 <tr>
                     <th>ID</th>
                     <th>pid</th>
-                    <th>名称</th>
-                    <th>文章数</th>
-                    <th>状态</th>
-                    <th>操作</th>
+                    <th>name</th>
+                    <th>Article Number</th>
+                    <th>Status</th>
+                    <th>Operation</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -121,15 +121,15 @@
                             <td>
                                     <c:choose>
                                         <c:when test="${c.categoryStatus==1}">
-                                            显示
+                                            Display
                                         </c:when>
                                         <c:otherwise>
-                                            <span style="color:#FF5722;">隐藏</span>
+                                            <span style="color:#FF5722;">Hidden</span>
                                         </c:otherwise>
                                     </c:choose>
                             </td>
                             <td>
-                                <a href="/admin/category/edit/${c.categoryId}" class="layui-btn layui-btn-mini">编辑</a>
+                                <a href="/admin/category/edit/${c.categoryId}" class="layui-btn layui-btn-mini">Edit</a>
                                 <c:if test="${c.articleCount==0}">
                                     <a href="/admin/category/delete/${c.categoryId}" class="layui-btn layui-btn-danger layui-btn-mini" onclick="return confirmDelete()">删除</a>
                                 </c:if>
@@ -175,7 +175,7 @@
                 温馨提示：
                 <ul>
                     <li>分类最多只有两级，一级分类pid=0，二级分类pid=其父节点id</li>
-                    <li>如果该分类包含文章，将不可删除</li>
+                    <li>如果该分类包含Article，将不可删除</li>
                 </ul>
             </blockquote>
         </div>

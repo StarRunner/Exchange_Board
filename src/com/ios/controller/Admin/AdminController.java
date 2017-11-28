@@ -48,11 +48,11 @@ public class AdminController {
 
     }
 
-    //后台首页
+    //后台Home
     @RequestMapping("/admin")
     public ModelAndView index() throws Exception {
         ModelAndView modelAndView = new ModelAndView();
-        //文章列表
+        //Article列表
         List<ArticleListVo> articleCustomList = articleService.listArticle(null);
         modelAndView.addObject("articleCustomList",articleCustomList);
         //评论列表

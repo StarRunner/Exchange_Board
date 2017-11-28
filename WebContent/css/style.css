@@ -1043,7 +1043,7 @@ a, button, input {
     }
 }
 /** 菜单结束 **/
-/** 搜索 **/
+/** Search **/
 #search-main {
     position: fixed;
     left: 0;
@@ -1453,7 +1453,7 @@ a, button, input {
     background: #fc5a20;
 }
 
-/** 文章信息 **/
+/** Article信息 **/
 .entry-meta {
     position: absolute;
     bottom: 14px;
@@ -2057,7 +2057,7 @@ img.alignleft {
     color: #f85d00 !important;
     margin: 0 10px 0 0;
 }
-/** 文章信息 **/
+/** Article信息 **/
 .single-footer {
 }
 
@@ -5059,7 +5059,7 @@ li.comments-anchor {
     }
 }
 
-/** 文章商品 **/
+/** Article商品 **/
 .wplist-item {
     margin: 0 0 -1px 0;
     padding: 10px 10px 15px 10px;
@@ -5598,7 +5598,7 @@ li.comments-anchor {
 /*.fancybox-close:hover {*/
     /*color: #ccc;*/
 /*}*/
-/** 搜索结果 **/
+/** Search结果 **/
 .search-results #primary,
 .search-no-results #primary {
     width: 100%;
@@ -6210,7 +6210,7 @@ li.search-inf {
 /** CMS **/
 
 
-/*!** 最新文章列表 **!*/
+/*!** 最新Article列表 **!*/
 
 /*.cms-new-title {*/
     /*float: left;*/

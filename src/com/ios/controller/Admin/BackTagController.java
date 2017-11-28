@@ -51,7 +51,7 @@ public class BackTagController {
     @RequestMapping(value = "/delete/{id}")
     public String deleteTag(@PathVariable("id") Integer id) throws Exception {
 
-        //禁止删除有文章的分类
+        //禁止删除有Article的分类
         int count = articleService.countArticleWithTag(null,id);
         if (count == 0) {
             tagService.deleteTag(id);

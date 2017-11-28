@@ -6,7 +6,7 @@
 <%@ taglib prefix="rapid" uri="http://www.rapid-framework.org.cn/rapid" %>
 
     <rapid:override name="title">
-        - 链接列表
+        - Link List
     </rapid:override>
 <rapid:override name="header-style">
     <style>
@@ -25,8 +25,8 @@
 <rapid:override name="content">
     <blockquote class="layui-elem-quote">
         <span class="layui-breadcrumb" lay-separator="/">
-              <a href="/admin">首页</a>
-              <a><cite>链接列表</cite></a>
+              <a href="/admin">Home</a>
+              <a><cite>Link List</cite></a>
         </span>
     </blockquote>
 
@@ -43,13 +43,13 @@
         </colgroup>
         <thead>
         <tr>
-            <th>名称</th>
+            <th>Name</th>
             <th>URL</th>
-            <th>联系方式</th>
-            <th>创建时间</th>
+            <th>Contact</th>
+            <th>Created Time</th>
             <th>Order</th>
-            <th>状态</th>
-            <th>操作</th>
+            <th>Status</th>
+            <th>Operation</th>
             <th>ID</th>
         </tr>
         </thead>
@@ -74,16 +74,16 @@
                 <td>
                     <c:choose>
                         <c:when test="${l.linkStatus==1}">
-                            显示
+                            Display
                         </c:when>
                         <c:otherwise>
-                            <span style="color:#FF5722;">隐藏</span>
+                            <span style="color:#FF5722;">Hidden</span>
                         </c:otherwise>
                     </c:choose>
                 </td>
                 <td>
-                    <a href="/admin/link/edit/${l.linkId}" class="layui-btn layui-btn-mini">编辑</a>
-                    <a href="/admin/link/delete/${l.linkId}" class="layui-btn layui-btn-danger layui-btn-mini" onclick="return confirmDelete()">删除</a>
+                    <a href="/admin/link/edit/${l.linkId}" class="layui-btn layui-btn-mini">Edit</a>
+                    <a href="/admin/link/delete/${l.linkId}" class="layui-btn layui-btn-danger layui-btn-mini" onclick="return confirmDelete()">Delete</a>
                 </td>
                 <td>${l.linkId}</td>
             </tr>

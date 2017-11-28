@@ -53,7 +53,7 @@ public class BackCategoryController {
     @RequestMapping(value = "/delete/{id}")
     public String deleteCategory(@PathVariable("id") Integer id) throws Exception {
 
-        //禁止删除有文章的分类
+        //禁止删除有Article的分类
         int count = articleService.countArticleWithCategory(null,id);
         if (count == 0) {
             categoryService.deleteCategory(id);

@@ -18,22 +18,22 @@
 
     <blockquote class="layui-elem-quote">
         <span class="layui-breadcrumb" lay-separator="/">
-              <a href="/admin">首页</a>
-              <a href="/admin/notice">公告列表</a>
-              <a><cite>添加公告</cite></a>
+              <a href="/admin">Home</a>
+              <a href="/admin/notice">Notice List</a>
+              <a><cite>Add Notice</cite></a>
         </span>
     </blockquote>
 
     <form class="layui-form"  method="post" id="myForm" action="/admin/notice/insertSubmit">
         <div class="layui-form-item">
-            <label class="layui-form-label">标题  <span style="color: #FF5722; ">*</span></label>
+            <label class="layui-form-label">Title  <span style="color: #FF5722; ">*</span></label>
             <div class="layui-input-block">
                 <input type="text" name="noticeTitle" lay-verify="title" id="title" class="layui-input" required>
             </div>
         </div>
 
         <div class="layui-form-item layui-form-text">
-            <label class="layui-form-label">内容  <span style="color: #FF5722; ">*</span></label>
+            <label class="layui-form-label">Content  <span style="color: #FF5722; ">*</span></label>
             <div class="layui-input-block">
                 <textarea class="layui-textarea layui-hide" name="noticeContent" lay-verify="content" id="content" required></textarea>
             </div>
@@ -41,7 +41,7 @@
         
         <div class="layui-form-item">
             <div class="layui-input-block">
-                <button class="layui-btn" lay-submit="" lay-filter="" >添加</button>
+                <button class="layui-btn" lay-submit="" lay-filter="" >Add</button>
             </div>
         </div>
     </form>

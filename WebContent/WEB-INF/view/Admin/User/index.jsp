@@ -6,7 +6,7 @@
 <%@ taglib prefix="rapid" uri="http://www.rapid-framework.org.cn/rapid" %>
 
     <rapid:override name="title">
-        - 用户列表
+        - User List
     </rapid:override>
 <rapid:override name="header-style">
     <style>
@@ -25,8 +25,8 @@
 <rapid:override name="content">
     <blockquote class="layui-elem-quote">
          <span class="layui-breadcrumb" lay-separator="/">
-              <a href="/admin">首页</a>
-              <a><cite>用户列表</cite></a>
+              <a href="/admin">Home</a>
+              <a><cite>User List</cite></a>
         </span>
     </blockquote>
 
@@ -42,12 +42,12 @@
     </colgroup>
     <thead>
     <tr>
-        <th>用户名</th>
-        <th>昵称</th>
-        <th>电子邮件</th>
-        <th>文章</th>
-        <th>状态</th>
-        <th>操作</th>
+        <th>User Name</th>
+        <th>Nick</th>
+        <th>Email</th>
+        <th>Article</th>
+        <th>Status</th>
+        <th>Operation</th>
         <th>ID</th>
     </tr>
     </thead>
@@ -70,16 +70,16 @@
             <td>
                 <c:choose>
                     <c:when test="${u.userStatus==0}">
-                        <span style="color:#FF5722;">禁用</span>
+                        <span style="color:#FF5722;">Forbidden</span>
                     </c:when>
                     <c:otherwise>
-                        正常
+                        Normal
                     </c:otherwise>
                 </c:choose>
             </td>
             <td>
-                <a href="/admin/user/edit/${u.userId}" class="layui-btn layui-btn-mini">编辑</a>
-                <a href="/admin/user/delete/${u.userId}" class="layui-btn layui-btn-danger layui-btn-mini" onclick="return confirmDelete()">删除</a>
+                <a href="/admin/user/edit/${u.userId}" class="layui-btn layui-btn-mini">Edit</a>
+                <a href="/admin/user/delete/${u.userId}" class="layui-btn layui-btn-danger layui-btn-mini" onclick="return confirmDelete()">Delete</a>
             </td>
             <td>
                 ${u.userId}

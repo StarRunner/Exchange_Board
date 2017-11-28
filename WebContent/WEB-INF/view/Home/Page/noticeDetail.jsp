@@ -18,7 +18,7 @@
     <%--面包屑导航 start--%>
     <nav class="breadcrumb">
         <a class="crumbs" href="/">
-            <i class="fa fa-home"></i>首页
+            <i class="fa fa-home"></i>Home
         </a>
         <i class="fa fa-angle-right"></i>
         博客公告
@@ -30,7 +30,7 @@
 
 
 <rapid:override name="left">
-    <%--博客主体-左侧文章正文 start--%>
+    <%--博客主体-左侧Article正文 start--%>
     <div id="primary" class="content-area">
         <main id="main" class="site-main" role="main">
             <article class="post" style="min-height: 500px;">
@@ -74,7 +74,7 @@
         </main>
         <!-- .site-main -->
     </div>
-    <%--博客主体-左侧文章正文end--%>
+    <%--博客主体-左侧Article正文end--%>
 </rapid:override>
 
 

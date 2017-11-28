@@ -5,7 +5,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@ taglib prefix="rapid" uri="http://www.rapid-framework.org.cn/rapid" %>
 <rapid:override name="title">
-    - 文章列表
+    - Article列表
 </rapid:override>
 <rapid:override name="header-style">
     <style>
@@ -26,25 +26,25 @@
 <rapid:override name="content">
     <blockquote class="layui-elem-quote">
         <span class="layui-breadcrumb" lay-separator="/">
-          <a href="/admin">首页</a>
-          <a><cite>文章列表</cite></a>
+          <a href="/admin">Home</a>
+          <a><cite>Article List</cite></a>
         </span>
     </blockquote>
 
     <div class="layui-tab layui-tab-card">
         <ul class="layui-tab-title">
-            <li class="layui-this">已发布(${publishedArticleListVoList.size()})</li>
-            <li>草稿(${draftArticleList.size()})</li>
+            <li class="layui-this">Posted (${publishedArticleListVoList.size()})</li>
+            <li>Draft (${draftArticleList.size()})</li>
         </ul>
         <div class="layui-tab-content">
             <div class="layui-tab-item layui-show">
                 <form id="articleForm" method="post">
                     <div class="layui-form-item">
                         <div class="layui-input-block">
-                            <input type="text" name="query" placeholder="请输入关键词" autocomplete="off" class="layui-input">
-                            <button class="layui-btn" lay-filter="formDemo" onclick="queryArticle()">搜索</button>
+                            <input type="text" name="query" placeholder="Input Key Word" autocomplete="off" class="layui-input">
+                            <button class="layui-btn" lay-filter="formDemo" onclick="queryArticle()">Search</button>
                             <button class="layui-btn" lay-filter="formDemo" style="float: right;"
-                                    onclick="confirmDeleteArticleBatch()">批量删除
+                                    onclick="confirmDeleteArticleBatch()">Patch Delete
                             </button>
                         </div>
                     </div>
@@ -64,12 +64,12 @@
                         <tr>
                             <th><input type="checkbox" id="allSelect" onclick="javascript:DoCheck()"></th>
                             <th>id</th>
-                            <th>标题</th>
-                            <th>所属分类</th>
-                            <th>所带标签</th>
+                            <th>title</th>
+                            <th>Category</th>
+                            <th>Label</th>
                             <td>order</td>
-                            <th>发布时间</th>
-                            <th>操作</th>
+                            <th>Post Time</th>
+                            <th>Operation</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -102,14 +102,14 @@
                                     <td>${a.articleCustom.articleOrder}</td>
                                     <td>
                                         <fmt:formatDate value="${a.articleCustom.articlePostTime}"
-                                                        pattern="MM月dd日 HH:mm"/>
+                                                        pattern="MM-dd- HH:mm"/>
                                     </td>
                                     <td>
                                         <a href="/admin/article/edit/${a.articleCustom.articleId}"
-                                           class="layui-btn layui-btn-mini">编辑</a>
+                                           class="layui-btn layui-btn-mini">Edit</a>
                                         <a href="javascript:void(0)"
                                            onclick="deleteArticle(${a.articleCustom.articleId})"
-                                           class="layui-btn layui-btn-danger layui-btn-mini">删除</a>
+                                           class="layui-btn layui-btn-danger layui-btn-mini">Delete</a>
                                     </td>
                                 </tr>
                             </c:if>
@@ -213,11 +213,11 @@
                     <thead>
                     <tr>
                         <th>id</th>
-                        <th>标题</th>
-                        <th>所属分类</th>
-                        <th>所带标签</th>
-                        <th>发布时间</th>
-                        <th>操作</th>
+                        <th>Title</th>
+                        <th>Category</th>
+                        <th>Lablel</th>
+                        <th>Post Time</th>
+                        <th>Operation</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -251,10 +251,10 @@
                             </td>
                             <td>
                                 <a href="/admin/article/edit/${a.articleCustom.articleId}"
-                                   class="layui-btn layui-btn-mini">编辑</a>
+                                   class="layui-btn layui-btn-mini">Edit</a>
                                 <a href="javascript:void(0)"
                                    onclick="deleteArticle(${a.articleCustom.articleId})"
-                                   class="layui-btn layui-btn-danger layui-btn-mini">删除</a>
+                                   class="layui-btn layui-btn-danger layui-btn-mini">Delete</a>
                             </td>
                         </tr>
                     </c:forEach>

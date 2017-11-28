@@ -35,7 +35,7 @@ public class CommentController {
 		//添加评论
 		comment.setCommentCreateTime(new Date());
 		commentService.insertComment(request,comment);
-		//更新文章的评论数
+		//更新Article的评论数
 		Article article = articleService.getArticleById(null,comment.getCommentArticleId());
 		articleService.updateCommentCount(article.getArticleId());
 	}

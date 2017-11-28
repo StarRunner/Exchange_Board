@@ -1,6 +1,6 @@
 <%--
     一般用于正文侧边栏：
-    包括 搜索，热评文章，所有标签，随机文章 等小工具
+    包括 Search，热评Article，所有标签，随机Article 等小工具
 --%>
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -9,23 +9,23 @@
 <div id="sidebar" class="widget-area all-sidebar"
      style="position: relative; overflow: visible; box-sizing: border-box; min-height: 1px;">
 
-        <%--搜索框--%>
+        <%--Search框--%>
         <aside class="widget widget_search">
             <div class="searchbar">
                 <form method="get" id="searchform1" action="/search">
-                        <span> <input type="text" value="" name="query" id="s1" placeholder="输入搜索内容" required="">
-                            <button type="submit" id="searchsubmit1">搜索</button>
+                        <span> <input type="text" value="" name="query" id="s1" placeholder="Ipnut Search Content" required="">
+                            <button type="submit" id="searchsubmit1">Search</button>
                         </span>
                 </form>
             </div>
             <div class="clear"></div>
         </aside>
-        <%--搜索框--%>
+        <%--Search框--%>
 
-        <%--热评文章 start--%>
+        <%--热评Article start--%>
         <aside class="widget hot_comment" >
             <h3 class="widget-title">
-                <i class="fa fa-bars"></i>热评文章
+                <i class="fa fa-bars"></i>Most View
             </h3>
             <div id="hot_comment_widget">
                 <ul>
@@ -40,7 +40,7 @@
             </div>
             <div class="clear"></div>
         </aside>
-        <%--热评文章 end--%>
+        <%--热评Article end--%>
 
         <%--所有标签 start--%>
         <aside class="widget">
@@ -61,10 +61,10 @@
         </aside>
         <%--所有标签 end--%>
 
-        <%--博客主体-右侧侧边栏-随机文章 start--%>
+        <%--博客主体-右侧侧边栏-随机Article start--%>
         <aside id="random_post-7" class="widget random_post wow fadeInUp" data-wow-delay="0.3s">
             <h3 class="widget-title">
-                <i class="fa fa-bars"></i>随机文章
+                <i class="fa fa-bars"></i>随机Article
             </h3>
             <div id="random_post_widget">
                 <ul>
@@ -79,7 +79,7 @@
             </div>
             <div class="clear"></div>
         </aside>
-        <%--博客主体-右侧侧边栏-近期文章 end--%>
+        <%--博客主体-右侧侧边栏-近期Article end--%>
 
 </div>
 <%--博客主体-右侧侧边栏 end--%>

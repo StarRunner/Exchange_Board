@@ -9,7 +9,7 @@
 <%@ taglib prefix="rapid" uri="http://www.rapid-framework.org.cn/rapid" %>
 
 <rapid:override name="title">
-    - 评论列表
+    - Comment List
 </rapid:override>
 <rapid:override name="header-style">
     <style>
@@ -24,14 +24,14 @@
 <rapid:override name="content">
     <blockquote class="layui-elem-quote">
         <span class="layui-breadcrumb" lay-separator="/">
-              <a href="/admin">首页</a>
-              <a><cite>评论列表</cite></a>
+              <a href="/admin">Home</a>
+              <a><cite>Comment List</cite></a>
         </span>
     </blockquote>
     <div class="layui-tab layui-tab-card">
         <ul class="layui-tab-title">
-            <li class="layui-this">全部评论(${commentListVoList.size()})</li>
-            <li>待审评论(${hiddenCommentListVoList.size()})</li>
+            <li class="layui-this">All comment(${commentListVoList.size()})</li>
+            <li>Pending Comment(${hiddenCommentListVoList.size()})</li>
         </ul>
         <div class="layui-tab-content" >
             <div class="layui-tab-item layui-show" style="margin-bottom: -10px">
@@ -45,10 +45,10 @@
                     </colgroup>
                     <thead>
                     <tr>
-                        <th>作者</th>
-                        <th>评论内容</th>
-                        <th>回复至</th>
-                        <th>提交于</th>
+                        <th>Author</th>
+                        <th>Comment Content</th>
+                        <th>Reply </th>
+                        <th>Submitted</th>
                         <th>ID</th>
                     </tr>
                     </thead>
@@ -59,7 +59,7 @@
                                 <img src="${c.commentCustom.commentAuthorAvatar}" alt="" width="64px">
                                 <strong>${c.commentCustom.commentAuthorName}</strong>
                                 <c:if test="${c.commentCustom.commentStatus==0}">
-                                    <span class="approve">[待审]</span>
+                                    <span class="approve">[Pending]</span>
                                 </c:if>
                                 <br>
                                     ${c.commentCustom.commentAuthorUrl} <br>
@@ -75,23 +75,23 @@
                                      <span class="">
                                            <c:choose>
                                                <c:when test="${c.commentCustom.commentStatus==0}">
-                                                   <a href="javascript:void(0)" style="color:#5FB878;!important;" onclick="approveComment(${c.commentCustom.commentId})">批准</a>
+                                                   <a href="javascript:void(0)" style="color:#5FB878;!important;" onclick="approveComment(${c.commentCustom.commentId})">Approve</a>
                                                </c:when>
                                                <c:otherwise>
-                                                   <a href="javascript:void(0)" style="color:#FF5722;!important;" onclick="hideComment(${c.commentCustom.commentId})">屏蔽</a>
+                                                   <a href="javascript:void(0)" style="color:#FF5722;!important;" onclick="hideComment(${c.commentCustom.commentId})">Block</a>
                                                </c:otherwise>
                                            </c:choose>
                                      </span> |
                                      <span class="">
                                         <a href="/admin/comment/reply/${c.commentCustom.commentId}">
-                                            回复
+                                            Reply
                                         </a>
                                      </span>
                                      <span class=""> |
-                                        <a href="/admin/comment/edit/${c.commentCustom.commentId}">编辑</a>
+                                        <a href="/admin/comment/edit/${c.commentCustom.commentId}">Edit</a>
                                      </span>
                                      <span class=""> |
-                                        <a href="javascript:void(0)" onclick="deleteComment(${c.commentCustom.commentId})">删除</a>
+                                        <a href="javascript:void(0)" onclick="deleteComment(${c.commentCustom.commentId})">Edit</a>
                                      </span>
                                 </div>
                             </td>
@@ -100,7 +100,7 @@
                                    target="_blank">${c.articleCustom.articleTitle}</a>
                             </td>
                             <td>
-                                <fmt:formatDate value="${c.commentCustom.commentCreateTime}" pattern="yyyy年MM月dd日 HH:dd:ss"/>
+                                <fmt:formatDate value="${c.commentCustom.commentCreateTime}" pattern="yyyy-MM-dd- HH:dd:ss"/>
                             </td>
                             <td>
                                     ${c.commentCustom.commentId}
@@ -204,10 +204,10 @@
                     </colgroup>
                     <thead>
                     <tr>
-                        <th>作者</th>
-                        <th>评论内容</th>
-                        <th>回复至</th>
-                        <th>提交于</th>
+                        <th>Author</th>
+                        <th>Comment Content</th>
+                        <th>Reply</th>
+                        <th>Submit</th>
                         <th>ID</th>
                     </tr>
                     </thead>
@@ -230,21 +230,21 @@
                                     <span class="">
                                         <c:choose>
                                             <c:when test="${c.commentCustom.commentStatus==0}">
-                                                <a href="javascript:void(0)" style="color:#5FB878;!important;" onclick="approveComment(${c.commentCustom.commentId})">批准</a>
+                                                <a href="javascript:void(0)" style="color:#5FB878;!important;" onclick="approveComment(${c.commentCustom.commentId})">Appove</a>
                                             </c:when>
                                             <c:otherwise>
-                                                <a href="javascript:void(0)" style="color:#FF5722;!important;" onclick="hideComment(${c.commentCustom.commentId})">屏蔽</a>
+                                                <a href="javascript:void(0)" style="color:#FF5722;!important;" onclick="hideComment(${c.commentCustom.commentId})">Block</a>
                                             </c:otherwise>
                                         </c:choose>
                                     </span>
                                     <span class=""> |
-                                        <a href="/admin/comment/reply/${c.commentCustom.commentId}">回复</a>
+                                        <a href="/admin/comment/reply/${c.commentCustom.commentId}">Reply</a>
                                     </span>
                                     <span class=""> |
-                                         <a href="/admin/comment/edit/${c.commentCustom.commentId}">编辑</a>
+                                         <a href="/admin/comment/edit/${c.commentCustom.commentId}">Edit</a>
                                     </span>
                                     <span class=""> |
-                                        <a href="javascript:void(0)" onclick="deleteComment(${c.commentCustom.commentId})">删除</a>
+                                        <a href="javascript:void(0)" onclick="deleteComment(${c.commentCustom.commentId})">Delete</a>
                                     </span>
                                 </div>
                             </td>
@@ -253,7 +253,7 @@
                                    target="_blank">${c.articleCustom.articleTitle}</a>
                             </td>
                             <td>
-                                <fmt:formatDate value="${c.commentCustom.commentCreateTime}" pattern="yyyy年MM月dd日 HH:dd:ss"/>
+                                <fmt:formatDate value="${c.commentCustom.commentCreateTime}" pattern="yyyy-MM-dd-HH:dd:ss"/>
                             </td>
                             <td>
                                     ${c.commentCustom.commentId}

@@ -78,7 +78,7 @@ public class CategoryServiceImpl implements CategoryService {
 		for(int i=0;i<articleCustomList.size();i++) {
 			ArticleListVo articleListVo = new ArticleListVo();
 			
-			//1、将文章信息装入 articleListVo
+			//1、将Article信息装入 articleListVo
 			ArticleCustom articleCustom = articleCustomList.get(i);
 			articleListVo.setArticleCustom(articleCustom);
 
@@ -99,7 +99,7 @@ public class CategoryServiceImpl implements CategoryService {
 
 			articleListVoList.add(articleListVo);
 		}
-        //如果该分类还没有文章
+        //如果该分类还没有Article
         if(totalCount!=0) {
             //2、将Page信息存储在第一个元素中
             articleListVoList.get(0).setPage(page);

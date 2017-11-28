@@ -1,6 +1,6 @@
 <%--
     博客顶部部分
-    包括：顶部菜单，主要菜单(包括搜索按钮)，面包屑
+    包括：顶部菜单，主要菜单(包括Search按钮)，面包屑
 --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
@@ -13,10 +13,10 @@
             <div class="user-login">
                 <c:choose>
                     <c:when test="${sessionScope.user==null}">
-                        <a href="/admin">登录</a>
+                        <a href="/admin">Login</a>
                     </c:when>
                     <c:otherwise>
-                        <a href="/admin">进入后台</a>
+                        <a href="/admin">Login to Console</a>
                     </c:otherwise>
                 </c:choose>
             </div>
@@ -55,7 +55,7 @@
                             <li>
                                 <a href="/">
                                     <i class="fa-home fa"></i>
-                                    <span class="font-text">首页</span>
+                                    <span class="font-text">Home</span>
                                 </a>
                             </li>
 
@@ -70,7 +70,7 @@
                                             <c:forEach items="${categoryList}" var="cate">
                                                 <c:if test="${cate.categoryPid==category.categoryId}">
                                                     <li>
-                                                        <a href="/category/${cate.categoryId}" target="_blank">${cate.categoryName}</a>
+                                                        <a href="/category/${cate.categoryId}">${cate.categoryName}</a>
                                                     </li>
                                                 </c:if>
                                             </c:forEach>
@@ -105,18 +105,18 @@
 </header><!-- #masthead -->
 <%--导航 end start--%>
 
-<%--搜索框 start--%>
+<%--Search框 start--%>
 <div id="search-main">
     <div class="searchbar">
         <form method="get" id="searchform" action="/search">
                 <span>
-                    <input type="text" value="" name="query" id="s" placeholder="输入搜索内容"required="">
-                    <button type="submit" id="searchsubmit">搜索</button>
+                    <input type="text" value="" name="query" id="s" placeholder="Input Search Content"required="">
+                    <button type="submit" id="searchsubmit">Search</button>
                 </span>
         </form>
     </div>
     <div class="clear"></div>
 </div>
-<%--搜索框 end--%>
+<%--Search框 end--%>
 
 <rapid:block name="breadcrumb"></rapid:block>

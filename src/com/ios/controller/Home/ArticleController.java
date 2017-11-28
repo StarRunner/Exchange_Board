@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
- * 文章的controller
+ * Article的controller
  * Created by 言曌 on 2017/8/24.
  */
 @Controller
@@ -30,18 +30,18 @@ public class ArticleController {
 		
 	}
 	
-	//文章详情页显示
+	//Article详情页显示
 	@RequestMapping(value = "/article/{articleId}")
 	@ResponseBody //适合RESTful
 	public ModelAndView ArticleDetailView(@PathVariable("articleId") Integer articleId) throws Exception{
 		ModelAndView modelAndView = new ModelAndView();
 
-		//文章信息，分类，标签，作者，评论
+		//Article信息，分类，标签，作者，评论
 		ArticleDetailVo articleDetailVo  = articleService.getArticleDetailById(articleId);
 		if(articleDetailVo!=null) {
 
 			modelAndView.addObject("articleDetailVo", articleDetailVo);
-			//相关文章
+			//相关Article
 			Integer parentCategoryId = articleService.getArticleById(1, articleId).getArticleParentCategoryId();
 			Integer childCategoryId = articleService.getArticleById(1, articleId).getArticleChildCategoryId();
 			List<ArticleCustom> similarArticleList = articleService.listArticleWithSameCategory(1, parentCategoryId, childCategoryId, 5);
@@ -50,10 +50,10 @@ public class ArticleController {
 			//猜你喜欢
 			List<ArticleCustom> mostViewArticleList = articleService.listArticleByViewCount(1, 5);
 			modelAndView.addObject("mostViewArticleList", mostViewArticleList);
-			//获取下一篇文章
+			//获取下一篇Article
 			ArticleCustom afterArticle = articleService.getAfterArticle(1, articleId);
 			modelAndView.addObject("afterArticle", afterArticle);
-			//获取上一篇文章
+			//获取上一篇Article
 			ArticleCustom preArticle = articleService.getPreArticle(1, articleId);
 			modelAndView.addObject("preArticle", preArticle);
 			modelAndView.setViewName("Home/Page/articleDetail");
@@ -64,7 +64,7 @@ public class ArticleController {
 		
 	}
 	
-	//文章点赞数增加
+	//Article点赞数增加
 	@RequestMapping(value = "/article/addLike/{id}",method = {RequestMethod.POST})
 	@ResponseBody
 	public Integer increaseLikeCount(@PathVariable("id") Integer id)
@@ -76,7 +76,7 @@ public class ArticleController {
 		return articleCount+1;
 	}
 	
-	//文章访问量数增加
+	//Article访问量数增加
 	@RequestMapping(value = "/article/addView/{id}",method = {RequestMethod.POST})
 	@ResponseBody
 	public Integer increaseViewCount(@PathVariable("id") Integer id)
@@ -91,7 +91,7 @@ public class ArticleController {
 	
 
 
-	//文章信息修改提交
+	//Article信息修改提交
 	@RequestMapping(value = "/editArticleSubmit",method = RequestMethod.POST)
 	public String editArticleSubmit(Integer id ,
 								 ArticleCustom articleCustom
@@ -103,7 +103,7 @@ public class ArticleController {
 		return "redirect:articleList.action";
 	}
 
-	//文章搜索实现
+	//ArticleSearch实现
 	@RequestMapping("/search")
 	@ResponseBody
 	public ModelAndView SearchPageView(HttpServletRequest request,Model model) throws Exception {
@@ -121,7 +121,7 @@ public class ArticleController {
 		return modelAndView;
 	}
 
-	//文章搜索分页实现
+	//ArticleSearch分页实现
 	@RequestMapping("/p/{pageNow}/search")
 	@ResponseBody
 	public  ModelAndView SearchPageByPageView(HttpServletRequest request, Model model,@PathVariable("pageNow") Integer pageNow) throws Exception {

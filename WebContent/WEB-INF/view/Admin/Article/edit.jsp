@@ -7,7 +7,7 @@
 <%@ taglib prefix="rapid" uri="http://www.rapid-framework.org.cn/rapid" %>
 <%--保留此处 end--%>
 <rapid:override name="title">
-    - 修改文章
+    - 修改Article
 </rapid:override>
 <rapid:override name="header-style">
 
@@ -16,9 +16,9 @@
 <rapid:override name="content">
     <blockquote class="layui-elem-quote">
         <span class="layui-breadcrumb" lay-separator="/">
-              <a href="/admin">首页</a>
-              <a href="/admin/article">文章列表</a>
-              <a><cite>修改文章</cite></a>
+              <a href="/admin">Home</a>
+              <a href="/admin/article">Article List</a>
+              <a><cite>修改Article</cite></a>
         </span>
     </blockquote>
 
@@ -89,14 +89,14 @@
         <div class="layui-form-item">
             <label class="layui-form-label">状态</label>
             <div class="layui-input-block">
-                <input type="radio" name="articleStatus" value="1" title="发布" <c:if test="${articleCustom.articleStatus==1}">checked</c:if>>
-                <input type="radio" name="articleStatus" value="0" title="草稿" <c:if test="${articleCustom.articleStatus==0}">checked</c:if>>
+                <input type="radio" name="articleStatus" value="1" title="Submit" <c:if test="${articleCustom.articleStatus==1}">checked</c:if>>
+                <input type="radio" name="articleStatus" value="0" title="Draft" <c:if test="${articleCustom.articleStatus==0}">checked</c:if>>
             </div>
         </div>
         <div class="layui-form-item">
             <div class="layui-input-block">
-                <button class="layui-btn" lay-submit="" lay-filter="demo1">保存</button>
-                <button type="reset" class="layui-btn layui-btn-primary" >重置</button>
+                <button class="layui-btn" lay-submit="" lay-filter="demo1">Save</button>
+                <button type="reset" class="layui-btn layui-btn-primary" >Reset</button>
             </div>
         </div>
     </form>

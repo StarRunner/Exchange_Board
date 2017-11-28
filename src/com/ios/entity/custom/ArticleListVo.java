@@ -6,17 +6,17 @@ import java.util.List;
 import com.ios.util.others.Page;
 
 /**
- * 用于封装文章列表，包括文章信息，作者信息，分类信息，标签信息
+ * 用于封装Article列表，包括Article信息，作者信息，分类信息，标签信息
  * Created by 言曌 on 2017/8/24.
  */
 public class ArticleListVo {
-	//文章信息
+	//Article信息
 	private ArticleCustom articleCustom;
 	
-	//文章对应的分类
+	//Article对应的分类
 	private List<CategoryCustom> categoryCustomList;
 	
-	//文章对应的标签
+	//Article对应的标签
 	private List<TagCustom> tagCustomList;
 
 	//作者信息
@@ -30,7 +30,7 @@ public class ArticleListVo {
 		this.userCustom = userCustom;
 	}
 
-	//文章分页信息
+	//Article分页信息
 	private Page page;
 	
 	public ArticleCustom getArticleCustom() {

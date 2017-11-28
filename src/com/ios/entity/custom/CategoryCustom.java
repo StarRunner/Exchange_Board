@@ -4,11 +4,11 @@ import com.ios.entity.Category;
 
 
 /**
- * 文章分类目录的信息的扩展
+ * Article分类目录的信息的扩展
  * Created by 言曌 on 2017/8/24.
  */
 public class CategoryCustom extends Category {
-    //分类对应的文章数
+    //分类对应的Article数
     private Integer articleCount;
 
     //分类的父分类名称

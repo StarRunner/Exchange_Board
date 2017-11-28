@@ -4,13 +4,13 @@ package com.ios.entity.custom;
 import com.ios.util.others.Page;
 
 /**
- *  用于封装评论信息，包括评论内容，作者信息，文章信息
+ *  用于封装评论信息，包括评论内容，作者信息，Article信息
   */
 public class CommentListVo {
     //评论信息
     private CommentCustom commentCustom;
 
-    //文章信息
+    //Article信息
     private ArticleCustom articleCustom;
 
     //分页信息

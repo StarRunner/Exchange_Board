@@ -100,7 +100,7 @@ function insertDraft() {
 
 }
 
-//删除文章
+//删除Article
 function deleteArticle(id) {
     if(confirmDelete()==true){
         $.ajax({
@@ -116,14 +116,14 @@ function deleteArticle(id) {
     }
 }
 
-//查询文章
+//查询Article
 function queryArticle() {
     //提交form
     $("#articleForm").attr("action", "/admin/article/search");
     $("#articleForm").submit();
 }
 
-//批量删除文章
+//批量删除Article
 function confirmDeleteArticleBatch() {
     if(confirmDelete()==true){
         var text = $("input:checkbox[name='ids']:checked").map(function(index,elem) {
@@ -229,12 +229,12 @@ layui.use(['form', 'layedit', 'laydate'], function () {
                 return "用户名必须4到12位";
             }
             if(checkUserName()==1) {
-                return "用户名已存在";
+                return "User Exist";
             }
         },
         userEmail: function () {
             if(checkUserEmail()==1) {
-                return "电子邮箱已存在";
+                return "Email Exist";
             }
         }
 

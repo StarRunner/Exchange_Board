@@ -6,7 +6,7 @@
 <%@ taglib prefix="rapid" uri="http://www.rapid-framework.org.cn/rapid" %>
 
     <rapid:override name="title">
-        - 标签列表
+        -Tag List
     </rapid:override>
 <rapid:override name="header-style">
     <style>
@@ -33,8 +33,8 @@
 
     <blockquote class="layui-elem-quote">
         <span class="layui-breadcrumb" lay-separator="/">
-              <a href="/admin">首页</a>
-              <a><cite>标签列表</cite></a>
+              <a href="/admin">Home</a>
+              <a><cite>Tag List</cite></a>
         </span>
     </blockquote>
     <div class="layui-row">
@@ -42,28 +42,28 @@
             <form class="layui-form"  method="post" id="myForm" action="/admin/tag/insertSubmit">
                 <div class="layui-form-item">
                     <div class="layui-input-block">
-                        <strong>添加标签</strong>
+                        <strong>Add Tag</strong>
                     </div>
                     <div class="layui-input-block">
-                        名称 <span style="color: #FF5722; ">*</span>
-                        <input type="text" name="tagName" placeholder="请输入标签名称" autocomplete="off" class="layui-input" required>
-                    </div>
-                    <br>
-                    <div class="layui-input-block">
-                        标签描述
-                        <input type="text" name="tagDescription" placeholder="请输入标签描述" autocomplete="off" class="layui-input" >
+                        Name <span style="color: #FF5722; ">*</span>
+                        <input type="text" name="tagName" placeholder="Input Tag Name" autocomplete="off" class="layui-input" required>
                     </div>
                     <br>
                     <div class="layui-input-block">
-                        <button class="layui-btn" lay-filter="formDemo" type="submit">添加</button>
+                       Tag Description
+                        <input type="text" name="tagDescription" placeholder="Input Tag Description" autocomplete="off" class="layui-input" >
+                    </div>
+                    <br>
+                    <div class="layui-input-block">
+                        <button class="layui-btn" lay-filter="formDemo" type="submit">Add</button>
                     </div>
                 </div>
             </form>
             <blockquote class="layui-elem-quote layui-quote-nm">
-                温馨提示：
+                Note：
                 <ul>
-                    <li>1、标签名必选，建议不要太长</li>
-                    <li>2、标签名勿重复</li>
+                    <li>1、Do not set the tag with long charater</li>
+                    <li>2、Duplicated Tag is not allowed</li>
                 </ul>
             </blockquote>
         </div>
@@ -79,10 +79,10 @@
                 </colgroup>
                 <thead>
                 <tr>
-                    <th>名称</th>
-                    <th>文章数</th>
-                    <th>状态</th>
-                    <th>操作</th>
+                    <th>Name</th>
+                    <th>Article Number</th>
+                    <th>Status</th>
+                    <th>Opertation</th>
                     <th>ID</th>
                 </tr>
                 </thead>
@@ -99,17 +99,17 @@
                         <td>
                              <c:choose>
                                  <c:when test="${c.tagStatus==1}">
-                                     显示
+                                     Display
                                  </c:when>
                                  <c:otherwise>
-                                     隐藏
+                                     Hidden
                                  </c:otherwise>
                              </c:choose>
                         </td>
                         <td>
-                            <a href="/admin/tag/edit/${c.tagId}" class="layui-btn layui-btn-mini">编辑</a>
+                            <a href="/admin/tag/edit/${c.tagId}" class="layui-btn layui-btn-mini">Edit</a>
                             <c:if test="${c.articleCount==0}">
-                                <a href="/admin/tag/delete/${c.tagId}" class="layui-btn layui-btn-danger layui-btn-mini" onclick="return confirmDelete()">删除</a>
+                                <a href="/admin/tag/delete/${c.tagId}" class="layui-btn layui-btn-danger layui-btn-mini" onclick="return confirmDelete()">Delete</a>
                             </c:if>
 
                         </td>
@@ -120,9 +120,9 @@
                 </tbody>
             </table>
             <blockquote class="layui-elem-quote layui-quote-nm">
-                温馨提示：
+             Note：
                 <ul>
-                    <li>如果该标签包含文章，将不可删除</li>
+                    <li>If the tag contain Article，the tag can not be deleted</li>
                 </ul>
             </blockquote>
         </div>

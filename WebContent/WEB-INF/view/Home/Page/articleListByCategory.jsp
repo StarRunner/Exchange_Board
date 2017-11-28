@@ -20,7 +20,7 @@
 <rapid:override name="breadcrumb">
     <nav class="breadcrumb">
         <a class="crumbs" href="/">
-            <i class="fa fa-home"></i>首页</a>
+            <i class="fa fa-home"></i>Home</a>
         <i class="fa fa-angle-right"></i>
         <c:choose>
             <c:when test="${articleListVoList!=null}">
@@ -33,7 +33,7 @@
                     </c:otherwise>
                 </c:choose>
                 <i class="fa fa-angle-right"></i>
-                文章
+                Article
             </c:when>
             <c:otherwise>
                 该分类不存在
@@ -54,7 +54,7 @@
                         <c:when test="${articleListVoList!=null}">
                             <c:choose>
                                 <c:when test="${articleListVoList.size()!=0}">
-                                    <%--文章列表-start--%>
+                                    <%--Article列表-start--%>
                                     <c:forEach items="${articleListVoList}" var="a">
 
                                         <article class="post"  style="float:left;width:33%">
@@ -115,7 +115,7 @@
                                           <i class="fa fa-comment-o"></i>
                                             <c:choose>
                                                 <c:when test="${a.articleCustom.articleCommentCount==0}">
-                                                    发表评论
+                                                    Post Comment
                                                 </c:when>
                                                 <c:otherwise>
                                                     ${a.articleCustom.articleCommentCount}
@@ -129,12 +129,12 @@
 
                                         </article>
                                     </c:forEach>
-                                    <%--文章列表-end--%>
+                                    <%--Article列表-end--%>
                                 </c:when>
                                 <c:otherwise>
                                     <section class="no-results not-found">
                                         <div class="post">
-                                            <p>该分类目前还没有文章！</p>
+                                            <p>该分类目前还没有Article！</p>
                                             <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
                                         </div>
                                     </section>

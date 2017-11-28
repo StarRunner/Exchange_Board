@@ -34,9 +34,9 @@
 
     <blockquote class="layui-elem-quote">
         <span class="layui-breadcrumb" lay-separator="/">
-              <a href="/admin">首页</a>
-              <a href="/admin/link">链接列表</a>
-              <a><cite>添加链接</cite></a>
+              <a href="/admin">Home</a>
+              <a href="/admin/link">Link List</a>
+              <a><cite>Add Link</cite></a>
         </span>
     </blockquote>
     <div class="layui-row">
@@ -44,11 +44,11 @@
             <form class="layui-form" method="post" id="myForm" action="/admin/link/insertSubmit">
                 <div class="layui-form-item">
                     <div class="layui-input-block">
-                        <strong>编辑链接</strong>
+                        <strong>Edit Link</strong>
                     </div>
                     <input type="hidden" name="linkId" value="">
                     <div class="layui-input-block">
-                        名称 <span style="color: #FF5722; ">*</span>
+                        Name <span style="color: #FF5722; ">*</span>
                         <input type="text" name="linkName" value="" autocomplete="off" class="layui-input" required>
                     </div>
                     <br>
@@ -58,12 +58,12 @@
                     </div>
                     <br>
                     <div class="layui-input-block">
-                        联系方式
+                       Contact
                         <input type="text" name="linkOwnerContact" value="" autocomplete="off" class="layui-input" >
                     </div>
                     <br>
                     <div class="layui-input-block">
-                        描述
+                        Description
                         <input type="text" name="linkDescription" value="" autocomplete="off" class="layui-input" >
                     </div>
 
@@ -74,15 +74,15 @@
                     </div>
                     <br>
                     <div class="layui-input-block">
-                        <button class="layui-btn" lay-filter="formDemo" type="submit">添加</button>
+                        <button class="layui-btn" lay-filter="formDemo" type="submit">Add</button>
                     </div>
                 </div>
             </form>
             <blockquote class="layui-elem-quote layui-quote-nm">
-                温馨提示：
+                Note：
                 <ul>
-                    <li>URL：如 http://liuyanzhao.com</li>
-                    <li>Order：默认是0，Order越大排名越靠前</li>
+                    <li>URL:  http://www.baidu.com</li>
+                   <li>Order： defaut is 0， bigger order has the higher rankings</li>
                 </ul>
             </blockquote>
         </div>
@@ -97,11 +97,11 @@
                 </colgroup>
                 <thead>
                 <tr>
-                    <th>id</th>
-                    <th>名称</th>
+                    <th>ID</th>
+                    <th>Name</th>
                     <th>URL</th>
                     <th>Order</th>
-                    <th>操作</th>
+                    <th>Operation</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -119,8 +119,8 @@
                             ${l.linkOrder}
                         </td>
                         <td>
-                            <a href="/admin/link/edit/${l.linkId}" class="layui-btn layui-btn-mini">编辑</a>
-                            <a href="/admin/link/delete/${l.linkId}" class="layui-btn layui-btn-danger layui-btn-mini" onclick="return confirmDelete()">删除</a>
+                            <a href="/admin/link/edit/${l.linkId}" class="layui-btn layui-btn-mini">Edit</a>
+                            <a href="/admin/link/delete/${l.linkId}" class="layui-btn layui-btn-danger layui-btn-mini" onclick="return confirmDelete()">Delete</a>
 
                         </td>
                     </tr>

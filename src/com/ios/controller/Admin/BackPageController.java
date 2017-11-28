@@ -83,7 +83,7 @@ public class BackPageController {
     @RequestMapping(value = "/editSubmit",method = RequestMethod.POST)
     public String editPageSubmit(Page page) throws Exception {
         PageCustom checkPage = pageService.getPageByKey(null,page.getPageKey());
-        //判断别名是否存在且不是这篇文章
+        //判断别名是否存在且不是这篇Article
         if(checkPage.getPageId()==page.getPageId()) {
             page.setPageUpdateTime(new Date());
             pageService.updatePage(page);

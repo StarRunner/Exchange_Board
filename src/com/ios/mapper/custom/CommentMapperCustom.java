@@ -12,7 +12,7 @@ import java.util.List;
  */
 public interface CommentMapperCustom {
 
-	//根据文章id获取评论列表
+	//根据Articleid获取评论列表
 	public List<CommentCustom> listCommentByArticleId(@Param(value="status")  Integer status,@Param(value="id") Integer id);
 	
 	//获得评论列表分页

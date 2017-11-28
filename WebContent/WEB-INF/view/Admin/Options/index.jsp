@@ -6,7 +6,7 @@
 <%@ taglib prefix="rapid" uri="http://www.rapid-framework.org.cn/rapid" %>
 
     <rapid:override name="title">
-        - 基本信息列表
+        -Basic Information
     </rapid:override>
 <rapid:override name="header-style">
     <style>
@@ -16,16 +16,16 @@
 <rapid:override name="content">
     <blockquote class="layui-elem-quote">
         <span class="layui-breadcrumb" lay-separator="/">
-          <a href="/admin">首页</a>
-          <a><cite>基本信息</cite></a>
+          <a href="/admin">Home</a>
+          <a><cite>Basic Information</cite></a>
         </span>
     </blockquote>
     <form class="layui-form" action="/admin/options/editSubmit" method="post">
 
     <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
         <ul class="layui-tab-title">
-            <li class="layui-this">基本信息</li>
-            <li>小工具</li>
+            <li class="layui-this">Basic Information</li>
+            <li>Tool</li>
         </ul>
         <div class="layui-tab-content">
             <br><br>
@@ -41,25 +41,25 @@
 
             <div class="layui-tab-item layui-show">
                 <div class="layui-form-item">
-                    <label class="layui-form-label">站点名称</label>
+                    <label class="layui-form-label">Website Description</label>
                     <div class="layui-input-inline">
                         <input type="text" name="optionSiteTitle"  value="${optionCustom.optionSiteTitle}"   autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-form-item">
-                    <label class="layui-form-label">站点描述</label>
+                    <label class="layui-form-label">Website Description</label>
                     <div class="layui-input-block">
                         <input type="text" name="optionSiteDescrption"   value="${optionCustom.optionSiteDescrption}"   autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-form-item">
-                    <label class="layui-form-label">首页描述</label>
+                    <label class="layui-form-label">Home Description</label>
                     <div class="layui-input-block">
                         <input type="text" name="optionMetaDescrption"  value="${optionCustom.optionMetaDescrption}"   autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-form-item">
-                    <label class="layui-form-label">首页关键词</label>
+                    <label class="layui-form-label">Home Key Word</label>
                     <div class="layui-input-block">
                         <input type="text" name="optionMetaKeyword"  value="${optionCustom.optionMetaKeyword}"   autocomplete="off" class="layui-input">
                     </div>
@@ -67,7 +67,7 @@
             </div>
             <div class="layui-tab-item">
                 <div class="layui-form-item">
-                    <label class="layui-form-label">头像</label>
+                    <label class="layui-form-label">Favicon</label>
                     <div class="layui-input-inline">
                         <div class="layui-upload">
                             <div class="layui-upload-list" style="">
@@ -75,59 +75,26 @@
                                      height="100">
                                 <p id="demoText"></p>
                             </div>
-                            <button type="button" class="layui-btn" id="test1">上传图片</button>
+                            <button type="button" class="layui-btn" id="test1">Upload Picture</button>
                             <input type="hidden" id="optionAboutsiteAvatar" name="optionAboutsiteAvatar" value="${optionCustom.optionAboutsiteAvatar}">
                         </div>
                     </div>
-                    <div class="layui-form-mid layui-word-aux">建议 150px*150px</div>
+                    <div class="layui-form-mid layui-word-aux">Advice 150px*150px</div>
 
                 </div>
                 <div class="layui-form-item">
-                    <label class="layui-form-label">昵称</label>
+                    <label class="layui-form-label">Nick</label>
                     <div class="layui-input-inline">
                         <input type="text" name="optionAboutsiteTitle"   value="${optionCustom.optionAboutsiteTitle}"   autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-form-item">
-                    <label class="layui-form-label">说明</label>
+                    <label class="layui-form-label">Introduce</label>
                     <div class="layui-input-block">
                         <input type="text" name="optionAboutsiteContent"   value="${optionCustom.optionAboutsiteContent}"   autocomplete="off" class="layui-input">
                     </div>
                 </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">微信二维码</label>
-                    <div class="layui-input-inline">
-                        <div class="layui-upload">
-                            <div class="layui-upload-list" style="">
-                                <img class="layui-upload-img" src="${optionCustom.optionAboutsiteWechat}" id="demo2" width="100"
-                                     height="100">
-                                <p id="demoText2"></p>
-                            </div>
-                            <button type="button" class="layui-btn" id="test2">上传图片</button>
-                            <input type="hidden" id="optionAboutsiteWechat" name="optionAboutsiteWechat" value="${optionCustom.optionAboutsiteWechat}">
-                        </div>
-                    </div>
-                    <div class="layui-form-mid layui-word-aux">建议 430px*430px</div>
-
-                </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">QQ</label>
-                    <div class="layui-input-inline">
-                        <input type="text" name="optionAboutsiteQq"   value="${optionCustom.optionAboutsiteQq}"   autocomplete="off" class="layui-input">
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">微博</label>
-                    <div class="layui-input-inline">
-                        <input type="text" name="optionAboutsiteWeibo"  value="${optionCustom.optionAboutsiteWeibo}"    autocomplete="off" class="layui-input">
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">Github</label>
-                    <div class="layui-input-inline">
-                        <input type="text" name="optionAboutsiteGithub"  value="${optionCustom.optionAboutsiteGithub}"   autocomplete="off" class="layui-input">
-                    </div>
-                </div>
+             
             </div>
         </div>
 
@@ -135,7 +102,7 @@
 
         <div class="layui-form-item">
             <div class="layui-input-block">
-                <button class="layui-btn" lay-submit lay-filter="formDemo">保存设置</button>
+                <button class="layui-btn" lay-submit lay-filter="formDemo">Save</button>
             </div>
         </div>
     </form>
@@ -161,14 +128,14 @@
                 done: function (res) {
                     $("#optionAboutsiteAvatar").attr("value", res.data.src);
                     if (res.code > 0) {
-                        return layer.msg('上传失败');
+                        return layer.msg('Upload Failed');
                     }
                 },
                 error: function () {
                     var demoText = $('#demoText');
                     demoText.html('' +
                         '<span style="color: #FF5722;">上传失败</span>' +
-                        ' <a class="layui-btn layui-btn-mini demo-reload">重试</a>');
+                        ' <a class="layui-btn layui-btn-mini demo-reload">Retry</a>');
                     demoText.find('.demo-reload').on('click', function () {
                         uploadInst.upload();
                     });
@@ -191,14 +158,14 @@
                 done: function (res) {
                     $("#optionAboutsiteWechat").attr("value", res.data.src);
                     if (res.code > 0) {
-                        return layer.msg('上传失败');
+                        return layer.msg('Upload Failed');
                     }
                 },
                 error: function () {
                     var demoText = $('#demoText2');
                     demoText.html('' +
-                        '<span style="color: #FF5722;">上传失败</span>' +
-                        ' <a class="layui-btn layui-btn-mini demo-reload">重试</a>');
+                        '<span style="color: #FF5722;">Upload Failed</span>' +
+                        ' <a class="layui-btn layui-btn-mini demo-reload">Retry</a>');
                     demoText.find('.demo-reload').on('click', function () {
                         uploadInst.upload();
                     });

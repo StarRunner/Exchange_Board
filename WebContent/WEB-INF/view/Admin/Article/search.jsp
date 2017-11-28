@@ -8,7 +8,7 @@
 
 <title>
     <rapid:block name="title">
-        - 搜索文章
+        - SearchArticle
     </rapid:block>
 </title>
 <rapid:override name="header-style">
@@ -27,10 +27,10 @@
 <rapid:override name="content">
     <blockquote class="layui-elem-quote">
          <span class="layui-breadcrumb" lay-separator="/">
-              <a href="/admin">首页</a>
-              <a href="/admin/article">文章列表</a>
+              <a href="/admin">Home</a>
+              <a href="/admin/article">Article List</a>
               <a><cite>
-                  搜索 ${articleSearchVoList[0].query} 找到 ${articleSearchVoList[0].page.totalCount} 条数据
+                  Search ${articleSearchVoList[0].query} 找到 ${articleSearchVoList[0].page.totalCount} 条数据
                 </cite>
               </a>
         </span>
@@ -40,7 +40,7 @@
         <div class="layui-form-item">
             <div class="layui-input-block">
                 <input type="text" name="query" placeholder="请输入关键词" autocomplete="off" class="layui-input" >
-                <button class="layui-btn" lay-filter="formDemo" onclick="queryArticle()">搜索</button>
+                <button class="layui-btn" lay-filter="formDemo" onclick="queryArticle()">Search</button>
                 <button class="layui-btn" lay-filter="formDemo" style="float: right;" onclick="confirmDeleteArticleBatch()">批量删除</button>
             </div>
         </div>

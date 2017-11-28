@@ -76,7 +76,7 @@ public class BackCommentController {
         //添加评论
         comment.setCommentCreateTime(new Date());
         commentService.insertComment(request,comment);
-        //更新文章的评论数
+        //更新Article的评论数
         Article article = articleService.getArticleById(null,comment.getCommentArticleId());
         articleService.updateCommentCount(article.getArticleId());
     }
@@ -92,7 +92,7 @@ public class BackCommentController {
         for(int i=0;i<childCommentList.size();i++) {
             commentService.deleteComment(childCommentList.get(i).getCommentId());
         }
-        //更新文章的评论数
+        //更新Article的评论数
         Article article = articleService.getArticleById(null,comment.getCommentArticleId());
         articleService.updateCommentCount(article.getArticleId());
     }
@@ -153,7 +153,7 @@ public class BackCommentController {
             commentService.updateComment(childComment);
         }
 
-        //更新文章的评论数
+        //更新Article的评论数
         Article article = articleService.getArticleById(null,comment.getCommentArticleId());
         articleService.updateCommentCount(article.getArticleId());
     }
@@ -171,7 +171,7 @@ public class BackCommentController {
             childComment.setCommentStatus(0);
             commentService.updateComment(childComment);
         }
-        //更新文章的评论数
+        //更新Article的评论数
         Article article = articleService.getArticleById(null,comment.getCommentArticleId());
         articleService.updateCommentCount(article.getArticleId());
     }
@@ -191,7 +191,7 @@ public class BackCommentController {
     //回复评论提交
     @RequestMapping(value = "/replySubmit",method = RequestMethod.POST)
     public String replyCommentSubmit(HttpServletRequest request,Comment comment) throws Exception {
-        //文章评论数+1
+        //Article评论数+1
         Article article = articleService.getArticleById(null,comment.getCommentArticleId());
         article.setArticleCommentCount(article.getArticleCommentCount()+1);
         articleService.updateArticle(article.getArticleId(),article);

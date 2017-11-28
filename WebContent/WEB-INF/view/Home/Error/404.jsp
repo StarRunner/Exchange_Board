@@ -37,18 +37,18 @@
                 </header>
                 <div id="content_404">
                     <h2>您打开的这个的页面不存在！</h2>
-                    <p>当您看到这个页面,表示您的访问出错,这个错误是您打开的页面不存在,请确认您输入的地址是正确的,如果是在本站点击后出现这个页面,请联系站长进行处理,或者请通过下边的搜索重新查找资源。</p>
+                    <p>当您看到这个页面,表示您的访问出错,这个错误是您打开的页面不存在,请确认您输入的地址是正确的,如果是在本站点击后出现这个页面,请联系站长进行处理,或者请通过下边的Search重新查找资源。</p>
                     <div class="utilities">
                         <center>
                         <form name="formsearch" action="/search" id="formkeyword">
                             <div class="input-container">
-                                <input type="text" class="left" name="query" size="24" value="在这里搜索..." onfocus="if(this.value=='在这里搜索...'){this.value='';}" onblur="if(this.value==''){this.value='在这里搜索...';}" id="inputString" onkeyup="lookup(this.value);" onblur="fill();" placeholder="搜索..." />
+                                <input type="text" class="left" name="query" size="24" value="在这里Search..." onfocus="if(this.value=='在这里Search...'){this.value='';}" onblur="if(this.value==''){this.value='在这里Search...';}" id="inputString" onkeyup="lookup(this.value);" onblur="fill();" placeholder="Search..." />
                                 <button id="search"></button>
                             </div>
                         </form>
                         <div id="btn">
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <a class="button" href="/">返回首页</a>
+                            <a class="button" href="/">返回Home</a>
                             <a class="button" href="http://wpa.qq.com/msgrd?v=3&uin=847064370&site=qq&menu=yes">联系站长</a>
                             <div class="clear"></div>
                         </div>

@@ -26,9 +26,9 @@
 
     <blockquote class="layui-elem-quote">
          <span class="layui-breadcrumb" lay-separator="/">
-              <a href="/admin">首页</a>
-              <a href="/admin/user">用户列表</a>
-              <a><cite>编辑用户</cite></a>
+              <a href="/admin">Home</a>
+              <a href="/admin/user">User List</a>
+              <a><cite>Edit User</cite></a>
         </span>
     </blockquote>
     <br><br>
@@ -36,7 +36,7 @@
           method="post">
         <input type="hidden" name="userId" id="userId" value="${userCustom.userId}">
         <div class="layui-form-item">
-            <label class="layui-form-label">头像</label>
+            <label class="layui-form-label">Favicon</label>
             <div class="layui-input-inline">
                 <div class="layui-upload">
                     <div class="layui-upload-list" style="">
@@ -44,13 +44,13 @@
                              height="100">
                         <p id="demoText"></p>
                     </div>
-                    <button type="button" class="layui-btn" id="test1">上传图片</button>
+                    <button type="button" class="layui-btn" id="test1">Upload Picture</button>
                     <input type="hidden" name="userAvatar" id="userAvatar" value="${userCustom.userAvatar}">
                 </div>
             </div>
         </div>
         <div class="layui-form-item">
-            <label class="layui-form-label">用户名 <span style="color: #FF5722; ">*</span></label>
+            <label class="layui-form-label">User Name <span style="color: #FF5722; ">*</span></label>
             <div class="layui-input-inline">
                 <input type="text" value="${userCustom.userName}" name="userName" id="userName" required
                        lay-verify="userName"
@@ -59,7 +59,7 @@
             <div class="layui-form-mid layui-word-aux" id="userNameTips"></div>
         </div>
         <div class="layui-form-item">
-            <label class="layui-form-label">密码 <span style="color: #FF5722; ">*</span></label>
+            <label class="layui-form-label">Password <span style="color: #FF5722; ">*</span></label>
             <div class="layui-input-inline">
                 <input type="password" name="userPass" value="${userCustom.userPass}" id="userPass" required
                        autocomplete="off" class="layui-input" min="3" max="20">
@@ -67,7 +67,7 @@
             <div class="layui-form-mid layui-word-aux"></div>
         </div>
         <div class="layui-form-item">
-            <label class="layui-form-label">昵称 <span style="color: #FF5722; ">*</span></label>
+            <label class="layui-form-label">Nick <span style="color: #FF5722; ">*</span></label>
             <div class="layui-input-inline">
                 <input type="text" name="userNickname" value="${userCustom.userNickname}" required
                        placeholder="" autocomplete="off" min="2" max="10"
@@ -92,16 +92,16 @@
             </div>
         </div>
         <div class="layui-form-item">
-            <label class="layui-form-label">状态</label>
+            <label class="layui-form-label">Status</label>
             <div class="layui-input-block">
-                <input type="radio" name="userStatus" value="1" title="正常" <c:if test="${userCustom.userStatus==1}">checked</c:if>>
-                <input type="radio" name="userStatus" value="0" title="禁用" <c:if test="${userCustom.userStatus==0}">checked</c:if>>
+                <input type="radio" name="userStatus" value="1" title="display" <c:if test="${userCustom.userStatus==1}">checked</c:if>>
+                <input type="radio" name="userStatus" value="0" title="hidden" <c:if test="${userCustom.userStatus==0}">checked</c:if>>
             </div>
         </div>
         <div class="layui-form-item">
             <div class="layui-input-block">
-                <button class="layui-btn" lay-submit lay-filter="demo1" id="submit-btn">保存</button>
-                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                <button class="layui-btn" lay-submit lay-filter="demo1" id="submit-btn">Save</button>
+                <button type="reset" class="layui-btn layui-btn-primary">Reset</button>
             </div>
         </div>
     </form>
@@ -126,14 +126,14 @@
                 done: function (res) {
                     $("#userAvatar").attr("value", res.data.src);
                     if (res.code > 0) {
-                        return layer.msg('上传失败');
+                        return layer.msg('Upload Failed');
                     }
                 },
                 error: function () {
                     var demoText = $('#demoText');
                     demoText.html('' +
-                        '<span style="color: #FF5722;">上传失败</span>' +
-                        ' <a class="layui-btn layui-btn-mini demo-reload">重试</a>');
+                        '<span style="color: #FF5722;">Upload Failed</span>' +
+                        ' <a class="layui-btn layui-btn-mini demo-reload">Retry</a>');
                     demoText.find('.demo-reload').on('click', function () {
                         uploadInst.upload();
                     });

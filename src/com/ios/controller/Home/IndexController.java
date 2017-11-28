@@ -38,11 +38,11 @@ public class IndexController {
 		model.addAttribute("noticeCustomList",noticeCustomList);
 	}
 	
-	//首页显示
+	//Home显示
 	@RequestMapping("/")
 	public ModelAndView IndexView() throws Exception {
 		ModelAndView modelAndView = new ModelAndView();
-		//文章列表
+		//Article列表
 		int pageSize = 9;
 		List<ArticleListVo> articleListVoList = articleService.listArticleByPage(1,null,pageSize);
 		modelAndView.addObject("articleListVoList",articleListVoList);
@@ -51,7 +51,7 @@ public class IndexController {
 		return modelAndView;
 	}
 	
-	//文章分页显示
+	//Article分页显示
 	@RequestMapping("p/{pageNow}")
 	//适合RESTful
 	public @ResponseBody  ModelAndView ArticleListByPageView(@PathVariable("pageNow") Integer pageNow) throws Exception{

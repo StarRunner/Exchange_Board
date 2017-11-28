@@ -7,15 +7,15 @@
 <%@ taglib prefix="rapid" uri="http://www.rapid-framework.org.cn/rapid" %>
 <%--保留此处 end--%>
     <rapid:override name="title">
-        - 新建文章
+        - New Article
     </rapid:override>
 
 <rapid:override name="content">
     <blockquote class="layui-elem-quote">
          <span class="layui-breadcrumb" lay-separator="/">
-              <a href="/admin">首页</a>
-              <a href="/admin/article">文章列表</a>
-              <a><cite>添加文章</cite></a>
+              <a href="/admin">Home</a>
+              <a href="/admin/article">Article List</a>
+              <a><cite>Post New Article</cite></a>
         </span>
     </blockquote>
 
@@ -24,9 +24,9 @@
     <form class="layui-form" enctype="multipart/form-data" method="post" id="myForm" action="/admin/article/insertSubmit">
 
         <div class="layui-form-item">
-            <label class="layui-form-label">标题 <span style="color: #FF5722; ">*</span></label>
+            <label class="layui-form-label">Title <span style="color: #FF5722; ">*</span></label>
             <div class="layui-input-block">
-                <input type="text" name="articleTitle" lay-verify="title" id="title" autocomplete="off" placeholder="请输入标题" class="layui-input">
+                <input type="text" name="articleTitle" lay-verify="title" id="title" autocomplete="off" placeholder="Please Input Title" class="layui-input">
             </div>
         </div>
         
@@ -40,14 +40,14 @@
 
 		<!-- Frank add - upload mini picture for article -->
 		<div class="layui-form-item">
-            <label class="layui-form-label">Vedio Picture<span style="color: #FF5722; ">*</span></label>
+            <label class="layui-form-label">Featured Image<span style="color: #FF5722; ">*</span></label>
             <div class="layui-input-block">
                 <input type="file" name="file">
             </div>
         </div>
 
         <div class="layui-form-item layui-form-text">
-            <label class="layui-form-label">内容 <span style="color: #FF5722; ">*</span></label>
+            <label class="layui-form-label">Content <span style="color: #FF5722; ">*</span></label>
             <div class="layui-input-block">
                 <textarea class="layui-textarea layui-hide" name="articleContent" lay-verify="content" id="content"></textarea>
             </div>
@@ -55,10 +55,10 @@
         </div>
 
         <div class="layui-form-item">
-            <label class="layui-form-label">分类 <span style="color: #FF5722; ">*</span> </label>
+            <label class="layui-form-label">Category <span style="color: #FF5722; ">*</span> </label>
             <div class="layui-input-inline">
                 <select name="articleParentCategoryId" id="articleParentCategoryId" lay-filter="articleParentCategoryId" required>
-                    <option value="" selected="">一级分类</option>
+                    <option value="" selected="">Primary Classification</option>
                     <c:forEach items="${categoryCustomList}" var="c">
                         <c:if test="${c.categoryPid==0}">
                             <option value="${c.categoryId}">${c.categoryName}</option>
@@ -68,13 +68,13 @@
             </div>
             <div class="layui-input-inline">
                 <select name="articleChildCategoryId" id="articleChildCategoryId">
-                    <option value="" selected>二级分类</option>
+                    <option value="" selected>Reclassify</option>
                 </select>
             </div>
         </div>
 
         <div class="layui-form-item" pane="">
-            <label class="layui-form-label">标签</label>
+            <label class="layui-form-label">Topics</label>
             <div class="layui-input-block">
                 <c:forEach items="${tagCustomList}" var="t">
                     <input type="checkbox" name="articleTagIds" lay-skin="primary" title="${t.tagName}" value="${t.tagId}" onchange="chk()">
@@ -82,23 +82,22 @@
             </div>
         </div>
         <div class="layui-form-item">
-            <label class="layui-form-label">状态</label>
+            <label class="layui-form-label">Status</label>
             <div class="layui-input-block">
-                <input type="radio" name="articleStatus" value="1" title="发布" checked>
-                <input type="radio" name="articleStatus" value="0" title="草稿" >
+                <input type="radio" name="articleStatus" value="1" title="Submit" checked>
+                <input type="radio" name="articleStatus" value="0" title="Draft" >
             </div>
         </div>
         <div class="layui-form-item">
             <div class="layui-input-block">
-                <button class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>
-                <button type="reset" class="layui-btn layui-btn-primary" onclick="getCateIds()">重置</button>
+                <button class="layui-btn" lay-submit="" lay-filter="demo1">Submit</button>
+                <button type="reset" class="layui-btn layui-btn-primary" onclick="getCateIds()">Reset</button>
             </div>
         </div>
         <blockquote class="layui-elem-quote layui-quote-nm">
-            温馨提示：<br>
-            1、文章内容的数据表字段类型为MEDIUMTEXT,每篇文章内容请不要超过500万字 <br>
-            2、写文章之前，请确保标签和分类存在，否则可以先新建；请勿刷新页面，博客不会自动保存 <br>
-            3、插入代码前，可以点击 <a href="http://liuyanzhao.com/code-highlight.html" target="_blank">代码高亮</a>,将代码转成HTML格式
+            Note ：<br>
+            Before you add the new article. please ensure the topics and the categories are exist. Please not refresh the page, if you refresh the page, the input content will be disapeared.       
+
 
         </blockquote>
 

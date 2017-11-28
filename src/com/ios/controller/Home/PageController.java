@@ -54,7 +54,7 @@ public class PageController {
 	}
 
 
-	//文章归档页面显示
+	//Article归档页面显示
 	@RequestMapping(value = "/articleFile")
 	public ModelAndView articleFile() throws Exception {
 		ModelAndView modelAndView = new ModelAndView();
@@ -69,7 +69,7 @@ public class PageController {
 	public ModelAndView siteMap() throws Exception {
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.setViewName("Home/Page/siteMap");
-		//文章显示
+		//Article显示
 		List<ArticleListVo> articleList = articleService.listArticle(1);
 		modelAndView.addObject("articleList",articleList);
         //分类显示

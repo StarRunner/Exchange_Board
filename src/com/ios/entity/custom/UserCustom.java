@@ -7,7 +7,7 @@ import com.ios.entity.User;
  * Created by 言曌 on 2017/8/24.
  */
 public class UserCustom extends User {
-    //用户的文章数
+    //用户的Article数
     private Integer articleCount;
 
     public Integer getArticleCount() {

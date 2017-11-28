@@ -34,9 +34,9 @@
 
     <blockquote class="layui-elem-quote">
         <span class="layui-breadcrumb" lay-separator="/">
-          <a href="/admin">首页</a>
-          <a href="/admin/menu">菜单内容列表</a>
-          <a><cite>编辑菜单内容</cite></a>
+          <a href="/admin">Home</a>
+          <a href="/admin/menu">Menu List</a>
+          <a><cite>Edit Menu</cite></a>
         </span>
     </blockquote>
 
@@ -45,11 +45,11 @@
             <form class="layui-form"  method="post" id="myForm" action="/admin/menu/editSubmit">
                 <div class="layui-form-item">
                     <div class="layui-input-block">
-                        <strong>修改菜单项目</strong>
+                        <strong>Modify Menu</strong>
                     </div>
                     <input type="hidden" name="menuId" value="${menuCustom.menuId}">
                     <div class="layui-input-block">
-                        名称
+                        Name
                         <span style="color: #FF5722; ">*</span>
                         <input type="text" name="menuName" value="${menuCustom.menuName}" autocomplete="off" class="layui-input" required>
                     </div>
@@ -61,15 +61,15 @@
                     </div>
                     <br>
                     <div class="layui-input-block">
-                        图标
+                        Icon Style
                         <input type="text" name="menuIcon" value="${menuCustom.menuIcon}" layui-input="" class="layui-input"  >
                     </div>
                     <br>
                     <div class="layui-input-block">
-                        菜单位置
+                      Memu Location
                         <select name="menuLevel" id="">
-                            <option value="1" <c:if test="${menuCustom.menuLevel==1}">selected</c:if>>顶部菜单</option>
-                            <option value="2" <c:if test="${menuCustom.menuLevel==2}">selected</c:if> >主要菜单</option>
+                            <option value="1" <c:if test="${menuCustom.menuLevel==1}">selected</c:if>>Top Menu</option>
+                            <option value="2" <c:if test="${menuCustom.menuLevel==2}">selected</c:if> >Main Menu</option>
                         </select>
                     </div>
                     <br>
@@ -80,22 +80,20 @@
                     <br>
 
                     <div class="layui-input-block">
-                        状态 <br>
-                        <input type="radio" name="menuStatus" value="1" title="显示" <c:if test="${menuCustom.menuStatus==1}">checked</c:if>>
-                        <input type="radio" name="menuStatus" value="0" title="隐藏" <c:if test="${menuCustom.menuStatus==0}">checked</c:if>>
+                        Status <br>
+                        <input type="radio" name="menuStatus" value="1" title="display" <c:if test="${menuCustom.menuStatus==1}">checked</c:if>>
+                        <input type="radio" name="menuStatus" value="0" title="hidden" <c:if test="${menuCustom.menuStatus==0}">checked</c:if>>
                     </div>
                     <br>
                     <div class="layui-input-block">
-                        <button class="layui-btn" lay-filter="formDemo" type="submit">保存</button>
+                        <button class="layui-btn" lay-filter="formDemo" type="submit">Save</button>
                     </div>
                 </div>
             </form>
             <blockquote class="layui-elem-quote layui-quote-nm">
-                温馨提示：
+               Note：
                 <ul>
-                    <li>1、Order范围为0-10,默认为1</li>
-                    <li>2、图标为名称前面的字体图标，可选。采用的是 <a href="http://fontawesome.io/icons/" target="_blank">fontawesome</a>图标</li>
-                    <li>3、目前只有两种菜单：顶部菜单和主要菜单</li>
+                    <li>1、Order number is from 0-10, defaut is 1</li>
                 </ul>
             </blockquote>
         </div>
@@ -103,8 +101,8 @@
 
             <div class="layui-tab layui-tab-card">
                 <ul class="layui-tab-title">
-                    <li class="layui-this">顶部菜单</li>
-                    <li>主要菜单</li>
+                    <li class="layui-this">Top Menu</li>
+                    <li>Main Menu</li>
                 </ul>
                 <div class="layui-tab-content" style="height: auto;">
                     <div class="layui-tab-item layui-show">
@@ -119,11 +117,11 @@
                             </colgroup>
                             <thead>
                             <tr>
-                                <th>名称</th>
+                                <th>Name</th>
                                 <th>URL</th>
                                 <th>Order</th>
-                                <th>状态</th>
-                                <th>操作</th>
+                                <th>Status</th>
+                                <th>Operation</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -141,16 +139,16 @@
                                         <td>
                                             <c:choose>
                                                 <c:when test="${m.menuStatus==0}">
-                                                    <span style="color:#FF5722;">隐藏</span>
+                                                    <span style="color:#FF5722;">Hidden</span>
                                                 </c:when>
                                                 <c:otherwise>
-                                                    显示
+                                                    Display
                                                 </c:otherwise>
                                             </c:choose>
                                         </td>
                                         <td>
-                                            <a href="/admin/menu/edit/${m.menuId}" class="layui-btn layui-btn-mini">编辑</a>
-                                            <a href="/admin/menu/delete/${m.menuId}" class="layui-btn layui-btn-danger layui-btn-mini" onclick="return confirmDelete()">删除</a>
+                                            <a href="/admin/menu/edit/${m.menuId}" class="layui-btn layui-btn-mini">Edit</a>
+                                            <a href="/admin/menu/delete/${m.menuId}" class="layui-btn layui-btn-danger layui-btn-mini" onclick="return confirmDelete()">Delete</a>
                                         </td>
                                     </tr>
                                 </c:if>
@@ -169,11 +167,11 @@
                             </colgroup>
                             <thead>
                             <tr>
-                                <th>名称</th>
+                                <th>Name</th>
                                 <th>URL</th>
                                 <th>Order</th>
-                                <th>状态</th>
-                                <th>操作</th>
+                                <th>Status</th>
+                                <th>Operation</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -191,16 +189,16 @@
                                         <td>
                                             <c:choose>
                                                 <c:when test="${m.menuStatus==0}">
-                                                    <span style="color:#FF5722;">隐藏</span>
+                                                    <span style="color:#FF5722;">Hidden</span>
                                                 </c:when>
                                                 <c:otherwise>
-                                                    显示
+                                                    Display
                                                 </c:otherwise>
                                             </c:choose>
                                         </td>
                                         <td>
-                                            <a href="/admin/menu/edit/${m.menuId}" class="layui-btn layui-btn-mini">编辑</a>
-                                            <a href="/admin/menu/delete/${m.menuId}" class="layui-btn layui-btn-danger layui-btn-mini" onclick="return confirmDelete()">删除</a>
+                                            <a href="/admin/menu/edit/${m.menuId}" class="layui-btn layui-btn-mini">Edit</a>
+                                            <a href="/admin/menu/delete/${m.menuId}" class="layui-btn layui-btn-danger layui-btn-mini" onclick="return confirmDelete()">Delete</a>
                                         </td>
                                     </tr>
                                 </c:if>

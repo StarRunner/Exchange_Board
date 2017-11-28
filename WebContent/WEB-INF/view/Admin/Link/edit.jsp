@@ -33,9 +33,9 @@
 
     <blockquote class="layui-elem-quote">
         <span class="layui-breadcrumb" lay-separator="/">
-              <a href="/admin">首页</a>
-              <a href="/admin/link">链接列表</a>
-              <a><cite>编辑链接</cite></a>
+              <a href="/admin">Home</a>
+              <a href="/admin/link">Link List</a>
+              <a><cite>Edit Link</cite></a>
         </span>
     </blockquote>
     <div class="layui-row">
@@ -43,11 +43,11 @@
             <form class="layui-form" method="post" id="myForm" action="/admin/link/editSubmit">
                 <div class="layui-form-item">
                     <div class="layui-input-block">
-                        <strong>编辑标签</strong>
+                        <strong>Edit Tag</strong>
                     </div>
                     <input type="hidden" name="linkId" value="${linkCustom.linkId}">
                     <div class="layui-input-block">
-                        名称 <span style="color: #FF5722; ">*</span>
+                        Name <span style="color: #FF5722; ">*</span>
                         <input type="text" name="linkName" value="${linkCustom.linkName}" autocomplete="off" class="layui-input" required>
                     </div>
                     <br>
@@ -57,12 +57,12 @@
                     </div>
                     <br>
                     <div class="layui-input-block">
-                        联系方式
+                        Contact
                         <input type="text" name="linkOwnerContact" value="${linkCustom.linkOwnerContact}" autocomplete="off" class="layui-input" >
                     </div>
                     <br>
                     <div class="layui-input-block">
-                        描述
+                        Description
                         <input type="text" name="linkDescription" value="${linkCustom.linkDescription}" autocomplete="off" class="layui-input" >
                     </div>
 
@@ -73,21 +73,21 @@
                     </div>
                     <br>
                     <div class="layui-input-block">
-                        状态 <br>
-                        <input type="radio" name="linkStatus" value="1" title="显示" <c:if test="${linkCustom.linkStatus==1}">checked</c:if>>
-                        <input type="radio" name="linkStatus" value="0" title="隐藏" <c:if test="${linkCustom.linkStatus==0}">checked</c:if>>
+                        Status <br>
+                        <input type="radio" name="linkStatus" value="1" title="Display" <c:if test="${linkCustom.linkStatus==1}">checked</c:if>>
+                        <input type="radio" name="linkStatus" value="0" title="Hidden" <c:if test="${linkCustom.linkStatus==0}">checked</c:if>>
                     </div>
                     <br>
                     <div class="layui-input-block">
-                        <button class="layui-btn" lay-filter="formDemo" type="submit">保存</button>
+                        <button class="layui-btn" lay-filter="formDemo" type="submit">Save</button>
                     </div>
                 </div>
             </form>
             <blockquote class="layui-elem-quote layui-quote-nm">
-                温馨提示：
+              Note：
                 <ul>
-                    <li>URL：如 http://liuyanzhao.com</li>
-                    <li>Order：默认是0，Order越大排名越靠前</li>
+                    <li>URL：Like http://www.baidu.com</li>
+                    <li>Order： defaut is 0， bigger order has the higher rankings</li>
                 </ul>
             </blockquote>
         </div>
@@ -102,11 +102,11 @@
                 </colgroup>
                 <thead>
                 <tr>
-                    <th>id</th>
-                    <th>名称</th>
+                    <th>ID</th>
+                    <th>Name</th>
                     <th>URL</th>
                     <th>Order</th>
-                    <th>操作</th>
+                    <th>Operation</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -124,8 +124,8 @@
                             ${l.linkOrder}
                         </td>
                         <td>
-                            <a href="/admin/link/edit/${l.linkId}" class="layui-btn layui-btn-mini">编辑</a>
-                            <a href="/admin/link/delete/${l.linkId}" class="layui-btn layui-btn-danger layui-btn-mini" onclick="return confirmDelete()">删除</a>
+                            <a href="/admin/link/edit/${l.linkId}" class="layui-btn layui-btn-mini">Edit</a>
+                            <a href="/admin/link/delete/${l.linkId}" class="layui-btn layui-btn-danger layui-btn-mini" onclick="return confirmDelete()">Edit</a>
 
                         </td>
                     </tr>

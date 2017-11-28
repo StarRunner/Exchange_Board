@@ -31,14 +31,14 @@
         <ul class="layui-nav layui-layout-left">
             <li class="layui-nav-item"><a href="/" target="_blank">ShowCase Board</a></li>
             <li class="layui-nav-item">
-                <a href="javascript:;">新建</a>
+                <a href="javascript:;">New</a>
                 <dl class="layui-nav-child">
-                    <dd><a href="/admin/article/insert">文章</a></dd>
-                    <dd><a href="/admin/page/insert">页面</a></dd>
-                    <dd><a href="/admin/category/insert">分类</a></dd>
-                    <dd><a href="/admin/tag/insert">标签</a></dd>
-                    <dd><a href="/admin/notice/insert">公告</a></dd>
-                    <dd><a href="/admin/link/insert">链接</a></dd>
+                    <dd><a href="/admin/article/insert">Article</a></dd>
+                    <dd><a href="/admin/page/insert">Page</a></dd>
+                    <dd><a href="/admin/category/insert">Category</a></dd>
+                    <dd><a href="/admin/tag/insert">Tag</a></dd>
+                    <dd><a href="/admin/notice/insert">Notice</a></dd>
+                    <dd><a href="/admin/link/insert">Link</a></dd>
                 </dl>
             </li>
         </ul>
@@ -49,11 +49,11 @@
                     ${loginUser.userName}
                 </a>
                 <dl class="layui-nav-child">
-                    <dd><a href="/admin/user/profile/${loginUser.userId}">基本资料</a></dd>
+                    <dd><a href="/admin/user/profile/${loginUser.userId}">Basic Profile</a></dd>
                 </dl>
             </li>
             <li class="layui-nav-item">
-                <a href="/admin/logout">退了</a>
+                <a href="/admin/logout">Logout</a>
             </li>
         </ul>
     </div>
@@ -63,56 +63,56 @@
             <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
             <ul class="layui-nav layui-nav-tree"  lay-filter="test">
                 <li class="layui-nav-item layui-nav-itemed">
-                    <a class="" href="javascript:;">文章</a>
+                    <a class="" href="javascript:;">Article</a>
                     <dl class="layui-nav-child">
-                        <dd><a href="/admin/article">全部文章</a></dd>
-                        <dd><a href="/admin/article/insert">写文章</a></dd>
-                        <dd><a href="/admin/category">全部分类</a></dd>
-                        <dd><a href="/admin/tag">全部标签</a></dd>
+                        <dd><a href="/admin/article"> Article List</a></dd>
+                        <dd><a href="/admin/article/insert">Add Article</a></dd>
+                        <dd><a href="/admin/category">Category List</a></dd>
+                        <dd><a href="/admin/tag">Tag List</a></dd>
                     </dl>
                 </li>
                 <li class="layui-nav-item">
-                    <a href="javascript:;">页面</a>
+                    <a href="javascript:;">Page</a>
                     <dl class="layui-nav-child">
-                        <dd><a href="/admin/page">全部页面</a></dd>
-                        <dd><a href="/admin/page/insert">添加页面</a></dd>
+                        <dd><a href="/admin/page">Page List</a></dd>
+                        <dd><a href="/admin/page/insert">Add Page</a></dd>
                     </dl>
                 </li>
                 <li class="layui-nav-item">
                     <a class="" href="javascript:;">
-                        链接
+                        Link
                     </a>
                     <dl class="layui-nav-child">
-                        <dd><a href="/admin/link">全部链接</a></dd>
-                        <dd><a href="/admin/link/insert">添加链接</a></dd>
+                        <dd><a href="/admin/link">Link List</a></dd>
+                        <dd><a href="/admin/link/insert">Add link</a></dd>
                     </dl>
                 </li>
                 <li class="layui-nav-item">
-                    <a href="javascript:;">公告</a>
+                    <a href="javascript:;">Notice</a>
                     <dl class="layui-nav-child">
-                        <dd><a href="/admin/notice">全部公告</a></dd>
-                        <dd><a href="/admin/notice/insert">添加公告</a></dd>
+                        <dd><a href="/admin/notice">Notice List</a></dd>
+                        <dd><a href="/admin/notice/insert">Add Notice</a></dd>
                     </dl>
                 </li>
                 <li class="layui-nav-item">
                     <a href="/admin/comment">
-                        评论
+                        Comment
                     </a>
                 </li>
                 <li class="layui-nav-item">
                     <a class="" href="javascript:;">
-                        用户
+                        User
                     </a>
                     <dl class="layui-nav-child">
-                        <dd><a href="/admin/user">全部用户</a></dd>
-                        <dd><a href="/admin/user/insert">添加用户</a></dd>
+                        <dd><a href="/admin/user">User List</a></dd>
+                        <dd><a href="/admin/user/insert">Add User</a></dd>
                     </dl>
                 </li>
                 <li class="layui-nav-item">
-                    <a href="javascript:;">设置</a>
+                    <a href="javascript:;">Settings</a>
                     <dl class="layui-nav-child">
-                        <dd><a href="/admin/menu">菜单</a></dd>
-                        <dd><a href="/admin/options">主要选项</a></dd>
+                        <dd><a href="/admin/menu">Menu</a></dd>
+                        <dd><a href="/admin/options">Main Menus</a></dd>
                     </dl>
                 </li>
             </ul>

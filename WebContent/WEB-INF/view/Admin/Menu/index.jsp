@@ -34,8 +34,8 @@
 
     <blockquote class="layui-elem-quote">
         <span class="layui-breadcrumb" lay-separator="/">
-          <a href="/admin">首页</a>
-          <a><cite>菜单内容列表</cite></a>
+          <a href="/admin">Home</a>
+          <a><cite>Menu Content</cite></a>
         </span>
     </blockquote>
 
@@ -44,43 +44,42 @@
             <form class="layui-form"  method="post" id="myForm" action="/admin/menu/insertSubmit">
                 <div class="layui-form-item">
                     <div class="layui-input-block">
-                        <strong>添加菜单项目</strong>
+                        <strong>Add New Menu</strong>
                     </div>
                     <div class="layui-input-block">
-                        名称
+                        Name
                         <span style="color: #FF5722; ">*</span>
-                        <input type="text" name="menuName" placeholder="如：如留言板" autocomplete="off" class="layui-input" required>
+                        <input type="text" name="menuName" placeholder="Like Comment Board" autocomplete="off" class="layui-input" required>
                     </div>
                     <br>
                     <div class="layui-input-block">
                         URL
                         <span style="color: #FF5722; ">*</span>
-                        <input type="text" name="menuUrl" placeholder="如：http://liuyanzhao.com/message.html" autocomplete="off" class="layui-input" >
+                        <input type="text" name="menuUrl" placeholder="" autocomplete="off" class="layui-input" >
                     </div>
                     <br>
                     <div class="layui-input-block">
-                        图标
-                        <input type="text" name="menuIcon" placeholder="如：fa fa-comment" autocomplete="off" class="layui-input" >
+                        Icon Style
+                        <input type="text" name="menuIcon" placeholder="Like：fa fa-comment" autocomplete="off" class="layui-input" >
                     </div>
                     <br>
                     <div class="layui-input-block">
-                        菜单位置
+                      Menu Location
                         <select name="menuLevel" id="">
-                            <option value="1" selected>顶部菜单</option>
-                            <option value="2" >主要菜单</option>
+                            <option value="1" selected>Top Menu</option>
+                            <option value="2" >Main Menu</option>
                         </select>
                     </div>
                     <br>
                     <div class="layui-input-block">
-                        <button class="layui-btn" lay-filter="formDemo" type="submit">添加</button>
+                        <button class="layui-btn" lay-filter="formDemo" type="submit">Add</button>
                     </div>
                 </div>
             </form>
             <blockquote class="layui-elem-quote layui-quote-nm">
-                温馨提示：
+               Note：
                 <ul>
-                    <li>1、图标为名称前面的字体图标，可选。采用的是<a href="http://fontawesome.io/icons/" target="_blank">fontawesome</a>图标</li>
-                    <li>2、目前只有两种菜单：顶部菜单和主要菜单</li>
+                    <li>Icon Style can refer to <a href="http://fontawesome.io/icons/" target="_blank"> fontawesome </a>, advice to add the  first line level category with icon style </li>
                 </ul>
             </blockquote>
         </div>
@@ -88,8 +87,8 @@
 
             <div class="layui-tab layui-tab-card">
                 <ul class="layui-tab-title">
-                    <li class="layui-this">顶部菜单</li>
-                    <li>主要菜单</li>
+                    <li class="layui-this">Top Menu</li>
+                    <li>Main Menu</li>
                 </ul>
                 <div class="layui-tab-content" style="height: auto;">
                     <div class="layui-tab-item layui-show">
@@ -105,11 +104,11 @@
                             </colgroup>
                             <thead>
                             <tr>
-                                <th>名称</th>
+                                <th>Name</th>
                                 <th>URL</th>
                                 <th>Order</th>
-                                <td>状态</td>
-                                <th>操作</th>
+                                <td>Satus</td>
+                                <th>Operation</th>
                                 <th>ID</th>
                             </tr>
                             </thead>
@@ -128,16 +127,16 @@
                                     <td>
                                     <c:choose>
                                         <c:when test="${m.menuStatus==0}">
-                                            <span style="color:#FF5722;">隐藏</span>
+                                            <span style="color:#FF5722;">Hidden</span>
                                         </c:when>
                                         <c:otherwise>
-                                            显示
+                                            Display
                                         </c:otherwise>
                                     </c:choose>
                                     </td>
                                     <td>
-                                        <a href="/admin/menu/edit/${m.menuId}" class="layui-btn layui-btn-mini" title="点击编辑">编辑</a>
-                                        <a href="/admin/menu/delete/${m.menuId}" class="layui-btn layui-btn-danger layui-btn-mini" title="点击删除" onclick="return confirmDelete()">删除</a>
+                                        <a href="/admin/menu/edit/${m.menuId}" class="layui-btn layui-btn-mini" title="点击编辑">Edit</a>
+                                        <a href="/admin/menu/delete/${m.menuId}" class="layui-btn layui-btn-danger layui-btn-mini" title="click to delete" onclick="return confirmDelete()">Delete</a>
                                     </td>
                                     <td >${m.menuId}</td>
                                 </tr>
@@ -146,9 +145,9 @@
                             </tbody>
                         </table>
                         <blockquote class="layui-elem-quote layui-quote-nm">
-                            温馨提示：
+                            Note：
                             <ul>
-                                <li>1、Order的大小为菜单中各项目的顺序</li>
+                                <li>1、Ranking list decided by order number</li>
                             </ul>
                         </blockquote>
                     </div>
@@ -164,11 +163,11 @@
                             </colgroup>
                             <thead>
                             <tr>
-                                <th>名称</th>
+                                <th>Name</th>
                                 <th>URL</th>
                                 <th>Order</th>
-                                <th>状态</th>
-                                <th>操作</th>
+                                <th>Status</th>
+                                <th>Operation</th>
                                 <th>ID</th>
 
                             </tr>
@@ -188,16 +187,16 @@
                                         <td>
                                             <c:choose>
                                                 <c:when test="${m.menuStatus==0}">
-                                                    <span style="color:#FF5722;">隐藏</span>
+                                                    <span style="color:#FF5722;">Hidden</span>
                                                 </c:when>
                                                 <c:otherwise>
-                                                    显示
+                                                    Display
                                                 </c:otherwise>
                                             </c:choose>
                                         </td>
                                         <td>
-                                            <a href="/admin/menu/edit/${m.menuId}" class="layui-btn layui-btn-mini">编辑</a>
-                                            <a href="/admin/menu/delete/${m.menuId}" class="layui-btn layui-btn-danger layui-btn-mini" onclick="return confirmDelete()">删除</a>
+                                            <a href="/admin/menu/edit/${m.menuId}" class="layui-btn layui-btn-mini">Edit</a>
+                                            <a href="/admin/menu/delete/${m.menuId}" class="layui-btn layui-btn-danger layui-btn-mini" onclick="return confirmDelete()">Delete</a>
                                         </td>
                                         <td >${m.menuId}</td>
                                     </tr>
@@ -206,10 +205,9 @@
                             </tbody>
                         </table>
                         <blockquote class="layui-elem-quote layui-quote-nm">
-                            温馨提示：
+                           Note：
                             <ul>
-                                <li>1、Order的大小为菜单中各项目的顺序</li>
-                                <li>2、主要菜单的分类目录是默认显示的</li>
+                                <li>1、Ranking list decided by order number</li>
                             </ul>
                         </blockquote>
                     </div>

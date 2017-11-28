@@ -5,7 +5,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@ taglib prefix="rapid" uri="http://www.rapid-framework.org.cn/rapid" %>
 <rapid:override name="title">
-    - 页面列表
+    - Page List
 </rapid:override>
 <rapid:override name="header-style">
     <style>
@@ -15,12 +15,12 @@
 <rapid:override name="content">
     <blockquote class="layui-elem-quote">
         <span class="layui-breadcrumb" lay-separator="/">
-          <a href="/admin">首页</a>
-          <a><cite>页面列表</cite></a>
+          <a href="/admin">Home</a>
+          <a><cite>Page List</cite></a>
         </span>
     </blockquote>
     <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
-        <legend>页面列表</legend>
+        <legend>Page List</legend>
     </fieldset>
     <form id="pageForm" method="post">
         <table class="layui-table">
@@ -34,12 +34,12 @@
             </colgroup>
             <thead>
             <tr>
-                <th>id</th>
-                <th>key</th>
-                <th>标题</th>
-                <th>内容</th>
-                <th>状态</th>
-                <th>操作</th>
+                <th>ID</th>
+                <th>Key</th>
+                <th>Title</th>
+                <th>Content</th>
+                <th>Status</th>
+                <th>Operation</th>
             </tr>
             </thead>
             <tbody>
@@ -61,20 +61,20 @@
                         <td>
                             <c:choose>
                                 <c:when test="${p.pageStatus==1}">
-                                    显示
+                                    Display
                                 </c:when>
                                 <c:otherwise>
                                     <span style="color: #FF5722;">
-                                        隐藏
+                                        Hidden
                                     </span>
                                 </c:otherwise>
                             </c:choose>
                         </td>
                         <td>
                             <a href="/admin/page/edit/${p.pageId}"
-                               class="layui-btn layui-btn-mini">编辑</a>
+                               class="layui-btn layui-btn-mini">Edit</a>
                             <a href="/admin/page/delete/${p.pageId}"
-                               class="layui-btn layui-btn-danger layui-btn-mini" onclick="return confirmDelete()">删除</a>
+                               class="layui-btn layui-btn-danger layui-btn-mini" onclick="return confirmDelete()">Delete</a>
                         </td>
                     </tr>
                 </c:if>
@@ -83,7 +83,7 @@
         </table>
     </form>
     <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
-        <legend>自定义页面</legend>
+        <legend>Customized Page</legend>
     </fieldset>
     <div class="layui-form">
         <table class="layui-table" style="width: 40%;">
@@ -95,9 +95,9 @@
             </colgroup>
             <thead>
             <tr>
-                <th>别名</th>
-                <th>标题</th>
-                <th>内容</th>
+                <th>Alias</th>
+                <th>Title</th>
+                <th>Content</th>
             </tr>
             </thead>
             <tbody>
@@ -106,7 +106,7 @@
                         <tr>
                             <td>${p.pageKey}</td>
                             <td>${p.pageTitle}</td>
-                            <td><a href="/${p.pageKey}" target="_blank">点击查看</a></td>
+                            <td><a href="/${p.pageKey}" target="_blank">Display</a></td>
                         </tr>
                     </c:if>
                 </c:forEach>
@@ -116,8 +116,8 @@
 
 
     <blockquote class="layui-elem-quote layui-quote-nm">
-        温馨提示： <br>
-        1、自定义的页面，无法删除，别名已写入控制器
+       Note： <br>
+        1、Can not delete customized page，already added to control content
     </blockquote>
 </rapid:override>
 <rapid:override name="footer-script">

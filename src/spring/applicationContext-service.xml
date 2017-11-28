@@ -16,7 +16,7 @@
     <!-- 用户管理的service -->
     <bean id="userService" class="com.ios.service.impl.UserServiceImpl"/>
 
-    <!-- 文章管理的service -->
+    <!-- Article管理的service -->
     <bean id="articleService" class="com.ios.service.impl.ArticleServiceImpl"/>
 
     <!-- 分类管理的service -->

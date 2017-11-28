@@ -76,7 +76,7 @@ public class CommentServiceImpl implements CommentService{
 
 		for(int i=0;i<commentCustomList.size();i++) {
 			CommentListVo commentListVo = new CommentListVo();
-			//获得文章信息
+			//获得Article信息
 			Integer articleId = commentCustomList.get(i).getCommentArticleId();
 			ArticleCustom articleCustom = articleMapperCustom.getArticleById(status,articleId);
 			commentListVo.setArticleCustom(articleCustom);
@@ -106,7 +106,7 @@ public class CommentServiceImpl implements CommentService{
 
 		for(int i=0;i<commentCustomList.size();i++) {
 			CommentListVo commentListVo = new CommentListVo();
-			//获得文章信息
+			//获得Article信息
 			Integer articleId = commentCustomList.get(i).getCommentArticleId();
 			ArticleCustom articleCustom = articleMapperCustom.getArticleById(status,articleId);
 			commentListVo.setArticleCustom(articleCustom);
@@ -157,7 +157,7 @@ public class CommentServiceImpl implements CommentService{
 			CommentCustom commentCustom = commentCustomList.get(i);
 			commentCustom.setCommentAuthorAvatar(avatar);
 			commentListVo.setCommentCustom(commentCustom);
-			//找到评论对应的文章信息
+			//找到评论对应的Article信息
 			ArticleCustom articleCustom = articleMapperCustom.getArticleById(1,commentCustom.getCommentArticleId());
 			commentListVo.setArticleCustom(articleCustom);
 

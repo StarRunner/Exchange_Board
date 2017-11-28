@@ -26,8 +26,8 @@
 
     <blockquote class="layui-elem-quote">
         <span class="layui-breadcrumb" lay-separator="/">
-          <a href="/admin">首页</a>
-          <a><cite>公告列表</cite></a>
+          <a href="/admin">Home</a>
+          <a><cite>Notice LIst</cite></a>
         </span>
     </blockquote>
 
@@ -43,11 +43,11 @@
                 </colgroup>
                 <thead>
                 <tr>
-                    <th>标题</th>
-                    <th>内容</th>
+                    <th>Title</th>
+                    <th>Content</th>
                     <th>Order</th>
-                    <th>状态</th>
-                    <th>操作</th>
+                    <th>Status</th>
+                    <th>Operation</th>
                     <td>ID</td>
                 </tr>
                 </thead>
@@ -67,17 +67,17 @@
                         <td>
                             <c:choose>
                                 <c:when test="${c.noticeStatus==1}">
-                                    显示
+                                    Display
                                 </c:when>
                                 <c:otherwise>
-                                    <span style="color:#FF5722;">隐藏</span>
+                                    <span style="color:#FF5722;">Hidden</span>
                                 </c:otherwise>
                             </c:choose>
 
                         </td>
                         <td>
-                            <a href="/admin/notice/edit/${c.noticeId}" class="layui-btn layui-btn-mini">编辑</a>
-                            <a href="/admin/notice/delete/${c.noticeId}" class="layui-btn layui-btn-danger layui-btn-mini" onclick="return confirmDelete()">删除</a>
+                            <a href="/admin/notice/edit/${c.noticeId}" class="layui-btn layui-btn-mini">Eddit</a>
+                            <a href="/admin/notice/delete/${c.noticeId}" class="layui-btn layui-btn-danger layui-btn-mini" onclick="return confirmDelete()">Delete</a>
                         </td>
                         <td >${c.noticeId}</td>
                     </tr>
@@ -86,9 +86,9 @@
                 </tbody>
             </table>
             <blockquote class="layui-elem-quote layui-quote-nm">
-                温馨提示：
+                Notice：
                 <ul>
-                    <li>Order的大小决定显示的顺序</li>
+                    <li>We use order number to rank the banking</li>
                 </ul>
             </blockquote>
 
