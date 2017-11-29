@@ -250,7 +250,7 @@
                                              class="avatar avatar-50 photo" height="50" width="50">
                                         <div class="dashboard-comment-wrap has-row-actions">
                                             <p class="comment-meta">
-                                                由<cite class="comment-author">
+                                                By <cite class="comment-author">
                                                 <a target="_blank" href="${c.commentCustom.commentAuthorUrl}"
                                                    rel="external nofollow"
                                                    class="url">${c.commentCustom.commentAuthorName}</a>
