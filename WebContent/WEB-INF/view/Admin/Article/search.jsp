@@ -30,7 +30,7 @@
               <a href="/admin">Home</a>
               <a href="/admin/article">Article List</a>
               <a><cite>
-                  Search ${articleSearchVoList[0].query} 找到 ${articleSearchVoList[0].page.totalCount} 条数据
+                  Search ${articleSearchVoList[0].query} Find ${articleSearchVoList[0].page.totalCount} Message
                 </cite>
               </a>
         </span>
@@ -39,9 +39,9 @@
     <form id="articleForm" method="post">
         <div class="layui-form-item">
             <div class="layui-input-block">
-                <input type="text" name="query" placeholder="请输入关键词" autocomplete="off" class="layui-input" >
+                <input type="text" name="query" placeholder="Input Key Word" autocomplete="off" class="layui-input" >
                 <button class="layui-btn" lay-filter="formDemo" onclick="queryArticle()">Search</button>
-                <button class="layui-btn" lay-filter="formDemo" style="float: right;" onclick="confirmDeleteArticleBatch()">批量删除</button>
+                <button class="layui-btn" lay-filter="formDemo" style="float: right;" onclick="confirmDeleteArticleBatch()">Patch Delete</button>
             </div>
         </div>
     <input type="hidden" name="currentUrl" id="currentUrl" value="">
@@ -62,13 +62,13 @@
                 <thead>
                 <tr>
                     <th><input type="checkbox" id="allSelect"  onclick="javascript:DoCheck()"></th>
-                    <th>id</th>
-                    <th>标题</th>
-                    <th>所属分类</th>
-                    <th>所带标签</th>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Category</th>
+                    <th>Tag</th>
                     <th>order</th>
-                    <th>发布时间</th>
-                    <th>操作</th>
+                    <th>Post Date</th>
+                    <th>Operation</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -97,14 +97,14 @@
                             ${a.articleCustom.articleOrder}
                         </td>
                         <td>
-                            <fmt:formatDate value="${a.articleCustom.articlePostTime}" pattern="MM月dd日 HH:mm"/>
+                            <fmt:formatDate value="${a.articleCustom.articlePostTime}" pattern="MM-dd-HH:mm"/>
                         </td>
                         <td>
                             <a href="/admin/article/edit/${a.articleCustom.articleId}"
-                               class="layui-btn layui-btn-mini">编辑</a>
+                               class="layui-btn layui-btn-mini">Edit</a>
                             <a href="javascript:void(0)"
                                onclick="confirmDeleteArticle(${a.articleCustom.articleId})"
-                               class="layui-btn layui-btn-danger layui-btn-mini">删除</a>
+                               class="layui-btn layui-btn-danger layui-btn-mini">Delete</a>
                         </td>
                     </tr>
                 </c:forEach>
@@ -190,7 +190,7 @@
         </c:when>
         <%--查询结果为0--%>
         <c:otherwise>
-           <center><br>很遗憾，没有查询到带有 <font style="color: red;"> ${articleSearchVoList[0].query} </font> 的内容，换一个关键词再试试吧。</center>
+           <center><br>There is no relative  <font style="color: red;"> ${articleSearchVoList[0].query} </font> content，please change to other word。</center>
         </c:otherwise>
     </c:choose>
 
@@ -207,7 +207,7 @@
         }
 
         function confirmDeleteArticleBatch() {
-            var msg = "您真的确定要删除吗？";
+            var msg = "Are you sure to delete?";
             if (confirm(msg)==true){
                 //提交form
                 $("#currentUrl").attr("value",currentUrl);
@@ -219,7 +219,7 @@
         }
 
         function confirmDeleteArticle(id) {
-            var msg = "您真的确定要删除吗？";
+            var msg = "Are you sure to delete?";
             if (confirm(msg)==true){
                 //提交form
                 $("#currentUrl").attr("value",currentUrl);

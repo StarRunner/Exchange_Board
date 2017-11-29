@@ -45,12 +45,12 @@
         <%--所有标签 start--%>
         <aside class="widget">
             <h3 class="widget-title">
-                <i class="fa fa-bars"></i>所有标签
+                <i class="fa fa-bars"></i>All Tags
             </h3>
             <div class="tagcloud">
                 <c:forEach items="${tagList}" var="t">
                     <a href="/tag/${t.tagId}"
-                       class="tag-link-129 tag-link-position-1" title="${t.articleCount}个话题"
+                       class="tag-link-129 tag-link-position-1" title="${t.articleCount}Topics"
                        style="font-size: 14px;">
                             ${t.tagName}
                     </a>
@@ -64,7 +64,7 @@
         <%--博客主体-右侧侧边栏-随机Article start--%>
         <aside id="random_post-7" class="widget random_post wow fadeInUp" data-wow-delay="0.3s">
             <h3 class="widget-title">
-                <i class="fa fa-bars"></i>随机Article
+                <i class="fa fa-bars"></i>Random Article
             </h3>
             <div id="random_post_widget">
                 <ul>

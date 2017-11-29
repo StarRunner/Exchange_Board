@@ -39,7 +39,7 @@
         <div class="tagcloud">
             <c:forEach items="${tagList}" var="tag">
                 <a href="/tag/${tag.tagId}"
-                   class="tag-link-129 tag-link-position-1" title="${tag.articleCount}个话题"
+                   class="tag-link-129 tag-link-position-1" title="${tag.articleCount}Topics"
                    style="font-size: 14px;">
                         ${tag.tagName}
                 </a>

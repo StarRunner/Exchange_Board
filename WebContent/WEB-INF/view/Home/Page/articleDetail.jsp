@@ -43,11 +43,11 @@
                 </c:forEach>
             </c:when>
             <c:otherwise>
-                <a>未分类</a>
+                <a>No Category</a>
             </c:otherwise>
         </c:choose>
         <i class="fa fa-angle-right"></i>
-        正文
+      Body
     </nav>
     <%--面包屑导航 end--%>
 </rapid:override>
@@ -87,7 +87,7 @@
                             <c:if test="${sessionScope.user!=null}">
                             <li class="edit-link">
                                 <a target="_blank" class="post-edit-link"
-                                   href="/admin/article/edit/${articleDetailVo.articleCustom.articleId}">编辑</a>
+                                   href="/admin/article/edit/${articleDetailVo.articleCustom.articleId}">Edit</a>
                             </li>
                             </c:if>
                             <li class="comment">
@@ -103,7 +103,7 @@
                                 views
                             </li>
                             <li class="r-hide">
-                                <a href="javascript:pr()" title="侧边栏">
+                                <a href="javascript:pr()" title="Left Side">
                                     <i class="fa fa-caret-left"></i>
                                     <i class="fa fa-caret-right"></i>
                                 </a>
@@ -113,7 +113,7 @@
                             <li>A+</li>
                         </ul>
                         <div class="single-cat-tag">
-                            <div class="single-cat">所属分类：
+                            <div class="single-cat">Part Of Category：
                                 <c:forEach items="${articleDetailVo.categoryCustomList}" var="c">
                                     <a href="/category/${c.categoryId}">
                                             ${c.categoryName}
@@ -175,7 +175,7 @@
                 <div class="wow fadeInUp" data-wow-delay="0.3s">
                     <aside id="related_post-2" class="widget">
                         <h3 class="widget-title">
-                            <span class="s-icon"></span>相关Article
+                            <span class="s-icon"></span>Relative Article
                         </h3>
                         <div id="related_post_widget">
                             <ul>
@@ -190,7 +190,7 @@
                     </aside>
                         <%--猜你喜欢 start--%>
                     <aside id="hot_post-8" class="widget hot_post">
-                        <h3 class="widget-title"><span class="s-icon"></span>猜你喜欢</h3>
+                        <h3 class="widget-title"><span class="s-icon"></span>Recommended Article</h3>
                         <div id="hot_post_widget">
                             <ul>
                                 <c:forEach items="${mostViewArticleList}" var="m">
@@ -217,7 +217,7 @@
                     <c:when test="${preArticle!=null}">
                         <a href="/article/${preArticle.articleId}" rel="next">
                             <span class="meta-nav">
-                                <span class="post-nav">上一篇
+                                <span class="post-nav">Previous
                                  <i class="fa fa-angle-left"></i>
                                 </span>
                                 <br>${preArticle.articleTitle}
@@ -227,8 +227,8 @@
                     <c:otherwise>
                               <span class="meta-nav">
                                     <span class="post-nav">
-                                        没有了<br>
-                                    </span>已是第一篇Article
+                                       None<br>
+                                    </span>Last Article
                                 </span>
                     </c:otherwise>
                 </c:choose>
@@ -236,7 +236,7 @@
                     <c:when test="${afterArticle!=null}">
                         <a href="/article/${afterArticle.articleId}" rel="next">
                             <span class="meta-nav">
-                                <span class="post-nav">下一篇
+                                <span class="post-nav">Next
                                  <i class="fa fa-angle-right"></i>
                                 </span>
                                 <br>${afterArticle.articleTitle}
@@ -246,8 +246,8 @@
                     <c:otherwise>
                             <span class="meta-nav">
                                 <span class="post-nav">
-                                    没有了<br>
-                                </span>已是最后Article
+                                   None<br>
+                                </span>Last Article
                              </span>
                     </c:otherwise>
                 </c:choose>
@@ -265,9 +265,9 @@
                            href="/article/${articleDetailVo.articleCustom.articleId}#respond"
                            style="">Cancel Comment</a>
                         <span class="like">
-                                        <a href="javascript:;" data-action="ding" data-id="1" title="点赞"
+                                        <a href="javascript:;" data-action="ding" data-id="1" title="like"
                                            class="favorite" style="border: unset !important; width: unset !important" onclick="increaseLikeCount()">
-                                            <i class="fa fa-thumbs-up"></i>赞
+                                            <i class="fa fa-thumbs-up"></i>Like
                                             <i class="count"
                                                id="count-${articleDetailVo.articleCustom.articleId}">${articleDetailVo.articleCustom.articleLikeCount}</i>
                                         </a>
@@ -299,14 +299,14 @@
                                 <input type="hidden" name="commentRole" value="0">
                                 <p class="comment-form-author">
                                     <label for="author_name">
-                                        昵称<span class="required">*</span>
+                                    Nick<span class="required">*</span>
                                     </label>
                                     <input type="text" name="commentAuthorName" id="author_name" class="" value=""
                                            tabindex="2" required>
                                 </p>
                                 <p class="comment-form-email">
                                     <label for="author_email">
-                                        邮箱<span class="required">*</span>
+                                        Email<span class="required">*</span>
                                     </label>
                                     <input type="email" name="commentAuthorEmail" id="author_email" class="" value=""
                                            tabindex="3" required>
