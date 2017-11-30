@@ -36,7 +36,7 @@
                 Article
             </c:when>
             <c:otherwise>
-                该分类不存在
+             No Category
             </c:otherwise>
 
         </c:choose>
@@ -83,26 +83,26 @@
                                             </header><!-- .entry-header -->
 
                                             <div class="entry-content">
-                                              
-                                    <c:choose>
-                                        <c:when test="${a.articleCustom.articleStatus==2}">
-                                            <i class="fa fa-bookmark-o"></i>
-                                        </c:when>
-                                        <c:otherwise>
-                                            <jsp:useBean id="nowDate" class="java.util.Date"/> <%--当前时间--%>
-                                            <c:set var="interval"
-                                                   value="${nowDate.time - a.articleCustom.articlePostTime.time}"/><%--时间差毫秒数--%>
-                                            <fmt:formatNumber value="${interval/1000/60/60/24}" pattern="#0"
-                                                              var="days"/><%--取天数整数--%>
-                                            <c:if test="${days <= 7}">NEW</c:if>
-                                        </c:otherwise>
-                                    </c:choose>
+                                                                             <span class="new-icon">
+                                <c:choose>
+                                    <c:when test="${a.articleCustom.articleStatus==2}">
+                                        <i class="fa fa-bookmark-o"></i>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <jsp:useBean id="nowDate" class="java.util.Date"/> <%--当前时间--%>
+                                        <c:set var="interval"
+                                               value="${nowDate.time - a.articleCustom.articlePostTime.time}"/><%--时间差毫秒数--%>
+                                        <fmt:formatNumber value="${interval/1000/60/60/24}" pattern="#0"
+                                                          var="days"/><%--取天数整数--%>
+                                        <c:if test="${days <= 7}">NEW</c:if>
+                                    </c:otherwise>
+                                </c:choose>
 
 
-                                </span>
-                                                <span class="entry-meta" style="display:block; position:unset !important">
-                                    <span class="date">
-                                        <fmt:formatDate value="${a.articleCustom.articlePostTime}" pattern="yyyy年MM月dd日"/>
+                            </span>
+                                <span class="entry-meta" style="display:block; position:unset !important">
+                                <span class="date" style="width: 100%;display: block;position:unset !important">
+                                        <fmt:formatDate value="${a.articleCustom.articlePostTime}" pattern="yyyy-MM-dd"/>
                                     &nbsp;&nbsp;
                                     </span>
                                     <span class="views">
@@ -134,7 +134,7 @@
                                 <c:otherwise>
                                     <section class="no-results not-found">
                                         <div class="post">
-                                            <p>该分类目前还没有Article！</p>
+                                            <p>There is no relative Article！</p>
                                             <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
                                         </div>
                                     </section>
@@ -144,7 +144,7 @@
                         <c:otherwise>
                             <section class="no-results not-found">
                                 <div class="post">
-                                    <p>该分类不存在</p>
+                                    <p>No Category</p>
                                     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
                                 </div>
                             </section>
