@@ -118,7 +118,7 @@ public class UserController {
 	            }
 	            user.setUserLastLoginTime(new Date());
 	            user.setUserLastLoginIp(getIpAddr(request));
-	            userService.updateUser(user);
+	        //    userService.updateUser(user);
 
 	        }
 	        String result = new JSONObject(map).toString();
