@@ -47,7 +47,7 @@
           method="post">
         <input type="hidden" name="userId" id="userId" value="${userCustom.userId}">
         <div class="layui-form-item">
-            <a class="layui-btn layui-btn-primary"  href="/admin/user/edit/${userCustom.userId}">Eidt</a>
+            <a class="layui-btn layui-btn-primary"  href="/admin/user/edit/${userCustom.userId}">Edit</a>
             <label class="layui-form-label">Favicon</label>
             <div class="layui-input-inline">
                 <div class="layui-upload">
