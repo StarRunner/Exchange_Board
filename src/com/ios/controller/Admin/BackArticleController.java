@@ -6,6 +6,7 @@ import com.ios.mapper.custom.ArticleMapperCustom;
 import com.ios.service.ArticleService;
 import com.ios.service.CategoryService;
 import com.ios.service.TagService;
+import com.ios.util.UploadArticlePicture;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -101,29 +102,16 @@ public class BackArticleController {
     @RequestMapping(value = "/insertSubmit",method = RequestMethod.POST)
     public String insertArticleSubmit(Article article, @RequestParam("file") CommonsMultipartFile file) throws Exception {
     	
+    	UploadArticlePicture uploadFunction = new UploadArticlePicture();
+    	
     	/*
     	 *  Insert Article
     	 */
-    	SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
     	System.out.println(" ---- Start insert article ----");
     	Date utilDate=new Date(); 
-    	
-    	String timeStr = df.format(utilDate);
-    	System.out.println("after format: " + timeStr);//2017-11-26 23:35:49
-    	
-    	String year = timeStr.substring(0, 4);
-    	String month = timeStr.substring(5,7);
-    	String day = timeStr.substring(8,10);
-    	String hour = timeStr.substring(11, 13);
-    	String minute = timeStr.substring(14, 16);
-    	String second = timeStr.substring(17, 19);
-    	Date date1Parsed = df.parse(year +"-" + month+ "-" + day+ " " + hour + ":" + minute + ":" + second);
-    	System.out.println("date format : " + date1Parsed);
-    	
-    	Timestamp time = new Timestamp(date1Parsed.getTime());
-    	System.out.println("Date: " + utilDate);
-    	System.out.println("timestamp: " + time);//0201-01-02 00:00:03.0
-    	
+    	SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    	String timeStr = df.format(utilDate);//2017-11-26 23:35:49
+    	Timestamp time = uploadFunction.setTimeStamp(utilDate);
         article.setArticlePostTime(time);
         article.setArticleUpdateTime(time);
         article.setArticleIsComment(1);
@@ -133,14 +121,11 @@ public class BackArticleController {
         article.setArticleStatus(1);
         article.setArticleOrder(1);
         System.out.println("Article.toString: " + article.toString());
-        
         //insert
         articleService.insertArticle(article);
         System.out.println("Inser article finished.");
         
         //get article id
-        
-    	
         System.out.println(" Start get article id...");
         int articleId = 1;
         
@@ -155,53 +140,17 @@ public class BackArticleController {
         if (articleId==1) {
 			System.out.println("Get article id failed. Try another way. ");
 			System.out.println("Get last update article...");
-			articleService.getLastUpdateArticle();
+			articleId = articleService.getLastUpdateArticle().getArticleId();
 		}
-        
-        System.out.println("Get article id successed. ");
         System.out.println("Article id: " + articleId);
         
         /*
          *	Upload Video Picture 
-         *
-         *	1, get project path from properties file
-         *	2, get Server path
-         *	2, set img name
-         *	3, write file to 2 pathes
          */
         System.out.println(" ---- Start upload video picture ----");
-        Properties prop = new Properties();
-        System.out.println("start get properties file which contains project root path");
-        String imgDirInServer = "/img/thumbnail/random/";
-        //get Server real path
-        String serverDir = request.getSession().getServletContext().getRealPath(imgDirInServer);
         
-        if (!serverDir.endsWith("\\")) {
-        	System.out.println("Path doesn't contains \\, adding '\\' for server path...");
-			serverDir = serverDir + "\\";
-			System.out.println("'\\' added to server path : " + serverDir);
-		}
+        Boolean b = uploadFunction.uploadArticlePic2CustomPath(articleId, file, request);
         
-        String fileName = "img_" + articleId;
-        System.out.println("img name: " + fileName);
-        System.out.println("server path: " + serverDir);
-        System.out.println("final path: " + serverDir + fileName + ".jpg");
-        try {
-        	
-			OutputStream os4Server = new FileOutputStream(serverDir + fileName + ".jpg");
-        	InputStream is = file.getInputStream();
-			
-			int temp;
-			while((temp=is.read())!=(-1)){
-				os4Server.write(temp);
-			}
-			os4Server.flush();
-			os4Server.close();
-			is.close();
-		} catch (FileNotFoundException e) {
-			// TODO: handle exception
-			e.printStackTrace();
-		}
         return "redirect:/admin/article";
     }
 
@@ -288,8 +237,7 @@ public class BackArticleController {
 
         List<TagCustom> tagCustomList = tagService.listTag(1);
         modelAndView.addObject("tagCustomList",tagCustomList);
-
-
+        
         modelAndView.setViewName("Admin/Article/edit");
         return modelAndView;
     }
@@ -297,10 +245,15 @@ public class BackArticleController {
 
     //编辑Article提交
     @RequestMapping(value = "/editSubmit",method = RequestMethod.POST)
-    public String editArticleSubmit(ArticleCustom articleCustom) throws Exception {
-        Integer id = articleCustom.getArticleId();
+    public String editArticleSubmit(ArticleCustom articleCustom, @RequestParam("file") CommonsMultipartFile file) throws Exception {
+    	
+    	UploadArticlePicture uploadFunction = new UploadArticlePicture();
+    	Integer id = articleCustom.getArticleId();
         articleCustom.setArticleUpdateTime(new Date());
         articleService.updateArticle(id,articleCustom);
+        
+        uploadFunction.uploadArticlePic2CustomPath(id, file, request);
+        
         return "redirect:/admin/article";
     }
 
