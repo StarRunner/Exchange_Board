@@ -24,17 +24,33 @@
 
 
 
-    <form class="layui-form"  method="post" id="myForm" action="/admin/article/editSubmit">
+    <form class="layui-form" enctype="multipart/form-data" method="post" id="myForm" action="/admin/article/editSubmit">
         <input type="hidden" name="articleId" value="${articleCustom.articleId}">
         <div class="layui-form-item">
-            <label class="layui-form-label">标题  <span style="color: #FF5722; ">*</span></label>
+            <label class="layui-form-label">Title  <span style="color: #FF5722; ">*</span></label>
             <div class="layui-input-block">
                 <input type="text" name="articleTitle" lay-verify="title" id="title" value="${articleCustom.articleTitle}" class="layui-input">
             </div>
         </div>
+        
+		<!-- Rancho Add -->
+        <div class="layui-form-item">
+            <label class="layui-form-label">Video URL <span style="color: #FF5722; ">*</span></label>
+            <div class="layui-input-block">
+                <input type="text" name="articleUrl" lay-verify="title" id="articleurl" value="${articleCustom.articleUrl} " autocomplete="off" placeholder="Please input url for box" class="layui-input">
+            </div>
+        </div>
 
+		<!-- Frank add - upload mini picture for article -->
+		<div class="layui-form-item">
+            <label class="layui-form-label">Featured Image<span style="color: #FF5722; ">*</span></label>
+            <div class="layui-input-block">
+                <input type="file" name="file">
+            </div>
+        </div>
+        
         <div class="layui-form-item layui-form-text">
-            <label class="layui-form-label">内容  <span style="color: #FF5722; ">*</span></label>
+            <label class="layui-form-label">Content  <span style="color: #FF5722; ">*</span></label>
             <div class="layui-input-block">
                 <textarea class="layui-textarea layui-hide" name="articleContent" id="content">${articleCustom.articleContent}</textarea>
             </div>
@@ -42,10 +58,10 @@
 
 
         <div class="layui-form-item">
-            <label class="layui-form-label">分类  <span style="color: #FF5722; ">*</span></label>
+            <label class="layui-form-label">Category  <span style="color: #FF5722; ">*</span></label>
             <div class="layui-input-inline">
                 <select name="articleParentCategoryId" id="articleParentCategoryId" lay-filter="articleParentCategoryId">
-                    <option value="">一级分类</option>
+                    <option value="">Primary Classification</option>
                     <c:forEach items="${categoryCustomList}" var="c">
                         <c:if test="${c.categoryPid==0}">
                             <option value="${c.categoryId}"
@@ -68,7 +84,7 @@
             </div>
         </div>
         <div class="layui-form-item" pane="">
-            <label class="layui-form-label">标签</label>
+            <label class="layui-form-label">Topics</label>
             <c:set var="tagIds" value="${fn:split(articleCustom.articleTagIds,',')}"/>
             <div class="layui-input-block">
                 <c:forEach items="${tagCustomList}" var="t">
@@ -84,10 +100,11 @@
             <div class="layui-input-inline">
                 <input type="number" name="articleOrder" value="${articleCustom.articleOrder}"   autocomplete="off" class="layui-input">
             </div>
-            <div class="layui-form-mid layui-word-aux">输入1-10的数字,order越大排序越前</div>
+            <!-- <div class="layui-form-mid layui-word-aux">Input 1-10的数字,order越大排序越前</div> -->
+       		<div class="layui-form-mid layui-word-aux">Input number 1-10, to manage sort</div>
         </div>
         <div class="layui-form-item">
-            <label class="layui-form-label">状态</label>
+            <label class="layui-form-label">Status</label>
             <div class="layui-input-block">
                 <input type="radio" name="articleStatus" value="1" title="Submit" <c:if test="${articleCustom.articleStatus==1}">checked</c:if>>
                 <input type="radio" name="articleStatus" value="0" title="Draft" <c:if test="${articleCustom.articleStatus==0}">checked</c:if>>
@@ -102,8 +119,8 @@
     </form>
 
     <blockquote class="layui-elem-quote layui-quote-nm">
-        温馨提示：
-        1、插入代码前，可以点击 <a href="http://liuyanzhao.com/code-highlight.html" target="_blank">代码高亮</a>,将代码转成HTML格式
+        Note：
+        1、Before insert code，you can click <a href="http://liuyanzhao.com/code-highlight.html" target="_blank">code highlight</a>,to transfer code to html
     </blockquote>
 
 </rapid:override>
