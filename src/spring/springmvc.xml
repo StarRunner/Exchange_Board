@@ -63,10 +63,10 @@
             <bean class="com.ios.Interceptor.SecurityInterceptor"/>
         </mvc:interceptor>
         
-         <!-- mvc:interceptor>
+         <mvc:interceptor>
             <mvc:mapping path="/user"/>
             <bean class="com.ios.Interceptor.UserSecurityInterceptor"/>
-        </mvc:interceptor-->
+        </mvc:interceptor>
         
         <mvc:interceptor>
             <mvc:mapping path="/admin/**"/>

@@ -77,5 +77,6 @@
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/cwa-v3.2.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

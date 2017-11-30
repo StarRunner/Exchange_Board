@@ -17,19 +17,20 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import swat.ReturnCode;
+import swat.cwa;
+
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.ios.entity.User;
-import com.ios.entity.custom.ArticleListVo;
-import com.ios.entity.custom.CommentListVo;
+
 import com.ios.service.ArticleService;
 import com.ios.service.CommentService;
 import com.ios.service.LinkService;
 import com.ios.service.UserService;
-import com.ios.util.Functions;
 /**
  * 用户的controller
  * Created by 言曌 on 2017/8/24.
@@ -58,20 +59,20 @@ public class UserController {
 	    public ModelAndView index() throws Exception {
 	        ModelAndView modelAndView = new ModelAndView();
 	        //Article列表
-	        List<ArticleListVo> articleCustomList = articleService.listArticle(null);
-	        modelAndView.addObject("articleCustomList",articleCustomList);
-	        //评论列表
-	        List<CommentListVo> commentListVoList = commentService.listCommentVo(null);
-	        modelAndView.addObject("commentListVoList",commentListVoList);
-	        //评论数
-	        Integer allCommentCount = commentService.countComment(null);
-	        Integer approvedCommentCount = commentService.countComment(1);
-	        Integer hiddenCommentCount = commentService.countComment(0);
-	        modelAndView.addObject("allCommentCount",allCommentCount);
-	        modelAndView.addObject("approvedCommentCount",approvedCommentCount);
-	        modelAndView.addObject("hiddenCommentCount",hiddenCommentCount);
+//	        List<ArticleListVo> articleCustomList = articleService.listArticle(null);
+//	        modelAndView.addObject("articleCustomList",articleCustomList);
+//	        //评论列表
+//	        List<CommentListVo> commentListVoList = commentService.listCommentVo(null);
+//	        modelAndView.addObject("commentListVoList",commentListVoList);
+//	        //评论数
+//	        Integer allCommentCount = commentService.countComment(null);
+//	        Integer approvedCommentCount = commentService.countComment(1);
+//	        Integer hiddenCommentCount = commentService.countComment(0);
+//	        modelAndView.addObject("allCommentCount",allCommentCount);
+//	        modelAndView.addObject("approvedCommentCount",approvedCommentCount);
+//	        modelAndView.addObject("hiddenCommentCount",hiddenCommentCount);
 
-	        modelAndView.setViewName("/user/index");
+	        modelAndView.setViewName("/Home/index");
 	        return modelAndView;
 	    }
 
@@ -79,7 +80,7 @@ public class UserController {
 	    @RequestMapping("/user/login")
 	    public ModelAndView loginView() {
 	        ModelAndView modelAndView = new ModelAndView();
-	        modelAndView.setViewName("/user/login");
+	        modelAndView.setViewName("/Home/login");
 	        return modelAndView;
 	    }
 
@@ -92,19 +93,17 @@ public class UserController {
 	        String username = request.getParameter("username");
 	        String password = request.getParameter("password");
 	        String rememberme = request.getParameter("rememberme");
-	        User user = userService.getUserByNameOrEmail(username);
-	        if(user==null) {
-	            map.put("code",0);
-	            map.put("msg","Your username or password was entered incorrectly");
-	        } else if(!user.getUserPass().equals(password)) {
-	            map.put("code",0);
-	            map.put("msg","Your username or password was entered incorrectly");
-	        } else {
-	            //登录成功
+	        User customer=new User();
+	        ReturnCode returnCode = cwa.authenticate("9.17.186.253" , username, password);
+
+	        if (returnCode.getCode() == 0){ 
+                //登录成功
 	            map.put("code",1);
 	            map.put("msg","");
+	            customer.setUserName(username);
+	            customer.setUserPass(password);
 	            //添加session
-	            request.getSession().setAttribute("user", user);
+	            request.getSession().setAttribute("customer", customer);
 	            //添加cookie
 	            if(rememberme!=null) {
 	                //创建两个Cookie对象
@@ -115,22 +114,24 @@ public class UserController {
 	                pwdCookie.setMaxAge(60 * 60 * 24 * 3);
 	                response.addCookie(nameCookie);
 	                response.addCookie(pwdCookie);
-	            }
-	            user.setUserLastLoginTime(new Date());
-	            user.setUserLastLoginIp(getIpAddr(request));
-	        //    userService.updateUser(user);
-
+	           
+            }
 	        }
+
+            else{
+	            map.put("code",0);
+	            map.put("msg","Your username or password was entered incorrectly");
+            }
 	        String result = new JSONObject(map).toString();
 	        return result;
-	    }
+	        }
 
 	    //退出登录
 	    @RequestMapping(value = "/user/logout")
 	    public String logout(HttpSession session) throws Exception {
-	        session.removeAttribute("user");
+	        session.removeAttribute("customer");
 	        session.invalidate();
-	        return "redirect:/user/login";
+	        return "redirect:/";
 	    }
 
 
