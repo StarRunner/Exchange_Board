@@ -65,7 +65,7 @@
         
          <mvc:interceptor>
             <mvc:mapping path="/user"/>
-            <bean class="com.ios.Interceptor.SecurityInterceptor"/>
+            <bean class="com.ios.Interceptor.UserSecurityInterceptor.java"/>
         </mvc:interceptor>
         
         <mvc:interceptor>
