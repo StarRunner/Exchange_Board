@@ -2,10 +2,14 @@ package com.ios.controller.Home;
 
 import static com.ios.util.Functions.getIpAddr;
 
+import com.ibm.bluepages.BluePages;
+import com.ibm.bluepages.BPResults;
+
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Vector;
 
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +30,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.ios.entity.User;
-
 import com.ios.service.ArticleService;
 import com.ios.service.CommentService;
 import com.ios.service.LinkService;
@@ -95,13 +98,20 @@ public class UserController {
 	        String rememberme = request.getParameter("rememberme");
 	        User customer=new User();
 	        ReturnCode returnCode = cwa.authenticate("9.17.186.253" , username, password);
-
+	        
+	        BPResults bpr= BluePages.getPersonsByInternet(username);
+	        Vector<String> name=bpr.getColumn("HRFIRSTNAME");
+	        Vector<String> familyname=bpr.getColumn("HRLASTNAME");
+	        String fullname=name.get(0) +" " +familyname.get(0);
+	        System.out.println(fullname);
+	        
 	        if (returnCode.getCode() == 0){ 
                 //登录成功
 	            map.put("code",1);
 	            map.put("msg","");
 	            customer.setUserName(username);
 	            customer.setUserPass(password);
+	            customer.setUserNickname(fullname);
 	            //添加session
 	            request.getSession().setAttribute("customer", customer);
 	            //添加cookie
