@@ -30,6 +30,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.ios.entity.User;
+import com.ios.entity.custom.ArticleListVo;
 import com.ios.service.ArticleService;
 import com.ios.service.CommentService;
 import com.ios.service.LinkService;
@@ -74,6 +75,9 @@ public class UserController {
 //	        modelAndView.addObject("allCommentCount",allCommentCount);
 //	        modelAndView.addObject("approvedCommentCount",approvedCommentCount);
 //	        modelAndView.addObject("hiddenCommentCount",hiddenCommentCount);
+	    	int pageSize = 9;
+			List<ArticleListVo> articleListVoList = articleService.listArticleByPage(1,null,pageSize);
+			modelAndView.addObject("articleListVoList",articleListVoList);
 
 	        modelAndView.setViewName("/Home/index");
 	        return modelAndView;
