@@ -26,8 +26,8 @@
     font-weight: 300;
     vertical-align: middle;
     display: inline-block;">
-                      Thanks for visiting ShowcaseBoard, <a href="/user" style="font-size: 19px;font-weight: 300;vertical-align: middle;color: #0288d1;padding-right: 5px;display: inline-block;">${sessionScope.customer.userNickname}</a>
-                      | <a href="/user/logout" style="font-size: 19px;font-weight: 300;vertical-align: middle;color: #0288d1;padding-right: 5px;display: inline-block;">Log out</a></p>
+                      Welcome, <a href="/user" style="font-size: 19px;font-weight: 300;vertical-align: middle;color: #0288d1;padding-right: 5px;padding-bottom:4px;display: inline-block;">${sessionScope.customer.userNickname}</a>
+                      | <a href="/user/logout" style="font-size: 19px;font-weight: 300;vertical-align: middle;color: #0288d1;padding-right: 5px;padding-bottom:4px;display: inline-block;">Log out</a></p>
                       
                     </c:otherwise>
                 </c:choose>
