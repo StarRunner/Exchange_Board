@@ -18,7 +18,6 @@
         article_is_comment,
         article_status,
         article_order,
-        video_url,
         article_url
     </sql>
 

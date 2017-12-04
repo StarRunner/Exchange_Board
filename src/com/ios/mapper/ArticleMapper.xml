@@ -24,7 +24,7 @@
   <sql id="Base_Column_List" >
     article_id, article_user_id, article_title, article_parent_category_id, article_child_category_id, 
     article_tag_ids, article_view_count, article_comment_count, article_like_count, article_post_time, 
-    article_update_time, article_is_comment, article_status, article_order, video_url, articel_url
+    article_update_time, article_is_comment, article_status, article_order,articel_url
   </sql>
   <sql id="Blob_Column_List" >
     article_content
@@ -47,7 +47,7 @@
       article_tag_ids, article_view_count, article_comment_count, 
       article_like_count, article_post_time, article_update_time, 
       article_is_comment, article_status, article_order, 
-      article_content,video_url,article_url)
+      article_content,article_url)
     values (#{articleId,jdbcType=INTEGER}, #{articleUserId,jdbcType=INTEGER}, #{articleTitle,jdbcType=VARCHAR}, 
       #{articleParentCategoryId,jdbcType=INTEGER}, #{articleChildCategoryId,jdbcType=INTEGER}, 
       #{articleTagIds,jdbcType=VARCHAR}, #{articleViewCount,jdbcType=INTEGER}, #{articleCommentCount,jdbcType=INTEGER}, 
@@ -102,9 +102,6 @@
       </if>
       <if test="articleContent != null" >
         article_content,
-      </if>
-      <if test="videoUrl != null" >
-        video_url,
       </if>
       <if test="articleUrl != null" >
         article_url,
@@ -209,9 +206,6 @@
       <if test="articleContent != null" >
         article_content = #{articleContent,jdbcType=LONGVARCHAR},
       </if>
-      <if test="videoUrl != null" >
-        video_url = #{videoUrl,jdbcType=VARCHAR},
-      </if>
       <if test="articleUrl != null" >
         article_url = #{articleUrl,jdbcType=VARCHAR},
       </if>
@@ -234,7 +228,6 @@
       article_status = #{articleStatus,jdbcType=INTEGER},
       article_order = #{articleOrder,jdbcType=INTEGER},
       article_content = #{articleContent,jdbcType=LONGVARCHAR},
-      video_url= #{videoUrl,jdbcType=VARCHAR},
       article_url= #{articleUrl,jdbcType=VARCHAR}
     where article_id = #{articleId,jdbcType=INTEGER}
   </update>
@@ -253,7 +246,6 @@
       article_is_comment = #{articleIsComment,jdbcType=INTEGER},
       article_status = #{articleStatus,jdbcType=INTEGER},
       article_order = #{articleOrder,jdbcType=INTEGER},
-      video_url = #{videoUrl,jdbcType=VARCHAR},
       article_url = #{articleUrl,jdbcType=VARCHAR}
     
     where article_id = #{articleId,jdbcType=INTEGER}
