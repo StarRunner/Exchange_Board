@@ -232,4 +232,4 @@
     </script>
 </rapid:override>
 
-<%@ include file="Manage/framework.jsp"%>
+<%@ include file="framework.jsp"%>

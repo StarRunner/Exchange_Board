@@ -10,6 +10,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Vector;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -104,11 +106,19 @@ public class UserController {
 	        ReturnCode returnCode = cwa.authenticate("9.17.186.253" , username, password);
 	        
 	        BPResults bpr= BluePages.getPersonsByInternet(username);
-	        Vector<String> name=bpr.getColumn("HRFIRSTNAME");
-	        Vector<String> familyname=bpr.getColumn("HRLASTNAME");
-	        String fullname=name.get(0) +" " +familyname.get(0);
+//	        Vector<String> name=bpr.getColumn("HRFIRSTNAME");
+//	        Vector<String> familyname=bpr.getColumn("HRLASTNAME");
+	        Vector<String> name=bpr.getColumn("NAME");
+	        String fullname=name.get(0);
 	        System.out.println(fullname);
-	        
+	        Pattern pattern = Pattern.compile(".*?(?=\\*CONTRACTOR\\*)");
+	        Matcher matcher = pattern.matcher(fullname);
+	     
+	        if(matcher.find()){
+	            System.out.println("匹配到了："+matcher.group());
+	            fullname=matcher.group();
+	
+	        }
 	        if (returnCode.getCode() == 0){ 
                 //登录成功
 	            map.put("code",1);

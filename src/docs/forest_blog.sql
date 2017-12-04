@@ -266,3 +266,8 @@ CREATE TABLE `user` (
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
 INSERT INTO `user` VALUES (1,'admin','123456','言曌','admin@liuyanzhao.com','https://liuyanzhao.com','/uploads/2017/10/20171006225356181.jpg','0:0:0:0:0:0:0:1','2017-10-06 21:56:33','2017-11-28 22:13:47',1),(2,'Rancho Qu','123456','Rancho','815292987@qq.com','','/uploads/2017/10/20171006225356181.jpg','0:0:0:0:0:0:0:1','2017-11-17 17:10:27','2017-11-24 22:44:01',1);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
+
+#
+# ALTER TABLE `article`
+#
+ALTER TABLE article ADD `user_email` VARCHAR(50) DEFAULT NULL;

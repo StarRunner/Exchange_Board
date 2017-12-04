@@ -72,7 +72,7 @@
     <%--近期Article end--%>
 
     <%--最新评论 start--%>
-    <aside id="recent_comments-2" class="widget recent_comments wow fadeInUp" data-wow-delay="0.3s"><h3
+    <!-- aside id="recent_comments-2" class="widget recent_comments wow fadeInUp" data-wow-delay="0.3s"><h3
             class="widget-title"><i class="fa fa-bars"></i>Recent Comment</h3>
         <div id="message" class="message-widget">
             <ul>
@@ -90,7 +90,7 @@
             </ul>
         </div>
         <div class="clear"></div>
-    </aside>
+    </aside-->
     <%--最新评论 end--%>
 
 </div>

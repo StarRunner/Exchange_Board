@@ -33,7 +33,7 @@
                 </c:choose>
             </div>
             <div style="clear:both;"></div>
-        </div>
+        </div> 
     </nav><!-- #top-header -->
     <%--顶部菜单 end--%>
 
