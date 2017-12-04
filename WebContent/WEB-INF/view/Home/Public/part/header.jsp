@@ -12,7 +12,7 @@
         <div class="top-nav">
             <div class="user-login" style="float:left;" >
              <a class="inner" href="/">
-              <img width="100" height="50" src="/img/dzone.png" alt="DZone" />
+              <img width="100" height="40" src="/img/dzone.png" alt="DZone" />
               </a>
             </div>
             <div class="menu-topmenu-container" style="padding-top:10px;padding-bottom:10px;float:right;">
