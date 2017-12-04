@@ -1,12 +1,12 @@
 package com.ios.controller.Home;
 
-import com.ios.entity.Article;
-import com.ios.entity.custom.*;
-import com.ios.mapper.custom.ArticleMapperCustom;
-import com.ios.service.ArticleService;
-import com.ios.service.CategoryService;
-import com.ios.service.TagService;
-import com.ios.util.UploadArticlePicture;
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,25 +19,21 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
-import java.util.Properties;
+import com.ios.entity.Article;
+import com.ios.entity.User;
+import com.ios.entity.custom.ArticleCustom;
+import com.ios.entity.custom.ArticleListVo;
+import com.ios.entity.custom.ArticleSearchVo;
+import com.ios.entity.custom.CategoryCustom;
+import com.ios.entity.custom.TagCustom;
+import com.ios.service.ArticleService;
+import com.ios.service.CategoryService;
+import com.ios.service.TagService;
+import com.ios.util.UploadArticlePicture;
 
 
 @Controller
-@RequestMapping("/user/article")
+@RequestMapping("/manage/article")
 public class ManageArticleController {
     @Autowired
     private ArticleService articleService;
@@ -53,13 +49,18 @@ public class ManageArticleController {
     public ModelAndView index(HttpSession session) throws Exception {
         ModelAndView modelAndView = new ModelAndView();
 
+        User customer = (User)session.getAttribute("customer");
+        if(customer == null){
+//        	判断
+        }
+        String email = customer.getUserName();
         //分页显示已发布Article
         Integer pageSize = 20;
-        List<ArticleListVo> publishedArticleListVoList = articleService.listArticleByUserByPage(1,(String)session.getAttribute("customer"),null,pageSize);
+        List<ArticleListVo> publishedArticleListVoList = articleService.listArticleByUserByPage(1,email,null,pageSize);
         modelAndView.addObject("publishedArticleListVoList",publishedArticleListVoList);
 
         //不分页显示 草稿Article
-        List<ArticleListVo> draftArticleList = articleService.getArticleByUserEmail(0,(String)session.getAttribute("customer"));
+        List<ArticleListVo> draftArticleList = articleService.getArticleByUserEmail(0,email);
         modelAndView.addObject("draftArticleList",draftArticleList);
         modelAndView.setViewName("Home/Manage/index");
         return modelAndView;
@@ -152,7 +153,7 @@ public class ManageArticleController {
         
         Boolean b = uploadFunction.uploadArticlePic2CustomPath(articleId, file, request);
         
-        return "redirect:/user/article";
+        return "redirect:/manage/article";
     }
 
     //后台添加Article提交操作
@@ -170,7 +171,7 @@ public class ManageArticleController {
 
         articleService.insertArticle(article);
 
-        return "redirect:/user/article";
+        return "redirect:/manage/article";
     }
 
 
@@ -255,7 +256,7 @@ public class ManageArticleController {
         
         uploadFunction.uploadArticlePic2CustomPath(id, file, request);
         
-        return "redirect:/user/article";
+        return "redirect:/manage/article";
     }
 
 

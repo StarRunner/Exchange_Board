@@ -11,7 +11,6 @@
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
     <link rel="shortcut icon" href="/img/logo.png">
     <title>
-        <%-- ${options.optionSiteTitle}Management --%>Management
             <rapid:block name="title"></rapid:block>
     </title>
     <link rel="stylesheet" href="/plugin/layui/css/layui.css">
@@ -23,24 +22,9 @@
 <body>
 <div class="layui-layout layui-layout-admin">
     <div class="layui-header">
-        <div class="layui-logo"><a href="/admin" style="color:#009688;">
-        <%-- ${options.optionSiteTitle}Management --%>Management
-        </a>
-        </div>
         <!-- 头部区域（可配合layui已有的水平导航） -->
         <ul class="layui-nav layui-layout-left">
             <li class="layui-nav-item"><a href="/" target="_blank">ShowCase Board</a></li>
-            <li class="layui-nav-item">
-                <a href="javascript:;">New</a>
-                <dl class="layui-nav-child">
-                    <dd><a href="/admin/article/insert">Article</a></dd>
-                    <dd><a href="/admin/page/insert">Page</a></dd>
-                    <dd><a href="/admin/category/insert">Category</a></dd>
-                    <dd><a href="/admin/tag/insert">Tag</a></dd>
-                    <dd><a href="/admin/notice/insert">Notice</a></dd>
-                    <dd><a href="/admin/link/insert">Link</a></dd>
-                </dl>
-            </li>
         </ul>
         <ul class="layui-nav layui-layout-right">
             <li class="layui-nav-item">
@@ -48,12 +32,12 @@
                     <img src="${loginUser.userAvatar}" class="layui-nav-img">
                     ${loginUser.userName}
                 </a>
-                <dl class="layui-nav-child">
+                <%-- <dl class="layui-nav-child">
                     <dd><a href="/admin/user/profile/${loginUser.userId}">Basic Profile</a></dd>
-                </dl>
+                </dl> --%>
             </li>
             <li class="layui-nav-item">
-                <a href="/admin/logout">Logout</a>
+                <a href="/user/logout">Logout</a>
             </li>
         </ul>
     </div>
@@ -65,54 +49,8 @@
                 <li class="layui-nav-item layui-nav-itemed">
                     <a class="" href="javascript:;">Article</a>
                     <dl class="layui-nav-child">
-                        <dd><a href="/admin/article"> Article List</a></dd>
-                        <dd><a href="/admin/article/insert">Add Article</a></dd>
-                        <dd><a href="/admin/category">Category List</a></dd>
-                        <dd><a href="/admin/tag">Tag List</a></dd>
-                    </dl>
-                </li>
-                <li class="layui-nav-item">
-                    <a href="javascript:;">Page</a>
-                    <dl class="layui-nav-child">
-                        <dd><a href="/admin/page">Page List</a></dd>
-                        <dd><a href="/admin/page/insert">Add Page</a></dd>
-                    </dl>
-                </li>
-                <li class="layui-nav-item">
-                    <a class="" href="javascript:;">
-                        Link
-                    </a>
-                    <dl class="layui-nav-child">
-                        <dd><a href="/admin/link">Link List</a></dd>
-                        <dd><a href="/admin/link/insert">Add link</a></dd>
-                    </dl>
-                </li>
-                <li class="layui-nav-item">
-                    <a href="javascript:;">Notice</a>
-                    <dl class="layui-nav-child">
-                        <dd><a href="/admin/notice">Notice List</a></dd>
-                        <dd><a href="/admin/notice/insert">Add Notice</a></dd>
-                    </dl>
-                </li>
-                <li class="layui-nav-item">
-                    <a href="/admin/comment">
-                        Comment
-                    </a>
-                </li>
-                <li class="layui-nav-item">
-                    <a class="" href="javascript:;">
-                        User
-                    </a>
-                    <dl class="layui-nav-child">
-                        <dd><a href="/admin/user">User List</a></dd>
-                        <dd><a href="/admin/user/insert">Add User</a></dd>
-                    </dl>
-                </li>
-                <li class="layui-nav-item">
-                    <a href="javascript:;">Settings</a>
-                    <dl class="layui-nav-child">
-                        <dd><a href="/admin/menu">Menu</a></dd>
-                        <dd><a href="/admin/options">Main Menus</a></dd>
+                        <dd><a href="/manage/article"> Article List</a></dd>
+                        <dd><a href="/manage/article/insert">Add Article</a></dd>
                     </dl>
                 </li>
             </ul>
@@ -130,7 +68,7 @@
 
     <div class="layui-footer">
         <!-- 底部固定区域 -->
-        <%-- © ${options.optionSiteTitle} - Management --%>Management
+        <%-- © ${options.optionSiteTitle} - Management --%>Article Management
     </div>
 </div>
 

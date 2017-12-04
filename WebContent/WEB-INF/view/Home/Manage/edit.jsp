@@ -216,5 +216,5 @@
 
 
 <%--此句必须放在最后--%>
-<%@ include file="Manage/framework.jsp"%>
+<%@ include file="framework.jsp"%>
 
