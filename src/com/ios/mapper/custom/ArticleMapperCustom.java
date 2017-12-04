@@ -17,6 +17,9 @@ public interface ArticleMapperCustom {
 	//获取Article总数
 	public Integer countArticle(@Param(value="status") Integer status) throws Exception;
 	
+	//获取指定user的Article总数
+	public Integer countArticleByUser(@Param(value="status") Integer status,@Param(value="email")String email) throws Exception;
+		
 	//获得留言总数
 	public Integer countArticleComment(@Param(value="status")Integer status) throws Exception;
 	
@@ -75,6 +78,9 @@ public interface ArticleMapperCustom {
 	
 	//Get Article id by update time in table article
 	public ArticleCustom getArticleIdByUpdateTime(@Param(value="updateTime") String updateTime);
+	
+	//获得所有指定user的Article(Article归档)
+	public List<ArticleCustom> listArticleByUser(@Param(value="status")Integer status,@Param(value="email") String email) throws Exception;
 }
 
 

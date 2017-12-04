@@ -18,6 +18,7 @@
         article_is_comment,
         article_status,
         article_order,
+        video_url,
         article_url
     </sql>
 
@@ -323,5 +324,20 @@
         FROM `article`
         WHERE article_update_time=#{updateTime} 
 	</select>
+	
+	<!--获得所有指定user的Article-->
+    <select id="listArticleByUser" resultType="com.ios.entity.custom.ArticleCustom">
+        SELECT
+        <include refid="article_table_all_columns"/>
+        FROM
+        `article`
+        <where>
+            <if test="status!=null">
+                article_status=#{status} AND
+            </if>
+            user_email=#{email}
+        </where>
+        ORDER BY article_status ASC, article_order DESC, article_id DESC
+    </select>
 
 </mapper>
