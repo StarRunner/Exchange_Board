@@ -50,9 +50,6 @@ public class ManageArticleController {
         ModelAndView modelAndView = new ModelAndView();
 
         User customer = (User)session.getAttribute("customer");
-        if(customer == null){
-//        	判断
-        }
         String email = customer.getUserName();
         //分页显示已发布Article
         Integer pageSize = 20;

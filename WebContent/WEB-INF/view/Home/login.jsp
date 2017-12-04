@@ -11,7 +11,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>${options.optionSiteTitle} &lsaquo; Logon</title>
+    <title>${options.optionSiteTitle} &lsaquo; Sign in</title>
     <link rel="stylesheet" href="/plugin/font-awesome/css/font-awesome.min.css">
     <link rel="shortcut icon" href="/img/logo.png">
     <link rel='stylesheet' id='dashicons-css'  href='/plugin/login/dashicons.min.css' type='text/css' media='all' />
@@ -77,7 +77,7 @@
          %>
     <form name="userLoginForm" id="userLoginForm"  method="post">
         <p>
-            <label for="user_login">Username or Email<br />
+            <label for="user_login">IBM Intranet ID<br />
                 <input type="text" name="username" id="user_login" class="input" value="<%=username%>" size="20" required/></label>
         </p>
         <p>

@@ -88,6 +88,12 @@
                                     </li>
                                 </c:if>
                             </c:forEach>
+                            <li>
+                                <a href="/manage/article">
+                                    <i class="fa-home fa"></i>
+                                    <span class="font-text">Manage Article</span>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </nav>
@@ -95,7 +101,6 @@
               <span class="nav-search">
                     <i class="fa fa-search"></i>
               </span>
-            
             <div class="clear"></div>
         </div><!-- #top-menu -->
     </div><!-- #menu-box -->
