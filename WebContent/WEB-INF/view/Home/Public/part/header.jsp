@@ -12,8 +12,8 @@
         <div class="top-nav">
             <div class="user-login" style="float:left;" >
              <a class="inner" href="/">
-              <img width="100" height="50" src="/img/dzone.png" alt="DZone" />
-              </a>
+             	<img width="100px" height="40px" src="/img/dzone.png" alt="DZone" />
+             </a>
             </div>
             <div class="menu-topmenu-container" style="padding-top:10px;padding-bottom:10px;float:right;">
                    <c:choose>
@@ -22,10 +22,10 @@
                     </c:when>
                     <c:otherwise>
                       <p style="font-size: 19px;
-    color: #939598;
-    font-weight: 300;
-    vertical-align: middle;
-    display: inline-block;">
+					    color: #939598;
+					    font-weight: 300;
+					    vertical-align: middle;
+					    display: inline-block;">
                       Thanks for visiting ShowcaseBoard, <a href="/user" style="font-size: 19px;font-weight: 300;vertical-align: middle;color: #0288d1;padding-right: 5px;display: inline-block;">${sessionScope.customer.userNickname}</a>
                       | <a href="/user/logout" style="font-size: 19px;font-weight: 300;vertical-align: middle;color: #0288d1;padding-right: 5px;display: inline-block;">Log out</a></p>
                       
