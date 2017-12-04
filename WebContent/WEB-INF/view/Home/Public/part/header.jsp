@@ -18,10 +18,17 @@
             <div class="menu-topmenu-container" style="padding-top:10px;padding-bottom:10px;float:right;">
                    <c:choose>
                     <c:when test="${sessionScope.customer==null}">
-                        <a href="/user">Login</a>
+                        <a  href="/user" style="font-size: 19px;font-weight: 300;vertical-align: middle;color: #0288d1;padding-right: 5px;display: inline-block;">Login</a>
                     </c:when>
                     <c:otherwise>
-                      Thanks for visiting ShowcaseBoard, <a href="/user">${sessionScope.customer.userNickname}</a>
+                      <p style="font-size: 19px;
+    color: #939598;
+    font-weight: 300;
+    vertical-align: middle;
+    display: inline-block;">
+                      Thanks for visiting ShowcaseBoard, <a href="/user" style="font-size: 19px;font-weight: 300;vertical-align: middle;color: #0288d1;padding-right: 5px;display: inline-block;">${sessionScope.customer.userNickname}</a>
+                      | <a href="/user/logout" style="font-size: 19px;font-weight: 300;vertical-align: middle;color: #0288d1;padding-right: 5px;display: inline-block;">Log out</a></p>
+                      
                     </c:otherwise>
                 </c:choose>
             </div>
