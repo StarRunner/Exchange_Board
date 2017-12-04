@@ -79,7 +79,7 @@
             <bean class="com.ios.Interceptor.UserSecurityInterceptor"/>
 		</mvc:interceptor>
 		<mvc:interceptor>
-            <mvc:mapping path="/user/article"/>
+            <mvc:mapping path="/manage/article"/>
             <bean class="com.ios.Interceptor.UserSecurityInterceptor"/>
 		</mvc:interceptor>
 
