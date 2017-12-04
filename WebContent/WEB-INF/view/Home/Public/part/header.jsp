@@ -34,6 +34,10 @@
             </div>
             <div style="clear:both;"></div>
         </div>
+        <!--should be hidden without login -->
+        <div>
+			<a href="/manage/article">Manage Article</a>
+		</div>
     </nav><!-- #top-header -->
     <%--顶部菜单 end--%>
 
