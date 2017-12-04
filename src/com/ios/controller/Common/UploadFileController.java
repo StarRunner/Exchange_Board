@@ -30,7 +30,7 @@ public class UploadFileController {
 
         //本地使用
         //String rootPath ="/Users/liuyanzhao/Documents/uploads/";
-        String rootPath ="/www/uploads/";
+        String rootPath ="/uploads/";
 
         //原始名称
         String originalFilename = file.getOriginalFilename();

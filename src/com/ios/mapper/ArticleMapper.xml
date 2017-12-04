@@ -24,7 +24,7 @@
   <sql id="Base_Column_List" >
     article_id, article_user_id, article_title, article_parent_category_id, article_child_category_id, 
     article_tag_ids, article_view_count, article_comment_count, article_like_count, article_post_time, 
-    article_update_time, article_is_comment, article_status, article_order, articel_url
+    article_update_time, article_is_comment, article_status, article_order,articel_url
   </sql>
   <sql id="Blob_Column_List" >
     article_content
@@ -53,7 +53,7 @@
       #{articleTagIds,jdbcType=VARCHAR}, #{articleViewCount,jdbcType=INTEGER}, #{articleCommentCount,jdbcType=INTEGER}, 
       #{articleLikeCount,jdbcType=INTEGER}, #{articlePostTime,jdbcType=TIMESTAMP}, #{articleUpdateTime,jdbcType=TIMESTAMP}, 
       #{articleIsComment,jdbcType=INTEGER}, #{articleStatus,jdbcType=INTEGER}, #{articleOrder,jdbcType=INTEGER}, 
-      #{articleContent,jdbcType=LONGVARCHAR}, #{articleUrl,jdbcType=VARCHAR})
+      #{articleContent,jdbcType=LONGVARCHAR}, #{videoUrl,jdbcType=VARCHAR}, #{articleUrl,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.ios.entity.Article" >
     insert into article
@@ -103,7 +103,7 @@
       <if test="articleContent != null" >
         article_content,
       </if>
-        <if test="articleUrl != null" >
+      <if test="articleUrl != null" >
         article_url,
       </if>
     </trim>
@@ -153,7 +153,10 @@
       <if test="articleContent != null" >
         #{articleContent,jdbcType=LONGVARCHAR},
       </if>
-       <if test="articleUrl != null" >
+      <if test="videoUrl != null" >
+        #{videoUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="articleUrl != null" >
         #{articleUrl,jdbcType=VARCHAR},
       </if>
     </trim>

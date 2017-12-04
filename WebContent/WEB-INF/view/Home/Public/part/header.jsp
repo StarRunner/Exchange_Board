@@ -10,30 +10,29 @@
     <%--顶部菜单 start--%>
     <nav id="top-header">
         <div class="top-nav">
-            <div class="user-login">
-                <c:choose>
-                    <c:when test="${sessionScope.user==null}">
-                        <a href="/admin">Login</a>
+            <div class="user-login" style="float:left;" >
+             <a class="inner" href="/">
+              <img width="100" height="50" src="/img/dzone.png" alt="DZone" />
+              </a>
+            </div>
+            <div class="menu-topmenu-container" style="padding-top:10px;padding-bottom:10px;float:right;">
+                   <c:choose>
+                    <c:when test="${sessionScope.customer==null}">
+                        <a  href="/user" style="font-size: 19px;font-weight: 300;vertical-align: middle;color: #0288d1;padding-right: 5px;display: inline-block;">Login</a>
                     </c:when>
                     <c:otherwise>
-                        <a href="/admin">Login to Console</a>
+                      <p style="font-size: 19px;
+    color: #939598;
+    font-weight: 300;
+    vertical-align: middle;
+    display: inline-block;">
+                      Thanks for visiting ShowcaseBoard, <a href="/user" style="font-size: 19px;font-weight: 300;vertical-align: middle;color: #0288d1;padding-right: 5px;display: inline-block;">${sessionScope.customer.userNickname}</a>
+                      | <a href="/user/logout" style="font-size: 19px;font-weight: 300;vertical-align: middle;color: #0288d1;padding-right: 5px;display: inline-block;">Log out</a></p>
+                      
                     </c:otherwise>
                 </c:choose>
             </div>
-            <div class="menu-topmenu-container">
-                <ul id="menu-topmenu" class="top-menu">
-                    <c:forEach items="${menuCustomList}" var="m">
-                        <li class="menu-item">
-                        <c:if test="${m.menuLevel==1}">
-                                <a href="${m.menuUrl}" >
-                                    <i class="${m.menuIcon}"></i>
-                                    <span class="font-text">${m.menuName}&nbsp;</span>&nbsp;
-                                </a>
-                            </c:if>
-                        </li>
-                    </c:forEach>
-                </ul>
-            </div>
+            <div style="clear:both;"></div>
         </div>
     </nav><!-- #top-header -->
     <%--顶部菜单 end--%>

@@ -86,4 +86,10 @@ public interface ArticleService {
 	
 	//get article by update time
 	public ArticleCustom getArticleByUpdateTime(String content) throws Exception;
+	
+	//get all article by user
+	public List<ArticleListVo> getArticleByUserEmail(Integer status,String email) throws Exception;
+	
+	//get all article by user by page
+	public List<ArticleListVo> listArticleByUserByPage(Integer status,String email,Integer pageNow,Integer pageSize) throws Exception;
 }

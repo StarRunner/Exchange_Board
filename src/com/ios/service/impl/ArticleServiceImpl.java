@@ -460,4 +460,139 @@ public class ArticleServiceImpl implements ArticleService {
 		ArticleCustom articleCustom = articleMapperCustom.getArticleIdByUpdateTime(time);
 		return articleCustom;
 	}
+
+	@Override
+	public List<ArticleListVo> getArticleByUserEmail(Integer status,String email) throws Exception {
+		// TODO Auto-generated method stub
+		List<ArticleListVo> articleListVoList = new ArrayList<ArticleListVo>();
+
+		//获得Article列表信息和分页信息
+		List<ArticleCustom> articleCustomList = articleMapperCustom.listArticleByUser(status,email);
+
+		//获得分类信息
+		for (int i = 0; i < articleCustomList.size(); i++) {
+			ArticleListVo articleListVo = new ArticleListVo();
+
+			//1、将Article信息装到 articleListVoList 中
+			ArticleCustom articleCustom = articleCustomList.get(i);
+			articleListVo.setArticleCustom(articleCustom);
+
+			//2、将分类信息装到 articleListVoList 中
+			List<CategoryCustom> categoryCustomList = new ArrayList<CategoryCustom>();
+			Integer parentCategoryId = articleCustomList.get(i).getArticleParentCategoryId();
+			Integer childCategoryId = articleCustomList.get(i).getArticleChildCategoryId();
+			CategoryCustom categoryCustom = categoryMapperCustom.getCategoryById(1,parentCategoryId);
+			CategoryCustom categoryCustom2 = categoryMapperCustom.getCategoryById(1,childCategoryId);
+			if (categoryCustom != null) {
+				categoryCustomList.add(categoryCustom);
+			}
+			if (categoryCustom2 != null) {
+				categoryCustomList.add(categoryCustom2);
+			}
+			articleListVo.setCategoryCustomList(categoryCustomList);
+
+			//3、获得标签信息
+			List<TagCustom> tagCustomList = new ArrayList<TagCustom>();
+			String tagIds = articleCustomList.get(i).getArticleTagIds();
+			//防止该Article没有分类，空指针
+			if (tagIds != null && tagIds != "") {
+				String[] tagId = tagIds.split(",");
+				for (int j = 0; j < tagId.length; j++) {
+					Tag tag = tagMapper.selectByPrimaryKey(Integer.valueOf(tagId[j]));
+					//防止标签不存在，被删除
+					if (tag != null) {
+						TagCustom tagCustom = new TagCustom();
+						BeanUtils.copyProperties(tag, tagCustom);
+						tagCustomList.add(tagCustom);
+					}
+				}
+			}
+			articleListVo.setTagCustomList(tagCustomList);
+
+			//4、获得作者信息
+			/*
+			User user = userMapper.selectByPrimaryKey(articleCustom.getArticleUserId());
+			UserCustom userCustom = new UserCustom();
+			BeanUtils.copyProperties(user, userCustom);
+			articleListVo.setUserCustom(userCustom);
+			*/
+
+			articleListVoList.add(articleListVo);
+
+		}
+		return articleListVoList;
+	}
+	//分页显示指定user的Article列表
+		@Override
+		public List<ArticleListVo> listArticleByUserByPage(Integer status,String email,Integer pageNow,Integer pageSize) throws Exception {
+			List<ArticleListVo> articleListVoList = new ArrayList<ArticleListVo>();
+			
+			//获得Article列表信息和分页信息
+			List<ArticleCustom> articleCustomList = new ArrayList<ArticleCustom>();
+			Page page = null;
+			int totalCount = articleMapperCustom.countArticle(status);
+			if (pageNow != null) {
+				page = new Page(totalCount, pageNow,pageSize);
+				articleCustomList = articleMapperCustom.listArticleByPage(status,page.getStartPos(),pageSize);
+			} else {
+				page = new Page(totalCount, 1,pageSize);
+				articleCustomList = articleMapperCustom.listArticleByPage(status,page.getStartPos(), pageSize);
+			}
+			
+			//获得分类信息
+			for(int i=0;i<articleCustomList.size();i++) {
+				ArticleListVo articleListVo = new ArticleListVo();
+				
+				//1、将Article信息装到 articleListVoList 中
+				ArticleCustom articleCustom = articleCustomList.get(i);
+				articleListVo.setArticleCustom(articleCustom);
+				
+				//2、将分类信息装到 articleListVoList 中
+				List<CategoryCustom> categoryCustomList = new ArrayList<CategoryCustom>();
+				Integer parentCategoryId =articleCustomList.get(i).getArticleParentCategoryId();
+	            Integer childCategoryId =articleCustomList.get(i).getArticleChildCategoryId();
+	            CategoryCustom categoryCustom = categoryMapperCustom.getCategoryById(status,parentCategoryId);
+				CategoryCustom categoryCustom2 = categoryMapperCustom.getCategoryById(status,childCategoryId);
+				if(categoryCustom!=null) {
+	                categoryCustomList.add(categoryCustom);
+	            }
+	            if(categoryCustom2!=null) {
+	                categoryCustomList.add(categoryCustom2);
+	            }
+	            articleListVo.setCategoryCustomList(categoryCustomList);
+
+				//3、获得标签信息
+				List<TagCustom> tagCustomList = new ArrayList<TagCustom>();
+				String tagIds = articleCustomList.get(i).getArticleTagIds();
+				//防止该Article没有分类，空指针
+				if(tagIds!=null && tagIds!="") {
+					String[] tagId = tagIds.split(",");
+					for (int j = 0; j < tagId.length; j++) {
+						Tag tag = tagMapper.selectByPrimaryKey(Integer.valueOf(tagId[j]));
+						//防止标签不存在，被删除
+						if (tag != null) {
+							TagCustom tagCustom = new TagCustom();
+							BeanUtils.copyProperties(tag, tagCustom);
+							tagCustomList.add(tagCustom);
+						}
+					}
+				}
+				articleListVo.setTagCustomList(tagCustomList);
+
+				//4、获得作者信息
+				User user = userMapper.selectByPrimaryKey(articleCustom.getArticleUserId());
+				UserCustom  userCustom = new UserCustom();
+				BeanUtils.copyProperties(user,userCustom);
+				articleListVo.setUserCustom(userCustom);
+
+
+				articleListVoList.add(articleListVo);
+			}
+
+			if(articleListVoList.size()>0) {
+				//4、将Page信息存储在第一个元素中
+				articleListVoList.get(0).setPage(page);
+			}
+			return articleListVoList;
+		}
 }
