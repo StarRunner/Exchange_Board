@@ -12,7 +12,7 @@ function DoCheck() {
 }
 
 function confirmDelete() {
-    var msg = "您确定要删除吗？";
+    var msg = "Are you sure? ";
     if (confirm(msg)==true){
         return true;
     }else{
@@ -226,7 +226,7 @@ layui.use(['form', 'layedit', 'laydate'], function () {
 
         userName: function (value) {
             if (value.length > 12 || value.length < 4) {
-                return "用户名必须4到12位";
+                return "User name should between 4-12";
             }
             if(checkUserName()==1) {
                 return "User Exist";

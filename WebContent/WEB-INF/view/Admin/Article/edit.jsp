@@ -7,7 +7,7 @@
 <%@ taglib prefix="rapid" uri="http://www.rapid-framework.org.cn/rapid" %>
 <%--保留此处 end--%>
 <rapid:override name="title">
-    - 修改Article
+    - Change Article
 </rapid:override>
 <rapid:override name="header-style">
 
@@ -18,7 +18,7 @@
         <span class="layui-breadcrumb" lay-separator="/">
               <a href="/admin">Home</a>
               <a href="/admin/article">Article List</a>
-              <a><cite>修改Article</cite></a>
+              <a><cite>Change Article</cite></a>
         </span>
     </blockquote>
 
@@ -162,7 +162,7 @@
             form.verify({
                 title: function (value) {
                     if (value.length < 5) {
-                        return '标题至少得5个字符啊';
+                        return 'Title should larger than 5';
                     }
                 }
                 ,content: function (value) {
@@ -200,7 +200,7 @@
                     optionstring += "<option name='childCategory' value='${c.categoryId}'<c:if test='${articleCustom.articleChildCategoryId==c.categoryId}'>selected</c:if>>${c.categoryName}</option>";
                 }
                 </c:forEach>
-                $("#articleChildCategoryId").html("  <option value=''selected>二级分类</option>"+optionstring);
+//                 $("#articleChildCategoryId").html("  <option value=''selected>secondary classification</option>"+optionstring);
                 form.render('select'); //这个很重要
             })
 

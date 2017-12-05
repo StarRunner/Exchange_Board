@@ -277,7 +277,7 @@ function deleteComment(id) {
 $(".comment-reply-link").click(function () {
     var authorName = $(this).parents('.comment-author').find("strong").text();
     $("#cancel-comment-reply-link").show();
-    $("#reply-title-word").html("回复 " + authorName);
+    $("#reply-title-word").html("reply " + authorName);
     var commentId = $(this).parents('.comment-body').attr("id").match(/\d+/g);
     $("input[name=commentPid]").attr("value", commentId);
     $("input[name=commentPname]").attr("value", authorName);
@@ -288,7 +288,7 @@ $("#cancel-comment-reply-link").click(function () {
     $("#cancel-comment-reply-link").hide();
     $("input[name=commentPid]").attr("value", 0);
     $("input[name=commentPname]").attr("value", "");
-    $("#reply-title-word").html("发表评论");
+    $("#reply-title-word").html("publish comment");
 })
 
 var articleId = (window.location.pathname).match(/\d+/g);
@@ -311,7 +311,7 @@ function increaseViewCount() {
                 );
             },
             error: function () {
-                alert("获取数据出错!");
+                alert("Error to get data!");
             },
         });
     }

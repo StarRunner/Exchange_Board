@@ -176,7 +176,7 @@
                     optionstring += "<option name='childCategory' value='${c.categoryId}'>${c.categoryName}</option>";
                 }
                 </c:forEach>
-                $("#articleChildCategoryId").html("<option value=''selected>二级分类</option>"+optionstring);
+                $("#articleChildCategoryId").html("<option value=''selected>secondary classification</option>"+optionstring);
                 form.render('select'); //这个很重要
             })
 
