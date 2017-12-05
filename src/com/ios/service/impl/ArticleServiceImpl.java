@@ -530,7 +530,7 @@ public class ArticleServiceImpl implements ArticleService {
 			//获得Article列表信息和分页信息
 			List<ArticleCustom> articleCustomList = new ArrayList<ArticleCustom>();
 			Page page = null;
-			int totalCount = articleMapperCustom.countArticle(status);
+			int totalCount = articleMapperCustom.countArticleByUser(status,email);
 			if (pageNow != null) {
 				page = new Page(totalCount, pageNow,pageSize);
 				articleCustomList = articleMapperCustom.listArticleByPage(status,page.getStartPos(),pageSize);

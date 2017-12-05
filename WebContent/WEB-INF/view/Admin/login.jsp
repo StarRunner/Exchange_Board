@@ -142,7 +142,7 @@
                     }
                 },
                 error: function () {
-                    alert("数据获取失败")
+                    alert("Failed to fetch data!")
                 }
             })
         }

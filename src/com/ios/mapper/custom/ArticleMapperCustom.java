@@ -29,6 +29,9 @@ public interface ArticleMapperCustom {
 	//获得所有Article(Article归档)
 	public List<ArticleCustom> listArticle(@Param(value="status")Integer status) throws Exception;
 	
+	//获得所有指定user的Article(Article归档)
+	public List<ArticleCustom> listArticleByUser(@Param(value="status")Integer status,@Param(value="email") String email) throws Exception;
+	
 	//根据id查询用户信息
 	public ArticleCustom getArticleById(@Param(value="status")Integer status,@Param(value="id")Integer id) throws Exception;
 	
@@ -79,8 +82,6 @@ public interface ArticleMapperCustom {
 	//Get Article id by update time in table article
 	public ArticleCustom getArticleIdByUpdateTime(@Param(value="updateTime") String updateTime);
 	
-	//获得所有指定user的Article(Article归档)
-	public List<ArticleCustom> listArticleByUser(@Param(value="status")Integer status,@Param(value="email") String email) throws Exception;
 }
 
 
