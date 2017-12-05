@@ -12,8 +12,8 @@
         <div class="top-nav">
             <div class="user-login" style="float:left;" >
              <a class="inner" href="/">
-             	<img width="100px" height="40px" src="/img/dzone.png" alt="DZone" />
-             </a>
+              <img width="100" height="40" src="/img/dzone.png" alt="DZone" />
+              </a>
             </div>
             <div class="menu-topmenu-container" style="padding-top:10px;padding-bottom:10px;float:right;">
                    <c:choose>
@@ -22,12 +22,12 @@
                     </c:when>
                     <c:otherwise>
                       <p style="font-size: 19px;
-					    color: #939598;
-					    font-weight: 300;
-					    vertical-align: middle;
-					    display: inline-block;">
-                      Thanks for visiting ShowcaseBoard, <a href="/user" style="font-size: 19px;font-weight: 300;vertical-align: middle;color: #0288d1;padding-right: 5px;display: inline-block;">${sessionScope.customer.userNickname}</a>
-                      | <a href="/user/logout" style="font-size: 19px;font-weight: 300;vertical-align: middle;color: #0288d1;padding-right: 5px;display: inline-block;">Log out</a></p>
+    color: #939598;
+    font-weight: 300;
+    vertical-align: middle;
+    display: inline-block;">
+                      Welcome, <a href="/user" style="font-size: 19px;font-weight: 300;vertical-align: middle;color: #0288d1;padding-right: 5px;padding-bottom:4px;display: inline-block;">${sessionScope.customer.userNickname}</a>
+                      | <a href="/user/logout" style="font-size: 19px;font-weight: 300;vertical-align: middle;color: #0288d1;padding-right: 5px;padding-bottom:4px;display: inline-block;">Log out</a></p>
                       
                     </c:otherwise>
                 </c:choose>
@@ -88,6 +88,12 @@
                                     </li>
                                 </c:if>
                             </c:forEach>
+                            <li>
+                                <a href="/manage/article">
+                                    <i class="fa-home fa"></i>
+                                    <span class="font-text">Manage Article</span>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </nav>
@@ -95,7 +101,6 @@
               <span class="nav-search">
                     <i class="fa fa-search"></i>
               </span>
-            
             <div class="clear"></div>
         </div><!-- #top-menu -->
     </div><!-- #menu-box -->
