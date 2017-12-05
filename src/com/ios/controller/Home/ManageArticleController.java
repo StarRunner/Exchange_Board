@@ -11,11 +11,13 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -34,6 +36,7 @@ import com.ios.util.UploadArticlePicture;
 
 @Controller
 @RequestMapping("/manage/article")
+@SessionAttributes("customer")
 public class ManageArticleController {
     @Autowired
     private ArticleService articleService;
@@ -46,18 +49,16 @@ public class ManageArticleController {
 
     //后台Article列表显示
     @RequestMapping(value = "")
-    public ModelAndView index(HttpSession session) throws Exception {
+    public ModelAndView index(@ModelAttribute("customer")User customer) throws Exception {
         ModelAndView modelAndView = new ModelAndView();
-
-        User customer = (User)session.getAttribute("customer");
-        String email = customer.getUserName();
+        
         //分页显示已发布Article
-        Integer pageSize = 20;
-        List<ArticleListVo> publishedArticleListVoList = articleService.listArticleByUserByPage(1,email,null,pageSize);
+        Integer pageSize = 10;
+        List<ArticleListVo> publishedArticleListVoList = articleService.listArticleByUserByPage(1,customer.getUserName(),null,pageSize);
         modelAndView.addObject("publishedArticleListVoList",publishedArticleListVoList);
 
         //不分页显示 草稿Article
-        List<ArticleListVo> draftArticleList = articleService.getArticleByUserEmail(0,email);
+        List<ArticleListVo> draftArticleList = articleService.getArticleByUserEmail(0,customer.getUserName());
         modelAndView.addObject("draftArticleList",draftArticleList);
         modelAndView.setViewName("Home/Manage/index");
         return modelAndView;
@@ -65,15 +66,16 @@ public class ManageArticleController {
 
     //Article分页显示
     @RequestMapping("/p/{pageNow}")
-    public @ResponseBody  ModelAndView ArticleListByPageView(@PathVariable("pageNow") Integer pageNow) throws Exception{
+    public @ResponseBody  ModelAndView ArticleListByPageView(@PathVariable("pageNow") Integer pageNow,@ModelAttribute("customer")User customer) throws Exception{
         ModelAndView modelAndView = new ModelAndView();
+        
         //分页显示已发布Article
-        Integer pageSize = 20;
-        List<ArticleListVo> publishedArticleListVoList = articleService.listArticleByPage(1,pageNow,pageSize);
+        Integer pageSize = 10;
+        List<ArticleListVo> publishedArticleListVoList = articleService.listArticleByUserByPage(1,customer.getUserName(),pageNow,pageSize);
         modelAndView.addObject("publishedArticleListVoList",publishedArticleListVoList);
 
         //不分页显示 草稿Article
-        List<ArticleListVo> draftArticleList = articleService.listArticle(0);
+        List<ArticleListVo> draftArticleList = articleService.getArticleByUserEmail(0,customer.getUserName());
         modelAndView.addObject("draftArticleList",draftArticleList);
         modelAndView.setViewName("Home/Manage/index");
         return modelAndView;
@@ -192,7 +194,7 @@ public class ManageArticleController {
     public  ModelAndView SearchPageByPageView(HttpServletRequest request, Model model,@PathVariable("pageNow") Integer pageNow) throws Exception {
         ModelAndView modelAndView = new ModelAndView();
         //设置每页显示的数量
-        int pageSize = 20;
+        int pageSize = 10;
         String query = request.getParameter("query");
         List<ArticleSearchVo> articleSearchVoList = articleService.listSearchResultByPage(1,request,model,pageNow,pageSize,query);
         modelAndView.addObject("articleSearchVoList", articleSearchVoList);
