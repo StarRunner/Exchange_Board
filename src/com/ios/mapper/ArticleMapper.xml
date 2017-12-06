@@ -53,7 +53,8 @@
       #{articleTagIds,jdbcType=VARCHAR}, #{articleViewCount,jdbcType=INTEGER}, #{articleCommentCount,jdbcType=INTEGER}, 
       #{articleLikeCount,jdbcType=INTEGER}, #{articlePostTime,jdbcType=TIMESTAMP}, #{articleUpdateTime,jdbcType=TIMESTAMP}, 
       #{articleIsComment,jdbcType=INTEGER}, #{articleStatus,jdbcType=INTEGER}, #{articleOrder,jdbcType=INTEGER}, 
-      #{articleContent,jdbcType=LONGVARCHAR}, #{videoUrl,jdbcType=VARCHAR}, #{articleUrl,jdbcType=VARCHAR})
+  	  #{articleContent,jdbcType=LONGVARCHAR},#{articleUrl,jdbcType=VARCHAR})
+  
   </insert>
   <insert id="insertSelective" parameterType="com.ios.entity.Article" >
     insert into article
@@ -152,9 +153,6 @@
       </if>
       <if test="articleContent != null" >
         #{articleContent,jdbcType=LONGVARCHAR},
-      </if>
-      <if test="videoUrl != null" >
-        #{videoUrl,jdbcType=VARCHAR},
       </if>
       <if test="articleUrl != null" >
         #{articleUrl,jdbcType=VARCHAR},
