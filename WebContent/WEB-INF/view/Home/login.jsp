@@ -77,7 +77,7 @@
          %>
     <form name="userLoginForm" id="userLoginForm"  method="post">
         <p>
-            <label for="user_login">Username or Email<br />
+            <label for="user_login">IBM Intranet ID<br />
                 <input type="text" name="username" id="user_login" class="input" value="<%=username%>" size="20" required/></label>
         </p>
         <p>
