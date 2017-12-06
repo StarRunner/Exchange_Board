@@ -31,6 +31,17 @@
             </if>
         </where>
     </select>
+    
+    <!--获取指定user的Article总数-->
+    <select id="countArticleByUser" resultType="Integer">
+        SELECT COUNT(*) FROM `article`
+        <where>
+            <if test="status!=null">
+                article_status=#{status} AND
+            </if>
+			user_email=#{email}
+        </where>
+    </select>
 
     <!--获得Article留言总数-->
     <select id="countArticleComment" resultType="Integer">
@@ -80,8 +91,22 @@
         </where>
         ORDER BY article_status ASC, article_order DESC, article_id DESC
     </select>
-
-
+    
+    <!--获得所有指定user的Article-->
+    <select id="listArticleByUser" resultType="com.ios.entity.custom.ArticleCustom">
+        SELECT
+        <include refid="article_table_all_columns"/>
+        FROM
+        `article`
+        <where>
+            <if test="status!=null">
+                article_status=#{status} AND
+            </if>
+            user_email=#{email}
+        </where>
+        ORDER BY article_status ASC, article_order DESC, article_id DESC
+    </select>
+    
     <!--Article列表查询-->
     <select id="getArticleList" parameterType="com.ios.entity.custom.ArticleListVo"
             resultType="com.ios.entity.custom.ArticleCustom">
@@ -112,6 +137,21 @@
             <if test="status!=null">
                 article_status=#{status}
             </if>
+         </where>
+         ORDER BY article_status ASC, article_order DESC, article_id DESC
+         limit #{startPos},#{pageSize}
+    </select>
+    
+    <!--通过分页查询指定user的Article-->
+    <select id="listArticleByUserByPage" resultType="com.ios.entity.custom.ArticleCustom">
+         SELECT
+         <include refid="article_table_all_columns"/>
+         FROM `article`
+         <where>
+            <if test="status!=null">
+                article_status=#{status} AND
+            </if>
+            user_email=#{email}
          </where>
          ORDER BY article_status ASC, article_order DESC, article_id DESC
          limit #{startPos},#{pageSize}
@@ -324,19 +364,6 @@
         WHERE article_update_time=#{updateTime} 
 	</select>
 	
-	<!--获得所有指定user的Article-->
-    <select id="listArticleByUser" resultType="com.ios.entity.custom.ArticleCustom">
-        SELECT
-        <include refid="article_table_all_columns"/>
-        FROM
-        `article`
-        <where>
-            <if test="status!=null">
-                article_status=#{status} AND
-            </if>
-            user_email=#{email}
-        </where>
-        ORDER BY article_status ASC, article_order DESC, article_id DESC
-    </select>
+	
 
 </mapper>
