@@ -98,7 +98,8 @@ public class ManageArticleController {
     
     //后台添加Article提交操作
     @RequestMapping(value = "/insertSubmit",method = RequestMethod.POST)
-    public String insertArticleSubmit(Article article, @RequestParam("file") CommonsMultipartFile file) throws Exception {
+    public String insertArticleSubmit(Article article, @RequestParam("file") CommonsMultipartFile file,
+    		@ModelAttribute("customer")User customer) throws Exception {
     	
     	UploadArticlePicture uploadFunction = new UploadArticlePicture();
     	
@@ -118,6 +119,8 @@ public class ManageArticleController {
         article.setArticleCommentCount(0);
         article.setArticleStatus(1);
         article.setArticleOrder(1);
+        article.setUserEmail(customer.getUserName());
+        article.setArticleAuthor(customer.getUserNickname());
         System.out.println("Article.toString: " + article.toString());
         //insert
         articleService.insertArticle(article);
@@ -154,7 +157,7 @@ public class ManageArticleController {
 
     //后台添加Article提交操作
     @RequestMapping(value = "/insertDraftSubmit",method = RequestMethod.POST)
-    public String insertArticleDraftSubmit(Article article) throws Exception {
+    public String insertArticleDraftSubmit(Article article,@ModelAttribute("customer")User customer) throws Exception {
 
         article.setArticlePostTime(new Date());
         article.setArticleUpdateTime(new Date());
@@ -164,7 +167,8 @@ public class ManageArticleController {
         article.setArticleCommentCount(0);
         article.setArticleStatus(0);
         article.setArticleOrder(1);
-
+        article.setUserEmail(customer.getUserName());
+        article.setArticleAuthor(customer.getUserNickname());
         articleService.insertArticle(article);
 
         return "redirect:/manage/article";

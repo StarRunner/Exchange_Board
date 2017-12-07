@@ -47,13 +47,14 @@
       article_tag_ids, article_view_count, article_comment_count, 
       article_like_count, article_post_time, article_update_time, 
       article_is_comment, article_status, article_order, 
-      article_content,article_url)
+      article_content,article_url,user_email,article_author)
     values (#{articleId,jdbcType=INTEGER}, #{articleUserId,jdbcType=INTEGER}, #{articleTitle,jdbcType=VARCHAR}, 
       #{articleParentCategoryId,jdbcType=INTEGER}, #{articleChildCategoryId,jdbcType=INTEGER}, 
       #{articleTagIds,jdbcType=VARCHAR}, #{articleViewCount,jdbcType=INTEGER}, #{articleCommentCount,jdbcType=INTEGER}, 
       #{articleLikeCount,jdbcType=INTEGER}, #{articlePostTime,jdbcType=TIMESTAMP}, #{articleUpdateTime,jdbcType=TIMESTAMP}, 
       #{articleIsComment,jdbcType=INTEGER}, #{articleStatus,jdbcType=INTEGER}, #{articleOrder,jdbcType=INTEGER}, 
-  	  #{articleContent,jdbcType=LONGVARCHAR},#{articleUrl,jdbcType=VARCHAR})
+  	  #{articleContent,jdbcType=LONGVARCHAR},#{articleUrl,jdbcType=VARCHAR},
+  	  #{userEmail,jdbcType=VARCHAR},#{articleAuthor,jdbcType=VARCHAR})
   
   </insert>
   <insert id="insertSelective" parameterType="com.ios.entity.Article" >
@@ -107,6 +108,12 @@
       <if test="articleUrl != null" >
         article_url,
       </if>
+      <if test="userEmail != null" >
+        user_email,
+      </if>
+      <if test="articleAuthor != null" >
+        article_author,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="articleId != null" >
@@ -156,6 +163,12 @@
       </if>
       <if test="articleUrl != null" >
         #{articleUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="userEmail != null" >
+        #{userEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="articleAuthor != null" >
+        #{articleAuthor,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>

@@ -34,8 +34,10 @@ public class Article {
     private String articleContent;
     
     private String articleUrl;
-
-  
+    
+    private String userEmail;
+    
+    private String articleAuthor;
 
 	public String getArticleUrl() {
 		return articleUrl;
@@ -164,6 +166,22 @@ public class Article {
     public void setArticleContent(String articleContent) {
         this.articleContent = articleContent == null ? null : articleContent.trim();
     }
+
+	public String getUserEmail() {
+		return userEmail;
+	}
+
+	public void setUserEmail(String userEmail) {
+		this.userEmail = userEmail;
+	}
+
+	public String getArticleAuthor() {
+		return articleAuthor;
+	}
+
+	public void setArticleAuthor(String articleAuthor) {
+		this.articleAuthor = articleAuthor;
+	}
 
 	@Override
 	public String toString() {
