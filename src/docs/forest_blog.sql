@@ -271,3 +271,4 @@ INSERT INTO `user` VALUES (1,'admin','123456','言曌','admin@liuyanzhao.com','h
 # ALTER TABLE `article`
 #
 ALTER TABLE article ADD `user_email` VARCHAR(50) DEFAULT NULL;
+ALTER TABLE article ADD `article_author` VARCHAR(255) DEFAULT NULL;
