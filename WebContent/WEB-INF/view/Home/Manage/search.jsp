@@ -8,7 +8,7 @@
 
 <title>
     <rapid:block name="title">
-        - SearchArticle
+        ShowcaseBoard - SearchArticle
     </rapid:block>
 </title>
 <rapid:override name="header-style">
@@ -27,8 +27,7 @@
 <rapid:override name="content">
     <blockquote class="layui-elem-quote">
          <span class="layui-breadcrumb" lay-separator="/">
-              <a href="/admin">Home</a>
-              <a href="/admin/article">Article List</a>
+              <a href="/manage/article">Article List</a>
               <a><cite>
                   Search ${articleSearchVoList[0].query} Find ${articleSearchVoList[0].page.totalCount} Message
                 </cite>

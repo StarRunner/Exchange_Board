@@ -7,7 +7,7 @@
 <%@ taglib prefix="rapid" uri="http://www.rapid-framework.org.cn/rapid" %>
 <%--保留此处 end--%>
 <rapid:override name="title">
-    - 修改Article
+    ShowcaseBoard - Edit Article
 </rapid:override>
 <rapid:override name="header-style">
 
@@ -16,9 +16,8 @@
 <rapid:override name="content">
     <blockquote class="layui-elem-quote">
         <span class="layui-breadcrumb" lay-separator="/">
-              <a href="/admin">Home</a>
-              <a href="/admin/article">Article List</a>
-              <a><cite>修改Article</cite></a>
+              <a href="/manage/article">Article List</a>
+              <a><cite>Edit Article</cite></a>
         </span>
     </blockquote>
 

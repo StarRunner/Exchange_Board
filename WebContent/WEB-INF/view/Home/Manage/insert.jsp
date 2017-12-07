@@ -7,15 +7,14 @@
 <%@ taglib prefix="rapid" uri="http://www.rapid-framework.org.cn/rapid" %>
 <%--保留此处 end--%>
     <rapid:override name="title">
-        - New Article
+      ShowcaseBoard - Add Article
     </rapid:override>
 
 <rapid:override name="content">
     <blockquote class="layui-elem-quote">
          <span class="layui-breadcrumb" lay-separator="/">
-              <a href="/admin">Home</a>
-              <a href="/admin/article">Article List</a>
-              <a><cite>Post New Article</cite></a>
+              <a href="/manage/article">Article List</a>
+              <a><cite>New Article</cite></a>
         </span>
     </blockquote>
 
