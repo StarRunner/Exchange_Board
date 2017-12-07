@@ -81,7 +81,6 @@ public class ArticleServiceImpl implements ArticleService {
 		//获得分类信息
 		for (int i = 0; i < articleCustomList.size(); i++) {
 			ArticleListVo articleListVo = new ArticleListVo();
-
 			//1、将Article信息装到 articleListVoList 中
 			ArticleCustom articleCustom = articleCustomList.get(i);
 			articleListVo.setArticleCustom(articleCustom);

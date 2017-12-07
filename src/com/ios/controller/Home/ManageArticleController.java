@@ -83,7 +83,6 @@ public class ManageArticleController {
     @RequestMapping(value = "/insert")
     public ModelAndView insertArticleView() throws Exception {
         ModelAndView modelAndView = new ModelAndView();
-
         List<CategoryCustom> categoryCustomList = categoryService.listCategory(1);
         List<TagCustom> tagCustomList = tagService.listTag(1);
 
