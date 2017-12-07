@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="/plugin/layui/css/layui.css">
     <link rel="stylesheet" href="/css/back.css">
     <link rel="stylesheet" href="/plugin/font-awesome/css/font-awesome.min.css">
+    
     <rapid:block name="header-style"></rapid:block>
     <rapid:block name="header-script"></rapid:block>
 </head>
@@ -114,6 +115,7 @@
 <script src="/js/jquery.min.js"></script>
 <script src="/plugin/layui/layui.all.js"></script>
 <script src="/js/back.js"></script>
+<script src="/js/ckeditor/ckeditor.js"></script>
 <rapid:block name="footer-script">
 
 </rapid:block>

@@ -21,7 +21,7 @@
 
 
 
-    <form class="layui-form" enctype="multipart/form-data" method="post" id="myForm" action="/admin/article/insertSubmit">
+    <form name="frmZb" class="layui-form" enctype="multipart/form-data" method="post" id="myForm" action="/admin/article/insertSubmit">
 
         <div class="layui-form-item">
             <label class="layui-form-label">Title <span style="color: #FF5722; ">*</span></label>
@@ -42,14 +42,15 @@
 		<div class="layui-form-item">
             <label class="layui-form-label">Featured Image<span style="color: #FF5722; ">*</span></label>
             <div class="layui-input-block">
-                <input type="file" name="file">
+                <input type="file" id="file" name="file">
             </div>
         </div>
 
         <div class="layui-form-item layui-form-text">
             <label class="layui-form-label">Content <span style="color: #FF5722; ">*</span></label>
             <div class="layui-input-block">
-                <textarea class="layui-textarea layui-hide" name="articleContent" lay-verify="content" id="content"></textarea>
+                <!-- <textarea class="layui-textarea layui-hide" name="articleContent" lay-verify="content" id="content"></textarea> -->
+            	<textarea id="TextArea1" name="articleContent" cols="20" rows="2" class="ckeditor"></textarea>
             </div>
 
         </div>
@@ -179,7 +180,6 @@
                 $("#articleChildCategoryId").html("<option value=''selected>secondary classification</option>"+optionstring);
                 form.render('select'); //这个很重要
             })
-
 //end
      });
 //        window.onbeforeunload = function() {
@@ -187,11 +187,10 @@
 //        }
 
 
-
+		$(":file").filestyle();
     </script>
 
 </rapid:override>
-
 
 <%--此句必须放在最后--%>
 <%@ include file="../Public/framework.jsp"%>
