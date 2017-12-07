@@ -5,7 +5,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@ taglib prefix="rapid" uri="http://www.rapid-framework.org.cn/rapid" %>
 <rapid:override name="title">
-    - Article列表
+   ShowcaseBoard - Your Article List
 </rapid:override>
 <rapid:override name="header-style">
     <style>
@@ -26,7 +26,6 @@
 <rapid:override name="content">
     <blockquote class="layui-elem-quote">
         <span class="layui-breadcrumb" lay-separator="/">
-          <a href="/admin">Home</a>
           <a><cite>Article List</cite></a>
         </span>
     </blockquote>

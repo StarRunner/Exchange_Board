@@ -16,10 +16,10 @@
               </a>
             </div>
             <div class="menu-topmenu-container" style="padding-top:10px;padding-bottom:10px;float:right;">
-                   <c:choose>
+					<c:choose>
                     <c:when test="${sessionScope.customer==null}">
                         <a  href="/user" style="font-size: 19px;font-weight: 300;vertical-align: middle;color: #0288d1;padding-right: 5px;display: inline-block;">Login</a>
-                    </c:when>
+					</c:when>
                     <c:otherwise>
                       <p style="font-size: 19px;
     color: #939598;
@@ -89,10 +89,13 @@
                                 </c:if>
                             </c:forEach>
                             <li>
-                                <a href="/manage/article">
-                                    <i class="fa-home fa"></i>
-                                    <span class="font-text">Manage Article</span>
-                                </a>
+	                            <form name='manageArticle' action='/manage/article' method='post'>
+	                            	<input type='hidden' name='manageArticle' value='/manage/article'/>
+								    <a href="javascript:document.forms['manageArticle'].submit();">
+	                                    <i class="fa-home fa"></i>
+	                                    <span class="font-text">Manage Article</span>
+                               		 </a>
+								</form>
                             </li>
                         </ul>
                     </div>

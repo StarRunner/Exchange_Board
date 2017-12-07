@@ -137,12 +137,15 @@
                     if(data.code==0) {
                         alert(data.msg);
                     } else {
-                        window.location.href="/user";
-
+                    	if("<%=request.getParameter("manageArticle")%>" == "null"){
+                    		window.location.href="/user";
+                    	}else{
+                    		window.location.href="<%=request.getParameter("manageArticle")%>";
+                    	}
                     }
                 },
                 error: function () {
-                    alert("数据获取失败")
+                    alert("Failed to fetch data!")
                 }
             })
         }
