@@ -301,13 +301,13 @@ public class ArticleServiceImpl implements ArticleService {
 		List<ArticleCustom> articleCustomList = new ArrayList<ArticleCustom>();
 		Page page = null;
 		int totalCount = articleMapperCustom.countArticleByUser(status,email);
-		System.out.println(totalCount);
 		if (pageNow != null) {
 			page = new Page(totalCount, pageNow,pageSize);
 			articleCustomList = articleMapperCustom.listArticleByUserByPage(status,page.getStartPos(),pageSize,email);
 		} else {
 			page = new Page(totalCount, 1,pageSize);
 			articleCustomList = articleMapperCustom.listArticleByUserByPage(status,page.getStartPos(), pageSize,email);
+			System.out.println(articleCustomList.size());
 		}
 		
 		//获得分类信息
@@ -354,16 +354,17 @@ public class ArticleServiceImpl implements ArticleService {
 			/*User user = userMapper.selectByPrimaryKey(articleCustom.getArticleUserId());
 			UserCustom  userCustom = new UserCustom();
 			BeanUtils.copyProperties(user,userCustom);
-			articleListVo.setUserCustom(userCustom);
+			articleListVo.setUserCustom(userCustom);*/
 
 
-			articleListVoList.add(articleListVo);*/
+			articleListVoList.add(articleListVo);
 		}
 
 		if(articleListVoList.size()>0) {
 			//4、将Page信息存储在第一个元素中
 			articleListVoList.get(0).setPage(page);
 		}
+		System.out.println(articleListVoList.size());
 		return articleListVoList;
 	}
 	
@@ -574,10 +575,10 @@ public class ArticleServiceImpl implements ArticleService {
                 articleSearchVo.setTagCustomList(tagCustomList);
 
                 //4、获得作者信息
-                User user = userMapper.selectByPrimaryKey(articleCustom.getArticleUserId());
+                /*User user = userMapper.selectByPrimaryKey(articleCustom.getArticleUserId());
                 UserCustom userCustom = new UserCustom();
                 BeanUtils.copyProperties(user, userCustom);
-                articleSearchVo.setUserCustom(userCustom);
+                articleSearchVo.setUserCustom(userCustom);*/
 
 
                 articleSearchVoList.add(articleSearchVo);

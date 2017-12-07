@@ -62,11 +62,11 @@
                         <thead>
                         <tr>
                             <th><input type="checkbox" id="allSelect" onclick="javascript:DoCheck()"></th>
-                            <th>id</th>
-                            <th>title</th>
+                            <th>ID</th>
+                            <th>Title</th>
                             <th>Category</th>
                             <th>Label</th>
-                            <td>order</td>
+                            <td>Order</td>
                             <th>Post Time</th>
                             <th>Operation</th>
                         </tr>
@@ -101,10 +101,10 @@
                                     <td>${a.articleCustom.articleOrder}</td>
                                     <td>
                                         <fmt:formatDate value="${a.articleCustom.articlePostTime}"
-                                                        pattern="MM-dd- HH:mm"/>
+                                                        pattern="yy-MM-dd HH:mm"/>
                                     </td>
                                     <td>
-                                        <a href="/admin/article/edit/${a.articleCustom.articleId}"
+                                        <a href="/user/article/edit/${a.articleCustom.articleId}"
                                            class="layui-btn layui-btn-mini">Edit</a>
                                         <a href="javascript:void(0)"
                                            onclick="deleteArticle(${a.articleCustom.articleId})"
@@ -146,14 +146,14 @@
                             </c:when>
                             <c:otherwise>
                                 <a class="page-numbers"
-                                   href="/admin/article/p/${publishedArticleListVoList[0].page.pageNow-1}">
+                                   href="/user/article/p/${publishedArticleListVoList[0].page.pageNow-1}">
                                     <i class="layui-icon">&#xe603;</i>
                                 </a>
                             </c:otherwise>
                         </c:choose>
                             <%--显示第一页的页码--%>
                         <c:if test="${begin >= 2 }">
-                            <a class="page-numbers" href="/admin/article/p/1">1</a>
+                            <a class="page-numbers" href="/user/article/p/1">1</a>
                         </c:if>
                             <%--显示点点点--%>
                         <c:if test="${begin  > 2 }">
@@ -167,7 +167,7 @@
                                 </c:when>
                                 <c:otherwise>
                                     <a class="page-numbers"
-                                       href="/admin/article/p/${i}">${i}</a>
+                                       href="/user/article/p/${i}">${i}</a>
                                 </c:otherwise>
                             </c:choose>
                         </c:forEach>
@@ -177,7 +177,7 @@
                         </c:if>
                             <%-- 显示最后一页的数字 --%>
                         <c:if test="${end < publishedArticleListVoList[0].page.totalPageCount }">
-                            <a href="/admin/article/p/${publishedArticleListVoList[0].page.totalPageCount}">
+                            <a href="/user/article/p/${publishedArticleListVoList[0].page.totalPageCount}">
                                     ${publishedArticleListVoList[0].page.totalPageCount}
                             </a>
                         </c:if>
@@ -188,7 +188,7 @@
                             </c:when>
                             <c:otherwise>
                                 <a class="page-numbers"
-                                   href="/admin/article/p/${publishedArticleListVoList[0].page.pageNow+1}">
+                                   href="/user/article/p/${publishedArticleListVoList[0].page.pageNow+1}">
                                     <i class="layui-icon">&#xe602;</i>
                                 </a>
                             </c:otherwise>
@@ -249,7 +249,7 @@
                                                 pattern="yyyy-MM-dd HH:mm:ss"/>
                             </td>
                             <td>
-                                <a href="/admin/article/edit/${a.articleCustom.articleId}"
+                                <a href="/user/article/edit/${a.articleCustom.articleId}"
                                    class="layui-btn layui-btn-mini">Edit</a>
                                 <a href="javascript:void(0)"
                                    onclick="deleteArticle(${a.articleCustom.articleId})"

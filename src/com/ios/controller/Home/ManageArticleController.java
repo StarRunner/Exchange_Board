@@ -52,7 +52,7 @@ public class ManageArticleController {
     public ModelAndView index(@ModelAttribute("customer")User customer) throws Exception {
         ModelAndView modelAndView = new ModelAndView();
         //分页显示已发布Article
-        Integer pageSize = 8;
+        Integer pageSize = 20;
         List<ArticleListVo> publishedArticleListVoList = articleService.listArticleByUserByPage(1,customer.getUserName(),null,pageSize);
         modelAndView.addObject("publishedArticleListVoList",publishedArticleListVoList);
 
@@ -68,7 +68,7 @@ public class ManageArticleController {
     public @ResponseBody  ModelAndView ArticleListByPageView(@PathVariable("pageNow") Integer pageNow,@ModelAttribute("customer")User customer) throws Exception{
         ModelAndView modelAndView = new ModelAndView();
         //分页显示已发布Article
-        Integer pageSize = 8;
+        Integer pageSize = 20;
         List<ArticleListVo> publishedArticleListVoList = articleService.listArticleByUserByPage(1,customer.getUserName(),pageNow,pageSize);
         modelAndView.addObject("publishedArticleListVoList",publishedArticleListVoList);
 
@@ -178,7 +178,7 @@ public class ManageArticleController {
     public ModelAndView SearchPageView(HttpServletRequest request,Model model,@ModelAttribute("customer")User customer) throws Exception {
         ModelAndView modelAndView = new ModelAndView();
         //设置每页显示的数量
-        int pageSize = 8;
+        int pageSize = 20;
         String query = request.getParameter("query");
         List<ArticleSearchVo> articleSearchVoList = articleService.listSearchResultByUserByPage(1,request,model,null,pageSize,query,customer.getUserName());
         modelAndView.addObject("articleSearchVoList", articleSearchVoList);
@@ -192,7 +192,7 @@ public class ManageArticleController {
     public  ModelAndView SearchPageByPageView(HttpServletRequest request, Model model,@PathVariable("pageNow") Integer pageNow) throws Exception {
         ModelAndView modelAndView = new ModelAndView();
         //设置每页显示的数量
-        int pageSize = 8;
+        int pageSize = 20;
         String query = request.getParameter("query");
         List<ArticleSearchVo> articleSearchVoList = articleService.listSearchResultByPage(1,request,model,pageNow,pageSize,query);
         modelAndView.addObject("articleSearchVoList", articleSearchVoList);
