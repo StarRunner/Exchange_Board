@@ -69,9 +69,9 @@
          Cookie[] cookies = request.getCookies();
          for (int i = 0; i < cookies.length; i++) {//对cookies中的数据进行遍历，找到用户名、密码的数据
              if ("username".equals(cookies[i].getName())) {
-                    username = cookies[i].getValue();
+            	 username = cookies[i].getValue();
              } else if ("password".equals(cookies[i].getName())) {
-                 password = cookies[i].getValue();
+            	 password = cookies[i].getValue();
              }
          }
          %>
@@ -122,9 +122,9 @@
         var user = $("#user_login").val();
         var password = $("#user_pass").val();
         if(user=="") {
-            alert("用户名不可为空!");
+            alert("Input IntranetID Please!");
         } else if(password==""){
-            alert("密码不可为空!");
+            alert("Input Password Please!");
         } else {
             $.ajax({
                 async: false,//同步，待请求完毕后再执行后面的代码
