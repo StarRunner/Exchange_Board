@@ -23,7 +23,7 @@
 
 
 
-    <form class="layui-form" enctype="multipart/form-data" method="post" id="myForm" action="/admin/article/editSubmit">
+    <form class="layui-form" enctype="multipart/form-data" method="post" id="myForm" action="/manage/article/editSubmit">
         <input type="hidden" name="articleId" value="${articleCustom.articleId}">
         <div class="layui-form-item">
             <label class="layui-form-label">Title  <span style="color: #FF5722; ">*</span></label>

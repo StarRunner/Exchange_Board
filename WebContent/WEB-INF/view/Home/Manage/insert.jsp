@@ -20,7 +20,7 @@
 
 
 
-    <form class="layui-form" enctype="multipart/form-data" method="post" id="myForm" action="/admin/article/insertSubmit">
+    <form class="layui-form" enctype="multipart/form-data" method="post" id="myForm" action="/manage/article/insertSubmit">
 
         <div class="layui-form-item">
             <label class="layui-form-label">Title <span style="color: #FF5722; ">*</span></label>

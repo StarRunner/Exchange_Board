@@ -99,7 +99,7 @@
                             <fmt:formatDate value="${a.articleCustom.articlePostTime}" pattern="MM-dd-HH:mm"/>
                         </td>
                         <td>
-                            <a href="/admin/article/edit/${a.articleCustom.articleId}"
+                            <a href="/manage/article/edit/${a.articleCustom.articleId}"
                                class="layui-btn layui-btn-mini">Edit</a>
                             <a href="javascript:void(0)"
                                onclick="confirmDeleteArticle(${a.articleCustom.articleId})"
@@ -137,14 +137,14 @@
                             <%--当前页为第一页，隐藏上一页按钮--%>
                         </c:when>
                         <c:otherwise>
-                            <a class="page-numbers" href="/admin/article/p/${articleSearchVoList[0].page.pageNow-1}/search?query=${articleSearchVoList[0].query}" >
+                            <a class="page-numbers" href="/manage/article/p/${articleSearchVoList[0].page.pageNow-1}/search?query=${articleSearchVoList[0].query}" >
                                 <i class="layui-icon">&#xe603;</i>
                             </a>
                         </c:otherwise>
                     </c:choose>
                         <%--显示第一页的页码--%>
                     <c:if test="${begin >= 2 }">
-                        <a class="page-numbers" href="/admin/article/p/1/search?query=${articleSearchVoList[0].query}">1</a>
+                        <a class="page-numbers" href="/manage/article/p/1/search?query=${articleSearchVoList[0].query}">1</a>
                     </c:if>
                         <%--显示点点点--%>
                     <c:if test="${begin  > 2 }">
@@ -157,7 +157,7 @@
                                 <a class="page-numbers current" >${i}</a>
                             </c:when>
                             <c:otherwise>
-                                <a  class="page-numbers" href="/admin/article/p/${i}/search?query=${articleSearchVoList[0].query}">${i }</a>
+                                <a  class="page-numbers" href="/manage/article/p/${i}/search?query=${articleSearchVoList[0].query}">${i }</a>
                             </c:otherwise>
                         </c:choose>
                     </c:forEach>
@@ -167,7 +167,7 @@
                     </c:if>
                         <%-- 显示最后一页的数字 --%>
                     <c:if test="${end < articleSearchVoList[0].page.totalPageCount }">
-                        <a href="/admin/article/p/${articleSearchVoList[0].page.totalPageCount}/search?query=${articleSearchVoList[0].query}">
+                        <a href="/manage/article/p/${articleSearchVoList[0].page.totalPageCount}/search?query=${articleSearchVoList[0].query}">
                                 ${articleSearchVoList[0].page.totalPageCount}
                         </a>
                     </c:if>
@@ -177,7 +177,7 @@
                             <%--到了尾页隐藏，下一页按钮--%>
                         </c:when>
                         <c:otherwise>
-                            <a class="page-numbers" href="/admin/article/p/${articleSearchVoList[0].page.pageNow+1}/search?query=${articleSearchVoList[0].query}">
+                            <a class="page-numbers" href="/manage/article/p/${articleSearchVoList[0].page.pageNow+1}/search?query=${articleSearchVoList[0].query}">
                                 <i class="layui-icon">&#xe602;</i>
                             </a>
                         </c:otherwise>
@@ -201,7 +201,7 @@
         var currentUrl = window.location.href;
         function queryArticle() {
             //提交form
-            $("#articleForm").attr("action","/admin/article/search");
+            $("#articleForm").attr("action","/manage/article/search");
             $("#articleForm").submit();
         }
 
@@ -210,7 +210,7 @@
             if (confirm(msg)==true){
                 //提交form
                 $("#currentUrl").attr("value",currentUrl);
-                $("#articleForm").attr("action","/admin/article/deleteBatch");
+                $("#articleForm").attr("action","/manage/article/deleteBatch");
                 $("#articleForm").submit();
             }else{
                 return false;
@@ -222,7 +222,7 @@
             if (confirm(msg)==true){
                 //提交form
                 $("#currentUrl").attr("value",currentUrl);
-                $("#articleForm").attr("action","/admin/article/delete/"+id);
+                $("#articleForm").attr("action","/manage/article/delete/"+id);
                 $("#articleForm").submit();
             }else{
                 return false;
