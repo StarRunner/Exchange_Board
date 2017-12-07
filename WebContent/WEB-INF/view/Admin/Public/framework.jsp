@@ -70,30 +70,7 @@
                         <dd><a href="/admin/category">Category List</a></dd>
                         <dd><a href="/admin/tag">Tag List</a></dd>
                     </dl>
-                </li>
-                <li class="layui-nav-item">
-                    <a href="javascript:;">Page</a>
-                    <dl class="layui-nav-child">
-                        <dd><a href="/admin/page">Page List</a></dd>
-                        <dd><a href="/admin/page/insert">Add Page</a></dd>
-                    </dl>
-                </li>
-                <li class="layui-nav-item">
-                    <a class="" href="javascript:;">
-                        Link
-                    </a>
-                    <dl class="layui-nav-child">
-                        <dd><a href="/admin/link">Link List</a></dd>
-                        <dd><a href="/admin/link/insert">Add link</a></dd>
-                    </dl>
-                </li>
-                <li class="layui-nav-item">
-                    <a href="javascript:;">Notice</a>
-                    <dl class="layui-nav-child">
-                        <dd><a href="/admin/notice">Notice List</a></dd>
-                        <dd><a href="/admin/notice/insert">Add Notice</a></dd>
-                    </dl>
-                </li>
+                </li>         
                 <li class="layui-nav-item">
                     <a href="/admin/comment">
                         Comment

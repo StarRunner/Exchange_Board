@@ -91,7 +91,7 @@
                                         <a href="/admin/comment/edit/${c.commentCustom.commentId}">Edit</a>
                                      </span>
                                      <span class=""> |
-                                        <a href="javascript:void(0)" onclick="deleteComment(${c.commentCustom.commentId})">Edit</a>
+                                        <a href="javascript:void(0)" onclick="deleteComment(${c.commentCustom.commentId})">Delelte</a>
                                      </span>
                                 </div>
                             </td>
