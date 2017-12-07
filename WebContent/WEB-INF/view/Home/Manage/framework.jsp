@@ -24,7 +24,7 @@
     <div class="layui-header">
         <!-- 头部区域（可配合layui已有的水平导航） -->
         <ul class="layui-nav layui-layout-left">
-            <li class="layui-nav-item"><a href="/" target="_blank">ShowCase Board</a></li>
+            <li class="layui-nav-item"><a href="/" target="_blank">Showcase Board</a></li>
         </ul>
         <ul class="layui-nav layui-layout-right">
             <li class="layui-nav-item">
@@ -47,9 +47,9 @@
             <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
             <ul class="layui-nav layui-nav-tree"  lay-filter="test">
                 <li class="layui-nav-item layui-nav-itemed">
-                    <a class="" href="javascript:;">Article</a>
+                    <a class="" href="javascript:;">Your Article</a>
                     <dl class="layui-nav-child">
-                        <dd><a href="/manage/article"> Article List</a></dd>
+                        <dd><a href="/manage/article">Article List</a></dd>
                         <dd><a href="/manage/article/insert">Add Article</a></dd>
                     </dl>
                 </li>
