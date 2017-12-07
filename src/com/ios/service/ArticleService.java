@@ -30,6 +30,9 @@ public interface ArticleService {
 	//获得所有Article不分页
 	public List<ArticleListVo> listArticle(Integer status) throws Exception;
 	
+	//获得所有指定user的Article不分页
+	public List<ArticleListVo> listArticleByUser(Integer status,String email) throws Exception;
+	
 	//根据id获得Article
 	public ArticleCustom getArticleById(Integer status,Integer id) throws Exception;
 
@@ -42,8 +45,11 @@ public interface ArticleService {
 	//删除Article
 	public void deleteArticle(Integer id) throws Exception;
 
-	//分页显示()
+	//分页显示Article()
 	public List<ArticleListVo> listArticleByPage(Integer status,Integer pageNow,Integer pageSize) throws Exception;
+	
+	//分页显示指定user的Article()
+	public List<ArticleListVo> listArticleByUserByPage(Integer status,String email,Integer pageNow,Integer pageSize) throws Exception;
 	
 	//Article详情页面显示
 	public ArticleDetailVo getArticleDetailById(Integer id) throws Exception;
@@ -51,6 +57,9 @@ public interface ArticleService {
 	//Article查询分页显示
 	public List<ArticleSearchVo> listSearchResultByPage(Integer status,HttpServletRequest request, Model model, Integer pageNow, Integer pageSize, String s) throws Exception;
  
+	//指定user的Article查询分页显示
+	public List<ArticleSearchVo> listSearchResultByUserByPage(Integer status,HttpServletRequest request, Model model, Integer pageNow, Integer pageSize, String s,String email) throws Exception;
+	
 	//获得相关Article
 	public List<ArticleCustom> listArticleWithSameCategory(Integer status,Integer parentCategoryId,Integer childCategoryId, Integer limit) throws Exception;
 	
@@ -86,10 +95,4 @@ public interface ArticleService {
 	
 	//get article by update time
 	public ArticleCustom getArticleByUpdateTime(String content) throws Exception;
-	
-	//get all article by user
-	public List<ArticleListVo> getArticleByUserEmail(Integer status,String email) throws Exception;
-	
-	//get all article by user by page
-	public List<ArticleListVo> listArticleByUserByPage(Integer status,String email,Integer pageNow,Integer pageSize) throws Exception;
 }
