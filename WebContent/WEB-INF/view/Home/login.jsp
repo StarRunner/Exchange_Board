@@ -11,7 +11,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>${options.optionSiteTitle} &lsaquo; Logon</title>
+    <title>ShowcaseBoard &lsaquo; Sign in</title>
     <link rel="stylesheet" href="/plugin/font-awesome/css/font-awesome.min.css">
     <link rel="shortcut icon" href="/img/logo.png">
     <link rel='stylesheet' id='dashicons-css'  href='/plugin/login/dashicons.min.css' type='text/css' media='all' />
