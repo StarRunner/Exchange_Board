@@ -66,7 +66,7 @@
                             <th>id</th>
                             <th>title</th>
                             <th>Category</th>
-                            <th>Label</th>
+                            <th>Tag</th>
                             <td>order</td>
                             <th>Post Time</th>
                             <th>Operation</th>
