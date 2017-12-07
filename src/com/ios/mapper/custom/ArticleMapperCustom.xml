@@ -18,7 +18,8 @@
         article_is_comment,
         article_status,
         article_order,
-        article_url
+        article_url,
+        article_author
     </sql>
 
 

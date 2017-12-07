@@ -101,6 +101,9 @@
 
                             </span>
                                 <span class="entry-meta" style="display:block; position:unset !important">
+                                   Author:  <span style="color: #009688;">
+                                      ${a.articleCustom.articleAuthor}
+                                    </span>
                                 <span class="date" style="width: 100%;display: block;position:unset !important">
                                         <fmt:formatDate value="${a.articleCustom.articlePostTime}" pattern="yyyy-MM-dd"/>
                                     &nbsp;&nbsp;
