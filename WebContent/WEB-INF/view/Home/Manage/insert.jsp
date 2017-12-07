@@ -73,7 +73,7 @@
         </div>
 
         <div class="layui-form-item" pane="">
-            <label class="layui-form-label">Topics</label>
+            <label class="layui-form-label">Tags</label>
             <div class="layui-input-block">
                 <c:forEach items="${tagCustomList}" var="t">
                     <input type="checkbox" name="articleTagIds" lay-skin="primary" title="${t.tagName}" value="${t.tagId}" onchange="chk()">
