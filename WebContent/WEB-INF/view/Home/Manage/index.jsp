@@ -101,7 +101,7 @@
                                     <td>${a.articleCustom.articleOrder}</td>
                                     <td>
                                         <fmt:formatDate value="${a.articleCustom.articlePostTime}"
-                                                        pattern="yy-MM-dd HH:mm"/>
+                                                        pattern="yyyy-MM-dd HH:mm"/>
                                     </td>
                                     <td>
                                         <a href="/user/article/edit/${a.articleCustom.articleId}"
@@ -214,7 +214,7 @@
                         <th>id</th>
                         <th>Title</th>
                         <th>Category</th>
-                        <th>Lablel</th>
+                        <th>Tag</th>
                         <th>Post Time</th>
                         <th>Operation</th>
                     </tr>

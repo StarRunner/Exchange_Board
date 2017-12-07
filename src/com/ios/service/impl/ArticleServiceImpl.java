@@ -306,7 +306,6 @@ public class ArticleServiceImpl implements ArticleService {
 		} else {
 			page = new Page(totalCount, 1,pageSize);
 			articleCustomList = articleMapperCustom.listArticleByUserByPage(status,page.getStartPos(), pageSize,email);
-			System.out.println(articleCustomList.size());
 		}
 		
 		//获得分类信息
@@ -363,7 +362,6 @@ public class ArticleServiceImpl implements ArticleService {
 			//4、将Page信息存储在第一个元素中
 			articleListVoList.get(0).setPage(page);
 		}
-		System.out.println(articleListVoList.size());
 		return articleListVoList;
 	}
 	

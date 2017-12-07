@@ -215,7 +215,7 @@
                         <th>id</th>
                         <th>Title</th>
                         <th>Category</th>
-                        <th>Lablel</th>
+                        <th>Tag</th>
                         <th>Post Time</th>
                         <th>Operation</th>
                     </tr>
