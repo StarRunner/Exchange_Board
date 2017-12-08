@@ -55,7 +55,7 @@
     <script src="/js/superfish.js"></script>
     <script src="/js/script.js"></script>
     <script src="/plugin/layui/layui.all.js"></script>
-
+	<script src="/js/ckeditor/ckeditor.js"></script>
 <rapid:block name="footer-script"></rapid:block>
 
 </body>

@@ -44,14 +44,14 @@
 		<div class="layui-form-item">
             <label class="layui-form-label">Featured Image<span style="color: #FF5722; ">*</span></label>
             <div class="layui-input-block">
-                <input type="file" name="file">
+                <input type="file" name="file" accept="image/*">
             </div>
         </div>
         
         <div class="layui-form-item layui-form-text">
             <label class="layui-form-label">Content  <span style="color: #FF5722; ">*</span></label>
             <div class="layui-input-block">
-                <textarea class="layui-textarea layui-hide" name="articleContent" id="content">${articleCustom.articleContent}</textarea>
+           		<textarea id="TextArea1" name="articleContent" cols="20" rows="2" class="ckeditor">${articleCustom.articleContent}</textarea>
             </div>
         </div>
 

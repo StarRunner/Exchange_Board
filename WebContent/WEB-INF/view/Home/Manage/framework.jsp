@@ -75,6 +75,7 @@
 <script src="/js/jquery.min.js"></script>
 <script src="/plugin/layui/layui.all.js"></script>
 <script src="/js/back.js"></script>
+<script src="/js/ckeditor/ckeditor.js"></script>
 <rapid:block name="footer-script">
 
 </rapid:block>
