@@ -39,8 +39,8 @@
         <div class="layui-form-item">
             <div class="layui-input-block">
                 <input type="text" name="query" placeholder="Input Key Word" autocomplete="off" class="layui-input" >
-                <button class="layui-btn" lay-filter="formDemo" onclick="queryArticle()">Search</button>
-                <button class="layui-btn" lay-filter="formDemo" style="float: right;" onclick="confirmDeleteArticleBatch()">Patch Delete</button>
+                <button class="layui-btn" lay-filter="formDemo" onclick="queryArticleByUser()">Search</button>
+                <button class="layui-btn" lay-filter="formDemo" style="float: right;" onclick="confirmDeleteArticleBatchByUser()">Patch Delete</button>
             </div>
         </div>
     <input type="hidden" name="currentUrl" id="currentUrl" value="">
@@ -102,7 +102,7 @@
                             <a href="/manage/article/edit/${a.articleCustom.articleId}"
                                class="layui-btn layui-btn-mini">Edit</a>
                             <a href="javascript:void(0)"
-                               onclick="confirmDeleteArticle(${a.articleCustom.articleId})"
+                               onclick="confirmDeleteArticleBatchByUser(${a.articleCustom.articleId})"
                                class="layui-btn layui-btn-danger layui-btn-mini">Delete</a>
                         </td>
                     </tr>
@@ -199,7 +199,7 @@
 <rapid:override name="footer-script">
     <script>
         var currentUrl = window.location.href;
-        function queryArticle() {
+        function queryArticleByUser() {
             //提交form
             $("#articleForm").attr("action","/manage/article/search");
             $("#articleForm").submit();

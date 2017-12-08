@@ -40,10 +40,10 @@
                 <form id="articleForm" method="post">
                     <div class="layui-form-item">
                         <div class="layui-input-block">
-                            <input type="text" name="query" placeholder="Input Key Word" autocomplete="off" class="layui-input">
-                            <button class="layui-btn" lay-filter="formDemo" onclick="queryArticle()">Search</button>
+                            <input type="text" name="query" placeholder="Input Key Words" autocomplete="off" class="layui-input">
+                            <button class="layui-btn" lay-filter="formDemo" onclick="queryArticleByUser()">Search</button>
                             <button class="layui-btn" lay-filter="formDemo" style="float: right;"
-                                    onclick="confirmDeleteArticleBatch()">Patch Delete
+                                    onclick="confirmDeleteArticleBatchByUser()">Patch Delete
                             </button>
                         </div>
                     </div>
@@ -104,10 +104,10 @@
                                                         pattern="yyyy-MM-dd HH:mm"/>
                                     </td>
                                     <td>
-                                        <a href="/user/article/edit/${a.articleCustom.articleId}"
+                                        <a href="/manage/article/edit/${a.articleCustom.articleId}"
                                            class="layui-btn layui-btn-mini">Edit</a>
                                         <a href="javascript:void(0)"
-                                           onclick="deleteArticle(${a.articleCustom.articleId})"
+                                           onclick="deleteArticleByUser(${a.articleCustom.articleId})"
                                            class="layui-btn layui-btn-danger layui-btn-mini">Delete</a>
                                     </td>
                                 </tr>
@@ -146,14 +146,14 @@
                             </c:when>
                             <c:otherwise>
                                 <a class="page-numbers"
-                                   href="/user/article/p/${publishedArticleListVoList[0].page.pageNow-1}">
+                                   href="/manage/article/p/${publishedArticleListVoList[0].page.pageNow-1}">
                                     <i class="layui-icon">&#xe603;</i>
                                 </a>
                             </c:otherwise>
                         </c:choose>
                             <%--显示第一页的页码--%>
                         <c:if test="${begin >= 2 }">
-                            <a class="page-numbers" href="/user/article/p/1">1</a>
+                            <a class="page-numbers" href="/manage/article/p/1">1</a>
                         </c:if>
                             <%--显示点点点--%>
                         <c:if test="${begin  > 2 }">
@@ -167,7 +167,7 @@
                                 </c:when>
                                 <c:otherwise>
                                     <a class="page-numbers"
-                                       href="/user/article/p/${i}">${i}</a>
+                                       href="/manage/article/p/${i}">${i}</a>
                                 </c:otherwise>
                             </c:choose>
                         </c:forEach>
@@ -177,7 +177,7 @@
                         </c:if>
                             <%-- 显示最后一页的数字 --%>
                         <c:if test="${end < publishedArticleListVoList[0].page.totalPageCount }">
-                            <a href="/user/article/p/${publishedArticleListVoList[0].page.totalPageCount}">
+                            <a href="/manage/article/p/${publishedArticleListVoList[0].page.totalPageCount}">
                                     ${publishedArticleListVoList[0].page.totalPageCount}
                             </a>
                         </c:if>
@@ -188,7 +188,7 @@
                             </c:when>
                             <c:otherwise>
                                 <a class="page-numbers"
-                                   href="/user/article/p/${publishedArticleListVoList[0].page.pageNow+1}">
+                                   href="/manage/article/p/${publishedArticleListVoList[0].page.pageNow+1}">
                                     <i class="layui-icon">&#xe602;</i>
                                 </a>
                             </c:otherwise>
@@ -249,10 +249,10 @@
                                                 pattern="yyyy-MM-dd HH:mm:ss"/>
                             </td>
                             <td>
-                                <a href="/user/article/edit/${a.articleCustom.articleId}"
+                                <a href="/manage/article/edit/${a.articleCustom.articleId}"
                                    class="layui-btn layui-btn-mini">Edit</a>
                                 <a href="javascript:void(0)"
-                                   onclick="deleteArticle(${a.articleCustom.articleId})"
+                                   onclick="deleteArticleByUser(${a.articleCustom.articleId})"
                                    class="layui-btn layui-btn-danger layui-btn-mini">Delete</a>
                             </td>
                         </tr>

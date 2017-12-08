@@ -83,7 +83,7 @@
             </div>
         </div>
         <div class="layui-form-item" pane="">
-            <label class="layui-form-label">Topics</label>
+            <label class="layui-form-label">Tag</label>
             <c:set var="tagIds" value="${fn:split(articleCustom.articleTagIds,',')}"/>
             <div class="layui-input-block">
                 <c:forEach items="${tagCustomList}" var="t">
@@ -95,7 +95,7 @@
             </div>
         </div>
         <div class="layui-form-item">
-            <label class="layui-form-label">order</label>
+            <label class="layui-form-label">Order</label>
             <div class="layui-input-inline">
                 <input type="number" name="articleOrder" value="${articleCustom.articleOrder}"   autocomplete="off" class="layui-input">
             </div>
@@ -116,12 +116,12 @@
             </div>
         </div>
     </form>
-
+<!-- 
     <blockquote class="layui-elem-quote layui-quote-nm">
         Note：
         1、Before insert code，you can click <a href="http://liuyanzhao.com/code-highlight.html" target="_blank">code highlight</a>,to transfer code to html
     </blockquote>
-
+ -->
 </rapid:override>
 
 
@@ -161,7 +161,7 @@
             form.verify({
                 title: function (value) {
                     if (value.length < 5) {
-                        return '标题至少得5个字符啊';
+                        return 'Title should be more than 5 words!';
                     }
                 }
                 ,content: function (value) {

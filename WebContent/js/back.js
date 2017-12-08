@@ -12,7 +12,7 @@ function DoCheck() {
 }
 
 function confirmDelete() {
-    var msg = "Are you sure? ";
+    var msg = "Are you sure to delete? ";
     if (confirm(msg)==true){
         return true;
     }else{
@@ -116,10 +116,33 @@ function deleteArticle(id) {
     }
 }
 
+//删除指定user的Article
+function deleteArticleByUser(id) {
+    if(confirmDelete()==true){
+        $.ajax({
+            async: false,
+            type: "POST",
+            url:'/manage/article/delete/'+id,
+            contentType : "application/x-www-form-urlencoded; charset=utf-8",
+            dataType: "text",
+            complete:function () {
+                window.location.reload();
+            }
+        })
+    }
+}
+
 //查询Article
 function queryArticle() {
     //提交form
     $("#articleForm").attr("action", "/admin/article/search");
+    $("#articleForm").submit();
+}
+
+//查询指定user的Article
+function queryArticleByUser() {
+    //提交form
+    $("#articleForm").attr("action", "/manage/article/search");
     $("#articleForm").submit();
 }
 
@@ -133,6 +156,26 @@ function confirmDeleteArticleBatch() {
             async: false,
             type: "POST",
             url:'/admin/article/deleteBatch',
+            data:{ids:text},
+            contentType : "application/x-www-form-urlencoded; charset=utf-8",
+            dataType: "text",
+            complete:function () {
+                window.location.reload();
+            }
+        })
+    }
+}
+
+//批量删除指定user的Article
+function confirmDeleteArticleBatchByUser() {
+    if(confirmDelete()==true){
+        var text = $("input:checkbox[name='ids']:checked").map(function(index,elem) {
+            return $(elem).val();
+        }).get().join(',');
+        $.ajax({
+            async: false,
+            type: "POST",
+            url:'/manage/article/deleteBatch',
             data:{ids:text},
             contentType : "application/x-www-form-urlencoded; charset=utf-8",
             dataType: "text",

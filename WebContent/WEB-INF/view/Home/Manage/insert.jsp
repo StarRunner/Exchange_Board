@@ -133,10 +133,10 @@
             form.verify({
                 title: function (value) {
                     if (value.length < 5) {
-                        return '标题至少得5个字符啊';
+                        return 'Title should be more than 5 words!';
                     }
                 }
-                , pass: [/(.+){6,12}$/, '密码必须6到12位']
+                , pass: [/(.+){6,12}$/, 'Password length should between 6 to 12!']
                 , content: function (value) {
                     layedit.sync(editIndex);
                 }
