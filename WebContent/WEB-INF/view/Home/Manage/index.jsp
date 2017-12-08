@@ -223,11 +223,13 @@
                     <c:forEach items="${draftArticleList}" var="a">
                         <tr>
                             <td>${a.articleCustom.articleId}</td>
-                            <td><a href="/article/${a.articleCustom.articleId}"
+                            <td>
+                            	${a.articleCustom.articleTitle}
+                            	<%-- <a href="/article/${a.articleCustom.articleId}"
                                    target="_blank">
                                     ${a.articleCustom.articleTitle}
-
-                            </a></td>
+                            	</a> --%>
+                            </td>
                             <td>
                                 <c:forEach items="${a.categoryCustomList}" var="c">
                                     <a href="/category/${c.categoryId}"
