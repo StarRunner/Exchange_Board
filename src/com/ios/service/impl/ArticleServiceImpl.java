@@ -59,6 +59,13 @@ public class ArticleServiceImpl implements ArticleService {
 	}
 	
 	@Override
+	public Integer countArticleByUser(Integer status, String email) throws Exception {
+		// TODO Auto-generated method stub
+		Integer articleCount = articleMapperCustom.countArticleByUser(status,email);
+		return articleCount ;
+	}
+	
+	@Override
 	public Integer countArticleComment(Integer status) throws Exception {
 		Integer commentCount = articleMapperCustom.countArticleComment(status);
 		return commentCount;
@@ -676,4 +683,5 @@ public class ArticleServiceImpl implements ArticleService {
 		ArticleCustom articleCustom = articleMapperCustom.getArticleIdByUpdateTime(time);
 		return articleCustom;
 	}
+
 }
