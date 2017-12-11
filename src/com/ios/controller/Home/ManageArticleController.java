@@ -125,7 +125,7 @@ public class ManageArticleController {
         article.setArticleViewCount(0);
         article.setArticleLikeCount(0);
         article.setArticleCommentCount(0);
-        article.setArticleStatus(1);
+//        article.setArticleStatus(1);
         article.setArticleOrder(1);
         article.setUserEmail(customer.getUserName());
         article.setArticleAuthor(customer.getUserNickname());
