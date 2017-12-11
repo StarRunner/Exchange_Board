@@ -21,6 +21,9 @@ public interface ArticleService {
 	//获取Article总数
 	public Integer countArticle(Integer status) throws Exception;
 	
+	//获取指定user的Article总数
+	public Integer countArticleByUser(Integer status,String email) throws Exception;
+	
 	//获取评论总数
 	public Integer countArticleComment(Integer status) throws Exception;
 	

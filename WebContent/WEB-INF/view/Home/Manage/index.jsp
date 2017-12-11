@@ -32,8 +32,8 @@
 
     <div class="layui-tab layui-tab-card">
         <ul class="layui-tab-title">
-            <li class="layui-this">Posted (${publishedArticleListVoList.size()})</li>
-            <li>Draft (${draftArticleList.size()})</li>
+            <li class="layui-this">Posted (${totalArticleCount})</li>
+            <li>Draft (${totalDraftCount})</li>
         </ul>
         <div class="layui-tab-content">
             <div class="layui-tab-item layui-show">

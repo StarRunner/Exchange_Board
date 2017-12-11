@@ -52,12 +52,16 @@ public class ManageArticleController {
     public ModelAndView index(@ModelAttribute("customer")User customer) throws Exception {
         ModelAndView modelAndView = new ModelAndView();
         //分页显示已发布Article
-        Integer pageSize = 20;
+        Integer pageSize = 8;
+        int totalArticleCount = articleService.countArticleByUser(1, customer.getUserName());
         List<ArticleListVo> publishedArticleListVoList = articleService.listArticleByUserByPage(1,customer.getUserName(),null,pageSize);
+        modelAndView.addObject("totalArticleCount",totalArticleCount);
         modelAndView.addObject("publishedArticleListVoList",publishedArticleListVoList);
 
         //不分页显示 草稿Article
+        int totalDraftCount = articleService.countArticleByUser(0, customer.getUserName());
         List<ArticleListVo> draftArticleList = articleService.listArticleByUser(0,customer.getUserName());
+        modelAndView.addObject("totalDraftCount",totalDraftCount);
         modelAndView.addObject("draftArticleList",draftArticleList);
         modelAndView.setViewName("Home/Manage/index");
         return modelAndView;
@@ -68,12 +72,16 @@ public class ManageArticleController {
     public @ResponseBody  ModelAndView ArticleListByPageView(@PathVariable("pageNow") Integer pageNow,@ModelAttribute("customer")User customer) throws Exception{
         ModelAndView modelAndView = new ModelAndView();
         //分页显示已发布Article
-        Integer pageSize = 20;
+        Integer pageSize = 8;
+        int totalArticleCount = articleService.countArticleByUser(1, customer.getUserName());
         List<ArticleListVo> publishedArticleListVoList = articleService.listArticleByUserByPage(1,customer.getUserName(),pageNow,pageSize);
+        modelAndView.addObject("totalArticleCount",totalArticleCount);
         modelAndView.addObject("publishedArticleListVoList",publishedArticleListVoList);
 
         //不分页显示 草稿Article
+        int totalDraftCount = articleService.countArticleByUser(0, customer.getUserName());
         List<ArticleListVo> draftArticleList = articleService.listArticleByUser(0,customer.getUserName());
+        modelAndView.addObject("totalDraftCount",totalDraftCount);
         modelAndView.addObject("draftArticleList",draftArticleList);
         modelAndView.setViewName("Home/Manage/index");
         return modelAndView;
