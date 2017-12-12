@@ -8,12 +8,12 @@
 <%--导航 start--%>
 <header id="masthead" class="site-header">
     <%--顶部菜单 start--%>
-    <nav id="top-header">
+    <nav id="top-header" style="min-height: 30px;background: #25292C;border-bottom: 1px solid #414f5a;padding: 7px 0;">
         <div class="top-nav">
             <div class="menu-topmenu-container" style="padding-top:10px;padding-bottom:10px;float:right;">
 					<c:choose>
                     <c:when test="${sessionScope.customer==null}">
-                        <a  href="/user" style="font-size: 19px;font-weight: 300;vertical-align: middle;color: #0288d1;padding-right: 5px;display: inline-block;">Login</a>
+                        <a  href="/user" style="font-size: 19px;font-weight: 300;vertical-align: middle;color: white;padding-right: 5px;display: inline-block;">Login</a>
 					</c:when>
                     <c:otherwise>
                       <p style="font-size: 19px;
@@ -38,7 +38,7 @@
         <div id="top-menu">
          <div class="user-login" style="float:left;" >
              <a class="inner" href="/">
-              <img width="200" height="70" src="/img/dzone.png" alt="DZone" />
+              <img width="250" height="90" src="/img/dzone.png" alt="DZone" />
               </a>
             </div>
             <div id="site-nav-wrap">

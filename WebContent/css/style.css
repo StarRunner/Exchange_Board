@@ -211,10 +211,6 @@ a, button, input {
     margin: 0 auto;
 }
 
-/** 头部 **/
-#masthead {
-    height: 120px;
-}
 
 .logo-site, .logo-sites {
     position: relative;
