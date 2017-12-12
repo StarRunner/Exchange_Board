@@ -531,10 +531,10 @@ public class ArticleServiceImpl implements ArticleService {
 
         if (pageNow != null) {
             page = new Page(totalCount, pageNow, pageSize);
-            articleCustomList = this.articleMapperCustom.listSearchResultByPageByUser(status,query, page.getStartPos(), page.getPageSize(),email);
+            articleCustomList = this.articleMapperCustom.listSearchResultByUserByPage(status,query, page.getStartPos(), page.getPageSize(),email);
         } else {
             page = new Page(totalCount, 1, pageSize);
-            articleCustomList = this.articleMapperCustom.listSearchResultByPageByUser(status,query, page.getStartPos(), page.getPageSize(),email);
+            articleCustomList = this.articleMapperCustom.listSearchResultByUserByPage(status,query, page.getStartPos(), page.getPageSize(),email);
         }
 
         List<ArticleSearchVo> articleSearchVoList = new ArrayList<ArticleSearchVo>();

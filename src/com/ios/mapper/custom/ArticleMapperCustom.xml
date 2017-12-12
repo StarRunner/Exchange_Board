@@ -19,6 +19,7 @@
         article_status,
         article_order,
         article_url,
+        user_email,
         article_author
     </sql>
 
@@ -167,8 +168,8 @@
                 article_status=#{status} AND
             </if>
             article_status > 0 AND
-            article_title LIKE "%${query}%" OR
-            article_content LIKE "%${query}%"
+            (article_title LIKE "%${query}%" OR
+            article_content LIKE "%${query}%")
         </where>
     </select>
     
@@ -181,8 +182,8 @@
             </if>
             user_email=#{email} AND
             article_status > 0 AND
-            article_title LIKE "%${query}%" OR
-            article_content LIKE "%${query}%"
+            (article_title LIKE "%${query}%" OR
+            article_content LIKE "%${query}%")
         </where>
     </select>
 
@@ -196,15 +197,15 @@
                 article_status=#{status} AND
             </if>
             article_status > 0 AND
-            article_title LIKE '%${query}%' OR
-            article_content LIKE '%${query}%'
+            (article_title LIKE '%${query}%' OR
+            article_content LIKE '%${query}%')
         </where>
         ORDER BY  article_status ASC, article_order DESC, article_id DESC
         limit #{startPos},#{pageSize}
     </select>
     
     <!--指定user的Article查询分页显示-->
-    <select id="listSearchResultByPageByUser"  resultType="com.ios.entity.custom.ArticleCustom">
+    <select id="listSearchResultByUserByPage"  resultType="com.ios.entity.custom.ArticleCustom">
         SELECT
         <include refid="article_table_all_columns"/>
         FROM `article`
@@ -213,9 +214,8 @@
                 article_status=#{status} AND
             </if>
             user_email=#{email} AND
-            article_status > 0 AND
-            article_title LIKE '%${query}%' OR
-            article_content LIKE '%${query}%'
+            (article_title LIKE '%${query}%' OR
+            article_content LIKE '%${query}%')
         </where>
         ORDER BY  article_status ASC, article_order DESC, article_id DESC
         limit #{startPos},#{pageSize}
@@ -346,8 +346,8 @@
                 article_status=#{status} AND
             </if>
 
-            article_parent_category_id=#{id} OR
-            article_child_category_id=#{id}
+            (article_parent_category_id=#{id} OR
+            article_child_category_id=#{id})
 
         </where>
     </select>

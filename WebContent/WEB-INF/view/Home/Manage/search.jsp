@@ -29,7 +29,7 @@
          <span class="layui-breadcrumb" lay-separator="/">
               <a href="/manage/article">Article List</a>
               <a><cite>
-                  Search ${articleSearchVoList[0].query} Find ${articleSearchVoList[0].page.totalCount} Message
+                  Search ${articleSearchVoList[0].query} Found ${articleSearchVoList[0].page.totalCount} Message
                 </cite>
               </a>
         </span>
@@ -96,7 +96,7 @@
                             ${a.articleCustom.articleOrder}
                         </td>
                         <td>
-                            <fmt:formatDate value="${a.articleCustom.articlePostTime}" pattern="MM-dd-HH:mm"/>
+                            <fmt:formatDate value="${a.articleCustom.articlePostTime}" pattern="yyyy-MM-dd HH:mm"/>
                         </td>
                         <td>
                             <a href="/manage/article/edit/${a.articleCustom.articleId}"

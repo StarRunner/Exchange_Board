@@ -51,7 +51,7 @@ public interface ArticleMapperCustom {
 	public List<ArticleCustom> listSearchResultByPage(@Param(value="status") Integer status,@Param(value="query") String query,@Param(value="startPos") Integer startPos,@Param(value="pageSize") Integer pageSize) throws Exception;
 	
 	//查询指定user的Article分页操作
-	public List<ArticleCustom> listSearchResultByPageByUser(@Param(value="status") Integer status,@Param(value="query") String query,@Param(value="startPos") Integer startPos,@Param(value="pageSize") Integer pageSize,@Param(value="email") String email) throws Exception;
+	public List<ArticleCustom> listSearchResultByUserByPage(@Param(value="status") Integer status,@Param(value="query") String query,@Param(value="startPos") Integer startPos,@Param(value="pageSize") Integer pageSize,@Param(value="email") String email) throws Exception;
 		
 	//获得同分类的Article(相关Article)
 	public List<ArticleCustom> listArticleWithSameCategory(
