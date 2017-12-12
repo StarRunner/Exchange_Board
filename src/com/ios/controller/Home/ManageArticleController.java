@@ -125,7 +125,7 @@ public class ManageArticleController {
         article.setArticleViewCount(0);
         article.setArticleLikeCount(0);
         article.setArticleCommentCount(0);
-        article.setArticleStatus(1);
+//        article.setArticleStatus(1);
         article.setArticleOrder(1);
         article.setUserEmail(customer.getUserName());
         article.setArticleAuthor(customer.getUserNickname());
@@ -200,12 +200,12 @@ public class ManageArticleController {
     //Search分页实现
     @RequestMapping("/p/{pageNow}/search")
     @ResponseBody
-    public  ModelAndView SearchPageByPageView(HttpServletRequest request, Model model,@PathVariable("pageNow") Integer pageNow) throws Exception {
+    public  ModelAndView SearchPageByPageView(HttpServletRequest request, Model model,@PathVariable("pageNow") Integer pageNow,@ModelAttribute("customer")User customer) throws Exception {
         ModelAndView modelAndView = new ModelAndView();
         //设置每页显示的数量
         int pageSize = 10;
         String query = request.getParameter("query");
-        List<ArticleSearchVo> articleSearchVoList = articleService.listSearchResultByPage(1,request,model,pageNow,pageSize,query);
+        List<ArticleSearchVo> articleSearchVoList = articleService.listSearchResultByUserByPage(1,request,model,pageNow,pageSize,query,customer.getUserName());
         modelAndView.addObject("articleSearchVoList", articleSearchVoList);
         modelAndView.setViewName("Home/Manage/search");
         return modelAndView;

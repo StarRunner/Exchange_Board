@@ -180,9 +180,9 @@
 
 //end
      });
-//        window.onbeforeunload = function() {
-//            return "确认离开当前页面吗？未保存的数据将会丢失";
-//        }
+		/* window.onbeforeunload = function() {
+			return "Leave this page now？You will lose unsaved data.";
+		} */
 
 
 
