@@ -10,11 +10,6 @@
     <%--顶部菜单 start--%>
     <nav id="top-header">
         <div class="top-nav">
-            <div class="user-login" style="float:left;" >
-             <a class="inner" href="/">
-              <img width="100" height="40" src="/img/dzone.png" alt="DZone" />
-              </a>
-            </div>
             <div class="menu-topmenu-container" style="padding-top:10px;padding-bottom:10px;float:right;">
 					<c:choose>
                     <c:when test="${sessionScope.customer==null}">
@@ -39,7 +34,13 @@
 
     <%--主要菜单 satrt--%>
     <div id="menu-box">
+    
         <div id="top-menu">
+         <div class="user-login" style="float:left;" >
+             <a class="inner" href="/">
+              <img width="200" height="70" src="/img/dzone.png" alt="DZone" />
+              </a>
+            </div>
             <div id="site-nav-wrap">
                 <div id="sidr-close">
                     <a href="#sidr-close" class="toggle-sidr-close">×</a>
