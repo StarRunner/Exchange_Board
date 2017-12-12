@@ -42,7 +42,7 @@
         <div id="top-menu">
          <div class="user-login" style="float:left;" >
              <a class="inner" href="/">
-              <img width="250" height="90" src="/img/dzone.png" alt="DZone" />
+              <img width="250" height="80" src="/img/dzone.png" alt="DZone" />
               </a>
             </div>
             <div id="site-nav-wrap">
