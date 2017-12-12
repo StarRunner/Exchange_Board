@@ -44,6 +44,9 @@
                 <div id="sidr-close">
                     <a href="#sidr-close" class="toggle-sidr-close">×</a>
                 </div>
+               <span class="nav-search">
+                    <i class="fa fa-search"></i>
+              </span>
                 <nav id="site-nav" class="main-nav">
                     <a href="#sidr-main" id="navigation-toggle" class="bars">
                         <i class="fa fa-bars"></i>
@@ -101,9 +104,7 @@
                     </div>
                 </nav>
             </div>
-              <span class="nav-search">
-                    <i class="fa fa-search"></i>
-              </span>
+         
             <div class="clear"></div>
         </div><!-- #top-menu -->
     </div><!-- #menu-box -->
