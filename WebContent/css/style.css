@@ -617,7 +617,7 @@ a, button, input {
 
 #site-nav .down-menu a {
     padding: 0 13px;
-    color: #444;
+    color: #fff;
     text-align: left;
     transition-duration: .5s;
 }
@@ -639,6 +639,9 @@ a, button, input {
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.03);
 }
 
+#site-nav .down-menu li ul {
+    background: #444 !important;
+}
 .shadow #site-nav .down-menu ul {
     padding-top: 0;
 }
@@ -647,12 +650,18 @@ a, button, input {
     margin-top: 0;
 }
 
+.sub-menu  li{
+	background: #444 !important ;
+}
+.sub-menu  {
+	background: #444 !important ;
+}
 #site-nav .down-menu ul ul {
     padding-top: 0;
 }
 
 #site-nav .down-menu ul li {
-    background: #fff;
+    background: #444;
     line-height: 1.4em;
     height: auto;
     float: none;

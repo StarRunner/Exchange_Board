@@ -33,7 +33,11 @@
     <%--顶部菜单 end--%>
 
     <%--主要菜单 satrt--%>
-    <div id="menu-box">
+    <div id="menu-box" style="min-height: 86px;
+    z-index: 9999;
+    width: 100%;
+    position: relative;
+    background: #323B44;">
     
         <div id="top-menu">
          <div class="user-login" style="float:left;" >
