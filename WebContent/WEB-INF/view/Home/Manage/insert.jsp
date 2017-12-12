@@ -180,9 +180,9 @@
 
 //end
      });
-		window.onbeforeunload = function() {
+		/* window.onbeforeunload = function() {
 			return "Leave this page now？You will lose unsaved data.";
-		}
+		} */
 
 
 

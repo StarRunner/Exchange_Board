@@ -42,8 +42,8 @@
                         <div class="layui-input-block">
                             <input type="text" name="query" placeholder="Input Key Words" autocomplete="off" class="layui-input">
                             <button class="layui-btn" lay-filter="formDemo" onclick="queryArticleByUser()">Search</button>
-                            <button 
-                           		class="layui-btn" lay-filter="formDemo" style="float: right;"
+                            <button  disabled="disabled" 
+                           		class="layui-btn layui-btn-disabled" lay-filter="formDemo" style="float: right;"
 								onclick="confirmDeleteArticleBatchByUser()">Patch Delete
                             </button>
                         </div>
