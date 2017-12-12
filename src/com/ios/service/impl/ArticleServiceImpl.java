@@ -527,14 +527,14 @@ public class ArticleServiceImpl implements ArticleService {
 		// TODO Auto-generated method stub
 		Page page = null;
 		List<ArticleCustom> articleCustomList = new ArrayList<ArticleCustom>();
-		int totalCount = articleMapperCustom.getSearchResultCount(status,query);
+		int totalCount = articleMapperCustom.getSearchResultCountByUser(status,query,email);
 
         if (pageNow != null) {
             page = new Page(totalCount, pageNow, pageSize);
-            articleCustomList = this.articleMapperCustom.listSearchResultByPage(status,query, page.getStartPos(), page.getPageSize());
+            articleCustomList = this.articleMapperCustom.listSearchResultByPageByUser(status,query, page.getStartPos(), page.getPageSize(),email);
         } else {
             page = new Page(totalCount, 1, pageSize);
-            articleCustomList = this.articleMapperCustom.listSearchResultByPage(status,query, page.getStartPos(), page.getPageSize());
+            articleCustomList = this.articleMapperCustom.listSearchResultByPageByUser(status,query, page.getStartPos(), page.getPageSize(),email);
         }
 
         List<ArticleSearchVo> articleSearchVoList = new ArrayList<ArticleSearchVo>();
