@@ -42,7 +42,7 @@
                         <div class="layui-input-block">
                             <input type="text" name="query" placeholder="Input Key Words" autocomplete="off" class="layui-input">
                             <button class="layui-btn" lay-filter="formDemo" onclick="queryArticleByUser()">Search</button>
-                            <button  disabled="disabled" 
+                            <button  disabled="disabled" id="patchDelete"
                            		class="layui-btn layui-btn-disabled" lay-filter="formDemo" style="float: right;"
 								onclick="confirmDeleteArticleBatchByUser()">Patch Delete
                             </button>
@@ -265,16 +265,8 @@
             </div>
         </div>
     </div>
-<script>
-$(':checkbox').click(function(){
-	$('#patchDelete').prop('disabled',false);
-})
-</script>
+
 </rapid:override>
 <rapid:override name="footer-script">
-    <script>
-
-
-    </script>
 </rapid:override>
 <%@ include file="framework.jsp" %>
