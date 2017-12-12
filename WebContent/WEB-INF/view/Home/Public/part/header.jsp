@@ -8,17 +8,12 @@
 <%--导航 start--%>
 <header id="masthead" class="site-header">
     <%--顶部菜单 start--%>
-    <nav id="top-header">
+    <nav id="top-header" style="min-height: 30px;background: #25292C;border-bottom: 1px solid #414f5a;padding: 7px 0;">
         <div class="top-nav">
-            <div class="user-login" style="float:left;" >
-             <a class="inner" href="/">
-              <img width="100" height="40" src="/img/dzone.png" alt="DZone" />
-              </a>
-            </div>
             <div class="menu-topmenu-container" style="padding-top:10px;padding-bottom:10px;float:right;">
 					<c:choose>
                     <c:when test="${sessionScope.customer==null}">
-                        <a  href="/user" style="font-size: 19px;font-weight: 300;vertical-align: middle;color: #0288d1;padding-right: 5px;display: inline-block;">Login</a>
+                        <a  href="/user" style="font-size: 19px;font-weight: 300;vertical-align: middle;color: white;padding-right: 5px;display: inline-block;">Login</a>
 					</c:when>
                     <c:otherwise>
                       <p style="font-size: 19px;
@@ -39,11 +34,20 @@
 
     <%--主要菜单 satrt--%>
     <div id="menu-box">
+    
         <div id="top-menu">
+         <div class="user-login" style="float:left;" >
+             <a class="inner" href="/">
+              <img width="250" height="90" src="/img/dzone.png" alt="DZone" />
+              </a>
+            </div>
             <div id="site-nav-wrap">
                 <div id="sidr-close">
                     <a href="#sidr-close" class="toggle-sidr-close">×</a>
                 </div>
+               <span class="nav-search">
+                    <i class="fa fa-search"></i>
+              </span>
                 <nav id="site-nav" class="main-nav">
                     <a href="#sidr-main" id="navigation-toggle" class="bars">
                         <i class="fa fa-bars"></i>
@@ -101,9 +105,7 @@
                     </div>
                 </nav>
             </div>
-              <span class="nav-search">
-                    <i class="fa fa-search"></i>
-              </span>
+         
             <div class="clear"></div>
         </div><!-- #top-menu -->
     </div><!-- #menu-box -->

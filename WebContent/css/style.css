@@ -211,10 +211,6 @@ a, button, input {
     margin: 0 auto;
 }
 
-/** 头部 **/
-#masthead {
-    height: 120px;
-}
 
 .logo-site, .logo-sites {
     position: relative;
@@ -436,7 +432,7 @@ a, button, input {
 
 .nav-search {
     background: #009688;
-    float: left;
+    float: right;
     color: #fff;
     line-height: 26px;
     margin: 28px 10px 0 10px;
@@ -605,7 +601,7 @@ a, button, input {
 }
 /*一级样式*/
 #site-nav-wrap {
-    float: left;
+    float: right;
     max-width: 70%;
 }
 
