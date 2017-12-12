@@ -82,8 +82,27 @@
 <script>
     //给文本编辑器的iframe引入代码高亮的css
     $("iframe").contents().find("head").append("<link rel=\"stylesheet\" href=\"/css/highlight.css\">\n");
-
 </script>
-
+<!--patch delete button display-->
+<script>
+ 		$(":checkbox").click(function(){
+ 			var display = false;
+ 			$(":checkbox").each(function(){
+ 				if($(this).is(":checked")){
+ 					display = true;
+ 					return false;
+ 				}
+ 			})
+ 			if(display){
+					$("#patchDelete").prop('disabled',false);
+	 				$("#patchDelete").removeClass("layui-btn layui-btn-disabled");
+	 				$("#patchDelete").addClass("layui-btn");
+				}else{
+					$("#patchDelete").prop('disabled',true);
+	 				$("#patchDelete").removeClass("layui-btn");
+	 				$("#patchDelete").addClass("layui-btn layui-btn-disabled");
+			}
+ 		})
+</script>
 </body>
 </html>
