@@ -85,22 +85,22 @@
 </script>
 <!--patch delete button display-->
 <script>
- 		$(":checkbox").click(function(){
+ 		$(':checkbox').click(function(){
  			var display = false;
- 			$(":checkbox").each(function(){
- 				if($(this).is(":checked")){
+ 			$(':checkbox').each(function(){
+ 				if($(this).is(':checked')){
  					display = true;
  					return false;
  				}
  			})
  			if(display){
-					$("#patchDelete").prop('disabled',false);
-	 				$("#patchDelete").removeClass("layui-btn layui-btn-disabled");
-	 				$("#patchDelete").addClass("layui-btn");
+					$('#patchDelete').prop("disabled",false);
+	 				$('#patchDelete').removeClass("layui-btn layui-btn-disabled");
+	 				$('#patchDelete').addClass("layui-btn");
 				}else{
-					$("#patchDelete").prop('disabled',true);
-	 				$("#patchDelete").removeClass("layui-btn");
-	 				$("#patchDelete").addClass("layui-btn layui-btn-disabled");
+					$('#patchDelete').prop("disabled",true);
+	 				$('#patchDelete').removeClass("layui-btn");
+	 				$('#patchDelete').addClass("layui-btn layui-btn-disabled");
 			}
  		})
 </script>
