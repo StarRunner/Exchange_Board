@@ -150,7 +150,7 @@
                             <c:otherwise>
                                 <section class="no-results not-found">
                                     <div class="post">
-                                        <p>there is no this kind of Article！</p>
+                                        <p> There is no this kind of Article！</p>
                                         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
                                     </div>
                                 </section>
