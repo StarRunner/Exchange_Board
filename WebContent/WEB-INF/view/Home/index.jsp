@@ -62,14 +62,17 @@
                         </header>
 
                         <div class="entry-content">
-                            <span class="entry-meta" style="display:block; position:unset !important">
-                                   Author:  <span style="color: #009688;">
+                            <span class="entry-meta" style="display:block; position:unset !important;line-height: 1.8; font-size: 11px;">
+                                 <span style="display"block;">
+                                     By: <span style="color: #009688;">
                                       ${a.articleCustom.articleAuthor}
                                     </span>
-                                    <span class="date" style="width: 100%;display: block;position:unset !important">
-                                        <fmt:formatDate value="${a.articleCustom.articlePostTime}" pattern="yyyy/MM/dd"/>
+                                    on <span class="date" style="width: 100%;position:unset !important">
+                                        <fmt:formatDate value="${a.articleCustom.articlePostTime}" pattern="yyyy-MM-dd"/>
                                     &nbsp;&nbsp;
                                     </span>
+                                   </span>
+                                    <span style="display:block;">
                                     <span class="views">
                                         <i class="fa fa-eye"></i>
                                             ${a.articleCustom.articleViewCount} views
@@ -85,9 +88,9 @@
                                                     ${a.articleCustom.articleCommentCount}
                                                 </c:otherwise>
                                             </c:choose>
-
                                         </a>
                                     </span>
+                                   </span>
                                 </span>
                             <div class="clear"></div>
                         </div><!-- .entry-content -->
