@@ -96,15 +96,6 @@
                                     </li>
                                 </c:if>
                             </c:forEach>
-                            <li>
-	                            <form name='manageArticle' action='/manage/article' method='post'>
-	                            	<input type='hidden' name='manageArticle' value='/manage/article'/>
-								    <a href="javascript:document.forms['manageArticle'].submit();">
-	                                    <i class="fa-home fa"></i>
-	                                    <span class="font-text">Manage Article</span>
-                               		 </a>
-								</form>
-                            </li>
                         </ul>
                     </div>
                 </nav>
