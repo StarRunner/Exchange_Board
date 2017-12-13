@@ -10,6 +10,23 @@
     <rapid:override name="breadcrumb">
         <!--nav class="breadcrumb" style="background:unset !important;"-->
         <div class="slotholder"><img src="img/slider-bg-1.jpg" data-fullwidthcentering="on" alt="Pixma" style="width: 1633px;height: 552.839px;/* position: absolute; */left: -25px;top: -41px;"></div>
+         <div class="slogan bottom-pad-small">
+               <div class="container">
+                  <div class="row">
+                     <div class="slogan-content">
+                        <div class="col-lg-9 col-md-9">
+                           <h2 class="slogan-title">Post your idea and your POC here !</h2>
+                        </div>
+                        <div class="col-lg-3 col-md-3">
+                           <div class="get-started">
+                              <button class="btn btn-special btn-color pull-right">Get Started Now</button>
+                           </div>
+                        </div>
+                        <div class="clearfix"></div>
+                     </div>
+                  </div>
+               </div>
+            </div>
         </nav>
     </rapid:override>
 

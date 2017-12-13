@@ -202,7 +202,7 @@ a, button, input {
 
 /** 主体 **/
 #content {
-    width: 1080px;
+    width: 1150px;
     margin: 0 auto 10px;
 }
 
@@ -655,6 +655,66 @@ a, button, input {
 }
 .sub-menu  {
 	background: #444 !important ;
+}
+
+			
+/* Slogan Area */
+.slogan {
+    min-height: 100px;
+    background: #fafafa;
+    width: 100%;
+    border-top: 1px solid #DDD;
+    margin-bottom: 30px;
+    padding-top: 30px;
+}
+    border-bottom: 1px solid #DDD;
+    -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
+.slogan-content {
+    padding: 25px 0;
+}
+
+.slogan-title {
+    display: inline-block;
+    margin: 10px 0;
+    color: #666;
+    font-size: 28px;
+}
+
+.btn-special {
+    padding: 15px 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    outline: none;
+    -webkit-transition;
+    border-radius: 4px;
+    color: #fff !important;
+    text-shadow: 0 1px #555 !important;
+    display: inline-block;
+    margin-bottom: 0;
+    font-size: 14px;
+    line-height: 1.428571429;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    background: linear-gradient(#0488cd,#2eaef0);
+    }
+
+
+.page-services .slogan-content {
+    padding: 40px 0;
+}
+
+.page-services .get-started  {
+	padding-top: 15px;
+}
+
+.get-started {
+    padding-top: 1px;
+	vertical-align:middle;
 }
 #site-nav .down-menu ul ul {
     padding-top: 0;
@@ -1341,7 +1401,7 @@ a, button, input {
 
 /** 位置 **/
 .breadcrumb {
-    width: 1080px;
+    width: 1150px;
     height: 25px;
     line-height: 25px;
     margin: 0 auto;
