@@ -20,7 +20,7 @@
 
     <rapid:override name="breadcrumb" >
         <%--面包屑导航 start--%>
-         <nav class="breadcrumb" style="background:unset !important;">
+         <nav class="breadcrumb">
             <a class="crumbs" href="/">
                 <i class="fa fa-home"></i>Home</a>
             <i class="fa fa-angle-right"></i>
@@ -38,7 +38,7 @@
                     Article
                 </c:when>
                 <c:otherwise>
-                    该标签不存在
+               The tag is not exist !
                 </c:otherwise>
             </c:choose>
 
@@ -147,7 +147,7 @@
                             <c:otherwise>
                                 <section class="no-results not-found">
                                     <div class="post">
-                                        <p>该标签目前还没有Article！</p>
+                                        <p>there is no this kind of Article！</p>
                                         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
                                     </div>
                                 </section>
@@ -157,7 +157,7 @@
                     <c:otherwise>
                         <section class="no-results not-found">
                             <div class="post">
-                                <p>该标签不存在！</p>
+                                <p>The tag is not exist！</p>
                                 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
                             </div>
                         </section>
