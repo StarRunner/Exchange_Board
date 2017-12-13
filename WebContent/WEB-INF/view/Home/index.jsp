@@ -19,7 +19,12 @@
                         </div>
                         <div class="col-lg-3 col-md-3">
                            <div class="get-started">
-                              <button class="btn btn-special btn-color pull-right">Get Started Now</button>
+	                           <form name='manageArticle' action='/manage/article' method='post'>
+									<input type='hidden' name='manageArticle' value='/manage/article'/>
+									<button type="submit" class="btn btn-special btn-color pull-right">
+	                               		 	New Article Now!</button>
+								</form>
+								
                            </div>
                         </div>
                         <div class="clearfix"></div>
