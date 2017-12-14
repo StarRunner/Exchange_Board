@@ -22,7 +22,7 @@
 	                           <form name='manageArticle' action='/manage/article' method='post'>
 									<input type='hidden' name='manageArticle' value='/manage/article'/>
 									<button type="submit" class="btn btn-special btn-color pull-right">
-	                               		 	New Article Now!</button>
+	                               		 	Share Your Idea Now!</button>
 								</form>
 								
                            </div>
