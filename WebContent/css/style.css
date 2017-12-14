@@ -365,7 +365,7 @@ a, button, input {
 
 .top-nav {
     height: 50px;
-    width: 1080px;
+    width: 1150px;
     line-height: 30px;
     margin: 0 auto 0;
 }
@@ -505,7 +505,7 @@ a, button, input {
 }
 /** 菜单 **/
 #top-menu {
-    width: 1080px;
+    width: 1150px;
     margin: 0 auto;
     display: table;
     transition-duration: .5s;

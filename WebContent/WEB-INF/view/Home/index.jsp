@@ -9,7 +9,7 @@
 
     <rapid:override name="breadcrumb">
         <!--nav class="breadcrumb" style="background:unset !important;"-->
-        <div class="slotholder"><img src="img/slider-bg-1.jpg" data-fullwidthcentering="on" alt="Pixma" style="width: 1633px;height: 552.839px;/* position: absolute; */left: -25px;top: -41px;"></div>
+        <div class="slotholder"><img src="${request.getContextPath()}/img/slider-bg-1.jpg" data-fullwidthcentering="on" alt="Pixma" style="width: 1633px;height: 552.839px;/* position: absolute; */left: -25px;top: -41px;"></div>
          <div class="slogan bottom-pad-small">
                <div class="container">
                   <div class="row">
