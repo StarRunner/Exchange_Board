@@ -39,11 +39,9 @@
         </div>
 
 		<!-- Frank add - upload mini picture for article -->
-		<div class="layui-form-item">
-            <label class="layui-form-label">Featured Image<span style="color: #FF5722; ">*</span></label>
-            <div class="layui-input-block">
-                <input type="file" id="file" name="file" accept="image/*">
-            </div>
+        <div class="layui-form-item">
+			Featured Image<span style="color: #FF5722; ">*</span>
+            <input type="file" name="file" accept="image/*">
         </div>
 
         <div class="layui-form-item layui-form-text">
