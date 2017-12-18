@@ -9,11 +9,11 @@
 <%@ taglib prefix="rapid" uri="http://www.rapid-framework.org.cn/rapid" %>
 
 <rapid:override name="title">
-    - 回复评论
+    - reply page
 </rapid:override>
 <rapid:override name="header-style">
     <style>
-        /*覆盖 layui*/
+        /* layui*/
 
         .layui-btn {
             margin: 2px 0 !important;

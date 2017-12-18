@@ -1402,7 +1402,6 @@ a, button, input {
 /** 位置 **/
 .breadcrumb {
     width: 1150px;
-    height: 25px;
     line-height: 25px;
     margin: 0 auto;
     padding-left: 10px;
