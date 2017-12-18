@@ -191,7 +191,7 @@
                                         </c:when>
                                         <c:otherwise>
                                             <a class="page-numbers"
-                                               href="/category/${articleListVoList[0].categoryCustomList[0].categoryId}/p/${articleListVoList[0].page.pageNow-1}">
+                                               href="/category/${categoryCustom.categoryId}/p/${articleListVoList[0].page.pageNow-1}">
                                                 <span class="fa fa-angle-left"></span>
                                             </a>
                                         </c:otherwise>
@@ -199,7 +199,7 @@
                                         <%--显示第一页的页码--%>
                                     <c:if test="${begin >= 2 }">
                                         <a class="page-numbers"
-                                           href="/category/${articleListVoList[0].categoryCustomList[0].categoryId}/p/1">1</a>
+                                           href="/category/${categoryCustom.categoryId}/p/1">1</a>
                                     </c:if>
                                         <%--显示点点点--%>
                                     <c:if test="${begin  > 2 }">
@@ -213,7 +213,7 @@
                                             </c:when>
                                             <c:otherwise>
                                                 <a class="page-numbers"
-                                                   href="/category/${articleListVoList[0].categoryCustomList[0].categoryId}/p/${i}">${i }</a>
+                                                   href="/category/${categoryCustom.categoryId}/p/${i}">${i }</a>
                                             </c:otherwise>
                                         </c:choose>
                                     </c:forEach>
@@ -223,7 +223,7 @@
                                     </c:if>
                                         <%-- 显示最后一页的数字 --%>
                                     <c:if test="${end < articleListVoList[0].page.totalPageCount }">
-                                        <a href="/category/${articleListVoList[0].categoryCustomList[0].categoryId}/p/${articleListVoList[0].page.totalPageCount}">
+                                        <a href="/category/${categoryCustom.categoryId}/p/${articleListVoList[0].page.totalPageCount}">
                                                 ${articleListVoList[0].page.totalPageCount}
                                         </a>
                                     </c:if>
@@ -236,7 +236,7 @@
                                             <%--如果没有结果，隐藏最后一个>--%>
                                             <c:if test="${articleListVoList[0].page.totalPageCount>0}">
                                                 <a class="page-numbers"
-                                                   href="/category/${articleListVoList[0].categoryCustomList[0].categoryId}/p/${articleListVoList[0].page.pageNow+1}">
+                                                   href="/category/${categoryCustom.categoryId}/p/${articleListVoList[0].page.pageNow+1}">
                                                     <span class="fa fa-angle-right"></span>
                                                 </a>
                                             </c:if>
