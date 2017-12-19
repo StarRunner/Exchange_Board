@@ -60,7 +60,7 @@ public class IndexController {
 		int pageSize = 9;
 		List<ArticleListVo> articleListVoList = articleService.listArticleByPage(1,pageNow,pageSize);
 		modelAndView.addObject("articleListVoList",articleListVoList);
-		modelAndView.setViewName("Home/index");
+		modelAndView.setViewName("Home/indexContent");
 		return modelAndView;//不会被解析为跳转路径，而是直接写入HTTP response body中
 	}
 

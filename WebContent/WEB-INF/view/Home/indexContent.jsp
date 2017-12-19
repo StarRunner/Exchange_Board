@@ -5,40 +5,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@ taglib uri="/WEB-INF/myTag.tld" prefix="lyz" %>
 <%@ taglib prefix="rapid" uri="http://www.rapid-framework.org.cn/rapid" %>
-
-
-    <rapid:override name="breadcrumb">
-        <!--nav class="breadcrumb" style="background:unset !important;"-->
-        <div class="slotholder"><img src="${request.getContextPath()}/img/slider-bg-1.jpg" data-fullwidthcentering="on" alt="Pixma" style="width: 1583px;height: 552.839px;/* position: absolute; */left: -25px;top: -41px;"></div>
-         <div class="slogan bottom-pad-small">
-               <div class="container">
-                  <div class="row">
-                     <div class="slogan-content">
-                        <div class="col-lg-9 col-md-9">
-                           <h2 class="slogan-title">Post your idea and your POC here !</h2>
-                        </div>
-                        <div class="col-lg-3 col-md-3">
-                           <div class="get-started">
-	                           <form name='manageArticle' action='/manage/article' method='post'>
-									<input type='hidden' name='manageArticle' value='/manage/article'/>
-									<button type="submit" class="btn btn-special btn-color pull-right">
-	                               		 	Share Your Idea Now!</button>
-								</form>
-								
-                           </div>
-                        </div>
-                        <div class="clearfix"></div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-        </nav>
-    </rapid:override>
-
-    <rapid:override name="left">
-        <div id="primary" class="content-area">
-
-            <main id="main" class="site-main" role="main">
+<body>
+                   <main id="main" class="site-main" role="main">
                 <c:forEach items="${articleListVoList}" var="a">
 
                     <article  class="post type-post" style="float:left;width:33%">
@@ -182,14 +150,4 @@
             </nav>
                 <%--分页 end--%>
             </c:if>
-        </div>
-    </rapid:override>
-    <%--左侧区域 end--%>
-
-    <%--侧边栏 start--%>
-    <rapid:override name="right">
-        <%@include file="Public/part/sidebar-2.jsp" %>
-    </rapid:override>
-    <%--侧边栏 end--%>
-
-<%@ include file="Public/framework.jsp" %>
+</body>
