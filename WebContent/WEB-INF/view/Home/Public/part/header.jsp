@@ -13,7 +13,7 @@
             <div class="menu-topmenu-container" style="padding-top:10px;padding-bottom:10px;float:right;">
 					<c:choose>
                     <c:when test="${sessionScope.customer==null}">
-                        <a  href="/user" style="font-size: 19px;font-weight: 300;vertical-align: middle;color: white;padding-right: 5px;display: inline-block;">Login</a>
+                        <a  href="/user" style="font-size: 20px;font-weight: 300;vertical-align: middle;color: white;padding-right: 5px;display: inline-block;">Login</a>
 					</c:when>
                     <c:otherwise>
                       <p style="font-size: 19px;
