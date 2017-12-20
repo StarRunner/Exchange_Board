@@ -13,7 +13,7 @@
             <div class="menu-topmenu-container" style="padding-top:10px;padding-bottom:10px;float:right;">
 					<c:choose>
                     <c:when test="${sessionScope.customer==null}">
-                        <a  href="/user" style="font-size: 19px;font-weight: 300;vertical-align: middle;color: white;padding-right: 5px;display: inline-block;">Login</a>
+                        <a  href="/user" style="font-size: 20px;font-weight: 300;vertical-align: middle;color: white;padding-right: 5px;display: inline-block;">Login</a>
 					</c:when>
                     <c:otherwise>
                       <p style="font-size: 19px;
@@ -62,7 +62,7 @@
                             <li>
                                 <a href="/">
                                     <i class="fa-home fa"></i>
-                                    <span class="font-text">Home</span>
+                                    <span class="font-text title-font">Home</span>
                                 </a>
                             </li>
 
@@ -71,7 +71,7 @@
                                     <li>
                                         <a href="/category/${category.categoryId}">
                                             <i class="${category.categoryIcon}"></i>
-                                            <span class="font-text">${category.categoryName}&nbsp;</span>
+                                            <span class="font-text title-font">${category.categoryName}&nbsp;</span>
                                         </a>
                                         <ul class="sub-menu">
                                             <c:forEach items="${categoryList}" var="cate">
@@ -91,7 +91,7 @@
                                     <li>
                                         <a href="${m.menuUrl}">
                                             <i class="${m.menuIcon}"></i>
-                                            <span class="font-text">${m.menuName}&nbsp;</span>
+                                            <span class="font-text title-font">${m.menuName}&nbsp;</span>
                                         </a>
                                     </li>
                                 </c:if>

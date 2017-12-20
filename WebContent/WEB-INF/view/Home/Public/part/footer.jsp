@@ -11,9 +11,9 @@
         <p style="text-align: center;">Copyright © 2017
             <a href="/" target="_blank" rel="noopener noreferrer">${options.optionSiteTitle}</a>
             All rights reserved.
-            <a target="_blank" href="/map" >
-                <span class="font-text">站点地图</span>
-            </a>
+            <!--a target="_blank" href="/map" >
+                <span class="font-text">text</span>
+            </a-->
         </p>
     </div>
     <!-- .site-info -->
