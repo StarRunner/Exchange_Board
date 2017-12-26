@@ -113,7 +113,7 @@
                             <li>A+</li>
                         </ul>
                         <div class="single-cat-tag">
-                            <div class="single-cat">Part Of Category：
+                            <div class="single-cat">Tag：
                                 <c:forEach items="${articleDetailVo.categoryCustomList}" var="c">
                                     <a href="/category/${c.categoryId}">
                                             ${c.categoryName}
