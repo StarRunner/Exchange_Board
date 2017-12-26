@@ -12,7 +12,6 @@
         comment_author_url,
         comment_content,
         comment_agent,
-        comment_ip,
         comment_create_time,
         comment_role,
         comment_status

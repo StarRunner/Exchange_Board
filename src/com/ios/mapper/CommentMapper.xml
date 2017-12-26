@@ -11,14 +11,13 @@
     <result column="comment_author_url" property="commentAuthorUrl" jdbcType="VARCHAR" />
     <result column="comment_content" property="commentContent" jdbcType="VARCHAR" />
     <result column="comment_agent" property="commentAgent" jdbcType="VARCHAR" />
-    <result column="comment_ip" property="commentIp" jdbcType="VARCHAR" />
     <result column="comment_create_time" property="commentCreateTime" jdbcType="TIMESTAMP" />
     <result column="comment_role" property="commentRole" jdbcType="INTEGER" />
     <result column="comment_status" property="commentStatus" jdbcType="INTEGER" />
   </resultMap>
   <sql id="Base_Column_List" >
     comment_id, comment_pid, comment_pname, comment_article_id, comment_author_name, 
-    comment_author_email, comment_author_url, comment_content, comment_agent, comment_ip, 
+    comment_author_email, comment_author_url, comment_content, comment_agent, 
     comment_create_time, comment_role, comment_status
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
@@ -35,7 +34,7 @@
     insert into comment (comment_id, comment_pid, comment_pname, 
       comment_article_id, comment_author_name, comment_author_email, 
       comment_author_url, comment_content, comment_agent, 
-      comment_ip, comment_create_time, comment_role, 
+      comment_create_time, comment_role, 
       comment_status)
     values (#{commentId,jdbcType=INTEGER}, #{commentPid,jdbcType=INTEGER}, #{commentPname,jdbcType=VARCHAR}, 
       #{commentArticleId,jdbcType=INTEGER}, #{commentAuthorName,jdbcType=VARCHAR}, #{commentAuthorEmail,jdbcType=VARCHAR}, 
@@ -72,9 +71,6 @@
       </if>
       <if test="commentAgent != null" >
         comment_agent,
-      </if>
-      <if test="commentIp != null" >
-        comment_ip,
       </if>
       <if test="commentCreateTime != null" >
         comment_create_time,
@@ -155,9 +151,6 @@
       <if test="commentAgent != null" >
         comment_agent = #{commentAgent,jdbcType=VARCHAR},
       </if>
-      <if test="commentIp != null" >
-        comment_ip = #{commentIp,jdbcType=VARCHAR},
-      </if>
       <if test="commentCreateTime != null" >
         comment_create_time = #{commentCreateTime,jdbcType=TIMESTAMP},
       </if>
@@ -180,7 +173,6 @@
       comment_author_url = #{commentAuthorUrl,jdbcType=VARCHAR},
       comment_content = #{commentContent,jdbcType=VARCHAR},
       comment_agent = #{commentAgent,jdbcType=VARCHAR},
-      comment_ip = #{commentIp,jdbcType=VARCHAR},
       comment_create_time = #{commentCreateTime,jdbcType=TIMESTAMP},
       comment_role = #{commentRole,jdbcType=INTEGER},
       comment_status = #{commentStatus,jdbcType=INTEGER}
