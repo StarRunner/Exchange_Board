@@ -20,7 +20,6 @@ function confirmDelete() {
     }
 }
 
-//获取相对路径
 function  getPath(){
     var pathName = document.location.pathname;
     var index = pathName.substr(1).indexOf("/");
@@ -29,7 +28,6 @@ function  getPath(){
 }
 
 
-//显示和隐藏row-actions
 $(".dashboard-comment-wrap").mouseenter(function () {
     $(this).find(".row-actions").show();
 })
@@ -37,7 +35,6 @@ $(".dashboard-comment-wrap").mouseleave(function () {
     $(this).find(".row-actions").hide();
 })
 
-//删除评论
 function deleteComment(id) {
     if(confirmDelete()==true){
         $.ajax({
@@ -53,8 +50,6 @@ function deleteComment(id) {
     }
 }
 
-
-//批准评论
 function approveComment(id) {
     $.ajax({
         async: false,
@@ -68,8 +63,6 @@ function approveComment(id) {
     })
 }
 
-
-//屏蔽评论
 function hideComment(id) {
     $.ajax({
         async: false,
@@ -83,7 +76,6 @@ function hideComment(id) {
     })
 }
 
-//添加草稿
 function insertDraft() {
     if($("#articleContent").val!=""&&$("#articleTitle").val()!="") {
         $.ajax({
@@ -100,7 +92,6 @@ function insertDraft() {
 
 }
 
-//删除Article
 function deleteArticle(id) {
     if(confirmDelete()==true){
         $.ajax({
@@ -116,7 +107,6 @@ function deleteArticle(id) {
     }
 }
 
-//删除指定user的Article
 function deleteArticleByUser(id) {
     if(confirmDelete()==true){
         $.ajax({
@@ -132,21 +122,16 @@ function deleteArticleByUser(id) {
     }
 }
 
-//查询Article
 function queryArticle() {
-    //提交form
     $("#articleForm").attr("action", "/admin/article/search");
     $("#articleForm").submit();
 }
 
-//查询指定user的Article
 function queryArticleByUser() {
-    //提交form
     $("#articleForm").attr("action", "/manage/article/search");
     $("#articleForm").submit();
 }
 
-//批量删除Article
 function confirmDeleteArticleBatch() {
     if(confirmDelete()==true){
         var text = $("input:checkbox[name='ids']:checked").map(function(index,elem) {
@@ -166,7 +151,6 @@ function confirmDeleteArticleBatch() {
     }
 }
 
-//批量删除指定user的Article
 function confirmDeleteArticleBatchByUser() {
     if(confirmDelete()==true){
         var text = $("input:checkbox[name='ids']:checked").map(function(index,elem) {
@@ -186,69 +170,57 @@ function confirmDeleteArticleBatchByUser() {
     }
 }
 
-
-
-//添加用户检查用户名是否存在
 function checkUserName() {
     var result;
     $.ajax({
-        async: false,//同步，待请求完毕后再执行后面的代码
+        async: false,
         type: "POST",
         url: '/admin/user/checkUserName',
         contentType: "application/x-www-form-urlencoded; charset=utf-8",
         data: {"username": $("#userName").val(), "id": $("#userId").val()},
         dataType: "json",
         success: function (data) {
-            //用户名存在
             if(data.code==1) {
                 $("#userNameTips").html(data.msg);
                 result=1;
             }
-            //用户名不存在
             if(data.code==0) {
                 $("#userNameTips").html(data.msg);
                 result=0;
             }
         },
         error: function () {
-            // alert("数据获取失败")
         }
     })
     return result;
 }
 
-//添加用户检查电子邮箱是否存在
 function checkUserEmail() {
     var result;
     $.ajax({
-        async: false,//同步，待请求完毕后再执行后面的代码
+        async: false,
         type: "POST",
         url: '/admin/user/checkUserEmail',
         contentType: "application/x-www-form-urlencoded; charset=utf-8",
         data: {"email": $("#userEmail").val(), "id": $("#userId").val()},
         dataType: "json",
         success: function (data) {
-            //用户名存在
             if(data.code==1) {
                 $("#userEmailTips").html(data.msg);
                 result=1;
             }
-            //用户名不存在
             if(data.code==0) {
                 $("#userEmailTips").html(data.msg);
                 result=0;
             }
         },
         error: function () {
-            //alert("数据获取失败")
         }
     })
     return result;
 }
 
 
-
-//添加用户验证和编辑用户验证
 layui.use(['form', 'layedit', 'laydate'], function () {
     var form = layui.form, layer = layui.layer;
     form.verify({
