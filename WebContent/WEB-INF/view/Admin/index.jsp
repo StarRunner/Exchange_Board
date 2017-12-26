@@ -295,7 +295,7 @@
                             </ul>
                             <ul class="subsubsub">
                                 <li class="all"><a
-                                        href="">All<span
+                                        href="/admin/comment">All<span
                                         class="count">（<span class="all-count">${allCommentCount}</span>）</span></a> |
                                 </li>
                                 <li class="moderated"><a
