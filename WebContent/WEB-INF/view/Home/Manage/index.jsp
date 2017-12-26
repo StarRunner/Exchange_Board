@@ -185,7 +185,6 @@
                             <%--下一页 --%>
                         <c:choose>
                             <c:when test="${publishedArticleListVoList[0].page.pageNow eq publishedArticleListVoList[0].page.totalPageCount }">
-                                <%--到了尾页隐藏，下一页按钮--%>
                             </c:when>
                             <c:otherwise>
                                 <a class="page-numbers"

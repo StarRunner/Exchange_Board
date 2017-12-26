@@ -6,7 +6,7 @@
 <%@ taglib prefix="rapid" uri="http://www.rapid-framework.org.cn/rapid" %>
 
     <rapid:override name="title">
-        - 分类列表
+  
     </rapid:override>
 <rapid:override name="header-style">
     <style>
@@ -172,10 +172,9 @@
                 </tbody>
             </table>
             <blockquote class="layui-elem-quote layui-quote-nm">
-                温馨提示：
+                Note:：
                 <ul>
-                    <li>分类最多只有两级，一级分类pid=0，二级分类pid=其父节点id</li>
-                    <li>如果该分类包含Article，将不可删除</li>
+                     <li>If some Article relateive to the categroy，the categroy will not be deleted!</li>
                 </ul>
             </blockquote>
         </div>

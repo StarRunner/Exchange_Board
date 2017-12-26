@@ -97,7 +97,6 @@
             <div class="layui-input-inline">
                 <input type="number" name="articleOrder" value="${articleCustom.articleOrder}"   autocomplete="off" class="layui-input">
             </div>
-            <!-- <div class="layui-form-mid layui-word-aux">Input 1-10的数字,order越大排序越前</div> -->
        		<div class="layui-form-mid layui-word-aux">Input number 1-10, to manage sort</div>
         </div>
         <div class="layui-form-item">

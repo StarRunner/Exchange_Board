@@ -6,7 +6,6 @@
 <%@ taglib prefix="rapid" uri="http://www.rapid-framework.org.cn/rapid" %>
 
 <rapid:override name="title">
-    - 编辑用户
 </rapid:override>
 <rapid:override name="header-style">
     <style>
@@ -76,7 +75,7 @@
             <div class="layui-form-mid layui-word-aux"></div>
         </div>
         <div class="layui-form-item">
-            <label class="layui-form-label">昵称 </label>
+            <label class="layui-form-label">Nick Name </label>
             <div class="layui-input-inline">
                 <input type="text"  value="${userCustom.userNickname}" required
                        placeholder="" autocomplete="off" min="2" max="10"

@@ -10,7 +10,6 @@
     </rapid:override>
 <rapid:override name="header-style">
     <style>
-        /*覆盖 layui*/
 
         .layui-table {
             margin-top: 0;

@@ -311,11 +311,6 @@
                                     <input type="email" name="commentAuthorEmail" id="author_email" class="" value=""
                                            tabindex="3" required>
                                 </p>
-                                <p class="comment-form-url">
-                                    <label for="author_url">Website</label>
-                                    <input type="url" name="commentAuthorUrl" id="author_url" class="" value=""
-                                           tabindex="4">
-                                </p>
                             </c:if>
                         </div>
                         <div class="clear"></div>

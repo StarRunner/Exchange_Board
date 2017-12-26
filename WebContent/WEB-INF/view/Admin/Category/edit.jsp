@@ -6,7 +6,6 @@
 <%@ taglib prefix="rapid" uri="http://www.rapid-framework.org.cn/rapid" %>
 
     <rapid:override name="title">
-        - 分类列表
     </rapid:override>
 <rapid:override name="header-style">
     <style>
@@ -22,8 +21,8 @@
     <blockquote class="layui-elem-quote">
         <span class="layui-breadcrumb" lay-separator="/">
               <a href="/admin">Home</a>
-              <a href="/admin/category">分类列表</a>
-              <a><cite>编辑分类</cite></a>
+              <a href="/admin/category">Category List</a>
+              <a><cite>Edit Category</cite></a>
         </span>
     </blockquote>
     <div class="layui-row">
@@ -31,16 +30,16 @@
             <form class="layui-form"  method="post" id="myForm" action="/admin/category/editSubmit">
                 <div class="layui-form-item">
                     <div class="layui-input-block">
-                        <strong>修改分类</strong>
+                        <strong>Edit Category</strong>
                     </div>
                     <input type="hidden" name="categoryId" value="${categoryCustom.categoryId}">
                     <div class="layui-input-block">
-                        名称 <span style="color: #FF5722; ">*</span>
+                      Name <span style="color: #FF5722; ">*</span>
                         <input type="text" name="categoryName" value="${categoryCustom.categoryName}" placeholder="" autocomplete="off" class="layui-input" required>
                     </div>
                     <br>
                     <div class="layui-input-block">
-                        父节点 <span style="color: #FF5722; ">*</span>
+                        Parent Node <span style="color: #FF5722; ">*</span>
                         <select name="categoryPid" class="layui-input" required>
                             <c:forEach items="${categoryCustomList}" var="c">
                                 <c:choose>
@@ -54,24 +53,24 @@
                                     </c:otherwise>
                                 </c:choose>
                             </c:forEach>
-                            <option value="0" <c:if test="${categoryCustom.categoryPid==0}">selected</c:if> >无</option>
+                            <option value="0" <c:if test="${categoryCustom.categoryPid==0}">selected</c:if> >None</option>
                         </select>
                     </div>
                     <br>
                     <div class="layui-input-block">
-                        分类描述
+                       Category Description
                         <input type="text" name="categoryDescription" value="${categoryCustom.categoryDescription}"  class="layui-input" >
                     </div>
                     <br>
                     <div class="layui-input-block">
-                        图标样式
+                        Category Style
                         <input type="text" name="categoryIcon" value="${categoryCustom.categoryIcon}"class="layui-input" >
                     </div>
                     <br>
                     <div class="layui-input-block">
-                        状态 <br>
-                        <input type="radio" name="categoryStatus" value="1" title="显示" <c:if test="${categoryCustom.categoryStatus==1}">checked</c:if>>
-                        <input type="radio" name="categoryStatus" value="0" title="隐藏" <c:if test="${categoryCustom.categoryStatus==0}">checked</c:if>>
+                        Status <br>
+                        <input type="radio" name="categoryStatus" value="1" title="display" <c:if test="${categoryCustom.categoryStatus==1}">checked</c:if>>
+                        <input type="radio" name="categoryStatus" value="0" title="hidden" <c:if test="${categoryCustom.categoryStatus==0}">checked</c:if>>
                     </div>
                     <br>
                     <div class="layui-input-block">
@@ -81,10 +80,10 @@
             </form>
             <br><br>
             <blockquote class="layui-elem-quote layui-quote-nm">
-                温馨提示：
+                Note:：
                 <ul>
-                    <li>如果该分类为一级分类，父节点将不可修改</li>
-                    <li>如果该分类为二级分类，父节点可选择其对应的一级目录</li>
+                    <li>If this is the first level category, the parent node can not be edit!</li>
+                    <li>If this is the second level category, please select the relative category!</li>
                 </ul>
             </blockquote>
         </div>
@@ -100,12 +99,12 @@
                 </colgroup>
                 <thead>
                 <tr>
-                    <th>id</th>
-                    <th>pid</th>
-                    <th>名称</th>
-                    <th>Article数</th>
-                    <th>状态</th>
-                    <th>操作</th>
+                    <th>ID</th>
+                    <th>PID</th>
+                    <th>Name</th>
+                    <th>Article Number</th>
+                    <th>Status</th>
+                    <th>Operation</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -124,9 +123,9 @@
                                     ${c.categoryStatus}
                             </td>
                             <td>
-                                <a href="/admin/category/edit/${c.categoryId}" class="layui-btn layui-btn-mini">编辑</a>
+                                <a href="/admin/category/edit/${c.categoryId}" class="layui-btn layui-btn-mini">Edit</a>
                                 <c:if test="${c.articleCount==0}">
-                                    <a href="/admin/category/delete/${c.categoryId}" class="layui-btn layui-btn-danger layui-btn-mini" onclick="return confirmDelete()">删除</a>
+                                    <a href="/admin/category/delete/${c.categoryId}" class="layui-btn layui-btn-danger layui-btn-mini" onclick="return confirmDelete()">Delete</a>
                                 </c:if>
                             </td>
                         </tr>
@@ -145,9 +144,9 @@
                                             ${c2.categoryStatus}
                                     </td>
                                     <td>
-                                        <a href="/admin/category/edit/${c2.categoryId}" class="layui-btn layui-btn-mini">编辑</a>
+                                        <a href="/admin/category/edit/${c2.categoryId}" class="layui-btn layui-btn-mini">Edit</a>
                                         <c:if test="${c2.articleCount==0}">
-                                            <a href="/admin/category/delete/${c2.categoryId}" class="layui-btn layui-btn-danger layui-btn-mini" onclick="return confirmDelete()">删除</a>
+                                            <a href="/admin/category/delete/${c2.categoryId}" class="layui-btn layui-btn-danger layui-btn-mini" onclick="return confirmDelete()">Delete</a>
                                         </c:if>
                                     </td>
                                 </tr>
@@ -160,10 +159,9 @@
                 </tbody>
             </table>
             <blockquote class="layui-elem-quote layui-quote-nm">
-                温馨提示：
+                Note:：
                 <ul>
-                    <li>分类最多只有两级，一级分类pid=0，二级分类pid=其父节点id</li>
-                    <li>如果该分类包含Article，将不可删除</li>
+                    <li>If some Article relateive to the categroy，the categroy will not be deleted!</li>
                 </ul>
             </blockquote>
         </div>
