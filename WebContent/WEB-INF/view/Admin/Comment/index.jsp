@@ -47,8 +47,8 @@
                     <tr>
                         <th>Author</th>
                         <th>Comment Content</th>
-                        <th>Reply </th>
-                        <th>Submitted</th>
+                        <th>Article Name</th>
+                        <th>Submitted Date</th>
                         <th>ID</th>
                     </tr>
                     </thead>
@@ -200,8 +200,8 @@
                     <tr>
                         <th>Author</th>
                         <th>Comment Content</th>
-                        <th>Reply</th>
-                        <th>Submit</th>
+                        <th>Article Name</th>
+                        <th>Submitted Date</th>
                         <th>ID</th>
                     </tr>
                     </thead>
