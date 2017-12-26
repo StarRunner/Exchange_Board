@@ -86,13 +86,6 @@
                         <dd><a href="/admin/user/insert">Add User</a></dd>
                     </dl>
                 </li>
-                <li class="layui-nav-item">
-                    <a href="javascript:;">Settings</a>
-                    <dl class="layui-nav-child">
-                        <dd><a href="/admin/menu">Menu</a></dd>
-                        <dd><a href="/admin/options">Main Menus</a></dd>
-                    </dl>
-                </li>
             </ul>
         </div>
     </div>
