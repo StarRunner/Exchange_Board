@@ -660,12 +660,12 @@ a, button, input {
 			
 /* Slogan Area */
 .slogan {
-    min-height: 100px;
     background: #fafafa;
     width: 100%;
     border-top: 1px solid #DDD;
-    margin-bottom: 30px;
-    padding-top: 30px;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
     border-bottom: 1px solid #DDD;
     -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
@@ -1443,7 +1443,7 @@ a, button, input {
     position: relative;
     background: #fff;
     margin: 0 0 10px 0;
-    padding: 20px;
+    padding: 10px 20px 10px 20px;
     border: 1px solid #ddd;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
     border-radius: 2px;
@@ -1583,14 +1583,13 @@ a, button, input {
     max-width: 200px;
     height: auto;
     clear: both;
-    margin: 1px 20px 0 0;
     overflow: hidden;
     transition-duration: .5s;
 }
 
 .thumbnail a img {
     float: left;
-    width: 188px;
+    width: 250px;
     height: 141px;
     max-width: 100%;
 }
