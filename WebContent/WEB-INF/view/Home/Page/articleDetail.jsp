@@ -28,7 +28,6 @@
 </rapid:override>
 
 <rapid:override name="breadcrumb">
-    <%--面包屑导航 start--%>
     <nav class="breadcrumb">
         <a class="crumbs" href="/">
             <i class="fa fa-home"></i>Home
