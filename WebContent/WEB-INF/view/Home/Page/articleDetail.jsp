@@ -274,19 +274,19 @@
                         </span>
                     </h3>
                     <form id="comment_form" method="post">
-                        <c:if test="${sessionScope.user!=null}">
+                        <c:if test="${sessionScope.customer!=null}">
                             <div class="user_avatar">
                                 <img alt="Ahtor"
-                                     src="${sessionScope.user.userAvatar}"
+                                     src="${sessionScope.customer.userAvatar}"
                                      class="avatar avatar-64 photo" height="64" width="64">
-                                User：${sessionScope.user.userNickname}
+                                User：${sessionScope.customer.userNickname}
                                 <br> <a href="javascript:void(0)" onclick="logout()">Logout</a>
                                 <input type="hidden" name="commentRole" value="1">
                                 <input type="hidden" name="commentAuthorName"
-                                       value="${sessionScope.user.getUserNickname()}">
+                                       value="${sessionScope.customer.getUserNickname()}">
                                 <input type="hidden" name="commentAuthorEmail"
-                                       value="${sessionScope.user.getUserEmail()}">
-                                <input type="hidden" name="commentAuthorUrl" value="${sessionScope.user.getUserUrl()}">
+                                       value="${sessionScope.customer.getUserEmail()}">
+                                <input type="hidden" name="commentAuthorUrl" value="${sessionScope.customer.getUserUrl()}">
                             </div>
                         </c:if>
                         <p class="comment-form-comment">
@@ -295,7 +295,7 @@
                         <div id="comment-author-info">
                             <input type="hidden" name="commentPid" value="0">
                             <input type="hidden" name="commentPname" value="">
-                            <c:if test="${sessionScope.user==null}">
+                            <c:if test="${sessionScope.customer==null}">
                                 <input type="hidden" name="commentRole" value="0">
                                 <p class="comment-form-author">
                                     <label for="author_name">
