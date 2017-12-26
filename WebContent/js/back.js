@@ -186,20 +186,6 @@ function confirmDeleteArticleBatchByUser() {
     }
 }
 
-//退出登录
-function logout() {
-    $.ajax({
-        async: false,
-        type: "POST",
-        url:'/admin/logout',
-        contentType : "application/x-www-form-urlencoded; charset=utf-8",
-        dataType: "text",
-        complete:function () {
-            window.location.reload();
-        }
-    })
-}
-
 
 
 //添加用户检查用户名是否存在

@@ -280,7 +280,6 @@
                                      src="${sessionScope.customer.userAvatar}"
                                      class="avatar avatar-64 photo" height="64" width="64">
                                 User：${sessionScope.customer.userNickname}
-                                <br> <a href="javascript:void(0)" onclick="logout()">Logout</a>
                                 <input type="hidden" name="commentRole" value="1">
                                 <input type="hidden" name="commentAuthorName"
                                        value="${sessionScope.customer.getUserNickname()}">
