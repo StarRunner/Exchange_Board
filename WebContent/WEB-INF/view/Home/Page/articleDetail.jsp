@@ -343,7 +343,7 @@
                                                 <span class="comment-aux">
                                                     <span class="reply">
                                                         <a rel="nofollow" class="comment-reply-link" href="#respond"
-                                                           onclick="replyComment()">Reply
+                                                     >Reply
                                                         </a>
                                                     </span>
                                                     <fmt:formatDate value="${c.commentCreateTime}"
@@ -391,8 +391,7 @@
                                                     <br>
                                                     <span class="comment-aux">
                                                         <span class="reply">
-                                                            <a rel="nofollow" class="comment-reply-link" href="#respond"
-                                                               onclick="replyComment()">Reply
+                                                            <a rel="nofollow" class="comment-reply-link" href="#respond">Reply
                                                             </a>
                                                         </span>
                                                         <fmt:formatDate value="${c2.commentCreateTime}"
