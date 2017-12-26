@@ -1583,14 +1583,13 @@ a, button, input {
     max-width: 200px;
     height: auto;
     clear: both;
-    margin: 1px 20px 0 0;
     overflow: hidden;
     transition-duration: .5s;
 }
 
 .thumbnail a img {
     float: left;
-    width: 188px;
+    width: 250px;
     height: 141px;
     max-width: 100%;
 }

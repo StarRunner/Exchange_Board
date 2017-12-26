@@ -14,7 +14,7 @@
           content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
 
-    <title>抱歉，无法找到该页面！</title>
+    <title>NO page found！</title>
     <link rel="stylesheet" href="/css/style.css">
 
     <link rel="stylesheet" type="text/css" href="/plugin/404/main.css">
@@ -28,7 +28,6 @@
 
     <div id="content" class="site-content" style="transform: none;" >
 
-        <%--博客主体-左侧正文 start--%>
         <div id="primary" class="content-area">
             <main id="main" class="site-main" role="main">
 
@@ -36,20 +35,19 @@
                     <h1><span class="icon">!</span>404<span class="sub">page not found</span></h1>
                 </header>
                 <div id="content_404">
-                    <h2>您打开的这个的页面不存在！</h2>
-                    <p>当您看到这个页面,表示您的访问出错,这个错误是您打开的页面不存在,请确认您输入的地址是正确的,如果是在本站点击后出现这个页面,请联系站长进行处理,或者请通过下边的Search重新查找资源。</p>
+                    <h2>There is no such page!</h2>
+                    <p>Please retry to request the page!</p>
                     <div class="utilities">
                         <center>
                         <form name="formsearch" action="/search" id="formkeyword">
                             <div class="input-container">
-                                <input type="text" class="left" name="query" size="24" value="在这里Search..." onfocus="if(this.value=='在这里Search...'){this.value='';}" onblur="if(this.value==''){this.value='在这里Search...';}" id="inputString" onkeyup="lookup(this.value);" onblur="fill();" placeholder="Search..." />
+                                <input type="text" class="left" name="query" size="24" value="Search..." onfocus="if(this.value=='Search...'){this.value='';}" onblur="if(this.value==''){this.value='Search...';}" id="inputString" onkeyup="lookup(this.value);" onblur="fill();" placeholder="Search..." />
                                 <button id="search"></button>
                             </div>
                         </form>
                         <div id="btn">
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <a class="button" href="/">返回Home</a>
-                            <a class="button" href="http://wpa.qq.com/msgrd?v=3&uin=847064370&site=qq&menu=yes">联系站长</a>
+                            <a class="button" href="/">return Home</a>
                             <div class="clear"></div>
                         </div>
                         </center>
@@ -58,7 +56,6 @@
             </main><!-- .site-main -->
 
         </div>
-      <%--  博客主体-左侧正文 end--%>
 
 
         <div class="clear"></div>
