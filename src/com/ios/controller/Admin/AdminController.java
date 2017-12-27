@@ -22,8 +22,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import static com.ios.util.Functions.getIpAddr;
-
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -112,7 +110,6 @@ public class AdminController {
                 response.addCookie(pwdCookie);
             }
             user.setUserLastLoginTime(new Date());
-            user.setUserLastLoginIp(getIpAddr(request));
             userService.updateUser(user);
 
         }

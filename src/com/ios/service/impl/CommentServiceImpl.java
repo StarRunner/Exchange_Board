@@ -37,8 +37,6 @@ public class CommentServiceImpl implements CommentService{
 
 	@Override
 	public void insertComment(HttpServletRequest request, Comment comment) throws Exception {
-	    String ip = Functions.getIpAddr(request);
-	    comment.setCommentIp(ip);
 		commentMapper.insertSelective(comment);
 	}
 	

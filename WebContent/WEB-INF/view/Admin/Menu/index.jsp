@@ -6,7 +6,6 @@
 <%@ taglib prefix="rapid" uri="http://www.rapid-framework.org.cn/rapid" %>
 
     <rapid:override name="title">
-       - 菜单列表
     </rapid:override>
 
     <rapid:override name="header-style">

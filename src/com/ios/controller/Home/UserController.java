@@ -1,6 +1,5 @@
 package com.ios.controller.Home;
 
-import static com.ios.util.Functions.getIpAddr;
 
 import com.ibm.bluepages.BluePages;
 import com.ibm.bluepages.BPResults;

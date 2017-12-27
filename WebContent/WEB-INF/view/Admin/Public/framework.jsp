@@ -31,17 +31,6 @@
         <!-- 头部区域（可配合layui已有的水平导航） -->
         <ul class="layui-nav layui-layout-left">
             <li class="layui-nav-item"><a href="/" target="_blank">ShowCase Board</a></li>
-            <li class="layui-nav-item">
-                <a href="javascript:;">New</a>
-                <dl class="layui-nav-child">
-                    <dd><a href="/admin/article/insert">Article</a></dd>
-                    <dd><a href="/admin/page/insert">Page</a></dd>
-                    <dd><a href="/admin/category/insert">Category</a></dd>
-                    <dd><a href="/admin/tag/insert">Tag</a></dd>
-                    <dd><a href="/admin/notice/insert">Notice</a></dd>
-                    <dd><a href="/admin/link/insert">Link</a></dd>
-                </dl>
-            </li>
         </ul>
         <ul class="layui-nav layui-layout-right">
             <li class="layui-nav-item">
@@ -84,13 +73,6 @@
                     <dl class="layui-nav-child">
                         <dd><a href="/admin/user">User List</a></dd>
                         <dd><a href="/admin/user/insert">Add User</a></dd>
-                    </dl>
-                </li>
-                <li class="layui-nav-item">
-                    <a href="javascript:;">Settings</a>
-                    <dl class="layui-nav-child">
-                        <dd><a href="/admin/menu">Menu</a></dd>
-                        <dd><a href="/admin/options">Main Menus</a></dd>
                     </dl>
                 </li>
             </ul>

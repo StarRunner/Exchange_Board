@@ -28,7 +28,7 @@
                 <input type="text" name="pageKey" lay-verify="key" id="key" value=""
                        class="layui-input">
             </div>
-            <div class="layui-form-mid layui-word-aux">请填写2到20位，仅允许字母、下划线和减号组成（<span style="color: #FF5722;">请确保别名没重复</span>）</div>
+            <div class="layui-form-mid layui-word-aux">Please use 2-20 character，letter, _ and - are allowed（<span style="color: #FF5722;">Not duplicated</span>)</div>   
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">Title <span style="color: #FF5722; ">*</span></label>

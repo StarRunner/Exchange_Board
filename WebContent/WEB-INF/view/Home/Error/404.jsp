@@ -12,8 +12,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-
     <title>NO page found！</title>
     <link rel="stylesheet" href="/css/style.css">
 
@@ -39,12 +37,6 @@
                     <p>Please retry to request the page!</p>
                     <div class="utilities">
                         <center>
-                        <form name="formsearch" action="/search" id="formkeyword">
-                            <div class="input-container">
-                                <input type="text" class="left" name="query" size="24" value="Search..." onfocus="if(this.value=='Search...'){this.value='';}" onblur="if(this.value==''){this.value='Search...';}" id="inputString" onkeyup="lookup(this.value);" onblur="fill();" placeholder="Search..." />
-                                <button id="search"></button>
-                            </div>
-                        </form>
                         <div id="btn">
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <a class="button" href="/">return Home</a>

@@ -58,7 +58,7 @@
             </div>
         </div>
         <div class="layui-form-item">
-            <label class="layui-form-label">单选框</label>
+            <label class="layui-form-label">Radio</label>
             <div class="layui-input-block">
                 <input type="radio" name="commentStatus" value="1" title="display" <c:if test="${commentCustom.commentStatus==1}">checked</c:if>>
                 <input type="radio" name="commentStatus" value="0" title="hidden"<c:if test="${commentCustom.commentStatus==0}">checked</c:if>>

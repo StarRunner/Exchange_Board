@@ -56,12 +56,6 @@
                 <input type="text" name="commentAuthorEmail"  value="${sessionScope.user.getUserEmail()}" class="layui-input">
             </div>
         </div>
-        <div class="layui-form-item">
-            <label class="layui-form-label">My Website </label>
-            <div class="layui-input-block">
-                <input type="text" name="commentAuthorUrl"  value="${sessionScope.user.getUserUrl()}" class="layui-input">
-            </div>
-        </div>
         <div class="layui-form-item layui-form-text">
             <label class="layui-form-label">My Reply</label>
             <div class="layui-input-block">

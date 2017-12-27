@@ -47,8 +47,8 @@
                     <tr>
                         <th>Author</th>
                         <th>Comment Content</th>
-                        <th>Reply </th>
-                        <th>Submitted</th>
+                        <th>Article Name</th>
+                        <th>Submitted Date</th>
                         <th>ID</th>
                     </tr>
                     </thead>
@@ -56,20 +56,14 @@
                     <c:forEach items="${commentListVoList}" var="c">
                         <tr>
                             <td>
-                                <img src="${c.commentCustom.commentAuthorAvatar}" alt="" width="64px">
                                 <strong>${c.commentCustom.commentAuthorName}</strong>
                                 <c:if test="${c.commentCustom.commentStatus==0}">
                                     <span class="approve">[Pending]</span>
                                 </c:if>
                                 <br>
-                                    ${c.commentCustom.commentAuthorUrl} <br>
                                     ${c.commentCustom.commentAuthorEmail} <br>
-                                    ${c.commentCustom.commentIp}
                             </td>
                             <td class="dashboard-comment-wrap">
-                                <c:if test="${c.commentCustom.commentPid!=0}">
-                                    <span class="at">@ </span><a href="${c.commentCustom.commentAuthorUrl}">${c.commentCustom.commentPname}</a>
-                                </c:if>
                                     ${c.commentCustom.commentContent}
                                 <div class="row-actions">
                                      <span class="">
@@ -206,8 +200,8 @@
                     <tr>
                         <th>Author</th>
                         <th>Comment Content</th>
-                        <th>Reply</th>
-                        <th>Submit</th>
+                        <th>Article Name</th>
+                        <th>Submitted Date</th>
                         <th>ID</th>
                     </tr>
                     </thead>
@@ -215,16 +209,10 @@
                     <c:forEach items="${hiddenCommentListVoList}" var="c">
                         <tr>
                             <td>
-                                <img src="${c.commentCustom.commentAuthorAvatar}" alt="" width="64px">
                                 <strong>${c.commentCustom.commentAuthorName}</strong> <br>
-                                    ${c.commentCustom.commentAuthorUrl} <br>
                                     ${c.commentCustom.commentAuthorEmail} <br>
-                                    ${c.commentCustom.commentIp}
                             </td>
                             <td class="dashboard-comment-wrap">
-                                <c:if test="${c.commentCustom.commentPid!=0}">
-                                     <a href="${c.commentCustom.commentAuthorUrl}">@ ${c.commentCustom.commentPname}</a></span>
-                                </c:if>
                                     ${c.commentCustom.commentContent}
                                 <div class="row-actions">
                                     <span class="">

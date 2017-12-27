@@ -18,7 +18,7 @@
         </i>
 
         <i class="fa fa-angle-right"></i>
-        正文
+       Main Content
     </nav>
     <%--面包屑导航 end--%>
 </rapid:override>
@@ -44,7 +44,7 @@
                     <footer class="single-footer">
                         <ul class="single-meta">
                             <li class="r-hide">
-                                <a href="javascript:pr()" title="侧边栏">
+                                <a href="javascript:pr()" title="left">
                                     <i class="fa fa-caret-left"></i>
                                     <i class="fa fa-caret-right"></i>
                                 </a>
@@ -54,7 +54,7 @@
                             <li>A+</li>
                         </ul>
                         <div class="single-cat-tag">
-                            <div class="single-cat">日期：<fmt:formatDate value="${pageCustom.pageCreateTime}" pattern="yyyy年MM月dd日"/>
+                            <div class="single-cat">Date：<fmt:formatDate value="${pageCustom.pageCreateTime}" pattern="yyyy-MM-dd"/>
                             </div>
                         </div>
                     </footer><!-- .entry-footer -->
