@@ -31,7 +31,7 @@
     </blockquote>
     <br><br>
     <form class="layui-form" action="/admin/user/insertSubmit" id="userForm"
-          method="post">
+          method="post" enctype="multipart/form-data">
         <div class="layui-form-item">
             <input type="hidden" id="userId" value="0">
             <label class="layui-form-label">Favicon</label>

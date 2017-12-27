@@ -20,7 +20,6 @@
         }
     </style>
 </rapid:override>
-
 <rapid:override name="content">
 
     <blockquote class="layui-elem-quote">
@@ -32,7 +31,7 @@
     </blockquote>
     <br><br>
     <form class="layui-form" action="/admin/user/editSubmit" id="userForm"
-          method="post">
+          method="post" enctype="multipart/form-data">
         <input type="hidden" name="userId" id="userId" value="${userCustom.userId}">
         <div class="layui-form-item">
             <label class="layui-form-label">Favicon</label>
@@ -45,7 +44,8 @@
                     </div>
                     <button type="button" class="layui-btn" id="test1">Upload Picture</button>
                     <input type="hidden" name="userAvatar" id="userAvatar" value="${userCustom.userAvatar}">
-                </div>
+                    <!-- <input id="file1" type="file" name="file" accept="image/*"> -->
+               </div>
             </div>
         </div>
         <div class="layui-form-item">

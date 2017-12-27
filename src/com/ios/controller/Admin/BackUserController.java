@@ -9,6 +9,7 @@ import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.commons.CommonsMultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
@@ -125,7 +126,11 @@ public class BackUserController {
     //编辑用户提交
     @RequestMapping(value = "/editSubmit",method = RequestMethod.POST)
     public String editUserSubmit(User user) throws Exception {
+    	
+    	System.out.println("userAvatar: " + user.getUserAvatar());
         userService.updateUser(user);
+        
+        
         return "redirect:/admin/user";
     }
 
