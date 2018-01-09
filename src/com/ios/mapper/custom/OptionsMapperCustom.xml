@@ -3,7 +3,7 @@
 <mapper namespace="com.ios.mapper.custom.OptionsMapperCustom" >
 
     <select id="getOptions" resultType="com.ios.entity.Options">
-        SELECT * FROM `options` limit 1
+        SELECT * FROM options   fetch first row only
     </select>
 
 </mapper>

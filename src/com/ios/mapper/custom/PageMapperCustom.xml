@@ -19,7 +19,7 @@
     <select id="listPage" resultType="com.ios.entity.custom.PageCustom">
         SELECT
         <include refid="page_table_all_columns"/>
-        FROM `page`
+        FROM page
         <where>
             <if test="status!=null">
                 page_status=#{status}
@@ -32,7 +32,7 @@
         SELECT
         <include refid="page_table_all_columns"/>
         FROM
-        `page`
+        page
         <where>
             <if test="status!=null">
                 page_status=#{status} AND

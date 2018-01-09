@@ -8,7 +8,7 @@
 
     <!--获得分类总数-->
     <select id="countCategory" resultType="Integer">
-        SELECT COUNT(*) FROM `category`
+        SELECT COUNT(*) FROM category
         <where>
                 <if test="status!=null">
                     category_status=#{status}
@@ -45,8 +45,13 @@
 
     <!--获得含有该分类的Article列表-->
     <select id="listArticleWithCategoryByPage" resultType="com.ios.entity.custom.ArticleCustom">
-        SELECT * FROM `article`
-        <where>
+ 		
+  SELECT * FROM 
+  (
+  SELECT B.*, ROWNUMBER() OVER() AS TN FROM  
+  (
+  SELECT * FROM article  
+     <where>
             <if test="status!=null">
                 article_status=#{status} AND
             </if>
@@ -54,12 +59,14 @@
              article_child_category_id=#{cateId}
         </where>
         ORDER BY article_id DESC
-        limit #{startPos},#{pageSize}
+  ) AS B
+  ) AS A 
+  WHERE A.TN BETWEEN #{startPos} AND #{pageSize}
     </select>
 
     <!--删除分类-->
     <delete id="deleteCategory" parameterType="Integer">
-        DELETE FROM `category` WHERE category_id=#{value}
+        DELETE FROM category WHERE category_id=#{value}
     </delete>
 
     <!--根据父分类找子分类-->
@@ -67,7 +74,7 @@
         SELECT
         <include refid="category_table_all_column"/>
         FROM
-        `category`
+        category
         <where>
             <if test="status!=null">
                 category_status=#{status} AND
@@ -83,8 +90,8 @@
         SELECT
         <include refid="category_table_all_column"/>
         FROM
-        `category`
+        category
         WHERE category_name=#{value}
-        limit 1
+          fetch first row only
     </select>
 </mapper>

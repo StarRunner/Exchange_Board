@@ -20,8 +20,8 @@
             resultType="com.ios.entity.custom.UserCustom">
         SELECT
         <include refid="user_table_all_columns"/>
-        FROM `user`
-        ORDER BY `user_status` ASC
+        FROM user
+        ORDER BY user_status ASC
     </select>
 
     <!--根据用户名或邮箱获得用户-->
@@ -29,12 +29,12 @@
         SELECT
         <include refid="user_table_all_columns"/>
         FROM
-        `user`
+        user
         <where>
             user_name=#{value} OR user_email=#{value}
         </where>
         AND user_status>0
-        limit 1
+        fetch first row only
     </select>
 
     <!--根据用户名查用户-->
@@ -42,11 +42,11 @@
         SELECT
         <include refid="user_table_all_columns"/>
         FROM
-        `user`
+        user
         <where>
             user_name=#{value}
         </where>
-        limit 1
+      fetch first row only
     </select>
 
     <!--根据Email查用户-->
@@ -54,11 +54,11 @@
         SELECT
         <include refid="user_table_all_columns"/>
         FROM
-        `user`
+        user
         <where>
             user_email=#{value}
         </where>
-        limit 1
+        fetch first row only
     </select>
 
 
@@ -66,7 +66,7 @@
         SELECT
         COUNT(*)
         FROM
-        `article`
+        article
         WHERE
         article_user_id=#{id}
     </select>

@@ -22,7 +22,7 @@
         SELECT
         <include refid="comment_table_all_columns"/>
         FROM
-        `comment`
+        comment
         <where>
             comment_article_id=#{id}
             <if test="status!=null">
@@ -34,16 +34,21 @@
 
     <!--分页获取评论列表-->
     <select id="listCommentByPage" resultType="com.ios.entity.custom.CommentCustom">
-        SELECT
-        <include refid="comment_table_all_columns"/>
-        FROM  `comment`
-        <where>
+    		
+  SELECT * FROM 
+  (
+  SELECT B.*, ROWNUMBER() OVER() AS TN FROM  
+  (
+  SELECT * FROM comment  
+   <where>
             <if test="status!=null">
                 comment_status=#{status}
             </if>
         </where>
         ORDER BY comment_status ASC, comment_id DESC
-        limit #{startPos},#{pageSize}
+  ) AS B
+  ) AS A 
+  WHERE A.TN BETWEEN #{startPos} AND #{pageSize}
     </select>
 
 
@@ -52,7 +57,7 @@
     <select id="listComment" resultType="com.ios.entity.custom.CommentCustom">
         SELECT
         <include refid="comment_table_all_columns"/>
-        FROM  `comment`
+        FROM  comment
         <where>
             <if test="status!=null">
                comment_status=#{status}
@@ -64,7 +69,7 @@
 
     <!--统计评论数-->
     <select id="countComment" parameterType="Integer" resultType="Integer">
-        SELECT count(*) FROM `comment`
+        SELECT count(*) FROM comment
         <where>
             <if test="status!=null">
                 comment_status=#{status}
@@ -77,19 +82,19 @@
         SELECT
         <include refid="comment_table_all_columns"/>
         FROM
-        `comment`
+         comment
         <where>
             comment_status=1 AND comment_role=0
         </where>
         ORDER BY comment_id DESC
-        LIMIT #{limit}
+          fetch first 8 row only 
     </select>
 
     <select id="listChildComment" resultType="com.ios.entity.Comment">
         SELECT
         <include refid="comment_table_all_columns"/>
         FROM
-        `comment`
+        comment
         WHERE
         comment_pid=#{id}
     </select>

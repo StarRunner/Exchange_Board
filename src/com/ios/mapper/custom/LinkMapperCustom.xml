@@ -18,7 +18,7 @@
     </sql>
 
     <select id="countLink" resultType="Integer">
-        SELECT COUNT(*) FROM `link`
+        SELECT COUNT(*) FROM link
         <where>
             <if test="status!=null">
                 link_status=#{status}
@@ -30,7 +30,7 @@
     <select id="listLink" resultType="com.ios.entity.custom.LinkCustom">
         SELECT
         <include refid="link_table_all_columns"/>
-        FROM  `link`
+        FROM  link
         <where>
             <if test="status!=null">
                 link_status=#{status}

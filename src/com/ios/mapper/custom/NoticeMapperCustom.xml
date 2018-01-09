@@ -14,7 +14,7 @@
       </sql>
 
     <select id="countNotice" resultType="Integer">
-        SELECT COUNT(*) FROM `notice`
+        SELECT COUNT(*) FROM notice
         <where>
             <if test="status!=null">
                 menu_status=#{status}
@@ -26,7 +26,7 @@
     <select id="listNotice" resultType="com.ios.entity.custom.NoticeCustom">
         SELECT
         <include refid="notice_table_all_columns"/>
-        FROM  `notice`
+        FROM  notice
         <where>
             <if test="status!=null">
                 notice_status=#{status}

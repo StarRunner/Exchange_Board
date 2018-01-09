@@ -13,7 +13,7 @@
     <select id="listTag"  resultType="com.ios.entity.custom.TagCustom">
          SELECT
          <include refid="tag_table_all_columns"/>
-         FROM `tag`
+         FROM tag
         <where>
             <if test="status!=null">
                 tag_status=#{status}
@@ -24,10 +24,13 @@
 
 
    <select id="listArticleWithTagByPage" resultType="com.ios.entity.custom.ArticleCustom">
-        SELECT
-        *
-        FROM `article`
-       <where>
+		
+  SELECT * FROM 
+  (
+  SELECT B.*, ROWNUMBER() OVER() AS TN FROM  
+  (
+  SELECT * FROM article  
+   <where>
            <if test="status!=null">
                article_status=#{status} AND
            </if>
@@ -35,14 +38,16 @@
            article.article_tag_ids LIKE "${tagId},%" OR
            article.article_tag_ids LIKE "%,${tagId},%" OR
            article.article_tag_ids LIKE "%,${tagId}"
-           limit #{startPos},#{pageSize}
-       </where>
+        </where>
+  ) AS B
+  ) AS A 
+  WHERE A.TN BETWEEN #{startPos} AND #{pageSize}
 
     </select>
 
     <!--获得标签总数-->
     <select id="countTag" resultType="Integer">
-        SELECT COUNT(*) FROM `tag`
+        SELECT COUNT(*) FROM tag
         <where>
             <if test="status!=null">
                 tag_status=#{status}
@@ -55,9 +60,9 @@
         SELECT
         <include refid="tag_table_all_columns"/>
         FROM
-        `tag`
+        tag
         WHERE tag_name=#{value}
-        limit 1
+          fetch first row only
     </select>
 </mapper>
 

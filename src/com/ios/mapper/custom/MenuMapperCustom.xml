@@ -16,7 +16,7 @@
     <select id="listMenu"  resultType="com.ios.entity.custom.MenuCustom">
         SELECT
         <include refid="menu_table_all_columns"/>
-        FROM `menu`
+        FROM menu
         <where>
             <if test="status!=null">
                 menu_status=#{status}
