@@ -158,7 +158,7 @@
   SELECT * FROM article  
   <where>
             <if test="status!=null">
-                article_status=#{status}
+                article_status=#{status} and
             </if>
 		 user_email=#{email}
    </where>
