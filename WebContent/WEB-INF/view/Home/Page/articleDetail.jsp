@@ -347,7 +347,7 @@
                                                         </a>
                                                     </span>
                                                     <fmt:formatDate value="${c.commentCreateTime}"
-                                                                    pattern="yyyy/MM/dd/ HH:mm:ss"/>&nbsp;
+                                                                    pattern="yyyy/MM/dd HH:mm:ss"/>&nbsp;
                                                     <c:if test="${sessionScope.user!=null}">
                                                         <a href="javascript:void(0)"
                                                            onclick="deleteComment(${c.commentId})">Delete</a>
