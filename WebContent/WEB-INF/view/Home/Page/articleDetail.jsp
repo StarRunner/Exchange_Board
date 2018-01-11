@@ -328,9 +328,9 @@
                             </li>
                             <li class="comment">
                                 <div id="div-comment-${c.commentId}" class="comment-body">
-                                    <div class="comment-author vcard">
+                                    <!-- div class="comment-author vcard">
                                         <img class="avatar" src="${c.commentAuthorAvatar}" alt="avatar"
-                                             style="display: block;">
+                                             style="display: block;"-->
                                         <strong>${c.commentAuthorName} </strong>
                                         <c:if test="${c.commentRole==1}">
                                             <i class="fa fa-black-tie" style="color: #c40000;"></i>
@@ -378,8 +378,6 @@
                                             <li class="comment">
                                                 <div id="div-comment-${c.commentId}" class="comment-body">
                                                     <div class="comment-author vcard">
-                                                        <img class="avatar" src="${c2.commentAuthorAvatar}" alt="avatar"
-                                                             style="display: block;">
                                                         <strong>${c2.commentAuthorName} </strong>
                                                         <c:if test="${c2.commentRole==1}">
                                                             <i class="fa fa-black-tie" style="color: #c40000;"></i>

@@ -45,7 +45,7 @@ public class Functions {
 	public static String getGravatar(String email) {
 		String emailMd5 = strToMd5(email);
 		//设置图片大小32px
-		String avatar = "/img/shang/alipay.jpg";
+		String avatar = "/img/logo.png";
 		return avatar;
 	}
 
