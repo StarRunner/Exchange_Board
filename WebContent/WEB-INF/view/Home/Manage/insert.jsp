@@ -31,7 +31,7 @@
         
         <!-- Rancho Add -->
         <div class="layui-form-item">
-            <label class="layui-form-label">Video URL <span style="color: #FF5722; ">*</span></label>
+            <label class="layui-form-label">Source URL <span style="color: #FF5722; ">*</span></label>
             <div class="layui-input-block">
                 <input type="text" name="articleUrl" lay-verify="title" id="articleurl" autocomplete="off" placeholder="Please input url for box" class="layui-input">
             </div>
