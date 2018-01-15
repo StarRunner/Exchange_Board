@@ -33,10 +33,7 @@ public class UploadFileController {
     @ResponseBody
     public String uploadFile(HttpServletRequest request,@Param("file") MultipartFile file) throws IOException {
         
-        //原始名称
-        String originalFilename = file.getOriginalFilename();
         //新的文件名称
-        String filesuffix = originalFilename.substring(originalFilename.lastIndexOf("."));
         String fileName = Long.toString(System.currentTimeMillis());
 
         //get Server path
@@ -66,7 +63,7 @@ public class UploadFileController {
 	    	}    
 			prop.load(is4Prop);
 			//if path is null, will using next param
-			String backupPath = prop.getProperty("path", "C:/temp/");
+			String backupPath = prop.getProperty("path");
 			System.out.println("The backup path of img is : " + backupPath);
     		
         	//upload pic to tomcat and backup folder
