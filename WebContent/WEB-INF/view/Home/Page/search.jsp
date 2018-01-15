@@ -12,7 +12,7 @@
 </rapid:override>
 
 <rapid:override name="breadcrumb">
-    <nav class="breadcrumb" style="padding:unset;">
+    <nav class="breadcrumb">
         <a class="crumbs" href="/">
             <i class="fa fa-home"></i>Home</a>
             <i class="fa fa-angle-right"></i>
@@ -79,14 +79,12 @@
                                         </a>
                                     </span>
                                 </span>
-                            <div class="clear"></div>
+                              <div style="clear:both;"></div>
                         </div><!-- .entry-content -->
-
-
                     </article>
                 </c:forEach>
             </main>
-            <div style="clear:both;"></div>
+         
            <c:if test="${articleSearchVoList[0].page.totalCount!=0}">
                 <%--分页 start--%>
                 <nav class="navigation pagination" role="navigation">

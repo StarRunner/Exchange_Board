@@ -177,8 +177,8 @@
                 article_status=#{status} AND
             </if>
             article_status > 0 AND
-            (article_title LIKE "%${query}%" OR
-            article_content LIKE "%${query}%")
+            (article_title LIKE '%${query}%' OR
+            article_content LIKE '%${query}%')
         </where>
     </select>
     
@@ -191,8 +191,8 @@
             </if>
             user_email=#{email} AND
             article_status > 0 AND
-            (article_title LIKE "%${query}%" OR
-            article_content LIKE "%${query}%")
+            (article_title LIKE '%${query}%' OR
+            article_content LIKE '%${query}%')
         </where>
     </select>
 
@@ -386,7 +386,7 @@
     </select>
 
     <update id="updateCommentCount" parameterType="Integer">
-        UPDATE 'article'
+        UPDATE article
         SET article_comment_count=
         (
               SELECT count(*) FROM comment

@@ -246,8 +246,8 @@
                                 <c:forEach items="${commentListVoList}" begin="0" end="4" step="1" var="c">
                                     <li class="comment   thread-even comment-item approved">
 
-                                        <img alt="" src="${c.commentCustom.commentAuthorAvatar}"
-                                             class="avatar avatar-50 photo" height="50" width="50">
+                                        <!--img alt="" src="${c.commentCustom.commentAuthorAvatar}"
+                                             class="avatar avatar-50 photo" height="50" width="50"-->
                                         <div class="dashboard-comment-wrap has-row-actions">
                                             <p class="comment-meta">
                                                 By <cite class="comment-author">

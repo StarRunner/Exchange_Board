@@ -35,9 +35,9 @@
                article_status=#{status} AND
            </if>
            article.article_tag_ids = #{tagId} OR
-           article.article_tag_ids LIKE "${tagId},%" OR
-           article.article_tag_ids LIKE "%,${tagId},%" OR
-           article.article_tag_ids LIKE "%,${tagId}"
+           article.article_tag_ids LIKE '${tagId},%' OR
+           article.article_tag_ids LIKE '%,${tagId},%' OR
+           article.article_tag_ids LIKE '%,${tagId}'
         </where>
   ) AS B
   ) AS A 
