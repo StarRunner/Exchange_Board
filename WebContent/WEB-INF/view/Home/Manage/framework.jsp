@@ -28,15 +28,6 @@
         </ul>
         <ul class="layui-nav layui-layout-right">
             <li class="layui-nav-item">
-                <a href="javascript:;">
-                    <img src="${loginUser.userAvatar}" class="layui-nav-img">
-                    ${loginUser.userName}
-                </a>
-                <%-- <dl class="layui-nav-child">
-                    <dd><a href="/admin/user/profile/${loginUser.userId}">Basic Profile</a></dd>
-                </dl> --%>
-            </li>
-            <li class="layui-nav-item">
                 <a href="/user/logout">Logout</a>
             </li>
         </ul>
