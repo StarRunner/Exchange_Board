@@ -12,7 +12,9 @@ import com.ios.util.UploadArticlePicture;
 
 import javax.servlet.http.HttpServletRequest;
 
+import java.io.BufferedOutputStream;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashMap;
@@ -28,24 +30,33 @@ public class UploadFileController {
         
         String fileName = Long.toString(System.currentTimeMillis());
         
-        //for get path
+        //Get path
         InputStream is4Prop = null;
-         
-        //Get upload path
 		Properties prop = new Properties();
 		ClassLoader cl = UploadArticlePicture.class.getClassLoader();
 		if  (cl !=  null ) {        
 			is4Prop = cl.getResourceAsStream( "/path.properties" );        
     	}  else {        
     		is4Prop = ClassLoader.getSystemResourceAsStream( "/path.properties" );        
-    	}    
+    	} 
 		prop.load(is4Prop);
-		String path = prop.getProperty("path");
-		System.out.println("The backup path of img is : " + path);
+		String serverPath = prop.getProperty("serverpath");
+		String backupPath = prop.getProperty("backuppath");
 		
-		//upload
-    	file.transferTo(new File(path + fileName + ".jpg"));
-		System.out.println("upload file success! ");
+		if (!file.isEmpty()) {
+			byte[] bytes = file.getBytes();
+			BufferedOutputStream serverStream =
+                    new BufferedOutputStream(new FileOutputStream(new File(serverPath + fileName + ".jpg")));
+			serverStream.write(bytes);
+			serverStream.close();
+			System.out.println("upload img successfully");
+			
+			BufferedOutputStream backupStream =
+                    new BufferedOutputStream(new FileOutputStream(new File(backupPath + fileName + ".jpg")));
+			backupStream.write(bytes);
+			backupStream.close();
+			System.out.println("upload backup img successfully");
+		}
 
         Map<String,Object> map = new HashMap<String,Object>();
         Map<String,Object> map2 = new HashMap<String,Object>();
