@@ -1,6 +1,8 @@
 package com.ios.util;
 
+import java.io.BufferedOutputStream;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.Timestamp;
@@ -27,37 +29,44 @@ public class UploadArticlePicture {
 	 * 	@throws 
 	 * 	@author Frank
 	 */
-	public boolean uploadArticlePic2CustomPath(int articleId, CommonsMultipartFile file, HttpServletRequest request){
-		
+	public boolean uploadArticlePic2CustomPath(int articleId, CommonsMultipartFile file, HttpServletRequest request) throws IllegalStateException, IOException{
 		
 		//get upload path
-        String fileName = "img_" + articleId;
+        String fileName = "img_" + Integer.toString(articleId);
         System.out.println("img name: " + fileName);
-    	//Upload pic
         
+        //Get path
         InputStream is4Prop = null;
-        
-    	//Get path
 		Properties prop = new Properties();
 		ClassLoader cl = UploadArticlePicture.class.getClassLoader();
 		if  (cl !=  null ) {        
 			is4Prop = cl.getResourceAsStream( "/path.properties" );        
     	}  else {        
     		is4Prop = ClassLoader.getSystemResourceAsStream( "/path.properties" );        
-    	}  
-
-	    try {
+    	} 
+		prop.load(is4Prop);
+		String serverPath = prop.getProperty("serverpath");
+		String backupPath = prop.getProperty("backuppath");
+		
+		if (!file.isEmpty()) {
+			byte[] bytes = file.getBytes();
+			BufferedOutputStream serverStream =
+                    new BufferedOutputStream(new FileOutputStream(new File(serverPath + fileName + ".jpg")));
+			serverStream.write(bytes);
+			serverStream.close();
+			System.out.println("upload img successfully");
+			
+			BufferedOutputStream backupStream =
+                    new BufferedOutputStream(new FileOutputStream(new File(backupPath + fileName + ".jpg")));
+			backupStream.write(bytes);
+			backupStream.close();
+			System.out.println("upload backup img successfully");
 	    	
-			prop.load(is4Prop);
-			String backupPath = prop.getProperty("path");
-			file.transferTo(new File(backupPath + fileName + ".jpg"));
-    		System.out.println("transfer img successfully");
-        	
-		} catch (IOException e) {
-			e.printStackTrace();
+			return true;
 		}
 		
-        return true;
+		return false;
+        
 	}
 	
 	public Timestamp setTimeStamp(Date now) throws ParseException{
