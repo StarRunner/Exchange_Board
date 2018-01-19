@@ -6,33 +6,228 @@
 <%@ taglib uri="/WEB-INF/myTag.tld" prefix="lyz" %>
 <%@ taglib prefix="rapid" uri="http://www.rapid-framework.org.cn/rapid" %>
 
+<!-- This Script link should be here, else can't read it -->
+<script src="/js/jquery.min.js"></script>
 
     <rapid:override name="breadcrumb">
-        <!--nav class="breadcrumb" style="background:unset !important;"-->
-        <div class="slotholder"><img src="${request.getContextPath()}/img/slider-bg-1.jpg" data-fullwidthcentering="on" alt="Pixma" style="width: 1583px;height: 552.839px;/* position: absolute; */left: -25px;top: -41px;"></div>
-         <div class="slogan bottom-pad-small">
-               <div class="container">
-                  <div class="row">
-                     <div class="slogan-content">
-                        <div class="col-lg-9 col-md-9">
-                           <h2 class="slogan-title">Post your idea and your POC here !</h2>
+    
+    <!-- 透明 section -->
+	<!-- <section id="ext_menu-j" data-rv-view="0">
+    <nav class="navbar navbar-dropdown transparent navbar-fixed-top bg-color" style="border: 0px;">
+        <div class="container">
+
+            <div class="mbr-table">
+                <div class="mbr-table-cell">
+                    <div class="navbar-brand">
+                        <a href="https://mobirise.com" class="navbar-logo">
+                        <img src="/js/assets/images/logo.png" alt="Mobirise"></a>
+                        <a class="navbar-caption" href="">ShowCase Board</a>
+                    </div>
+                </div>
+                <div class="mbr-table-cell">
+                    <button class="navbar-toggler pull-xs-right" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
+                        <div class="hamburger-icon"></div>
+                    </button>
+                    <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-xl" id="exCollapsingNavbar">
+                    	<li class="nav-item dropdown open">
+                    		<a class="nav-link link dropdown-toggle" href="https://mobirise.com/" data-toggle="dropdown-submenu" aria-expanded="true">
+                    			OVERVIEW
+                    		</a>
+                    		<div class="dropdown-menu">
+                    			<a class="dropdown-item" href="https://mobirise.com/">
+                    				New Item
+                    			</a>
+                    		</div>
+                    	</li>
+                    	<li class="nav-item dropdown">
+                    		<a class="nav-link link dropdown-toggle" href="https://mobirise.com/" data-toggle="dropdown-submenu" aria-expanded="false">
+                    			FEATURES
+                    		</a>
+                    		<div class="dropdown-menu">
+                    			<a class="dropdown-item" href="https://mobirise.com/">
+                    				New Item
+                    			</a>
+                    			<a class="dropdown-item" href="https://mobirise.com/" aria-expanded="false">
+                    				New Item
+                    			</a>
+                    		</div>
+                    	</li>
+                    	<li class="nav-item">
+                    		<a class="nav-link link" href="https://mobirise.com/">
+                    			HELP
+                    		</a>
+                    	</li>
+                    	<li class="nav-item nav-btn">
+                    		<a class="nav-link btn btn-white btn-white-outline" href="https://mobirise.com/">
+                    			DOWNLOAD
+                    		</a>
+                    	</li>
+                    	<li class="nav-item nav-btn">
+                    		<a class="nav-link btn btn-primary" href="">
+                    			BUY
+                    		</a>
+                    	</li>
+                    	</ul>
+                    	Close the tab
+	                    <button hidden="" class="navbar-toggler navbar-close" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
+	                        <div class="close-icon"></div>
+	                    </button>
+
+                </div>
+            </div>
+
+        </div>
+    </nav>
+	</section> -->
+	<!-- MastHead section end -->
+	<!-- Slide Section Start -->
+	<section class="engine"><a href="https://mobirise.co/m">bootstrap table</a></section><section class="mbr-slider mbr-section mbr-section__container carousel slide mbr-section-nopadding mbr-after-navbar" data-ride="carousel" data-keyboard="false" data-wrap="true" data-pause="false" data-interval="4000" id="slider3-o" data-rv-view="14">
+    <div>
+        <div>
+            <div>
+                <ol class="carousel-indicators">
+                    <li data-app-prevent-settings="" data-target="#slider3-o" class="active" data-slide-to="0"></li><li data-app-prevent-settings="" data-target="#slider3-o" data-slide-to="1"></li><li data-app-prevent-settings="" data-target="#slider3-o" data-slide-to="2"></li><li data-app-prevent-settings="" data-target="#slider3-o" data-slide-to="3"></li><li data-app-prevent-settings="" data-target="#slider3-o" data-slide-to="4"></li><li data-app-prevent-settings="" data-target="#slider3-o" data-slide-to="5"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    <div class="mbr-section mbr-section-hero carousel-item dark center mbr-section-full active" data-bg-video-slide="false" style="background-image: url(/js/assets/images/man-back.jpg);">
+                        <div class="mbr-table-cell">
+                            <div class="mbr-overlay" style="opacity: 0.6; background-color: rgb(0, 0, 0);"></div>
+                            <div class="container-slide container">
+                                
+                                <div class="row">
+                                    <div class="col-md-8 col-md-offset-2 text-xs-center">
+                                        <h2 class="mbr-section-title display-1">IMAGE SLIDER</h2>
+                                        <p class="mbr-section-lead lead">Choose from the large selection of latest pre-made blocks - jumbotrons, hero images, parallax scrolling, video backgrounds, hamburger menu, sticky header and more.</p>
+
+                                        <div class="mbr-section-btn"><a class="btn btn-lg btn-success" href="https://mobirise.com">FOR WINDOWS</a> <a class="btn btn-lg btn-white btn-white-outline" href="https://mobirise.com">FOR MAC</a> </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-lg-3 col-md-3">
-                           <div class="get-started">
-	                           <form name='manageArticle' action='/manage/article' method='post'>
-									<input type='hidden' name='manageArticle' value='/manage/article'/>
-									<button type="submit" class="btn btn-special btn-color pull-right">
-	                               		 	Share Your Idea Now!</button>
-								</form>
-								
-                           </div>
+                    </div><div class="mbr-section mbr-section-hero carousel-item dark center mbr-section-full" data-bg-video-slide="false" style="background-image: url(/js/assets/images/bridge.jpg);">
+                        <div class="mbr-table-cell">
+                            <div class="mbr-overlay"></div>
+                            <div class="container-slide container">
+                                
+                                <div class="row">
+                                    <div class="col-md-8 col-md-offset-1">
+                                        <h2 class="mbr-section-title display-1">BACKGROUND VIDEO</h2>
+                                        <p class="mbr-section-lead lead">Choose from the large selection of latest pre-made blocks - jumbotrons, hero images, parallax scrolling, video backgrounds, hamburger menu, sticky header and more.</p>
+
+                                        
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="clearfix"></div>
+                    </div><div class="mbr-section mbr-section-hero carousel-item dark center mbr-section-full" data-bg-video-slide="false" style="background-image: url(/js/assets/images/sparklers.jpg);">
+                        <div class="mbr-table-cell">
+                            <div class="mbr-overlay"></div>
+                            <div class="container-slide container">
+                                
+                                <div class="row">
+                                    <div class="col-md-8 col-md-offset-3 text-xs-right">
+                                        <h2 class="mbr-section-title display-1">BOOTSTRAP SLIDER</h2>
+                                        <p class="mbr-section-lead lead">Choose from the large selection of latest pre-made blocks - jumbotrons, hero images, parallax scrolling, video backgrounds, hamburger menu, sticky header and more.</p>
+
+                                        <div class="mbr-section-btn"><a class="btn btn-lg btn-info" href="https://mobirise.com">FOR WINDOWS</a> <a class="btn btn-lg btn-white btn-white-outline" href="https://mobirise.com">FOR MAC</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><div class="mbr-section mbr-section-hero carousel-item dark center mbr-section-full" data-bg-video-slide="false" style="background-image: url(/js/assets/images/mbr-1-720x1080.jpg);">
+                        <div class="mbr-table-cell">
+                            <div class="mbr-overlay"></div>
+                            <div class="container-slide container">
+                                
+                                <div class="row">
+                                    <div class="col-md-8 col-md-offset-1">
+                                        <h2 class="mbr-section-title display-1">BACKGROUND VIDEO</h2>
+                                        <p class="mbr-section-lead lead">Choose from the large selection of latest pre-made blocks - jumbotrons, hero images, parallax scrolling, video backgrounds, hamburger menu, sticky header and more.</p>
+
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><div class="mbr-section mbr-section-hero carousel-item dark center mbr-section-full" data-bg-video-slide="false" style="background-image: url(/js/assets/images/mbr-1620x1080.jpg);">
+                        <div class="mbr-table-cell">
+                            <div class="mbr-overlay" style="opacity: 0.6; background-color: rgb(0, 0, 0);"></div>
+                            <div class="container-slide container">
+                                
+                                <div class="row">
+                                    <div class="col-md-8 col-md-offset-2 text-xs-center">
+                                        <h2 class="mbr-section-title display-1">IMAGE SLIDER</h2>
+                                        <p class="mbr-section-lead lead">Choose from the large selection of latest pre-made blocks - jumbotrons, hero images, parallax scrolling, video backgrounds, hamburger menu, sticky header and more.</p>
+
+                                        <div class="mbr-section-btn"><a class="btn btn-lg btn-success" href="https://mobirise.com">FOR WINDOWS</a> <a class="btn btn-lg btn-white btn-white-outline" href="https://mobirise.com">FOR MAC</a> </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><div class="mbr-section mbr-section-hero carousel-item dark center mbr-section-full" data-bg-video-slide="false" style="background-image: url(/js/assets/images/mbr-1611x1080.jpg);">
+                        <div class="mbr-table-cell">
+                            <div class="mbr-overlay"></div>
+                            <div class="container-slide container">
+                                
+                                <div class="row">
+                                    <div class="col-md-8 col-md-offset-3 text-xs-right">
+                                        <h2 class="mbr-section-title display-1">BOOTSTRAP SLIDER</h2>
+                                        <p class="mbr-section-lead lead">Choose from the large selection of latest pre-made blocks - jumbotrons, hero images, parallax scrolling, video backgrounds, hamburger menu, sticky header and more.</p>
+
+                                        <div class="mbr-section-btn"><a class="btn btn-lg btn-info" href="https://mobirise.com">FOR WINDOWS</a> <a class="btn btn-lg btn-white btn-white-outline" href="https://mobirise.com">FOR MAC</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a data-app-prevent-settings="" class="left carousel-control" role="button" data-slide="prev" href="#slider3-o">
+                    <span class="icon-prev" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a data-app-prevent-settings="" class="right carousel-control" role="button" data-slide="next" href="#slider3-o">
+                    <span class="icon-next" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+  <script src="/js/assets/web/assets/jquery/jquery.min.js"></script>
+  <script src="/js/assets/tether/tether.min.js"></script>
+  <script src="/js/assets/bootstrap/js/bootstrap.min.js"></script>
+  <script src="/js/assets/bootstrap-carousel-swipe/bootstrap-carousel-swipe.js"></script>
+  <script src="/js/assets/viewport-checker/jquery.viewportchecker.js"></script>
+  <script src="/js/assets/dropdown/js/script.min.js"></script>
+  <script src="/js/assets/touch-swipe/jquery.touch-swipe.min.js"></script>
+  <script src="/js/assets/smooth-scroll/smooth-scroll.js"></script>
+  <script src="/js/assets/theme/js/script.js"></script>
+  <!-- End of style -->
+        
+	<div class="slogan bottom-pad-small">
+            <div class="container">
+               <div class="row">
+                  <div class="slogan-content">
+                     <div class="col-lg-9 col-md-9">
+                        <h2 class="slogan-title">Post your idea and your POC here !</h2>
                      </div>
+                     <div class="col-lg-3 col-md-3">
+                        <div class="get-started">
+                         <form name='manageArticle' action='/manage/article' method='post'>
+						<input type='hidden' name='manageArticle' value='/manage/article'/>
+						<button type="submit" class="btn btn-special btn-color pull-right">
+                             		 	Share Your Idea Now!</button>
+					</form>
+					
+                        </div>
+                     </div>
+                     <div class="clearfix"></div>
                   </div>
                </div>
             </div>
-        </nav>
+    </div>
     </rapid:override>
 
     <rapid:override name="left">
