@@ -6,17 +6,11 @@
          pageEncoding="UTF-8" %>
 
 <%--页脚 start--%>
-<footer id="colophon" class="site-footer" role="contentinfo">
-    <div class="site-info">
-        <p style="text-align: center;">Copyright © 2017
-            <a href="/" target="_blank" rel="noopener noreferrer">${options.optionSiteTitle}</a>
-            All rights reserved.
-            <!--a target="_blank" href="/map" >
-                <span class="font-text">text</span>
-            </a-->
-        </p>
+<footer class="mbr-small-footer mbr-section mbr-section-nopadding" id="footer1-e" data-rv-view="65" style="background-color: rgb(50, 50, 50); padding-top: 1.75rem; padding-bottom: 1.75rem;">
+    
+    <div class="container text-xs-center">
+        <p>Copyright (c) 2018 <a href="/" target="_blank" rel="noopener noreferrer">${options.optionSiteTitle}</a>.</p>
     </div>
-    <!-- .site-info -->
-</footer><!-- .site-footer -->
+</footer>
 <%--页脚 end--%>
 
