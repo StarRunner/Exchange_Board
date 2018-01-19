@@ -30,16 +30,33 @@
         </title>
     </rapid:block>
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/plugin/layui/css/layui.css">
     <link rel="stylesheet" href="/plugin/font-awesome/css/font-awesome.min.css">
 
-    <rapid:block name="header-style">
-
-    </rapid:block>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/superfish.js"></script>
+    <script src="/js/script.js"></script>
+    <script src="/plugin/layui/layui.all.js"></script>
+    <script src="/plugin/layui/layui.js"></script>
+	<script src="/js/ckeditor/ckeditor.js"></script>
+	
+  <!-- added for slider style in 01162018 -->
+  <!-- <link rel="stylesheet" href="https://fonts.useso.com/css?family=Montserrat:400,700">
+  <link rel="stylesheet" href="https://fonts.useso.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
+  <link rel="stylesheet" href="https://fonts.useso.com/css?family=Lora:400,700,400italic,700italic&subset=latin">
+   <link rel="stylesheet" href="/js/assets/bootstrap-material-design-font/css/material.css">-->
+  <link rel="stylesheet" href="/js/assets/tether/tether.min.css">
+  <link rel="stylesheet" href="/js/assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/js/assets/dropdown/css/style.css">
+  <link rel="stylesheet" href="/js/assets/animate.css/animate.min.css">
+  <link rel="stylesheet" href="/js/assets/theme/css/style.css">
+  <link rel="stylesheet" href="/js/assets/mobirise/css/mbr-additional.css" type="text/css">
+  
 </head>
 <body>
 <div id="page" class="site" style="transform: none;">
-
     <%@ include file="part/header.jsp" %>
+    
     <div id="content" class="site-content" style="transform: none;">
         <rapid:block name="left"></rapid:block>
         <rapid:block name="right">
@@ -51,12 +68,7 @@
     <%@ include file="part/footer.jsp"%>
 
 </div>
-
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/superfish.js"></script>
-    <script src="/js/script.js"></script>
-    <script src="/plugin/layui/layui.all.js"></script>
-	<script src="/js/ckeditor/ckeditor.js"></script>
+    
 <rapid:block name="footer-script"></rapid:block>
 
 </body>
