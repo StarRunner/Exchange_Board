@@ -1580,7 +1580,7 @@ a, button, input {
 .thumbnail {
     position: relative;
     float: left;
-    max-width: 200px;
+    max-width: 300px;
     height: auto;
     clear: both;
     overflow: hidden;
@@ -6050,12 +6050,7 @@ li.search-inf {
         display: none;
     }
 
-    .thumbnail {
-        max-width: 100px;
-        height: auto;
-        margin: 0 10px 0 0;
-        transition-duration: .5s;
-    }
+
 
     .thumbnail a img {
         width: auto;
