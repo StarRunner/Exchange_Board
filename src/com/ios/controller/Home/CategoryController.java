@@ -38,7 +38,7 @@ public class CategoryController {
 	public ModelAndView ArticleListByCategoryView(@PathVariable("cateId") Integer cateId) throws Exception {
 		ModelAndView modelAndView = new ModelAndView();
 		//设置每页显示条数
-		int pageSize = 9;
+		int pageSize = 4;
 		List<ArticleListVo> articleListVoList = categoryService.listArticleWithCategoryByPage(1,null,pageSize,cateId);
 
 		//如果articleListVoList=null表示该分类不存在，如果=0表示该分类暂时没有Article
@@ -58,7 +58,7 @@ public class CategoryController {
 	public  ModelAndView ArticleListByCategoryAndPageView(@PathVariable("pageNow") Integer pageNow,@PathVariable("cateId") Integer cateId) throws Exception {
 		ModelAndView modelAndView = new ModelAndView();
 		//设置每页显示条数
-		int pageSize = 9;
+		int pageSize = 4;
 		List<ArticleListVo> articleListVoList = categoryService.listArticleWithCategoryByPage(1,pageNow,pageSize,cateId);
 		modelAndView.addObject("articleListVoList",articleListVoList);
 		modelAndView.setViewName("Home/Page/articleListByCategory");

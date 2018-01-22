@@ -25,63 +25,39 @@
 
             <main id="main" class="site-main" role="main">
                 <c:forEach items="${articleSearchVoList}" var="a">
-
-                    <article  class="post type-post" style="float:left;width:33%">
-
-                        <figure class="thumbnail">
-                            <a href="/article/${a.articleCustom.articleId}">
-                                <img width="280" height="210"
+ <article style="width: 50%; float: left; padding:10px">
+						<div class="art-header">
+						  <a href="/article/${a.articleCustom.articleId}">
+                                <img width="280" height="280"
                                      src="/img/thumbnail/random/img_${a.articleCustom.articleId%400}.jpg"
                                      class="attachment-content size-content wp-post-image"
                                      alt="${a.articleCustom.articleTitle}">
                             </a>
-                            <span class="cat">
-                                <a href="/category/${a.categoryCustomList[a.categoryCustomList.size()-1].categoryId}">
-                                        ${a.categoryCustomList[a.categoryCustomList.size()-1].categoryName}
-                                </a>
-                            </span>
-                        </figure>
-
-                        <header class="entry-header">
-                            <h2 class="entry-title">
-                                <a href="/article/${a.articleCustom.articleId}"
-                                   rel="bookmark"  style="font-weight:unset;font-size:14px;">
-                                        ${a.articleCustom.articleTitle}
-                                </a>
-                            </h2>
-                        </header>
-
-                        <div class="entry-content">
-                            <span class="entry-meta" style="display:block; position:unset !important">
-                                   Author:  <span style="color: #009688;">
-                                      ${a.articleCustom.articleAuthor}
-                                    </span>
-                                    <span class="date" style="width: 100%;display: block;position:unset !important">
-                                        <fmt:formatDate value="${a.articleCustom.articlePostTime}" pattern="yyyy/MM/dd"/>
-                                    &nbsp;&nbsp;
-                                    </span>
-                                    <span class="views">
-                                        <i class="fa fa-eye"></i>
-                                            ${a.articleCustom.articleViewCount} views
-                                    </span>
-                                    <span class="comment">&nbsp;&nbsp;
-                                        <a href="/article/${a.articleCustom.articleId}#comments" rel="external nofollow">
-                                          <i class="fa fa-comment-o"></i>
-                                            <c:choose>
-                                                <c:when test="${a.articleCustom.articleCommentCount==0}">
-                                                    Comment
-                                                </c:when>
-                                                <c:otherwise>
-                                                    ${a.articleCustom.articleCommentCount}
-                                                </c:otherwise>
-                                            </c:choose>
-
-                                        </a>
-                                    </span>
-                                </span>
-                              <div style="clear:both;"></div>
-                        </div><!-- .entry-content -->
-                    </article>
+						</div>
+						<div class="art-content">
+							<div class="col-1-3 right" style="width:33.3%">
+								<div class="wrap-col">
+									<div class="info">
+										<ul class="clearfix bg-green">
+											<li><a href="#"> ${a.articleCustom.articleAuthor}</a></li>
+											<li><a href="#"><fmt:formatDate value="${a.articleCustom.articlePostTime}" pattern="yyyy-MM-dd"/></a></li>
+											<li><a href="#">${a.articleCustom.articleViewCount} views</a></li>
+											<li class="last"><a href="/article/${a.articleCustom.articleId}#comments">Leave a comment</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="col-2-3 bg-white left"  style="width:66.6%">
+								<div class="wrap-col">
+									<div class="main-post">
+										<h2 class="title"><a href="/article/${a.articleCustom.articleId}">${a.articleCustom.articleTitle}</a></h2>
+										<p>${a.articleCustom.articleContent}</p>
+									</div>	
+								</div>
+							</div>
+							<div style="clear:both;"></div>
+						</div>
+					</article>
                 </c:forEach>
             </main>
          

@@ -16,9 +16,6 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 
-/**
- * Created by 言曌 on 2017/9/10.
- */
 
 @Controller
 public class CommentController {

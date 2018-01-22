@@ -12,9 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import java.util.Date;
 
-/**
- * Created by 言曌 on 2017/9/5.
- */
+
 @Controller
 public class LinkController {
 	@Autowired

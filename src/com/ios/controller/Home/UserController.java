@@ -76,7 +76,7 @@ public class UserController {
 //	        modelAndView.addObject("allCommentCount",allCommentCount);
 //	        modelAndView.addObject("approvedCommentCount",approvedCommentCount);
 //	        modelAndView.addObject("hiddenCommentCount",hiddenCommentCount);
-	    	int pageSize = 9;
+	    	int pageSize = 4;
 			List<ArticleListVo> articleListVoList = articleService.listArticleByPage(1,null,pageSize);
 			modelAndView.addObject("articleListVoList",articleListVoList);
 
