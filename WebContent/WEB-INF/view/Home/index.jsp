@@ -7,7 +7,7 @@
 <%@ taglib prefix="rapid" uri="http://www.rapid-framework.org.cn/rapid" %>
 
 <!-- This Script link should be here, else can't read it -->
-<script src="/js/jquery.min.js"></script>
+<!-- <script src="/js/jquery.min.js"></script> -->
 
     <rapid:override name="breadcrumb">
     
@@ -81,13 +81,21 @@
 	</section> -->
 	<!-- MastHead section end -->
 	<!-- Slide Section Start -->
-	<section class="engine"><a href="https://mobirise.co/m">bootstrap table</a></section><section class="mbr-slider mbr-section mbr-section__container carousel slide mbr-section-nopadding mbr-after-navbar" data-ride="carousel" data-keyboard="false" data-wrap="true" data-pause="false" data-interval="4000" id="slider3-o" data-rv-view="14">
+	<section class="engine">
+		<a href="https://mobirise.co/m">bootstrap table</a>
+	</section>
+	<section class="mbr-slider mbr-section mbr-section__container carousel slide mbr-section-nopadding mbr-after-navbar" data-ride="carousel" data-keyboard="false" data-wrap="true" data-pause="false" data-interval="4000" id="slider3-o" data-rv-view="14">
     <div>
         <div>
             <div>
                 <ol class="carousel-indicators">
-                    <li data-app-prevent-settings="" data-target="#slider3-o" class="active" data-slide-to="0"></li><li data-app-prevent-settings="" data-target="#slider3-o" data-slide-to="1"></li><li data-app-prevent-settings="" data-target="#slider3-o" data-slide-to="2"></li><li data-app-prevent-settings="" data-target="#slider3-o" data-slide-to="3"></li><li data-app-prevent-settings="" data-target="#slider3-o" data-slide-to="4"></li><li data-app-prevent-settings="" data-target="#slider3-o" data-slide-to="5"></li>
-                </ol>
+                    <li data-app-prevent-settings="" data-target="#slider3-o" class="active" data-slide-to="0">
+                    </li>
+                    <li data-app-prevent-settings="" data-target="#slider3-o" data-slide-to="1">
+                    </li>
+                    <li data-app-prevent-settings="" data-target="#slider3-o" data-slide-to="2">
+                    </li>
+                    </ol>
                 <div class="carousel-inner" role="listbox">
                     <div class="mbr-section mbr-section-hero carousel-item dark center mbr-section-full active" data-bg-video-slide="false" style="background-image: url(/js/assets/images/man-back.jpg);">
                         <div class="mbr-table-cell">
@@ -96,7 +104,7 @@
                                 
                                 <div class="row">
                                     <div class="col-md-8 col-md-offset-2 text-xs-center">
-                                        <h2 class="mbr-section-title display-1">IMAGE SLIDER</h2>
+                                        <h2 class="mbr-section-title display-1">SHOWCASE BOARD</h2>
                                         <p class="mbr-section-lead lead">Choose from the large selection of latest pre-made blocks - jumbotrons, hero images, parallax scrolling, video backgrounds, hamburger menu, sticky header and more.</p>
 
                                         <div class="mbr-section-btn"><a class="btn btn-lg btn-success" href="https://mobirise.com">FOR WINDOWS</a> <a class="btn btn-lg btn-white btn-white-outline" href="https://mobirise.com">FOR MAC</a> </div>
@@ -120,51 +128,6 @@
                             </div>
                         </div>
                     </div><div class="mbr-section mbr-section-hero carousel-item dark center mbr-section-full" data-bg-video-slide="false" style="background-image: url(/js/assets/images/sparklers.jpg);">
-                        <div class="mbr-table-cell">
-                            <div class="mbr-overlay"></div>
-                            <div class="container-slide container">
-                                
-                                <div class="row">
-                                    <div class="col-md-8 col-md-offset-3 text-xs-right">
-                                        <h2 class="mbr-section-title display-1">BOOTSTRAP SLIDER</h2>
-                                        <p class="mbr-section-lead lead">Choose from the large selection of latest pre-made blocks - jumbotrons, hero images, parallax scrolling, video backgrounds, hamburger menu, sticky header and more.</p>
-
-                                        <div class="mbr-section-btn"><a class="btn btn-lg btn-info" href="https://mobirise.com">FOR WINDOWS</a> <a class="btn btn-lg btn-white btn-white-outline" href="https://mobirise.com">FOR MAC</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div><div class="mbr-section mbr-section-hero carousel-item dark center mbr-section-full" data-bg-video-slide="false" style="background-image: url(/js/assets/images/mbr-1-720x1080.jpg);">
-                        <div class="mbr-table-cell">
-                            <div class="mbr-overlay"></div>
-                            <div class="container-slide container">
-                                
-                                <div class="row">
-                                    <div class="col-md-8 col-md-offset-1">
-                                        <h2 class="mbr-section-title display-1">BACKGROUND VIDEO</h2>
-                                        <p class="mbr-section-lead lead">Choose from the large selection of latest pre-made blocks - jumbotrons, hero images, parallax scrolling, video backgrounds, hamburger menu, sticky header and more.</p>
-
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div><div class="mbr-section mbr-section-hero carousel-item dark center mbr-section-full" data-bg-video-slide="false" style="background-image: url(/js/assets/images/mbr-1620x1080.jpg);">
-                        <div class="mbr-table-cell">
-                            <div class="mbr-overlay" style="opacity: 0.6; background-color: rgb(0, 0, 0);"></div>
-                            <div class="container-slide container">
-                                
-                                <div class="row">
-                                    <div class="col-md-8 col-md-offset-2 text-xs-center">
-                                        <h2 class="mbr-section-title display-1">IMAGE SLIDER</h2>
-                                        <p class="mbr-section-lead lead">Choose from the large selection of latest pre-made blocks - jumbotrons, hero images, parallax scrolling, video backgrounds, hamburger menu, sticky header and more.</p>
-
-                                        <div class="mbr-section-btn"><a class="btn btn-lg btn-success" href="https://mobirise.com">FOR WINDOWS</a> <a class="btn btn-lg btn-white btn-white-outline" href="https://mobirise.com">FOR MAC</a> </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div><div class="mbr-section mbr-section-hero carousel-item dark center mbr-section-full" data-bg-video-slide="false" style="background-image: url(/js/assets/images/mbr-1611x1080.jpg);">
                         <div class="mbr-table-cell">
                             <div class="mbr-overlay"></div>
                             <div class="container-slide container">
