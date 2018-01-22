@@ -47,11 +47,106 @@
    <link rel="stylesheet" href="/js/assets/bootstrap-material-design-font/css/material.css">-->
   <link rel="stylesheet" href="/js/assets/tether/tether.min.css">
   <link rel="stylesheet" href="/js/assets/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/js/assets/dropdown/css/style.css">
+  <!-- <link rel="stylesheet" href="/js/assets/dropdown/css/style.css"> -->
   <link rel="stylesheet" href="/js/assets/animate.css/animate.min.css">
   <link rel="stylesheet" href="/js/assets/theme/css/style.css">
-  <link rel="stylesheet" href="/js/assets/mobirise/css/mbr-additional.css" type="text/css">
-  
+  <!-- <link rel="stylesheet" href="/js/assets/mobirise/css/mbr-additional.css" type="text/css"> -->
+  <style type="text/css">
+  	body {
+    	background-color: #F5F8F9;
+    }
+    textarea {
+    font: 14px "Microsoft YaHei", Helvetica, Arial, Lucida Grande, Tahoma, sans-serif;
+    color: #444;
+    line-height: 180%;
+    background: #f1f1f1;
+	}
+	a img {
+    border: 0;
+	}
+	a {
+    color: #444;
+    text-decoration: none;
+	}
+	a:visited {
+    color: #555;
+	}
+	
+	a:hover {
+	    color: #009688;
+	}
+	
+	h2 {
+    margin: 0 0 5px 0;
+	}
+	
+	h2 a {
+	    font-size: 16px;
+	    font-size: 1.6rem;
+	    line-height: 20px;
+	}
+	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    border: 0;
+    font-size: 100%;
+    /* font-style: inherit; */
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    vertical-align: baseline;
+	}
+	article,
+	aside,
+	details,
+	figcaption,
+	figure,
+	footer,
+	header,
+	main,
+	nav,
+	section {
+	    display: block;
+	}
+	
+	/** 缩略图 **/
+	.thumbnail {
+	    position: relative;
+	    float: left;
+	    max-width: 200px;
+	    height: auto;
+	    clear: both;
+	    overflow: hidden;
+	    transition-duration: .5s;
+	}
+	
+	.thumbnail a img {
+	    float: left;
+	    width: 250px;
+	    height: 141px;
+	    max-width: 100%;
+	}
+	
+	.thumbnail .cat {
+	    background: #c40000;
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    filter: alpha(opacity=70);
+	    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+	    background: 0 0 rgba(216, 0, 0, 0.7);
+	}
+	
+	.thumbnail .cat a {
+	    color: #fff;
+	    line-height: 28px;
+	    padding: 0 10px;
+	}
+	
+	.type-bulletin .thumbnail {
+	    display: none;
+	}
+	
+	
+  </style>
 </head>
 <body>
 <div id="page" class="site" style="transform: none;">
