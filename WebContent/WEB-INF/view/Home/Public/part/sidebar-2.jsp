@@ -15,7 +15,7 @@
                 <c:forEach items="${mostCommentArticleList}" var="m">
                     <li>
                         <a href="/article/${m.articleId}" rel="bookmark"
-                           title=" (${m.articleCommentCount}Comments)">
+                           title=" (${m.articleViewCount} views)">
                                 ${m.articleTitle}
                         </a>
                     </li>
