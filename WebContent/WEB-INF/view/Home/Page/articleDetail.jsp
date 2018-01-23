@@ -438,11 +438,6 @@
 
     <script type="text/javascript">
         increaseViewCount();
-        layui.code({
-            elem: 'pre',//默认值为.layui-code
-           // skin: 'notepad', //如果要默认风格，不用设定该key。
-            about: false
-        });
     </script>
 
 </rapid:override>

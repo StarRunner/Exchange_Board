@@ -1420,6 +1420,7 @@ a, button, input {
 
 #page {
     flex:1;
+    background-color: #25292C;
 }
 
 #primary {
@@ -7601,7 +7602,7 @@ article .info-single ul li.last{border: none;}
 
 article .main-post  {padding: 10px;   padding: 10px;height: 220px; overflow: hidden;}
 
-article .art-header{}
+article .art-header{margin-bottom:-6px;}
 article .art-header img{width: 100%;}
 article .art-content{}
 article .art-content blockquote p{border-left: 3px solid #1c7791;font-size: 120%;margin: 0 50px;font-style: italic;color: #777;}
@@ -7691,8 +7692,8 @@ article.single .wrap-art {padding: 30px;}
 
 .container_index {width:88%}
 
-article{margin-bottom: 30px; background: #ffffff;}
+article{margin-bottom: 30px; }
 article:after, article:before{clear: both; content: '\0020'; display: block; visibility: hidden; width: 0; height: 0;}
 article h2{text-align: center;border-bottom: 1px solid #ddd;padding-bottom: 10px;}
-article .title a{ line-height:30px; font-weight: bold;text-transform: uppercase;color: #323A41;}
+article .title a{ line-height:30px; font-weight: bold;text-transform: uppercase;color: #323A41;font-size:16px}
 article .title a:hover {text-decoration: underline;}
