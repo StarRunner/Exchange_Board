@@ -187,12 +187,10 @@
                                     <c:when test="${articleListVoList[0].page.pageNow eq articleListVoList[0].page.totalPageCount }">
                                         <%--到了尾页隐藏，下一页按钮--%>
                                     </c:when>
-                                    <c:otherwise>
-                                        <c:if test="articleListVoList[0].page.totalPageCount>0">
+                                    <c:otherwise>                                 
                                             <a class="page-numbers" href="/tag/${articleListVoList[0].tagCustomList[0].tagId}/p/${articleListVoList[0].page.pageNow+1}">
                                                 <span class="fa fa-angle-right"></span>
                                             </a>
-                                        </c:if>
                                     </c:otherwise>
                                 </c:choose>
 
