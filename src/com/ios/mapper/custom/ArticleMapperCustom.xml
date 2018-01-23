@@ -336,7 +336,7 @@
             </if>
         </where>
         ORDER BY
-        article_comment_count DESC,article_order DESC, article_id DESC
+        article_view_count DESC,article_order DESC, article_id DESC
           fetch first 7 row only
     </select>
 

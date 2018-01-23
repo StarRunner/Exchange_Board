@@ -51,10 +51,10 @@ public class HomeResourceInterceptor implements WebRequestInterceptor {
 		List<TagCustom> tagList = tagService.listTag(1);
 		request.setAttribute("tagList",tagList,WebRequest.SCOPE_REQUEST);
 		//获得随机Article
-		List<ArticleCustom> randomArticleList = articleService.listRandomArticle(1,8);
+		List<ArticleCustom> randomArticleList = articleService.listRandomArticle(1,7);
 		request.setAttribute("randomArticleList",randomArticleList,WebRequest.SCOPE_REQUEST);
 		//获得热评Article
-		List<ArticleCustom> mostCommentArticleList = articleService.listArticleByCommentCount(1,8);
+		List<ArticleCustom> mostCommentArticleList = articleService.listArticleByCommentCount(1,7);
 		request.setAttribute("mostCommentArticleList",mostCommentArticleList,WebRequest.SCOPE_REQUEST);
 		//最新评论
         List<CommentListVo> recentCommentList = commentService.listRecentComment(10);

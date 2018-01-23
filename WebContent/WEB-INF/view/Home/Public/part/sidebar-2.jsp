@@ -1,11 +1,6 @@
-<%--
-    一般用于Home侧边栏：
-    包括 关于本站，网站概况，热评Article，所有标签，随机Article 等小工具
-
---%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
-<%--博客主体-右侧侧边栏 start--%>
+<%--blog right slide start--%>
 <div id="sidebar" class="widget-area all-sidebar"
      style="position: relative; overflow: visible; box-sizing: border-box; min-height: 1px;">
 
@@ -29,9 +24,9 @@
         </div>
         <div class="clear"></div>
     </aside>
-    <%--热评Article end--%>
+    <%--most view Article end--%>
 
-    <%--所有标签 start--%>
+    <%--All tag start--%>
     <aside class="widget">
         <h3 class="widget-title">
             <i class="fa fa-bars"></i>All Tags
@@ -48,10 +43,10 @@
         </div>
         <div class="clear"></div>
     </aside>
-    <%--所有标签 end--%>
+    <%--all tag end--%>
 
 
-    <%--随机Article start--%>
+    <%--random Article start--%>
     <aside id="random_post-7" class="widget random_post wow fadeInUp" data-wow-delay="0.3s">
         <h3 class="widget-title">
             <i class="fa fa-bars"></i>Random Article
@@ -69,7 +64,7 @@
         </div>
         <div class="clear"></div>
     </aside>
-    <%--近期Article end--%>
+    <%--recent Article end--%>
 
     <%--最新评论 start--%>
     <!-- aside id="recent_comments-2" class="widget recent_comments wow fadeInUp" data-wow-delay="0.3s"><h3
@@ -97,4 +92,4 @@
 
 
 
-<%--博客主体-右侧侧边栏 end--%>
+<%--blog right slide end--%>
