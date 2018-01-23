@@ -225,7 +225,7 @@
 								<div class="wrap-col">
 									<div class="main-post">
 										<h2 class="title"><a href="/article/${a.articleCustom.articleId}">${a.articleCustom.articleTitle}</a></h2>
-										<p>${a.articleCustom.articleContent}</p>
+										${a.articleCustom.articleContent}
 									</div>	
 								</div>
 							</div>

@@ -1,6 +1,7 @@
 package com.ios.controller.Admin;
 
 import com.ios.entity.Article;
+import com.ios.entity.User;
 import com.ios.entity.custom.*;
 import com.ios.mapper.custom.ArticleMapperCustom;
 import com.ios.service.ArticleService;
@@ -11,6 +12,7 @@ import com.ios.util.UploadArticlePicture;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -53,7 +55,7 @@ public class BackArticleController {
         ModelAndView modelAndView = new ModelAndView();
 
         //分页显示已发布Article
-        Integer pageSize = 20;
+        Integer pageSize = 9;
         List<ArticleListVo> publishedArticleListVoList = articleService.listArticleByPage(1,null,pageSize);
         modelAndView.addObject("publishedArticleListVoList",publishedArticleListVoList);
 
@@ -69,7 +71,7 @@ public class BackArticleController {
     public @ResponseBody  ModelAndView ArticleListByPageView(@PathVariable("pageNow") Integer pageNow) throws Exception{
         ModelAndView modelAndView = new ModelAndView();
         //分页显示已发布Article
-        Integer pageSize = 20;
+        Integer pageSize = 9;
         List<ArticleListVo> publishedArticleListVoList = articleService.listArticleByPage(1,pageNow,pageSize);
         modelAndView.addObject("publishedArticleListVoList",publishedArticleListVoList);
 
@@ -98,12 +100,14 @@ public class BackArticleController {
     @Autowired
     HttpServletRequest request;
     
+
+    
     //后台添加Article提交操作
     @RequestMapping(value = "/insertSubmit",method = RequestMethod.POST)
-    public String insertArticleSubmit(Article article, @RequestParam("file") CommonsMultipartFile file) throws Exception {
+    public String insertArticleSubmit(Article article, @RequestParam("file") CommonsMultipartFile file,	@ModelAttribute("user")User user) throws Exception {
     	
     	UploadArticlePicture uploadFunction = new UploadArticlePicture();
-    	
+    	user=(User)request.getSession().getAttribute("user") ;
     	/*
     	 *  Insert Article
     	 */
@@ -120,6 +124,8 @@ public class BackArticleController {
         article.setArticleCommentCount(0);
         article.setArticleStatus(1);
         article.setArticleOrder(1);
+        article.setArticleAuthor(user.getUserName());
+        article.setUserEmail(user.getUserEmail());
         System.out.println("Article.toString: " + article.toString());
         //insert
         articleService.insertArticle(article);
@@ -179,7 +185,7 @@ public class BackArticleController {
     public ModelAndView SearchPageView(HttpServletRequest request,Model model) throws Exception {
         ModelAndView modelAndView = new ModelAndView();
         //设置每页显示的数量
-        int pageSize = 20;
+        int pageSize = 9;
         String query = request.getParameter("query");
         List<ArticleSearchVo> articleSearchVoList = articleService.listSearchResultByPage(1,request,model,null,pageSize,query);
         modelAndView.addObject("articleSearchVoList", articleSearchVoList);
@@ -193,7 +199,7 @@ public class BackArticleController {
     public  ModelAndView SearchPageByPageView(HttpServletRequest request, Model model,@PathVariable("pageNow") Integer pageNow) throws Exception {
         ModelAndView modelAndView = new ModelAndView();
         //设置每页显示的数量
-        int pageSize = 20;
+        int pageSize = 9;
         String query = request.getParameter("query");
         List<ArticleSearchVo> articleSearchVoList = articleService.listSearchResultByPage(1,request,model,pageNow,pageSize,query);
         modelAndView.addObject("articleSearchVoList", articleSearchVoList);

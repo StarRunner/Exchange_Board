@@ -65,12 +65,10 @@ public class CommentServiceImpl implements CommentService{
 		int totalCount = commentMapperCustom.countComment(status);
 		if (pageNow != null) {
 			page = new Page(totalCount, pageNow,pageSize);
-			commentCustomList = commentMapperCustom.listCommentByPage(status,page.getStartPos(),pageSize);
-		} else {
+			commentCustomList = commentMapperCustom.listCommentByPage(status,(page.getPageNow() - 1) * pageSize+1,pageSize*page.getPageNow());
 			page = new Page(totalCount, 1,pageSize);
-			commentCustomList = commentMapperCustom.listCommentByPage(status,page.getStartPos(), pageSize);
+			commentCustomList = commentMapperCustom.listCommentByPage(status,(page.getPageNow() - 1) * pageSize+1,pageSize*page.getPageNow());
 		}
-
 
 		for(int i=0;i<commentCustomList.size();i++) {
 			CommentListVo commentListVo = new CommentListVo();

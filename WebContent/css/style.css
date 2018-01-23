@@ -7691,3 +7691,8 @@ article.single .wrap-art {padding: 30px;}
 
 .container_index {width:88%}
 
+article{margin-bottom: 30px; background: #ffffff;}
+article:after, article:before{clear: both; content: '\0020'; display: block; visibility: hidden; width: 0; height: 0;}
+article h2{text-align: center;border-bottom: 1px solid #ddd;padding-bottom: 10px;}
+article .title a{ line-height:30px; font-weight: bold;text-transform: uppercase;color: #323A41;}
+article .title a:hover {text-decoration: underline;}

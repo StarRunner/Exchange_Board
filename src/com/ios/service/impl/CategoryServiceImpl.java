@@ -69,12 +69,12 @@ public class CategoryServiceImpl implements CategoryService {
 
 		if (pageNow != null) {
 			page = new Page(totalCount, pageNow,pageSize);
-			articleCustomList = categoryMapperCustom.listArticleWithCategoryByPage(status,cateId,page.getStartPos(), page.getPageSize());
+			articleCustomList = categoryMapperCustom.listArticleWithCategoryByPage(status,cateId,(page.getPageNow() - 1) * pageSize+1,pageSize*page.getPageNow());
 		} else {
 			page = new Page(totalCount, 1,pageSize);
-			articleCustomList = categoryMapperCustom.listArticleWithCategoryByPage(status,cateId,page.getStartPos(), page.getPageSize());
-			
-		}
+			articleCustomList = categoryMapperCustom.listArticleWithCategoryByPage(status,cateId,(page.getPageNow() - 1) * pageSize+1,pageSize*page.getPageNow());
+			}
+		
 		for(int i=0;i<articleCustomList.size();i++) {
 			ArticleListVo articleListVo = new ArticleListVo();
 			

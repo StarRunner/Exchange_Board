@@ -235,10 +235,10 @@ public class ArticleServiceImpl implements ArticleService {
 		int totalCount = articleMapperCustom.countArticle(status);
 		if (pageNow != null) {
 			page = new Page(totalCount, pageNow,pageSize);
-			articleCustomList = articleMapperCustom.listArticleByPage(status,page.getStartPos(),pageSize);
+			articleCustomList = articleMapperCustom.listArticleByPage(status,(page.getPageNow() - 1) * pageSize+1,pageSize*page.getPageNow());
 		} else {
 			page = new Page(totalCount, 1,pageSize);
-			articleCustomList = articleMapperCustom.listArticleByPage(status,page.getStartPos(), pageSize);
+			articleCustomList = articleMapperCustom.listArticleByPage(status,(page.getPageNow() - 1) * pageSize+1,pageSize*page.getPageNow());
 		}
 		
 		//获得分类信息
@@ -309,10 +309,10 @@ public class ArticleServiceImpl implements ArticleService {
 		int totalCount = articleMapperCustom.countArticleByUser(status,email);
 		if (pageNow != null) {
 			page = new Page(totalCount, pageNow,pageSize);
-			articleCustomList = articleMapperCustom.listArticleByUserByPage(status,page.getStartPos(),pageSize,email);
+			articleCustomList = articleMapperCustom.listArticleByUserByPage(status,(page.getPageNow() - 1) * pageSize+1,pageSize*page.getPageNow(),email);
 		} else {
 			page = new Page(totalCount, 1,pageSize);
-			articleCustomList = articleMapperCustom.listArticleByUserByPage(status,page.getStartPos(), pageSize,email);
+			articleCustomList = articleMapperCustom.listArticleByUserByPage(status,(page.getPageNow() - 1) * pageSize+1,pageSize*page.getPageNow(),email);
 		}
 		
 		//获得分类信息
@@ -449,10 +449,10 @@ public class ArticleServiceImpl implements ArticleService {
 
         if (pageNow != null) {
             page = new Page(totalCount, pageNow, pageSize);
-            articleCustomList = this.articleMapperCustom.listSearchResultByPage(status,query, page.getStartPos(), page.getPageSize());
+            articleCustomList = this.articleMapperCustom.listSearchResultByPage(status,query, (page.getPageNow() - 1) * pageSize+1,pageSize*page.getPageNow());
         } else {
             page = new Page(totalCount, 1, pageSize);
-            articleCustomList = this.articleMapperCustom.listSearchResultByPage(status,query, page.getStartPos(), page.getPageSize());
+            articleCustomList = this.articleMapperCustom.listSearchResultByPage(status,query, (page.getPageNow() - 1) * pageSize+1,pageSize*page.getPageNow());
         }
 
         List<ArticleSearchVo> articleSearchVoList = new ArrayList<ArticleSearchVo>();
@@ -531,10 +531,10 @@ public class ArticleServiceImpl implements ArticleService {
 
         if (pageNow != null) {
             page = new Page(totalCount, pageNow, pageSize);
-            articleCustomList = this.articleMapperCustom.listSearchResultByUserByPage(status,query, page.getStartPos(), page.getPageSize(),email);
+            articleCustomList = this.articleMapperCustom.listSearchResultByUserByPage(status,query, (page.getPageNow() - 1) * pageSize+1,pageSize*page.getPageNow(),email);
         } else {
             page = new Page(totalCount, 1, pageSize);
-            articleCustomList = this.articleMapperCustom.listSearchResultByUserByPage(status,query, page.getStartPos(), page.getPageSize(),email);
+            articleCustomList = this.articleMapperCustom.listSearchResultByUserByPage(status,query, (page.getPageNow() - 1) * pageSize+1,pageSize*page.getPageNow(),email);
         }
 
         List<ArticleSearchVo> articleSearchVoList = new ArrayList<ArticleSearchVo>();

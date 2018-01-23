@@ -78,10 +78,10 @@ public class TagServiceImpl implements TagService {
 		int totalCount = articleMapperCustom.countArticleByTag(status,tagId);
 		if (pageNow != null) {
 			page = new Page(totalCount, pageNow,pageSize);
-			articleCustomList = tagMapperCustom.listArticleWithTagByPage(status,tagId,page.getStartPos(), page.getPageSize());
+			articleCustomList = tagMapperCustom.listArticleWithTagByPage(status,tagId,(page.getPageNow() - 1) * pageSize+1,pageSize*page.getPageNow());
 		} else {
 			page = new Page(totalCount, 1,pageSize);
-			articleCustomList = tagMapperCustom.listArticleWithTagByPage(status,tagId,page.getStartPos(), page.getPageSize());
+			articleCustomList = tagMapperCustom.listArticleWithTagByPage(status,tagId,(page.getPageNow() - 1) * pageSize+1,pageSize*page.getPageNow());
 		}
 		
 		for(int i=0;i<articleCustomList.size();i++) {
