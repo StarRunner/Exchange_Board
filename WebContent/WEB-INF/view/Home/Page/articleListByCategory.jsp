@@ -189,12 +189,10 @@
                                         </c:when>
                                         <c:otherwise>
                                             <%--如果没有结果，隐藏最后一个>--%>
-                                            <c:if test="${articleListVoList[0].page.totalPageCount>0}">
                                                 <a class="page-numbers"
                                                    href="/category/${categoryCustom.categoryId}/p/${articleListVoList[0].page.pageNow+1}">
                                                     <span class="fa fa-angle-right"></span>
                                                 </a>
-                                            </c:if>
                                         </c:otherwise>
                                     </c:choose>
 
