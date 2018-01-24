@@ -11,48 +11,24 @@
     <nav id="top-header" style="min-height: 30px;background: #25292C;border-bottom: 1px solid #414f5a;padding: 7px 0;">
         <div class="top-nav">
             <div class="menu-topmenu-container" style="padding-top:10px;padding-bottom:10px;float:right;">
-				<ul class="down-menu nav-menu sf-js-enabled sf-arrows">
 					<c:choose>
                     <c:when test="${sessionScope.customer==null}">
-                    	<li>
-                        	<a href="/user" style="font-size: 20px;font-weight: 300;vertical-align: middle;color: white;padding-right: 5px;display: inline-block;">Login</a>
-						</li>
+                        <a  href="/user" style="font-size: 20px;font-weight: 300;vertical-align: middle;color: white;padding-right: 5px;display: inline-block;">Login</a>
 					</c:when>
                     <c:otherwise>
-                    	<li>
-                      		<p style="font-size: 19px;
-							    color: #939598;
-							    font-weight: 300;
-							    vertical-align: middle;
-							    display: inline-block;">
-                      			Welcome, 
-                      		   <a href="/user" style="font-size: 19px;font-weight: 300;vertical-align: middle;color: #0288d1;padding-right: 5px;padding-bottom:4px;display: inline-block;">${sessionScope.customer.userNickname}</a>
-                     		 | <a href="/user/logout" style="font-size: 19px;font-weight: 300;vertical-align: middle;color: #0288d1;padding-right: 5px;padding-bottom:4px;display: inline-block;">Log out</a></p>
-                      	</li>
+                      <p style="font-size: 19px;color: #939598; font-weight: 300; vertical-align: middle; display: inline-block;">
+                      Welcome, <a href="/user" style="font-size: 19px;font-weight: 300;vertical-align: middle;color: #0288d1;padding-right: 5px;padding-bottom:4px;display: inline-block;">${sessionScope.customer.userNickname}</a>
+                      | <a href="/user/logout" style="font-size: 19px;font-weight: 300;vertical-align: middle;color: #0288d1;padding-right: 5px;padding-bottom:4px;display: inline-block;">Log out</a></p>                   
                     </c:otherwise>
-	                </c:choose>
-	                	<li>
-	                		&nbsp;&nbsp;&nbsp;&nbsp;
-	                	</li>
-		                <li>
-			                <span class="nav-search">
-			                    <i class="layui-icon" style="font-size: 30px; color: #F0F0F0;">&#xe615;</i>
-			              	</span>
-		              	</li>
-              	</ul>
+                </c:choose>
             </div>
-        </div>
+            <div style="clear:both;"></div>
+        </div> 
     </nav><!-- #top-header -->
     <%--顶部菜单 end--%>
-    
+
     <%--主要菜单 satrt--%>
-    <div id="menu-box" style="min-height: 86px;
-    z-index: 9999;
-    width: 100%;
-    position: relative;
-    background: #323B44;
-    border: 0px;">
-    
+    <div id="menu-box" style="min-height: 86px;  z-index: 9999; width: 100%; position: relative; background: #323B44;">  
         <div id="top-menu">
          <div class="user-login" style="float:left;" >
              <a class="inner" href="/">
@@ -63,7 +39,9 @@
                 <div id="sidr-close">
                     <a href="#sidr-close" class="toggle-sidr-close">×</a>
                 </div>
-               	
+               <span class="nav-search">
+                    <i class="fa fa-search"></i>
+              </span>
                 <nav id="site-nav" class="main-nav">
                     <a href="#sidr-main" id="navigation-toggle" class="bars">
                         <i class="fa fa-bars"></i>
@@ -109,6 +87,7 @@
                                 </c:if>
                             </c:forEach>
                         </ul>
+                        
                     </div>
                 </nav>
             </div>
