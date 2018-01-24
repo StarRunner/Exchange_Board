@@ -431,7 +431,7 @@ a, button, input {
 }
 
 .nav-search {
-    background: #009688;
+    /* background: #009688; */
     float: right;
     color: #fff;
     line-height: 26px;
@@ -439,7 +439,7 @@ a, button, input {
     padding: 0 8px 3px;
     cursor: pointer;
     border-radius: 3px;
-    border: 1px solid #009688;
+    /* border: 1px solid #009688; */
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
 }
 
