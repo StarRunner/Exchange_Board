@@ -103,7 +103,7 @@
                                         		document.getElementById("username").innerHTML="&nbsp;&#xe61a;";
                                         	}
                                         </script>
-				                    	<ul class="sub-menu">
+				                    	<ul class="sub-menu" onmousemove="changeUnameIconUp()" onmouseout="changeUnameIconDown()">
 				                    		<li>
 				                    			<a href="/manage/article" style="text-decoration:none; cursor:pointer;">
 				                    				Add Article
