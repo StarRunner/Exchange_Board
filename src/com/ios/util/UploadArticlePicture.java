@@ -48,20 +48,25 @@ public class UploadArticlePicture {
 		String serverPath = prop.getProperty("serverpath");
 		String backupPath = prop.getProperty("backuppath");
 		
+		System.out.println("The server img path: " + serverPath);
+		System.out.println("The Backup img path: " + backupPath);
+		
 		if (!file.isEmpty()) {
 			byte[] bytes = file.getBytes();
+			System.out.println("----Start upload ");
+			System.out.println("img byte stream: " + bytes);
 			BufferedOutputStream serverStream =
                     new BufferedOutputStream(new FileOutputStream(new File(serverPath + fileName + ".jpg")));
-			serverStream.write(bytes);
-			serverStream.close();
-			System.out.println("upload img successfully");
-			
 			BufferedOutputStream backupStream =
                     new BufferedOutputStream(new FileOutputStream(new File(backupPath + fileName + ".jpg")));
+			
+			serverStream.write(bytes);
+			System.out.println("upload img successfully");
 			backupStream.write(bytes);
 			backupStream.close();
+			serverStream.close();
 			System.out.println("upload backup img successfully");
-	    	
+	    	System.out.println("----End upload");
 			return true;
 		}
 		
