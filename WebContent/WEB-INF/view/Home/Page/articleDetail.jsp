@@ -6,11 +6,6 @@
 <%@ taglib uri="/WEB-INF/myTag.tld" prefix="lyz" %>
 <%@ taglib prefix="rapid" uri="http://www.rapid-framework.org.cn/rapid" %>
 
-<%--<rapid:override name="description">--%>
-<%--</rapid:override>--%>
-
-<%--<rapid:override name="keywords">--%>
-<%--</rapid:override>--%>
 
 <rapid:override name="title">
     <title>${articleDetailVo.articleCustom.articleTitle}</title>
@@ -48,12 +43,10 @@
         <i class="fa fa-angle-right"></i>
       Body
     </nav>
-    <%--面包屑导航 end--%>
 </rapid:override>
 
 
 <rapid:override name="left">
-    <%--博客主体-左侧Article正文 start--%>
     <div id="primary" class="content-area">
         <main id="main" class="site-main" role="main">
             <article class="post">
@@ -130,137 +123,7 @@
 
                     <div class="clear"></div>
                 </div><!-- .entry-content -->
-            </article><!-- #post -->
-
-                <%--所属标签 start--%>
-            <!--div class="single-tag">
-                <ul class="" data-wow-delay="0.3s">
-                    <c:forEach items="${articleDetailVo.tagCustomList}" var="t">
-                        <li>
-                            <a href="/tag/${t.tagId}" rel="tag"
-                               style="background:#666666">
-                                    ${t.tagName}
-                            </a>
-                        </li>
-                    </c:forEach>
-                </ul>
-            </div-->
-                <%--所属标签 end--%>
-
-
-                <%--版权声明 start--%>
-            <!--div class="authorbio wow fadeInUp" >
-                <img alt="${articleDetailVo.userCustom.userNickname}" src="${articleDetailVo.userCustom.userAvatar}"
-                     class="avatar avatar-64 photo" height="64" width="64">
-                <ul class="postinfo">
-                    <li></li>
-                    <li><strong>版权声明：</strong>本站原创Article，于<fmt:formatDate
-                            value="${articleDetailVo.articleCustom.articlePostTime}"
-                            pattern="yyyy-MM-dd"/>，由
-                            <strong>
-                                    ${articleDetailVo.userCustom.userNickname}
-                            </strong>
-                        发表。
-                    </li>
-                    <li class="reprinted"><strong>转载请注明：</strong>
-                        <a href="/article/${articleDetailVo.articleCustom.articleId}"
-                           rel="bookmark"
-                           title="本文固定链接 /article/${articleDetailVo.articleCustom.articleId}">
-                                ${articleDetailVo.articleCustom.articleTitle} | ${options.optionSiteTitle}</a>
-                    </li>
-                </ul>
-                <div class="clear"></div>
-            </div-->
-                <%--版权声明 end--%>
-
-
-                <%--相关Article start--%>
-            <div id="single-widget">
-                <div class="wow fadeInUp" data-wow-delay="0.3s">
-                    <aside id="related_post-2" class="widget">
-                        <h3 class="widget-title">
-                            <span class="s-icon"></span>Relative Article
-                        </h3>
-                        <div id="related_post_widget">
-                            <ul>
-                                <c:forEach items="${similarArticleList}" var="s">
-                                    <li>
-                                        <a href="/article/${s.articleId}">${s.articleTitle}</a>
-                                    </li>
-                                </c:forEach>
-                            </ul>
-                        </div>
-                        <div class="clear"></div>
-                    </aside>
-                        <%--猜你喜欢 start--%>
-                    <aside id="hot_post-8" class="widget hot_post">
-                        <h3 class="widget-title"><span class="s-icon"></span>Recommended Article</h3>
-                        <div id="hot_post_widget">
-                            <ul>
-                                <c:forEach items="${mostViewArticleList}" var="m">
-                                    <li>
-                                        <a href="/article/${m.articleId}">
-                                                ${m.articleTitle}
-                                        </a>
-                                    </li>
-                                </c:forEach>
-
-                            </ul>
-                        </div>
-                        <div class="clear"></div>
-                    </aside>
-                        <%--猜你喜欢 end--%>
-                </div>
-                <div class="clear"></div>
-            </div>
-                <%--相关Article end--%>
-
-                <%--上一篇下一篇 start--%>
-            <nav class="nav-single">
-                <c:choose>
-                    <c:when test="${preArticle!=null}">
-                        <a href="/article/${preArticle.articleId}" rel="next">
-                            <span class="meta-nav">
-                                <span class="post-nav">Previous
-                                 <i class="fa fa-angle-left"></i>
-                                </span>
-                                <br>${preArticle.articleTitle}
-                            </span>
-                        </a>
-                    </c:when>
-                    <c:otherwise>
-                              <span class="meta-nav">
-                                    <span class="post-nav">
-                                       None<br>
-                                    </span>Last Article
-                                </span>
-                    </c:otherwise>
-                </c:choose>
-                <c:choose>
-                    <c:when test="${afterArticle!=null}">
-                        <a href="/article/${afterArticle.articleId}" rel="next">
-                            <span class="meta-nav">
-                                <span class="post-nav">Next
-                                 <i class="fa fa-angle-right"></i>
-                                </span>
-                                <br>${afterArticle.articleTitle}
-                            </span>
-                        </a>
-                    </c:when>
-                    <c:otherwise>
-                            <span class="meta-nav">
-                                <span class="post-nav">
-                                   None<br>
-                                </span>Last Article
-                             </span>
-                    </c:otherwise>
-                </c:choose>
-
-                <div class="clear"></div>
-            </nav>
-                <%--上一篇下一篇 end--%>
-
-                <%--评论区域 start--%>
+            </article>
             <div class="scroll-comments"></div>
             <div id="comments" class="comments-area">
                 <div id="respond" class="comment-respond">
@@ -429,12 +292,10 @@
                     </c:forEach>
                 </ol>
             </div>
-                <%--评论框 end--%>
 
         </main>
         <!-- .site-main -->
     </div>
-    <%--博客主体-左侧Article正文end--%>
 </rapid:override>
 
 
