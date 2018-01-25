@@ -60,8 +60,13 @@
                 <header class="entry-header">
                     <h1 class="entry-title">
                             ${articleDetailVo.articleCustom.articleTitle}
+                             <div class="info" style="font-size:14px;">
+							    By <span style="color: #006EA0;display: unset !important;padding-right:5px;padding-bottom:40px;font-size:14px">${articleDetailVo.articleCustom.articleAuthor},</span>
+								<span><fmt:formatDate value="${articleDetailVo.articleCustom.articlePostTime}" pattern="yyyy-MM-dd"/></span> 
+						</div>
                     </h1>
-                </header><!-- .entry-header -->
+	                   
+                  </header>
                 
                 <!-- Rancho Add -->
                <div class="wrap-vid">

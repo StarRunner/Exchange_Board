@@ -1420,7 +1420,6 @@ a, button, input {
 
 #page {
     flex:1;
-    background-color: #25292C;
 }
 
 #primary {
@@ -7600,7 +7599,7 @@ article .info-single ul li{float: left; padding: 0 10px; border-right: 1px dotte
 article .info-single ul li.avatar{border: none;}
 article .info-single ul li.last{border: none;}
 
-article .main-post  {padding: 10px;   padding: 10px;height: 220px; overflow: hidden;}
+article .main-post  {padding: 10px;   padding: 10px;height: 207px; overflow: hidden;}
 
 article .art-header{margin-bottom:-6px;}
 article .art-header img{width: 100%;}
@@ -7697,3 +7696,9 @@ article:after, article:before{clear: both; content: '\0020'; display: block; vis
 article h2{text-align: center;border-bottom: 1px solid #ddd;padding-bottom: 5px;}
 article .title a{ line-height:30px; font-weight: bold;text-transform: uppercase;color: #323A41;font-size:16px}
 article .title a:hover {text-decoration: underline;}
+
+
+
+
+.wrapper {display: inline-block;text-align: left;margin-left: 10px;}
+.info {font-size: 12px;margin-top: 0;}

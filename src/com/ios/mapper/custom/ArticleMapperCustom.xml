@@ -321,7 +321,7 @@
         </where>
         ORDER BY
         RAND()
-        fetch first  7 row only
+        fetch first 4 row only
     </select>
 
     <!--获得评论数较多的Article列表-->
@@ -337,7 +337,7 @@
         </where>
         ORDER BY
         article_view_count DESC,article_order DESC, article_id DESC
-          fetch first 7 row only
+          fetch first 4 row only
     </select>
 
 
