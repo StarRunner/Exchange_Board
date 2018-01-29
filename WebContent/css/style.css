@@ -2671,6 +2671,7 @@ img.alignleft {
 #sidebar {
     float: right;
     width: 28.6%;
+    padding-top:10px;
 }
 
 #sidebar h3 {
