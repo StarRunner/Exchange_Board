@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
@@ -81,7 +81,7 @@
 
                     <footer class="single-footer">
                         <ul class="single-meta">
-                            <c:if test="${sessionScope.user!=null}">
+                            <c:if test="${sessionScope.customer!=null}">
                             <li class="edit-link">
                                 <a target="_blank" class="post-edit-link"
                                    href="/admin/article/edit/${articleDetailVo.articleCustom.articleId}">Edit</a>
@@ -174,6 +174,7 @@
                                     <input type="email" name="commentAuthorEmail" id="author_email" class="" value=""
                                            tabindex="3" required>
                                 </p>
+                                   
                             </c:if>
                         </div>
                         <div class="clear"></div>
@@ -182,6 +183,8 @@
                             <input type="hidden" name="commentArticleId"
                                    value="${articleDetailVo.articleCustom.articleId}" id="article_id">
                             <input type="hidden" name="commentPid" id="comment_pid" value="0">
+                            <input type="hidden" name="commentAuthorUrl" id="author_url" value="${sessionScope.customer.getUserAvatar()}"
+                                           tabindex="4">
                         </p>
                     </form>
                 </div>
@@ -196,9 +199,9 @@
                             </li>
                             <li class="comment">
                                 <div id="div-comment-${c.commentId}" class="comment-body">
-                                    <!-- div class="comment-author vcard">
+                                    <div class="comment-author vcard">
                                         <img class="avatar" src="${c.commentAuthorAvatar}" alt="avatar"
-                                             style="display: block;"-->
+                                             style="display: block;">
                                         <strong>${c.commentAuthorName} </strong>
                                         <c:if test="${c.commentRole==1}">
                                             <i class="fa fa-black-tie" style="color: #c40000;"></i>
@@ -216,7 +219,7 @@
                                                     </span>
                                                     <fmt:formatDate value="${c.commentCreateTime}"
                                                                     pattern="yyyy/MM/dd HH:mm:ss"/>&nbsp;
-                                                    <c:if test="${sessionScope.user!=null}">
+                                                    <c:if test="${sessionScope.customer!=null}">
                                                         <a href="javascript:void(0)"
                                                            onclick="deleteComment(${c.commentId})">Delete</a>
                                                         <a class="comment-edit-link"
@@ -257,12 +260,13 @@
                                                     <br>
                                                     <span class="comment-aux">
                                                         <span class="reply">
-                                                            <a rel="nofollow" class="comment-reply-link" href="#respond">Reply
+                                                            <a rel="nofollow" class="comment-reply-link" href="#respond"
+r                                                               onclick="replyComment()">reply
                                                             </a>
                                                         </span>
                                                         <fmt:formatDate value="${c2.commentCreateTime}"
                                                                         pattern="yyyy/MM/dd/ HH:mm:ss"/>&nbsp;
-                                                        <c:if test="${sessionScope.user!=null}">
+                                                        <c:if test="${sessionScope.customer!=null}">
                                                             <a href="javascript:void(0)"
                                                                onclick="deleteComment(${c2.commentId})">Delete</a>
                                                             <a class="comment-edit-link"
