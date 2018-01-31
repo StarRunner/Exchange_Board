@@ -179,7 +179,24 @@
                         </div>
                         <div class="clear"></div>
                         <p class="form-submit">
-                            <input id="submit" name="submit" type="submit" tabindex="5" value="Submit Comment">
+                        <script src="/js/jquery.min.js"></script>
+						<script type="text/javascript">
+						function submitcomment() {
+						    $.ajax({
+						        async: false,
+						        type: "POST",
+						        url: '/comment/insert',
+						        contentType: "application/x-www-form-urlencoded; charset=utf-8",
+						        data: $("#comment_form").serialize(),
+						        dataType: "text",
+						        success: function () {
+						        },
+						        error: function () {
+						        }
+						    })
+						}
+						</script>
+                            <input onclick="submitcomment()" id="submit" name="submit" type="submit" tabindex="5" value="Submit Comment">
                             <input type="hidden" name="commentArticleId"
                                    value="${articleDetailVo.articleCustom.articleId}" id="article_id">
                             <input type="hidden" name="commentPid" id="comment_pid" value="0">
