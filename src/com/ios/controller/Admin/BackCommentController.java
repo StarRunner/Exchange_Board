@@ -37,7 +37,7 @@ public class BackCommentController {
         ModelAndView modelandview = new ModelAndView();
         //正常评论显示
         Integer pageSize = 20;
-        List<CommentListVo> commentListVoList = commentService.listCommentByPage(null,null,pageSize);
+        List<CommentListVo> commentListVoList = commentService.listCommentByPage(1,1,pageSize);
         modelandview.addObject("commentListVoList", commentListVoList);
 
         //待审核评论不分页显示

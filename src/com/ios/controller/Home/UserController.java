@@ -101,6 +101,8 @@ public class UserController {
 	        String username = request.getParameter("username");
 	        String password = request.getParameter("password");
 	        String rememberme = request.getParameter("rememberme");
+	        String userAwaUrl="http://w3-services1.w3-969.ibm.com/myw3/unified-profile-photo/v1/image/";
+	        String parmate="?s=52";
 	        User customer=new User();
 	        ReturnCode returnCode = cwa.authenticate("9.17.186.253" , username, password);
 	        
@@ -108,6 +110,9 @@ public class UserController {
 //	        Vector<String> name=bpr.getColumn("HRFIRSTNAME");
 //	        Vector<String> familyname=bpr.getColumn("HRLASTNAME");
 	        Vector<String> name=bpr.getColumn("NAME");
+	        Vector<String> ssnumber=bpr.getColumn("CNUM");
+	        String awaFinal=ssnumber.get(0);
+	        String awaUrl=userAwaUrl+awaFinal+parmate;
 	        String fullname=name.get(0);
 	        System.out.println(fullname);
 	        Pattern pattern = Pattern.compile(".*?(?=\\*CONTRACTOR\\*)");
@@ -125,6 +130,7 @@ public class UserController {
 	            customer.setUserName(username);
 	            customer.setUserPass(password);
 	            customer.setUserNickname(fullname);
+	            customer.setUserAvatar(awaUrl);
 	            //添加session
 	            request.getSession().setAttribute("customer", customer);
 	            //添加cookie

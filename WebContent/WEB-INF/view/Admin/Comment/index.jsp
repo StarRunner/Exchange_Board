@@ -56,6 +56,7 @@
                     <c:forEach items="${commentListVoList}" var="c">
                         <tr>
                             <td>
+                            <img src="${c.commentCustom.commentAuthorUrl}" alt="" width="64px">
                                 <strong>${c.commentCustom.commentAuthorName}</strong>
                                 <c:if test="${c.commentCustom.commentStatus==0}">
                                     <span class="approve">[Pending]</span>
@@ -209,6 +210,7 @@
                     <c:forEach items="${hiddenCommentListVoList}" var="c">
                         <tr>
                             <td>
+                               <img src="${c.commentCustom.commentAuthorUrl}" alt="" width="64px">
                                 <strong>${c.commentCustom.commentAuthorName}</strong> <br>
                                     ${c.commentCustom.commentAuthorEmail} <br>
                             </td>

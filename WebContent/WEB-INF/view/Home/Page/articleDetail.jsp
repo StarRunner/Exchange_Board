@@ -144,12 +144,6 @@
                         <c:if test="${sessionScope.customer!=null}">
                             <div class="user_avatar">
                                 User：${sessionScope.customer.userNickname}
-                                <input type="hidden" name="commentRole" value="1">
-                                <input type="hidden" name="commentAuthorName"
-                                       value="${sessionScope.customer.getUserNickname()}">
-                                <input type="hidden" name="commentAuthorEmail"
-                                       value="${sessionScope.customer.getUserEmail()}">
-                                <input type="hidden" name="commentAuthorUrl" value="${sessionScope.customer.getUserUrl()}">
                             </div>
                         </c:if>
                         <p class="comment-form-comment">
@@ -201,7 +195,12 @@
                                    value="${articleDetailVo.articleCustom.articleId}" id="article_id">
                             <input type="hidden" name="commentPid" id="comment_pid" value="0">
                             <input type="hidden" name="commentAuthorUrl" id="author_url" value="${sessionScope.customer.getUserAvatar()}"
-                                           tabindex="4">
+                                           tabindex="4">             
+                             <input type="hidden" name="commentRole" value="1">
+                                <input type="hidden" name="commentAuthorName"
+                                       value="${sessionScope.customer.getUserNickname()}">
+                                <input type="hidden" name="commentAuthorEmail"
+                                       value="${sessionScope.customer.getUserName()}">
                         </p>
                     </form>
                 </div>
@@ -217,7 +216,7 @@
                             <li class="comment">
                                 <div id="div-comment-${c.commentId}" class="comment-body">
                                     <div class="comment-author vcard">
-                                        <img class="avatar" src="${c.commentAuthorAvatar}" alt="avatar"
+                                        <img class="avatar" src="${c.commentAuthorUrl}" alt="avatar"
                                              style="display: block;">
                                         <strong>${c.commentAuthorName} </strong>
                                         <c:if test="${c.commentRole==1}">
