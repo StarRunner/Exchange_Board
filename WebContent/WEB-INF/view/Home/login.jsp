@@ -137,11 +137,9 @@
                     if(data.code==0) {
                         alert(data.msg);
                     } else {
-                    	if("<%=request.getParameter("manageArticle")%>" == "null"){
-                    		window.location.href="/user";
-                    	}else{
-                    		window.location.href="<%=request.getParameter("manageArticle")%>";
-                    	}
+                    	
+                    		window.location.href="/manage/article";
+                 
                     }
                 },
                 error: function () {

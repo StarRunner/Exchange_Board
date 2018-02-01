@@ -107,7 +107,7 @@
                                         <h2 class="mbr-section-title display-1">SHOWCASE BOARD</h2>
                                         <p class="mbr-section-lead lead">Choose from the large selection of latest pre-made blocks - jumbotrons, hero images, parallax scrolling, video backgrounds, hamburger menu, sticky header and more.</p>
 
-                                        <div class="mbr-section-btn"><a class="btn btn-lg btn-success" href="https://mobirise.com">FOR WINDOWS</a> <a class="btn btn-lg btn-white btn-white-outline" href="https://mobirise.com">FOR MAC</a> </div>
+                                        <div class="mbr-section-btn"><a class="btn btn-lg btn-success" href="/manage/article">SHARE YOUR IDEA HERE</a> </div>
                                     </div>
                                 </div>
                             </div>
