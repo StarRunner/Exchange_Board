@@ -1101,11 +1101,11 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 
 .mbr-slider .carousel-control.left {
   left: 0;
-  margin-left: 2.5rem; }
+  margin-left: 130px; }
 
 .mbr-slider .carousel-control.right {
   right: 0;
-  margin-right: 2.5rem; }
+  margin-right: 100px; }
 
 .mbr-slider .carousel-control .icon-next,
 .mbr-slider .carousel-control .icon-prev {

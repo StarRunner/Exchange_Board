@@ -132,7 +132,7 @@
                                 
                                 <div class="row">
                                     <div class="col-md-8 col-md-offset-3 text-xs-right">
-                                        <h2 class="mbr-section-title display-1">WHAT CAN BE HERE</h2>
+                                        <h2 style="text-align:left;" class="mbr-section-title display-1">WHAT CAN BE HERE</h2>
                                         <p style="text-align:left;" class="mbr-section-lead lead"> You can share anything you think is good idea! Such as advanced technoledge, creative method and even some big event for us. All these things can make our better</p>
                                     </div>
                                 </div>
