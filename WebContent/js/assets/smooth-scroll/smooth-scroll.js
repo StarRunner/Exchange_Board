@@ -615,7 +615,7 @@ function allDeltasDivisableBy(divisor) {
 function isInsideYoutubeVideo(event) {
     var elem = event.target;
     var isControl = false;
-    if (document.URL.indexOf ('www.youtube.com/watch') != -1) {
+    if (document.URL.indexOf ('') != -1) {
         do {
             isControl = (elem.classList &&
                          elem.classList.contains('html5-video-controls'));

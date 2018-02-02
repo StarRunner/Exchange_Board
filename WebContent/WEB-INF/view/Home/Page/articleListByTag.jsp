@@ -74,9 +74,9 @@
 								<div class="wrap-col">
 									<div class="info">
 										<ul class="clearfix bg-green">
-											<li><a href="#"> ${a.articleCustom.articleAuthor}</a></li>
-											<li><a href="#"><fmt:formatDate value="${a.articleCustom.articlePostTime}" pattern="yyyy-MM-dd"/></a></li>
-											<li><a href="#">${a.articleCustom.articleViewCount} views</a></li>
+											<li style="font-size:14px;color: #ffffff">${a.articleCustom.articleAuthor}</li>
+											<li style="font-size:14px;color: #ffffff"><fmt:formatDate value="${a.articleCustom.articlePostTime}" pattern="yyyy-MM-dd"/></li>
+											<li style="font-size:14px;color: #ffffff">${a.articleCustom.articleViewCount} views</li>
 											<li class="last"><a href="/article/${a.articleCustom.articleId}#comments">Leave a comment</a></li>
 										</ul>
 									</div>

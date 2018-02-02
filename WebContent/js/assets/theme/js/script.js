@@ -301,39 +301,6 @@
         $('html').addClass('mbr-site-loaded');
         $(window).resize().scroll();
 
-        // smooth scroll
-        if (!$('html').hasClass('is-builder')){
-            $(document).click(function(e){
-                try {
-                    var target = e.target;
-
-                    if ($(target).parents().hasClass('extTestimonials1')) {
-                        return;
-                    }
-                    do {
-                        if (target.hash){
-                                var useBody = /#bottom|#top/g.test(target.hash);
-                            $(useBody ? 'body' : target.hash).each(function(){
-                                e.preventDefault();
-                                // in css sticky navbar has height 64px
-                                var stickyMenuHeight = $('.mbr-navbar--sticky').length ? 64 : 0;
-                                var goTo = target.hash == '#bottom'
-                                        ? ($(this).height() - $(window).height())
-                                        : ($(this).offset().top - stickyMenuHeight);
-                                //Disable Accordion's and Tab's scroll
-                                if($(this).hasClass('panel-collapse') || $(this).hasClass('tab-pane')){return};
-                                $('html, body').stop().animate({
-                                    scrollTop: goTo
-                                }, 800, 'easeInOutCubic');
-                            });
-                            break;
-                        }
-                    } while (target = target.parentNode);
-                } catch (e) {
-                   // throw e;
-                }
-            });
-        }
 
         // init the same height columns
         $('.cols-same-height .mbr-figure').each(function() {

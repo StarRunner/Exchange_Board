@@ -81,9 +81,6 @@
 	</section> -->
 	<!-- MastHead section end -->
 	<!-- Slide Section Start -->
-	<section class="engine">
-		<a href="https://mobirise.co/m">bootstrap table</a>
-	</section>
 	<section class="mbr-slider mbr-section mbr-section__container carousel slide mbr-section-nopadding mbr-after-navbar" data-ride="carousel" data-keyboard="false" data-wrap="true" data-pause="false" data-interval="4000" id="slider3-o" data-rv-view="14">
     <div>
         <div>
@@ -96,7 +93,7 @@
                     <li data-app-prevent-settings="" data-target="#slider3-o" data-slide-to="2">
                     </li>
                     </ol>
-                <div class="carousel-inner" role="listbox">
+                <div class="carousel-inner" style="height:716px;" role="listbox">
                     <div class="mbr-section mbr-section-hero carousel-item dark center mbr-section-full active" data-bg-video-slide="false" style="background-image: url(/js/assets/images/man-back.jpg);">
                         <div class="mbr-table-cell">
                             <div class="mbr-overlay" style="opacity: 0.6; background-color: rgb(0, 0, 0);"></div>
@@ -104,10 +101,10 @@
                                 
                                 <div class="row">
                                     <div class="col-md-8 col-md-offset-2 text-xs-center">
-                                        <h2 class="mbr-section-title display-1">SHOWCASE BOARD</h2>
-                                        <p class="mbr-section-lead lead">Choose from the large selection of latest pre-made blocks - jumbotrons, hero images, parallax scrolling, video backgrounds, hamburger menu, sticky header and more.</p>
+                                        <h2 class="mbr-section-title display-1">SHARE YOUR IDEA</h2>
+                                        <p class="mbr-section-lead lead">Contribute your idea, your invovation, creative method, technoledge</p>
 
-                                        <div class="mbr-section-btn"><a class="btn btn-lg btn-success" href="/manage/article">SHARE YOUR IDEA HERE</a> </div>
+                                        <div class="mbr-section-btn"><a class="btn btn-lg btn-info" href="/manage/article">Start Here</a> </div>
                                     </div>
                                 </div>
                             </div>
@@ -119,8 +116,9 @@
                                 
                                 <div class="row">
                                     <div class="col-md-8 col-md-offset-1">
-                                        <h2 class="mbr-section-title display-1">BACKGROUND VIDEO</h2>
-                                        <p class="mbr-section-lead lead">Choose from the large selection of latest pre-made blocks - jumbotrons, hero images, parallax scrolling, video backgrounds, hamburger menu, sticky header and more.</p>
+                                        <h2 class="mbr-section-title display-1">INOVATION</h2>
+                                        <p class="mbr-section-lead lead">We saw different ideas and innovations from others, but they are not yours, contribute yours here. Your thought may help 
+                                        others and help our customer </p>
 
                                         
                                     </div>
@@ -134,10 +132,8 @@
                                 
                                 <div class="row">
                                     <div class="col-md-8 col-md-offset-3 text-xs-right">
-                                        <h2 class="mbr-section-title display-1">BOOTSTRAP SLIDER</h2>
-                                        <p class="mbr-section-lead lead">Choose from the large selection of latest pre-made blocks - jumbotrons, hero images, parallax scrolling, video backgrounds, hamburger menu, sticky header and more.</p>
-
-                                        <div class="mbr-section-btn"><a class="btn btn-lg btn-info" href="https://mobirise.com">FOR WINDOWS</a> <a class="btn btn-lg btn-white btn-white-outline" href="https://mobirise.com">FOR MAC</a></div>
+                                        <h2 class="mbr-section-title display-1">WHAT CAN BE HERE</h2>
+                                        <p style="text-align:left;" class="mbr-section-lead lead"> You can share anything you think is good idea! Such as advanced technoledge, creative method and even some big event for us. All these things can make our better</p>
                                     </div>
                                 </div>
                             </div>
@@ -213,9 +209,9 @@
 								<div class="wrap-col">
 									<div class="info">
 										<ul class="clearfix bg-green">
-											<li><a href="#"> ${a.articleCustom.articleAuthor}</a></li>
-											<li><a href="#"><fmt:formatDate value="${a.articleCustom.articlePostTime}" pattern="yyyy-MM-dd"/></a></li>
-											<li><a href="#">${a.articleCustom.articleViewCount} views</a></li>
+											<li style="font-size:14px;color: #ffffff">${a.articleCustom.articleAuthor}</li>
+											<li style="font-size:14px;color: #ffffff"><fmt:formatDate value="${a.articleCustom.articlePostTime}" pattern="yyyy-MM-dd"/></li>
+											<li style="font-size:14px;color: #ffffff">${a.articleCustom.articleViewCount} views</li>
 											<li class="last"><a href="/article/${a.articleCustom.articleId}#comments">Leave a comment</a></li>
 										</ul>
 									</div>

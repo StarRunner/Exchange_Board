@@ -81,12 +81,6 @@
 
                     <footer class="single-footer">
                         <ul class="single-meta">
-                            <c:if test="${sessionScope.customer!=null}">
-                            <li class="edit-link">
-                                <a target="_blank" class="post-edit-link"
-                                   href="/admin/article/edit/${articleDetailVo.articleCustom.articleId}">Edit</a>
-                            </li>
-                            </c:if>
                             <li class="comment">
                                 <a href="/article/${articleDetailVo.articleCustom.articleId}#comments"
                                    rel="external nofollow">
@@ -219,11 +213,7 @@
                                         <img class="avatar" src="${c.commentAuthorUrl}" alt="avatar"
                                              style="display: block;">
                                         <strong>${c.commentAuthorName} </strong>
-                                        <c:if test="${c.commentRole==1}">
-                                            <i class="fa fa-black-tie" style="color: #c40000;"></i>
-                                            <span class=""
-                                                  style="margin-top: 2px!important;color: #c40000;font-size: 13px;;"><b>Owner</b></span>
-                                        </c:if>
+                                    
                                         <span class="comment-meta commentmetadata">
                                             <span class="ua-info" style="display: inline;">
                                                 <br>
@@ -235,13 +225,7 @@
                                                     </span>
                                                     <fmt:formatDate value="${c.commentCreateTime}"
                                                                     pattern="yyyy/MM/dd HH:mm:ss"/>&nbsp;
-                                                    <c:if test="${sessionScope.customer!=null}">
-                                                        <a href="javascript:void(0)"
-                                                           onclick="deleteComment(${c.commentId})">Delete</a>
-                                                        <a class="comment-edit-link"
-                                                           href="/admin/comment/edit/${c.commentId}"
-                                                           target="_blank">Edit</a>
-                                                    </c:if>
+                                                   
                                                     <span class="floor"> &nbsp;${floor}Floor </span>
                                                 </span>
                                             </span>
@@ -266,11 +250,7 @@
                                                 <div id="div-comment-${c.commentId}" class="comment-body">
                                                     <div class="comment-author vcard">
                                                         <strong>${c2.commentAuthorName} </strong>
-                                                        <c:if test="${c2.commentRole==1}">
-                                                            <i class="fa fa-black-tie" style="color: #c40000;"></i>
-                                                            <span class=""
-                                                                  style="margin-top: 2px!important;color: #c40000;font-size: 13px;;"><b>Owner</b></span>
-                                                        </c:if>
+                                                        
                                                         <span class="comment-meta">
                                                     <span class="ua-info" style="display: inline;">
                                                     <br>
@@ -282,13 +262,6 @@ r                                                               onclick="replyCo
                                                         </span>
                                                         <fmt:formatDate value="${c2.commentCreateTime}"
                                                                         pattern="yyyy/MM/dd/ HH:mm:ss"/>&nbsp;
-                                                        <c:if test="${sessionScope.customer!=null}">
-                                                            <a href="javascript:void(0)"
-                                                               onclick="deleteComment(${c2.commentId})">Delete</a>
-                                                            <a class="comment-edit-link"
-                                                               href="/admin/comment/edit/${c2.commentId}"
-                                                               target="_blank">Edit</a>
-                                                        </c:if>
                                                         <span class="floor"> &nbsp;${floor2}Floor </span>
                                                     </span>
                                                 </span>
