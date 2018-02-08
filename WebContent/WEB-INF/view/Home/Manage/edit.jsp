@@ -113,12 +113,7 @@
             </div>
         </div>
     </form>
-<!-- 
-    <blockquote class="layui-elem-quote layui-quote-nm">
-        Note：
-        1、Before insert code，you can click <a href="http://liuyanzhao.com/code-highlight.html" target="_blank">code highlight</a>,to transfer code to html
-    </blockquote>
- -->
+
 </rapid:override>
 
 

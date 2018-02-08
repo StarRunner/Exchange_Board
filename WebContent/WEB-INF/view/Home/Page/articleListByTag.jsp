@@ -15,7 +15,7 @@
     </rapid:override>
 
     <rapid:override name="title">
-        <title>${tagCustom.tagName}</title>
+        <title> Showcase Board</title>
     </rapid:override>
 
     <rapid:override name="breadcrumb" >

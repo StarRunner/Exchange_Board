@@ -24,7 +24,7 @@
     <div class="layui-header">
         <!-- 头部区域（可配合layui已有的水平导航） -->
         <ul class="layui-nav layui-layout-left">
-            <li class="layui-nav-item"><a href="/" target="_blank">Showcase Board</a></li>
+            <li class="layui-nav-item"><a href="/">Showcase Board</a></li>
         </ul>
         <ul class="layui-nav layui-layout-right">
             <li class="layui-nav-item">

@@ -25,9 +25,7 @@
         <meta name="keywords" content="${options.optionMetaKeyword}" />
     </rapid:block>
     <rapid:block name="title">
-        <title>
-                ${options.optionSiteTitle}-${options.optionSiteDescrption}
-        </title>
+        <title>Showcase Board</title>
     </rapid:block>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/plugin/layui/css/layui.css">

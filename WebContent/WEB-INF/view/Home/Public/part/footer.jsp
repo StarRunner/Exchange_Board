@@ -9,7 +9,7 @@
 <footer class="mbr-small-footer mbr-section mbr-section-nopadding" id="footer1-e" data-rv-view="65" style="background-color: rgb(50, 50, 50); padding-top: 1.75rem; padding-bottom: 1.75rem;">
     
     <div class="container text-xs-center">
-        <p>Copyright (c) 2018 <a href="/" target="_blank" rel="noopener noreferrer">${options.optionSiteTitle}</a>.</p>
+        <p>Copyright (c) 2018 <a href="/" rel="noopener noreferrer">${options.optionSiteTitle}</a>.</p>
     </div>
 </footer>
 <%--页脚 end--%>

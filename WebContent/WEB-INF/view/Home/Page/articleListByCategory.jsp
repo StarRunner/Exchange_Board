@@ -13,7 +13,7 @@
     <meta name="keywords" content="${categoryCustom.categoryName}"/>
 </rapid:override>
 <rapid:override name="title">
-    <title>${categoryCustom.categoryName}</title>
+    <title>Showcase Board</title>
 </rapid:override>
 
 <%--面包屑导航 start--%>

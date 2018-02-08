@@ -75,20 +75,20 @@
                     <tr>
                         <td><input type="checkbox" name="ids" value="${a.articleCustom.articleId}"></td>
                         <td>${a.articleCustom.articleId}</td>
-                        <td><a href="/article/${a.articleCustom.articleId}" target="_blank">
+                        <td><a href="/article/${a.articleCustom.articleId}" >
                                 ${fn:substring(a.articleCustom.articleTitle, 0,20 )}
 
                         </a></td>
                         <td>
                             <c:forEach items="${a.categoryCustomList}" var="c">
-                                <a href="/category/${c.categoryId}" target="_blank">${c.categoryName}</a>
+                                <a href="/category/${c.categoryId}" >${c.categoryName}</a>
                                 &nbsp;
                             </c:forEach>
                         </td>
 
                         <td>
                             <c:forEach items="${a.tagCustomList}" var="t">
-                                <a href="/tag/${t.tagId}" target="_blank">${t.tagName}</a>
+                                <a href="/tag/${t.tagId}">${t.tagName}</a>
                                 &nbsp;
                             </c:forEach>
                         </td>
