@@ -6,6 +6,20 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@ taglib prefix="rapid" uri="http://www.rapid-framework.org.cn/rapid" %>
 <%--保留此处 end--%>
+    <style>
+
+        .layui-form-label {
+            float: left;
+            display: block;
+            padding: 9px 10px !important;
+            width: 120px !important;
+            font-weight: 400;
+            text-align: left  !important;
+        }
+.layui-input-block{
+    margin-left: 140px !important;
+    }
+    </style>
     <rapid:override name="title">
         - New Article
     </rapid:override>
@@ -40,7 +54,7 @@
 
 		<!-- Frank add - upload mini picture for article -->
         <div class="layui-form-item">
-			Featured Image<span style="color: #FF5722; ">*</span>
+			<label class="layui-form-label">Featured Image<span style="color: #FF5722; ">*</span></label>
             <input type="file" name="file" accept="image/*">
         </div>
 
