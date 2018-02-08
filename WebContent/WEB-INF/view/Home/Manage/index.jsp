@@ -5,7 +5,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@ taglib prefix="rapid" uri="http://www.rapid-framework.org.cn/rapid" %>
 <rapid:override name="title">
-   ShowcaseBoard - Your Article List
+   Showcase Board - Your Article List
 </rapid:override>
 <rapid:override name="header-style">
     <style>

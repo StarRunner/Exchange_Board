@@ -8,7 +8,7 @@
 
 <title>
     <rapid:block name="title">
-        ShowcaseBoard - SearchArticle
+        Showcase Board - SearchArticle
     </rapid:block>
 </title>
 <rapid:override name="header-style">

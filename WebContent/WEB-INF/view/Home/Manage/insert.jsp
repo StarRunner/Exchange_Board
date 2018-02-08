@@ -22,7 +22,7 @@
 
 <%--保留此处 end--%>
     <rapid:override name="title">
-      ShowcaseBoard - Add Article
+      Showcase Board - Add Article
     </rapid:override>
 
 <rapid:override name="content">

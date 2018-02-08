@@ -22,7 +22,7 @@
     </style>
 
 <rapid:override name="title">
-    ShowcaseBoard - Edit Article
+    Showcase Board - Edit Article
 </rapid:override>
 <rapid:override name="header-style">
 
