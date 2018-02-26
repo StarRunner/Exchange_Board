@@ -101,25 +101,19 @@ public class UserController {
 	        String username = request.getParameter("username");
 	        String password = request.getParameter("password");
 	        String rememberme = request.getParameter("rememberme");
-	        String userAwaUrl="http://w3-services1.w3-969.ibm.com/myw3/unified-profile-photo/v1/image/";
-	        String parmate="?s=52";
+	        String userAwaUrl="http://w3-pics.ibm.com/bluepages/photo/Photo.jsp?email="+username;
 	        User customer=new User();
 	        System.setProperty(cwa.FORCE_SSL_SEARCH, "true");
 	        System.setProperty(BluePages.HTTP_API_LOCATOR_URL, "https://bluepages.ibm.com/BpHttpApisv3/apilocator");
 	        ReturnCode returnCode = cwa.authenticate("9.17.186.253" , username, password);
+	        
 	        System.out.println(returnCode.getCode());
 	        BPResults bpr= BluePages.getPersonsByInternet(username);
+	        
 	        System.out.println(bpr.getStatusCode());
 
-//	        Vector<String> name=bpr.getColumn("HRFIRSTNAME");
-//	        Vector<String> familyname=bpr.getColumn("HRLASTNAME");
 	        Vector<String> name=bpr.getColumn("NAME");
-	        Vector<String> ssnumber=bpr.getColumn("CNUM");
-	        String awaFinal=ssnumber.get(0);
-	        System.out.println("********************"+awaFinal);
-	        String awaUrl=userAwaUrl+awaFinal+parmate;
 	        String fullname=name.get(0);
-	        System.out.println(fullname);
 	        Pattern pattern = Pattern.compile(".*?(?=\\*CONTRACTOR\\*)");
 	        Matcher matcher = pattern.matcher(fullname);
 	     
@@ -135,7 +129,7 @@ public class UserController {
 	            customer.setUserName(username);
 	            customer.setUserPass(password);
 	            customer.setUserNickname(fullname);
-	            customer.setUserAvatar(awaUrl);
+	            customer.setUserAvatar(userAwaUrl);
 	            //添加session
 	            request.getSession().setAttribute("customer", customer);
 	            //添加cookie

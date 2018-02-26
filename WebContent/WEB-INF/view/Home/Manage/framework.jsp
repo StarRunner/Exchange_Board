@@ -42,6 +42,7 @@
                     <dl class="layui-nav-child">
                         <dd><a href="/manage/article">Article List</a></dd>
                         <dd><a href="/manage/article/insert">Add Article</a></dd>
+                        <dd><a href="/manage/article/help" target="_blank">Post Article Help</a></dd>
                     </dl>
                 </li>
             </ul>

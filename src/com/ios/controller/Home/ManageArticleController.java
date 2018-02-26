@@ -101,6 +101,15 @@ public class ManageArticleController {
         return modelAndView;
     }
     
+    @RequestMapping(value = "/help")
+    public ModelAndView helpArticleView() throws Exception {
+        ModelAndView modelAndView = new ModelAndView();
+      
+        modelAndView.setViewName("Home/Manage/help");
+        return modelAndView;
+    }
+    
+    
     @Autowired
     HttpServletRequest request;
     

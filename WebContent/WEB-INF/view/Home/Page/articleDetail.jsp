@@ -63,7 +63,7 @@
                 
                 <!-- Rancho Add -->
                <div class="wrap-vid">
-					<iframe width="100%" height="400" src="${articleDetailVo.articleCustom.articleUrl}" frameborder="0" allowfullscreen></iframe>
+					<iframe width="100%" height="550" src="${articleDetailVo.articleCustom.articleUrl}" frameborder="0" allowfullscreen></iframe>
 			   </div>
                 <div class="entry-content">
                     <div class="single-content">
