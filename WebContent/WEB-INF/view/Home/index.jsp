@@ -167,7 +167,8 @@
         
 	<div class="slogan bottom-pad-small">
             <div class="container_index">
-               <div class="row" style='    margin-right: -80px; margin-left: 110px;'>
+            <!-- changed by Frank in Jul 13th, requirement by Sarah -->
+               <!-- <div class="row" style='margin-right: -80px; margin-left: 110px;'>
                   <div class="slogan-content">
                      <div class="col-lg-9 col-md-9">
                         <h2 class="slogan-title">Post your idea and your POC here !</h2>
@@ -184,7 +185,7 @@
                      </div>
                      <div class="clearfix"></div>
                   </div>
-               </div>
+               </div> -->
             </div>
     </div>
     </rapid:override>

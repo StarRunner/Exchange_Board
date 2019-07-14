@@ -8,7 +8,7 @@
 <body>
                    <main id="main" class="site-main" role="main">
                 <c:forEach items="${articleListVoList}" var="a">
-     <article style="width: 50%; float: left; padding:10px">
+     <article style="width: 25%; float: left; padding:10px">
 						<div class="art-header">
 						  <a href="/article/${a.articleCustom.articleId}">
                                 <img width="280" height="280"
