@@ -6,7 +6,7 @@
 
 
     <%--热评Article start--%>
-    <aside class="widget hot_comment">
+    <%-- <aside class="widget hot_comment">
         <h3 class="widget-title">
             <i class="fa fa-bars"></i>Most View
         </h3>
@@ -36,7 +36,7 @@
             </ul>
         </div>
         <div class="clear"></div>
-    </aside>
+    </aside> --%>
     <%--most view Article end--%>
 
     <%--All tag start--%>
@@ -60,7 +60,7 @@
 
 
     <%--random Article start--%>
-    <aside id="random_post-7" class="widget random_post wow fadeInUp" data-wow-delay="0.3s">
+    <%-- <aside id="random_post-7" class="widget random_post wow fadeInUp" data-wow-delay="0.3s">
         <h3 class="widget-title">
             <i class="fa fa-bars"></i>Random Article
         </h3>
@@ -92,7 +92,7 @@
             </ul>
         </div>
         <div class="clear"></div>
-    </aside>
+    </aside> --%>
     <%--recent Article end--%>
 
     <%--最新评论 start--%>

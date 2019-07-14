@@ -92,6 +92,8 @@
                     </li>
                     <li data-app-prevent-settings="" data-target="#slider3-o" data-slide-to="2">
                     </li>
+                    <li data-app-prevent-settings="" data-target="#slider3-o" data-slide-to="3">
+                    </li>
                     </ol>
                 <div class="carousel-inner" style="height:716px;" role="listbox">
                     <div class="mbr-section mbr-section-hero carousel-item dark center mbr-section-full active" data-bg-video-slide="false" style="background-image: url(/js/assets/images/man-back.jpg);">
@@ -134,6 +136,19 @@
                                     <div class="col-md-8 col-md-offset-3 text-xs-right">
                                         <h2 style="text-align:left;" class="mbr-section-title display-1">WHAT CAN BE HERE</h2>
                                         <p style="text-align:left;" class="mbr-section-lead lead"> You can share anything you think is good idea! Such as advanced technoledge, creative method and even some big event for us. All these things can make our better</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><div class="mbr-section mbr-section-hero carousel-item dark center mbr-section-full" data-bg-video-slide="false" style="background-image: url(/js/assets/images/mbr-1611x1080.jpg);">
+                        <div class="mbr-table-cell">
+                            <div class="mbr-overlay"></div>
+                            <div class="container-slide container">
+                                
+                                <div class="row">
+                                    <div class="col-md-8 col-md-offset-3 text-xs-right">
+                                        <h2 style="text-align:left;" class="mbr-section-title display-1">COLLABORATION</h2>
+                                        <p style="text-align:left;" class="mbr-section-lead lead"> </p>
                                     </div>
                                 </div>
                             </div>

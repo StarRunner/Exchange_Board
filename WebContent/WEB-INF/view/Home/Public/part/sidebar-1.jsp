@@ -75,7 +75,7 @@
         </aside>
         <%--所有标签 end--%>
   <%--random Article start--%>
-    <aside id="random_post-7" class="widget random_post wow fadeInUp" data-wow-delay="0.3s">
+    <%-- <aside id="random_post-7" class="widget random_post wow fadeInUp" data-wow-delay="0.3s">
         <h3 class="widget-title">
             <i class="fa fa-bars"></i>Random Article
         </h3>
@@ -107,7 +107,7 @@
             </ul>
         </div>
         <div class="clear"></div>
-    </aside>
+    </aside> --%>
     <%--recent Article end--%>
 </div>
 <%--博客主体-右侧侧边栏 end--%>
